@@ -1,0 +1,90 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2022 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.3351">
+	<Airport ICAOcode="KTRK">
+		<Sid Name="TAHOE1" Runways="02 ,29 ">
+			<Sid_Waypoint ID="1">
+				<Name>PWWDR</Name>
+				<Type>Normal</Type>
+				<Latitude>39.46200555555556</Latitude>
+				<Longitude>-120.11498888888887</Longitude>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="2">
+				<Name>TAHOE</Name>
+				<Type>Normal</Type>
+				<Latitude>39.516238888888886</Latitude>
+				<Longitude>-120.14575</Longitude>
+				<Altitude>11000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="3">
+				<Name>TAHOE</Name>
+				<Type>Normal</Type>
+				<Latitude>39.516238888888886</Latitude>
+				<Longitude>-120.14575</Longitude>
+				<Altitude>12000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</Sid_Waypoint>
+			<Sid_Transition Name="FMG  ">
+				<SidTr_Waypoint ID="1">
+					<Name>TAHOE</Name>
+					<Type>Normal</Type>
+					<Latitude>39.516238888888886</Latitude>
+					<Longitude>-120.14575</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>FMG </Name>
+					<Type>Normal</Type>
+					<Latitude>39.531277777777774</Latitude>
+					<Longitude>-119.656075</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="SIGNA">
+				<SidTr_Waypoint ID="1">
+					<Name>TAHOE</Name>
+					<Type>Normal</Type>
+					<Latitude>39.516238888888886</Latitude>
+					<Longitude>-120.14575</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>SIGNA</Name>
+					<Type>Normal</Type>
+					<Latitude>39.34710277777778</Latitude>
+					<Longitude>-120.63912222222223</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="02 ">
+				<SidTr_Waypoint ID="2">
+					<Name>PWWDR</Name>
+					<Type>Normal</Type>
+					<Latitude>39.46200555555556</Latitude>
+					<Longitude>-120.11498888888887</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="29 ">
+				<SidTr_Waypoint ID="2">
+					<Name>PWWDR</Name>
+					<Type>Normal</Type>
+					<Latitude>39.46200555555556</Latitude>
+					<Longitude>-120.11498888888887</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+	</Airport>
+</ProceduresDB>
