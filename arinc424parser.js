@@ -370,6 +370,10 @@ const childClasses = [
                     out.SID_STAR_Ident = splitData[3];
                     out.TRANS_IDENT = splitData[5];
 
+                    if (out.is_SID) {
+                        out.TRANS_IDENT = out.TRANS_IDENT.replace("RW", "")
+                    }
+
                     out.sequence_number = splitData[6];
                     out.fix_ident = splitData[7];
                     out.fix_ICAO = splitData[8];
