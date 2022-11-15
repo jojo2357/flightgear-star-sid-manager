@@ -29,8 +29,6 @@ const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine)
         out.push(vahl);
-    else
-        console;
     return out;
 }, []);
 
@@ -72,15 +70,22 @@ const thingey = it.reduce((out, curr, windex, array) => {
                 out[curr.airportIDENT][curr.SID_STAR_Ident] = {sid: true};
             else if (curr.is_STAR)
                 out[curr.airportIDENT][curr.SID_STAR_Ident] = {star: true};
-            else return out;
+            else if (curr.is_APPROACH)
+                out[curr.airportIDENT][curr.SID_STAR_Ident] = {approach: true};
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType])
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType] = {};
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT])
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT] = [];
-        out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
-            loc: it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
-            obj: curr
-        });
+        // if (!curr.is_APPROACH)
+            out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
+                loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
+                obj: curr
+            });
+        // else
+        //     out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
+        //         loc: it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
+        //         obj: curr
+        //     });
     }
     return out;
 }, {});
@@ -163,7 +168,6 @@ for (const thingeyKey in thingey) {
                     for (const simpsKey in translist) {
                         outstring += `${'\t'.repeat(depth++)}<Sid_Transition Name="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
-                            if (false) ;
                             if (typeof simps.loc === 'string' || simps.loc instanceof String)
                                 continue;
 
@@ -212,9 +216,52 @@ for (const thingeyKey in thingey) {
                     for (const simpsKey in translist) {
                         outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
-                            if (false) ;
-                            if (typeof simps.loc === 'string' || simps.loc instanceof String)
+                            if (typeof simps.loc === 'string' || simps.loc instanceof String) {
+                                continue
+                                if (simps.obj.fix_path_termination === "VA") {
+                                    outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+
+                                    outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Type>vectors</Type>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+                                    switch (simps.obj.nav_altitude) {
+                                        case "B": {
+                                            outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                            outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                            outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_2}</Altitude>\n`;
+                                            outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                            break;
+                                        }
+                                        case "+": {
+                                            outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                            outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                            break;
+                                        }
+                                        case "-": {
+                                            outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                            outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                            break;
+                                        }
+                                        case " ": {
+                                            if (simps.obj.nav_altitude_1.trim().length) {
+                                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+                                            }
+                                            break;
+                                        }
+
+                                        default:
+                                            console.log("Unrecognized ", simps.obj.nav_altitude);
+                                    }
+
+                                    outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
+                                    outstring +=`${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+
+                                    outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
+                                }
                                 continue;
+                            }
 
                             outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
@@ -327,7 +374,6 @@ for (const thingeyKey in thingey) {
                     for (const simpsKey in translist) {
                         outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
-                            if (false) ;
                             if (typeof simps.loc === 'string' || simps.loc instanceof String)
                                 continue;
 
@@ -376,13 +422,123 @@ for (const thingeyKey in thingey) {
                 console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`);
             }
             outstring += `${'\t'.repeat(--depth)}</Star>\n`;
+        } else if (route.approach) {
+            // continue;
+            let transitions = [route[RouteType["PF"]["A"]]].reduce((out, arr) => {
+                if (arr) out.push(arr);
+                return out;
+            }, []);
+            let meatofit = [
+                "B", "D", "F", "G", "I", "J", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+            ].map(it => route[RouteType["PF"][it]]).reduce((out, arr) => {
+                if (arr) out.push(arr);
+                return out;
+            }, []);
+            outstring += `${'\t'.repeat(depth++)}<Approach Name="${sidarname.trim()}">\n`;
+            for (const commonerlist of meatofit) {
+                for (const simpsKey in commonerlist) {
+                    for (const simps of commonerlist[simpsKey]) {
+                        if (typeof simps.loc === 'string' || simps.loc instanceof String)
+                            continue;
+
+                        outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+
+                        outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway": "Normal"}</Type>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
+                        switch (simps.obj.nav_altitude) {
+                            case "B": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_2}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case "+": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case "-": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case " ": {
+                                if (simps.obj.nav_altitude_1.trim().length) {
+                                    outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+                                }
+                                break;
+                            }
+
+                            default:
+                                console.log("Unrecognized ", simps.obj.nav_altitude);
+                        }
+
+                        outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                    }
+                }
+            }
+            for (const translist of transitions) {
+                for (const simpsKey in translist) {
+                    outstring += `${'\t'.repeat(depth++)}<App_Transition Name="${simpsKey}">\n`;
+                    for (const simps of translist[simpsKey]) {
+                        if (typeof simps.loc === 'string' || simps.loc instanceof String)
+                            continue;
+
+                        outstring += `${'\t'.repeat(depth++)}<AppTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+
+                        outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
+                        switch (simps.obj.nav_altitude) {
+                            case "B": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_2}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case "+": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case "-": {
+                                outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+                                break;
+                            }
+                            case " ": {
+                                if (simps.obj.nav_altitude_1.trim().length) {
+                                    outstring += `${'\t'.repeat(depth)}<Altitude>${simps.obj.nav_altitude_1}</Altitude>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+                                }
+                                break;
+                            }
+
+                            default:
+                                console.log("Unrecognized ", simps.obj.nav_altitude);
+                        }
+
+                        outstring += `${'\t'.repeat(--depth)}</AppTr_Waypoint>\n`;
+                    }
+                    outstring += `${'\t'.repeat(--depth)}</App_Transition>\n`;
+                }
+            }
+            outstring += `${'\t'.repeat(--depth)}</Approach>\n`;
         } else {
-            //bad
+            // bad
         }
     }
     outstring += "\t</Airport>\n</ProceduresDB>";
     fs.mkdirSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
+    fs.mkdirSync(path.join(process.cwd(), "mygame", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "mygame", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
 }
 
 //console.log(thing);

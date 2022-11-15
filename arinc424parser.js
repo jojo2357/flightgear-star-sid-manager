@@ -96,6 +96,9 @@ class ParseResult {
     /** @type String */
     source;
 
+    /** @type ParseResult[] */
+    continuationRecords;
+
     /**
      * @param {String} dataIn
      * @return {String}
@@ -214,9 +217,12 @@ class Latongitude {
 }
 
 const childClasses = [
+    /*class SID_STAR_CONTINUATION extends ParseResult {
+        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{5}.)(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
+
+    },*/
     class SID_STAR extends ParseResult {
-    //S([A-Z]{3})P
-        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{6})([\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{5})([-\d ]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)   $/m;
+        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{5}.)(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
 
         /** @type String */
         airportIDENT;
@@ -379,6 +385,10 @@ const childClasses = [
                     out.fix_ICAO = splitData[8];
                     out.fix_type = splitData[9];
                     out.fix_sequence = splitData[10];
+                    if (splitData[10] === "1")
+                        out.continuationRecords = [];
+                    else if (splitData[10] !== "0")
+                        return ParseResult.ERROR;
                     out.fix_description = splitData[11];
                     out.fix_turn_direction = splitData[12];
                     out.fix_navigation_precision = splitData[13];
@@ -516,7 +526,49 @@ const childClasses = [
                     if (splitData[23])
                         out.DMELongitude = new Latongitude(splitData[23], splitData.slice(24, 24 + 4).map(val => Number.parseInt(val)));
 
+                    out.recognizedLine = true;
+                    out.completed = true;
+                    return out;
+                }
+            }
+        }
+    },
+    class RUNWAY extends ParseResult {
+        static regexp = /^(.{4})(.{2})G([A-Z\d ]{5}) {3}(.)([\dA-Z ]{5})([\dA-Z ]{4}) ([NS])(\d{2})(\d{2})(\d{2})(\d{2})([EW])(\d{3})(\d{2})(\d{2})(\d{2})([\dA-Z ]{5}) {4}(.{6})(.{5})(.{4})(.{2})(.{3})(.)(.{4})(.)(.{4})(.{4})(.) {6}(.{22})$/m;
 
+        parentident;
+        ICAO;
+        ident;
+        length;
+        magbearing;
+
+        latitude() { return this.rwylatitude}
+        longitude() { return this.rwylongitude}
+
+        rwylatitude;
+        rwylongitude;
+        static parse(dataIn) {
+            let out = new RUNWAY();
+            dataIn = out.local_parse(dataIn);
+            if (!out.header || !(out.header.section === "P" && out.header.subsection === " ")) {
+                return ParseResult.ERROR;
+            } else {
+                let splitData = dataIn.match(this.regexp);
+                if (!splitData)
+                    return ParseResult.ERROR;
+                else {
+                    out.source = splitData.shift();
+
+                    out.parentident = splitData[0];
+                    out.ICAO = splitData[1];
+                    out.ident = splitData[2];
+                    out.length = splitData[4];
+                    out.magbearing = splitData[5];
+
+                    if (splitData[6])
+                        out.rwylatitude = new Latongitude(splitData[6], splitData.slice(7, 7 + 4).map(val => Number.parseInt(val)));
+                    if (splitData[11])
+                        out.rwylongitude = new Latongitude(splitData[11], splitData.slice(12, 12 + 4).map(val => Number.parseInt(val)));
 
                     out.recognizedLine = true;
                     out.completed = true;
