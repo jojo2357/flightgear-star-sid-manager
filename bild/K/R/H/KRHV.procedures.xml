@@ -1,4 +1,4 @@
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.3996">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4468">
 	<Airport ICAOcode="KRHV">
 		<Sid Name="DECOT1" Runways="31L,31R">
 			<Sid_Waypoint ID="1">
@@ -36,8 +36,126 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Approach Name="R31RY">
-			<App_Waypoint ID="1">
+		<Star Name="PYE3  ">
+			<Star_Waypoint ID="1">
+				<Name>PYE </Name>
+				<Type>Normal</Type>
+				<Latitude>38.07975555555556</Latitude>
+				<Longitude>-122.86782777777778</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="2">
+				<Name>STINS</Name>
+				<Type>Normal</Type>
+				<Latitude>37.82367777777778</Latitude>
+				<Longitude>-122.75668333333333</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="3">
+				<Name>HADLY</Name>
+				<Type>Normal</Type>
+				<Latitude>37.40235833333333</Latitude>
+				<Longitude>-122.57559166666667</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="4">
+				<Name>OSI </Name>
+				<Type>Normal</Type>
+				<Latitude>37.3925</Latitude>
+				<Longitude>-122.28130277777778</Longitude>
+			</Star_Waypoint>
+			<Star_Transition Name="ENI  ">
+				<StarTr_Waypoint ID="1">
+					<Name>ENI </Name>
+					<Type>Normal</Type>
+					<Latitude>39.053216666666664</Latitude>
+					<Longitude>-123.27432777777777</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>PYE </Name>
+					<Type>Normal</Type>
+					<Latitude>38.07975555555556</Latitude>
+					<Longitude>-122.86782777777778</Longitude>
+				</StarTr_Waypoint>
+			</Star_Transition>
+			<Star_Transition Name="SAC  ">
+				<StarTr_Waypoint ID="1">
+					<Name>SAC </Name>
+					<Type>Normal</Type>
+					<Latitude>38.44373888888889</Latitude>
+					<Longitude>-121.55165277777778</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>POPES</Name>
+					<Type>Normal</Type>
+					<Latitude>38.48594722222222</Latitude>
+					<Longitude>-122.34587777777777</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="3">
+					<Name>PYE </Name>
+					<Type>Normal</Type>
+					<Latitude>38.07975555555556</Latitude>
+					<Longitude>-122.86782777777778</Longitude>
+				</StarTr_Waypoint>
+			</Star_Transition>
+		</Star>
+		<Approach Name="RNV13L">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>PIYOG</Name>
+				<Type>Normal</Type>
+				<Latitude>37.50961111111111</Latitude>
+				<Longitude>-121.98716666666667</Longitude>
+				<Altitude>03800</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>HEKUR</Name>
+				<Type>Normal</Type>
+				<Latitude>37.41779444444444</Latitude>
+				<Longitude>-121.89975</Longitude>
+				<Altitude>02800</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW13L</Name>
+				<Type>Runway</Type>
+				<Latitude>33.65537222222222</Latitude>
+				<Longitude>-88.45175277777778</Longitude>
+				<Altitude>00169</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>GILRO</Name>
+				<Type>Normal</Type>
+				<Latitude>37.046283333333335</Latitude>
+				<Longitude>-121.56854444444444</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>GILRO</Name>
+				<Type>Normal</Type>
+				<Latitude>37.046283333333335</Latitude>
+				<Longitude>-121.56854444444444</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="DECOT">
+				<AppTr_Waypoint ID="1">
+					<Name>DECOT</Name>
+					<Type>Normal</Type>
+					<Latitude>37.606036111111116</Latitude>
+					<Longitude>-122.04874722222223</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>PIYOG</Name>
+					<Type>Normal</Type>
+					<Latitude>37.50961111111111</Latitude>
+					<Longitude>-121.98716666666667</Longitude>
+					<Altitude>03800</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="GPS31R">
+			<App_Waypoint> <!--ID="1"-->
 				<Name>ECYON</Name>
 				<Type>Normal</Type>
 				<Latitude>37.15630833333333</Latitude>
@@ -45,7 +163,7 @@
 				<Altitude>04300</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="2">
+			<App_Waypoint> <!--ID="2"-->
 				<Name>UBIPE</Name>
 				<Type>Normal</Type>
 				<Latitude>37.24339166666667</Latitude>
@@ -53,13 +171,13 @@
 				<Altitude>02800</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="2">
+			<App_Waypoint> <!--ID="2"-->
 				<Name>SIKEW</Name>
 				<Type>Normal</Type>
 				<Latitude>37.278</Latitude>
 				<Longitude>-121.7757</Longitude>
 			</App_Waypoint>
-			<App_Waypoint ID="3">
+			<App_Waypoint> <!--ID="3"-->
 				<Name>RW31R</Name>
 				<Type>Runway</Type>
 				<Latitude>33.639827777777775</Latitude>
@@ -67,7 +185,7 @@
 				<Altitude>00178</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
+			<App_Waypoint> <!--ID="5"-->
 				<Name>DECOT</Name>
 				<Type>Normal</Type>
 				<Latitude>37.606036111111116</Latitude>
@@ -75,7 +193,7 @@
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="6">
+			<App_Waypoint> <!--ID="6"-->
 				<Name>DECOT</Name>
 				<Type>Normal</Type>
 				<Latitude>37.606036111111116</Latitude>
@@ -124,8 +242,8 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="R31RZ">
-			<App_Waypoint ID="1">
+		<Approach Name="RNP31R">
+			<App_Waypoint> <!--ID="1"-->
 				<Name>ECYON</Name>
 				<Type>Normal</Type>
 				<Latitude>37.15630833333333</Latitude>
@@ -133,7 +251,7 @@
 				<Altitude>04300</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="2">
+			<App_Waypoint> <!--ID="2"-->
 				<Name>OZNUM</Name>
 				<Type>Normal</Type>
 				<Latitude>37.24849444444445</Latitude>
@@ -141,7 +259,7 @@
 				<Altitude>02800</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="3">
+			<App_Waypoint> <!--ID="3"-->
 				<Name>RW31R</Name>
 				<Type>Runway</Type>
 				<Latitude>33.639827777777775</Latitude>
@@ -149,13 +267,13 @@
 				<Altitude>00178</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
+			<App_Waypoint> <!--ID="5"-->
 				<Name>CEPEL</Name>
 				<Type>Normal</Type>
 				<Latitude>37.46364444444445</Latitude>
 				<Longitude>-121.94324444444445</Longitude>
 			</App_Waypoint>
-			<App_Waypoint ID="6">
+			<App_Waypoint> <!--ID="6"-->
 				<Name>DECOT</Name>
 				<Type>Normal</Type>
 				<Latitude>37.606036111111116</Latitude>
@@ -163,7 +281,7 @@
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="7">
+			<App_Waypoint> <!--ID="7"-->
 				<Name>DECOT</Name>
 				<Type>Normal</Type>
 				<Latitude>37.606036111111116</Latitude>
@@ -214,3 +332,8 @@
 		</Approach>
 	</Airport>
 </ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 1/1
+Appch: 3/3
+-->

@@ -77,10 +77,10 @@ const thingey = it.reduce((out, curr, windex, array) => {
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT])
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT] = [];
         // if (!curr.is_APPROACH)
-            out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
-                loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
-                obj: curr
-            });
+        out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
+            loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
+            obj: curr
+        });
         // else
         //     out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
         //         loc: it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
@@ -96,9 +96,12 @@ for (const thingeyKey in thingey) {
     let outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<Airport ICAOcode="${thingeyKey}">\n`;
     let depth = 2;
     let namedRoute = thingey[thingeyKey];
+    let sids = 0, stars = 0, approaches = 0;
+    let completedsids = 0, completedstars = 0, completedapproaches = 0;
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
         if (route.sid) {
+            sids++;
             if (!route[RouteType["PD"]["2"]] && !route[RouteType["PD"]["5"]]
                 && !route[RouteType["PD"]["8"]] && !route[RouteType["PD"]["M"]]) {
                 continue;
@@ -217,7 +220,7 @@ for (const thingeyKey in thingey) {
                         outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
                             if (typeof simps.loc === 'string' || simps.loc instanceof String) {
-                                continue
+                                continue;
                                 if (simps.obj.fix_path_termination === "VA") {
                                     outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
@@ -256,7 +259,7 @@ for (const thingeyKey in thingey) {
                                     }
 
                                     outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                    outstring +=`${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+                                    outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
 
                                     outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
                                 }
@@ -304,11 +307,13 @@ for (const thingeyKey in thingey) {
                         outstring += `${'\t'.repeat(--depth)}</RunwayTransition>\n`;
                     }
                 }
+                completedsids++;
             } catch (E) {
                 console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`);
             }
             outstring += `${'\t'.repeat(--depth)}</Sid>\n`;
         } else if (route.star) {
+            stars++;
             if (!route[RouteType["PE"]["2"]] && !route[RouteType["PE"]["5"]]
                 && !route[RouteType["PE"]["8"]] && !route[RouteType["PE"]["M"]]) {
                 continue;
@@ -418,11 +423,13 @@ for (const thingeyKey in thingey) {
                         outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
                     }
                 }
+                completedstars++;
             } catch (E) {
                 console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`);
             }
             outstring += `${'\t'.repeat(--depth)}</Star>\n`;
         } else if (route.approach) {
+            approaches++;
             // continue;
             let transitions = [route[RouteType["PF"]["A"]]].reduce((out, arr) => {
                 if (arr) out.push(arr);
@@ -434,17 +441,66 @@ for (const thingeyKey in thingey) {
                 if (arr) out.push(arr);
                 return out;
             }, []);
-            outstring += `${'\t'.repeat(depth++)}<Approach Name="${sidarname.trim()}">\n`;
+            let changedName = "";
+            switch (sidarname.charAt(0)) {
+                case "I":
+                    changedName = `ILS${sidarname.substring(1, 4)}`;
+                    break;
+                case "S":
+                    changedName = `VOR${sidarname.substring(1, 4)}`;
+                    break;
+                case "D":
+                    changedName = `VOR${sidarname.substring(1, 4)}`;
+                    break;
+                case "L":
+                    changedName = `LOC${sidarname.substring(1, 4)}`;
+                    break;
+                case "N":
+                    changedName = `NDB${sidarname.substring(1, 4)}`;
+                    break;
+                case "X":
+                    changedName = `LDA${sidarname.substring(1, 4)}`;
+                    break;
+                case "Q":
+                    changedName = `NDB${sidarname.substring(1, 4)}`;
+                    break;
+                case "R":
+                    switch (sidarname.charAt(4)) {
+                        case " ":
+                            changedName = `RNV${sidarname.substring(1, 4)}`;
+                            break;
+                        case "Y":
+                            changedName = `GPS${sidarname.substring(1, 4)}`;
+                            break;
+                        case "Z":
+                            changedName = `RNP${sidarname.substring(1, 4)}`;
+                            break;
+                        case "X":
+                            changedName = `GPS${sidarname.substring(1, 4)}`;
+                            break;
+                        default:
+                            console.error("Did not recognize ", sidarname.charAt(4));
+                    }
+                    break;
+                case "H" :
+                    // I think this is helleychoppers
+                    break;
+                default:
+                    console.error("Did not recognize ", sidarname.charAt(0));
+            }
+            if (changedName === "")
+                continue;
+            outstring += `${'\t'.repeat(depth++)}<Approach Name="${changedName}">\n`;
             for (const commonerlist of meatofit) {
                 for (const simpsKey in commonerlist) {
                     for (const simps of commonerlist[simpsKey]) {
                         if (typeof simps.loc === 'string' || simps.loc instanceof String)
                             continue;
 
-                        outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                        outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
 
                         outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                        outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway": "Normal"}</Type>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway" : "Normal"}</Type>\n`;
                         outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
                         outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
                         switch (simps.obj.nav_altitude) {
@@ -529,12 +585,13 @@ for (const thingeyKey in thingey) {
                     outstring += `${'\t'.repeat(--depth)}</App_Transition>\n`;
                 }
             }
+            completedapproaches++;
             outstring += `${'\t'.repeat(--depth)}</Approach>\n`;
         } else {
             // bad
         }
     }
-    outstring += "\t</Airport>\n</ProceduresDB>";
+    outstring += `\t</Airport>\n</ProceduresDB>\n<!-- Completion Stats:\nSids: ${completedsids}/${sids}\nStars: ${completedstars}/${stars}\nAppch: ${completedapproaches}/${approaches}\n-->`;
     fs.mkdirSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
     fs.mkdirSync(path.join(process.cwd(), "mygame", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
