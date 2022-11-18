@@ -1,3 +1,21 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2022 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
 	<Airport ICAOcode="KLAN">
 		<Approach Name="ILS10R">
@@ -6,12 +24,20 @@
 				<Type>Normal</Type>
 				<Latitude>42.77983611111111</Latitude>
 				<Longitude>-84.84093888888887</Longitude>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
 				<Name>FAMLI</Name>
 				<Type>Normal</Type>
 				<Latitude>42.77895833333333</Latitude>
 				<Longitude>-84.70278055555556</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02367</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW10R</Name>
@@ -20,6 +46,21 @@
 				<Longitude>-84.60105555555555</Longitude>
 				<Altitude>00917</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>95.60000000000001</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>70</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>ERRYS</Name>
@@ -68,6 +109,10 @@
 				<Type>Normal</Type>
 				<Latitude>42.774775</Latitude>
 				<Longitude>-84.23650555555557</Longitude>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>WIGSA</Name>
@@ -82,6 +127,10 @@
 				<Type>Normal</Type>
 				<Latitude>42.77704166666667</Latitude>
 				<Longitude>-84.46286944444444</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW28L</Name>
@@ -90,6 +139,14 @@
 				<Longitude>-84.569375</Longitude>
 				<Altitude>00901</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>275.6</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>UNSUN</Name>
@@ -142,6 +199,21 @@
 				<Longitude>-84.60105555555555</Longitude>
 				<Altitude>00917</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>95.60000000000001</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>70</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>ERRYS</Name>
@@ -217,6 +289,14 @@
 				<Altitude>00901</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>275.6</Hdg_Crs_value>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>UNSUN</Name>
 				<Type>Normal</Type>
@@ -266,6 +346,10 @@
 				<Type>Normal</Type>
 				<Latitude>42.77859722222222</Latitude>
 				<Longitude>-84.65376388888889</Longitude>
+				<Altitude>01640</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01658</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW10R</Name>
@@ -274,6 +358,14 @@
 				<Longitude>-84.60105555555555</Longitude>
 				<Altitude>00917</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01061</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>95.5</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>DUTVE</Name>
@@ -358,6 +450,14 @@
 				<Longitude>-84.569375</Longitude>
 				<Altitude>00901</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01052</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>275.7</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>OCTEC</Name>

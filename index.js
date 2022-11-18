@@ -365,6 +365,38 @@ for (const thingeyKey in thingey) {
                                 outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
 
                                 outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                                continue
+                            } else if (simps.obj.fix_path_termination === "CA") {
+                                outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+
+                                outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
+                                // outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
+                                // outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+
+                                outstring += altitudeToXML(simps.obj, depth);
+
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
+
+                                outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                                continue
+                            } else if (simps.obj.fix_path_termination === "VI") {
+                                outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+
+                                outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
+                                // outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
+                                // outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+
+                                outstring += altitudeToXML(simps.obj, depth);
+
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Sp_Turn>${simps.obj.fix_turn_direction === "R" ? "Right" : simps.obj.fix_turn_direction === "L" ? "Left" : "Auto"}</Sp_Turn>\n`;
+
+                                outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                                continue
                             }
                             continue;
                         }

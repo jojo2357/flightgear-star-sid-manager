@@ -1,3 +1,21 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2022 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
 	<Airport ICAOcode="KSEA">
 		<Sid Name="ELMAA4" Runways="16C,16L,16R">
@@ -840,6 +858,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.64759166666667</Latitude>
 				<Longitude>-122.30937222222222</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ANVIL</Name>
@@ -854,6 +876,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.537758333333336</Latitude>
 				<Longitude>-122.31033888888888</Longitude>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW16C</Name>
@@ -862,6 +888,13 @@
 				<Longitude>-122.31098333333334</Longitude>
 				<Altitude>00484</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>160</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>TEBNE</Name>
@@ -996,6 +1029,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.64795</Latitude>
 				<Longitude>-122.3061361111111</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>KARFO</Name>
@@ -1010,6 +1047,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.53765833333333</Latitude>
 				<Longitude>-122.30710277777777</Longitude>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW16L</Name>
@@ -1152,6 +1193,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.648472222222225</Latitude>
 				<Longitude>-122.31628611111111</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>BUGNE</Name>
@@ -1166,6 +1211,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.53863888888889</Latitude>
 				<Longitude>-122.31722222222221</Longitude>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01900</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW16R</Name>
@@ -1174,6 +1223,21 @@
 				<Longitude>-122.31785555555555</Longitude>
 				<Altitude>00470</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>164.3</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>195</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>TECEE</Name>
@@ -1308,6 +1372,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.19834722222222</Latitude>
 				<Longitude>-122.31329722222222</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ODBOE</Name>
@@ -1322,6 +1390,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.33433333333333</Latitude>
 				<Longitude>-122.31211666666665</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34C</Name>
@@ -1330,6 +1402,13 @@
 				<Longitude>-122.3112111111111</Longitude>
 				<Altitude>00419</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>345</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>COYLA</Name>
@@ -1404,6 +1483,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.200519444444446</Latitude>
 				<Longitude>-122.32008611111111</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>JOSTA</Name>
@@ -1418,6 +1501,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.336505555555554</Latitude>
 				<Longitude>-122.31893888888888</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34L</Name>
@@ -1426,6 +1513,21 @@
 				<Longitude>-122.31805833333333</Longitude>
 				<Altitude>00411</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>344.3</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>300</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>WEXUB</Name>
@@ -1500,6 +1602,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.16903055555555</Latitude>
 				<Longitude>-122.31031944444443</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02200</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="1"-->
 				<Name>KLEWS</Name>
@@ -1514,6 +1620,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.32881666666667</Latitude>
 				<Longitude>-122.30893333333333</Longitude>
+				<Altitude>02200</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02200</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34R</Name>
@@ -1522,6 +1632,13 @@
 				<Longitude>-122.30803888888889</Longitude>
 				<Altitude>00406</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>343</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>COYLA</Name>
@@ -1642,6 +1759,13 @@
 				<Longitude>-122.31098333333334</Longitude>
 				<Altitude>00484</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>160</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>TEBNE</Name>
@@ -1963,6 +2087,21 @@
 				<Altitude>00470</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>164.3</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>195</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>TECEE</Name>
 				<Type>Normal</Type>
@@ -2131,6 +2270,13 @@
 				<Altitude>00578</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>345</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>COYLA</Name>
 				<Type>Normal</Type>
@@ -2239,6 +2385,21 @@
 				<Altitude>00411</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>344.3</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint ID="5">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>300</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
 				<Name>WEXUB</Name>
 				<Type>Normal</Type>
@@ -2346,6 +2507,13 @@
 				<Longitude>-122.30809166666667</Longitude>
 				<Altitude>00515</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>Vectors</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>343</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>COYLA</Name>
@@ -2467,6 +2635,14 @@
 				<Altitude>00486</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00630</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>164.3</Hdg_Crs_value>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>OTLIE</Name>
 				<Type>Normal</Type>
@@ -2567,6 +2743,14 @@
 				<Altitude>00488</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>164.3</Hdg_Crs_value>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>CAVOB</Name>
 				<Type>Normal</Type>
@@ -2665,6 +2849,14 @@
 				<Altitude>00470</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>164.3</Hdg_Crs_value>
+			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>ZERLI</Name>
 				<Type>Normal</Type>
@@ -2754,6 +2946,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.40631944444444</Latitude>
 				<Longitude>-122.31148888888889</Longitude>
+				<Altitude>01020</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01024</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34C</Name>
@@ -2762,6 +2958,14 @@
 				<Longitude>-122.3112111111111</Longitude>
 				<Altitude>00419</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00610</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>344.3</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>MGNUM</Name>
@@ -2852,6 +3056,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.40721944444444</Latitude>
 				<Longitude>-122.31834166666665</Longitude>
+				<Altitude>01040</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01048</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34L</Name>
@@ -2860,6 +3068,14 @@
 				<Longitude>-122.31805833333333</Longitude>
 				<Altitude>00411</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>344.3</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>LOFAL</Name>
@@ -2942,6 +3158,10 @@
 				<Type>Normal</Type>
 				<Latitude>47.394525</Latitude>
 				<Longitude>-122.30835833333333</Longitude>
+				<Altitude>01040</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01049</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW34R</Name>
@@ -2950,6 +3170,14 @@
 				<Longitude>-122.30803888888889</Longitude>
 				<Altitude>00407</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00572</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>344.3</Hdg_Crs_value>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="5"-->
 				<Name>DODVE</Name>

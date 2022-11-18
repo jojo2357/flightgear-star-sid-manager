@@ -609,6 +609,21 @@ function altitudeToXML(obj, depth) {
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             break;
         }
+        case "H":
+        case "V":
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+            break;
+        // glide slope intersect at 2, floor at 1
+        case "J": {
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+            break;
+        }
         case "+": {
             out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
@@ -619,6 +634,7 @@ function altitudeToXML(obj, depth) {
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
             break;
         }
+        case "I":
         case " ": {
             if (obj.nav_altitude_1.trim().length) {
                 out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
