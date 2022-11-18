@@ -474,7 +474,7 @@ const childClasses = [
         }
     },
     class NAVAID extends ParseResult {
-        static regexp = /^(.{4})(.{2}) ([A-Z\d ]{4}) {2}(.{2})(.)([\d ]{5})(.{5})(?:([NS])(\d{2})(\d{2})(\d{2})(\d{2})| {9})(?:([EW])(\d{3})(\d{2})(\d{2})(\d{2})| {10})(.{4})(?:([NS])(\d{2})(\d{2})(\d{2})(\d{2})| {9})(?:([EW])(\d{3})(\d{2})(\d{2})(\d{2})| {10})([EWTG])(\d{4})([-\d]\d{4})(.)([\d ]{2})(.{3})([A-Z ]{3})(.{30})$/m;
+        static regexp = /^(.{4})(.{2}) ([A-Z\d ]{4}) {2}(.{2})(.)([\d ]{5})(.{5})(?:([NS])(\d{2})(\d{2})(\d{2})(\d{2})| {9})(?:([EW])(\d{3})(\d{2})(\d{2})(\d{2})| {10})(.{4})(?:([NS])(\d{2})(\d{2})(\d{2})(\d{2})| {9})(?:([EW])(\d{3})(\d{2})(\d{2})(\d{2})| {10})([EWTG])(\d{4})([-\d]\d{4}| {5})(.)([\d ]{2})(.{3})([A-Z ]{3})(.{30})$/m;
 
         /** @type String */
         ident;
@@ -504,7 +504,7 @@ const childClasses = [
         static parse(dataIn) {
             let out = new NAVAID();
             dataIn = out.local_parse(dataIn);
-            if (!out.header || (!(out.header.section === "D" && out.header.subsection === " "))) {
+            if (!out.header || (!(out.header.section === "D" && (out.header.subsection === " " || out.header.subsection === "B")))) {
                 return ParseResult.ERROR;
             } else {
                 let splitData = dataIn.match(this.regexp);
@@ -599,7 +599,42 @@ function parse(dataIn) {
     dataIn.split(/\r?\n/g).map(parseLine);
 }
 
+function altitudeToXML(obj, depth) {
+    let out = "";
+    switch (obj.nav_altitude) {
+        case "B": {
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+            break;
+        }
+        case "+": {
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
+            break;
+        }
+        case "-": {
+            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
+            break;
+        }
+        case " ": {
+            if (obj.nav_altitude_1.trim().length) {
+                out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+                out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+            }
+            break;
+        }
+
+        default:
+            console.log("Unrecognized ", obj.nav_altitude);
+    }
+    return out;
+}
+
 module.exports = {
     parseLine: parseLine,
-    RouteType: RouteType
+    RouteType: RouteType,
+    altitudeToXML: altitudeToXML
 };
