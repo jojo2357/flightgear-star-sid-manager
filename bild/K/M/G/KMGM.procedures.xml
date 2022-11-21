@@ -1,0 +1,243 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2022 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+	<Airport ICAOcode="KMGM">
+		<Approach Name="ILS28">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>ICOTE</Name>
+				<Type>Normal</Type>
+				<Latitude>32.27768888888888</Latitude>
+				<Longitude>-86.13678055555556</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>TEBOC</Name>
+				<Type>Normal</Type>
+				<Latitude>32.29013888888889</Latitude>
+				<Longitude>-86.27357777777777</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW28</Name>
+				<Type>Runway</Type>
+				<Latitude>32.29980277777778</Latitude>
+				<Longitude>-86.38096388888889</Longitude>
+				<Altitude>00251</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>277</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>MGM</Name>
+				<Type>Normal</Type>
+				<Latitude>32.22228055555556</Latitude>
+				<Longitude>-86.31972777777779</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>MGM</Name>
+				<Type>Normal</Type>
+				<Latitude>32.22228055555556</Latitude>
+				<Longitude>-86.31972777777779</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="JEDOP">
+				<AppTr_Waypoint ID="1">
+					<Name>JEDOP</Name>
+					<Type>Normal</Type>
+					<Latitude>32.11843888888889</Latitude>
+					<Longitude>-86.16895833333334</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>ICOTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.27768888888888</Latitude>
+					<Longitude>-86.13678055555556</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>TEBOC</Name>
+					<Type>Normal</Type>
+					<Latitude>32.29013888888889</Latitude>
+					<Longitude>-86.27357777777777</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="MARRA">
+				<AppTr_Waypoint ID="1">
+					<Name>MARRA</Name>
+					<Type>Normal</Type>
+					<Latitude>32.31136111111111</Latitude>
+					<Longitude>-86.51066388888889</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>TEBOC</Name>
+					<Type>Normal</Type>
+					<Latitude>32.29013888888889</Latitude>
+					<Longitude>-86.27357777777777</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>TEBOC</Name>
+					<Type>Normal</Type>
+					<Latitude>32.29013888888889</Latitude>
+					<Longitude>-86.27357777777777</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="MGM1 ">
+				<AppTr_Waypoint ID="1">
+					<Name>MGM </Name>
+					<Type>Normal</Type>
+					<Latitude>32.22228055555556</Latitude>
+					<Longitude>-86.31972777777779</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>TEBOC</Name>
+					<Type>Normal</Type>
+					<Latitude>32.29013888888889</Latitude>
+					<Longitude>-86.27357777777777</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>TEBOC</Name>
+					<Type>Normal</Type>
+					<Latitude>32.29013888888889</Latitude>
+					<Longitude>-86.27357777777777</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="MGM2 ">
+				<AppTr_Waypoint ID="1">
+					<Name>MGM </Name>
+					<Type>Normal</Type>
+					<Latitude>32.22228055555556</Latitude>
+					<Longitude>-86.31972777777779</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>RISDE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.057652777777776</Latitude>
+					<Longitude>-86.33290277777778</Longitude>
+					<Altitude>02200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>JEDOP</Name>
+					<Type>Normal</Type>
+					<Latitude>32.11843888888889</Latitude>
+					<Longitude>-86.16895833333334</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="4">
+					<Name>ICOTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.27768888888888</Latitude>
+					<Longitude>-86.13678055555556</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="ILS28">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>ICOTE</Name>
+				<Type>Normal</Type>
+				<Latitude>32.27768888888888</Latitude>
+				<Longitude>-86.13678055555556</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>TEBOC</Name>
+				<Type>Normal</Type>
+				<Latitude>32.29013888888889</Latitude>
+				<Longitude>-86.27357777777777</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW28</Name>
+				<Type>Runway</Type>
+				<Latitude>32.29980277777778</Latitude>
+				<Longitude>-86.38096388888889</Longitude>
+				<Altitude>00251</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="4"-->
+				<Name>HEGAP</Name>
+				<Type>Normal</Type>
+				<Latitude>32.32373333333334</Latitude>
+				<Longitude>-86.65127777777779</Longitude>
+				<Altitude>03100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>HEGAP</Name>
+				<Type>Normal</Type>
+				<Latitude>32.32373333333334</Latitude>
+				<Longitude>-86.65127777777779</Longitude>
+				<Altitude>03100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="ICOTE">
+				<AppTr_Waypoint ID="1">
+					<Name>ICOTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.27768888888888</Latitude>
+					<Longitude>-86.13678055555556</Longitude>
+					<Altitude>02600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 2/3
+-->

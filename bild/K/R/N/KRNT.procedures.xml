@@ -16,8 +16,24 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KRNT">
+		<Sid Name="BELVU4" Runways="34">
+			<RunwayTransition Runway="34 ">
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="RENTN3" Runways="16">
+			<RunwayTransition Runway="16 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>150</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
 		<Star Name="CHINS5">
 			<Star_Waypoint ID="1">
 				<Name>CHINS</Name>
@@ -408,10 +424,204 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
+		<Approach Name="GPS16">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>LUTSY</Name>
+				<Type>Normal</Type>
+				<Latitude>47.67744444444444</Latitude>
+				<Longitude>-122.24370277777777</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>BLEIR</Name>
+				<Type>Normal</Type>
+				<Latitude>47.57907222222222</Latitude>
+				<Longitude>-122.22876666666666</Longitude>
+				<Altitude>01600</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ZULAV</Name>
+				<Type>Normal</Type>
+				<Latitude>47.54368888888889</Latitude>
+				<Longitude>-122.2234</Longitude>
+				<Altitude>00920</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>00920</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>TOYOL</Name>
+				<Type>Normal</Type>
+				<Latitude>47.50544444444444</Latitude>
+				<Longitude>-122.21760555555555</Longitude>
+				<Altitude>00185</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00432</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>157.10000000000002</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>ZEBKU</Name>
+				<Type>Normal</Type>
+				<Latitude>47.394575</Latitude>
+				<Longitude>-122.11831388888888</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>ZEBKU</Name>
+				<Type>Normal</Type>
+				<Latitude>47.394575</Latitude>
+				<Longitude>-122.11831388888888</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="LUTSY">
+				<AppTr_Waypoint ID="1">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="PAE  ">
+				<AppTr_Waypoint ID="1">
+					<Name>PAE </Name>
+					<Type>Normal</Type>
+					<Latitude>47.91983333333333</Latitude>
+					<Longitude>-122.27780277777777</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="WUNVA">
+				<AppTr_Waypoint ID="1">
+					<Name>WUNVA</Name>
+					<Type>Normal</Type>
+					<Latitude>47.73070555555555</Latitude>
+					<Longitude>-122.0467</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="RNP16">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>LUTSY</Name>
+				<Type>Normal</Type>
+				<Latitude>47.67744444444444</Latitude>
+				<Longitude>-122.24370277777777</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WIBAT</Name>
+				<Type>Normal</Type>
+				<Latitude>47.57116666666667</Latitude>
+				<Longitude>-122.22755555555557</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW16</Name>
+				<Type>Runway</Type>
+				<Latitude>47.49964722222222</Latitude>
+				<Longitude>-122.21672777777778</Longitude>
+				<Altitude>00074</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00432</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>157.10000000000002</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>ZEBKU</Name>
+				<Type>Normal</Type>
+				<Latitude>47.394575</Latitude>
+				<Longitude>-122.11831388888888</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>ZEBKU</Name>
+				<Type>Normal</Type>
+				<Latitude>47.394575</Latitude>
+				<Longitude>-122.11831388888888</Longitude>
+				<Altitude>02400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="LUTSY">
+				<AppTr_Waypoint ID="1">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="PAE  ">
+				<AppTr_Waypoint ID="1">
+					<Name>PAE </Name>
+					<Type>Normal</Type>
+					<Latitude>47.91983333333333</Latitude>
+					<Longitude>-122.27780277777777</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="WUNVA">
+				<AppTr_Waypoint ID="1">
+					<Name>WUNVA</Name>
+					<Type>Normal</Type>
+					<Latitude>47.73070555555555</Latitude>
+					<Longitude>-122.0467</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LUTSY</Name>
+					<Type>Normal</Type>
+					<Latitude>47.67744444444444</Latitude>
+					<Longitude>-122.24370277777777</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 0/2
+Sids: 2/2
 Stars: 4/4
-Appch: 0/0
+Appch: 2/2
 -->

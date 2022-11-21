@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KJYO">
-		<Sid Name="CLTCH3" Runways="ALL  ">
+		<Sid Name="CLTCH3" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>BUTRZ</Name>
 				<Type>Normal</Type>
@@ -80,7 +80,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="JDUBB4" Runways="ALL  ">
+		<Sid Name="JDUBB4" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>HAFNR</Name>
 				<Type>Normal</Type>
@@ -142,7 +142,45 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="SCRAM6" Runways="ALL  ">
+		<Sid Name="PTOMC2" Runways="17,35">
+			<RunwayTransition Runway="17 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00900</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>171.3</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>PTOMC</Name>
+					<Type>Normal</Type>
+					<Latitude>39.071672222222226</Latitude>
+					<Longitude>-77.68343611111112</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="35 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00900</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>351.3</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>PTOMC</Name>
+					<Type>Normal</Type>
+					<Latitude>39.071672222222226</Latitude>
+					<Longitude>-77.68343611111112</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="SCRAM6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>POOCH</Name>
 				<Type>Normal</Type>
@@ -381,7 +419,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 3/4
+Sids: 4/4
 Stars: 5/5
 Appch: 0/0
 -->

@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KGYR">
-		<Sid Name="BNYRD6" Runways="ALL  ">
+		<Sid Name="BNYRD6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>BNYRD</Name>
 				<Type>Normal</Type>
@@ -46,7 +46,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="FTHLS6" Runways="ALL  ">
+		<Sid Name="FTHLS6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>BROAK</Name>
 				<Type>Normal</Type>
@@ -126,7 +126,13 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="IZZZO7" Runways="ALL  ">
+		<Sid Name="GYR2  " Runways="03,21">
+			<RunwayTransition Runway="03 ">
+			</RunwayTransition>
+			<RunwayTransition Runway="21 ">
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="IZZZO7" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>KEENS</Name>
 				<Type>Normal</Type>
@@ -194,7 +200,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="JUDTH7" Runways="ALL  ">
+		<Sid Name="JUDTH7" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>GBN </Name>
 				<Type>Normal</Type>
@@ -222,7 +228,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="KATMN6" Runways="ALL  ">
+		<Sid Name="KATMN6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>ECLPS</Name>
 				<Type>Normal</Type>
@@ -256,7 +262,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="LALUZ6" Runways="ALL  ">
+		<Sid Name="LALUZ6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>FORPE</Name>
 				<Type>Normal</Type>
@@ -330,7 +336,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="MAYSA7" Runways="ALL  ">
+		<Sid Name="MAYSA7" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>ZEPER</Name>
 				<Type>Normal</Type>
@@ -360,7 +366,53 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="SNOBL6" Runways="ALL  ">
+		<Sid Name="POTER3" Runways="03,21">
+			<RunwayTransition Runway="03 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01480</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>28.1</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>RUPOY</Name>
+					<Type>Normal</Type>
+					<Latitude>33.337075000000006</Latitude>
+					<Longitude>-112.45973055555555</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>POTER</Name>
+					<Type>Normal</Type>
+					<Latitude>32.90985555555555</Latitude>
+					<Longitude>-112.1638638888889</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="21 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01480</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>208.10000000000002</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>RUPOY</Name>
+					<Type>Normal</Type>
+					<Latitude>33.337075000000006</Latitude>
+					<Longitude>-112.45973055555555</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>POTER</Name>
+					<Type>Normal</Type>
+					<Latitude>32.90985555555555</Latitude>
+					<Longitude>-112.1638638888889</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="SNOBL6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>QUAKY</Name>
 				<Type>Normal</Type>
@@ -486,7 +538,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="YOTES6" Runways="ALL  ">
+		<Sid Name="YOTES6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>MRBIL</Name>
 				<Type>Normal</Type>
@@ -649,7 +701,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 9/11
+Sids: 11/11
 Stars: 2/2
 Appch: 0/0
 -->

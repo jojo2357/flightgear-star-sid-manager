@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KFRG">
-		<Sid Name="DEEZZ5" Runways="01 ,14 ,19 ,32 ">
+		<Sid Name="DEEZZ5" Runways="01,14,19,32">
 			<Sid_Waypoint ID="1">
 				<Name>DEEZZ</Name>
 				<Type>Normal</Type>
@@ -131,6 +131,40 @@
 					<Type>Normal</Type>
 					<Latitude>41.114444444444445</Latitude>
 					<Longitude>-73.77777777777777</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="REP1  " Runways="01,14,19,32">
+			<RunwayTransition Runway="01 ">
+			</RunwayTransition>
+			<RunwayTransition Runway="14 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00480</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>146.20000000000002</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="19 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00480</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>193.20000000000002</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="32 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00480</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>326.3</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
@@ -444,10 +478,204 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
+		<Approach Name="ILS14">
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ALABE</Name>
+				<Type>Normal</Type>
+				<Latitude>40.77783055555555</Latitude>
+				<Longitude>-73.48434444444445</Longitude>
+				<Altitude>01400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW14</Name>
+				<Type>Runway</Type>
+				<Latitude>40.73338611111111</Latitude>
+				<Longitude>-73.41993055555557</Longitude>
+				<Altitude>00137</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="4"-->
+				<Name>FRRST</Name>
+				<Type>Normal</Type>
+				<Latitude>40.654852777777776</Latitude>
+				<Longitude>-73.30644444444445</Longitude>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>NICAD</Name>
+				<Type>Normal</Type>
+				<Latitude>40.54178888888889</Latitude>
+				<Longitude>-73.30156388888888</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>NICAD</Name>
+				<Type>Normal</Type>
+				<Latitude>40.54178888888889</Latitude>
+				<Longitude>-73.30156388888888</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="CAMRN">
+				<AppTr_Waypoint ID="1">
+					<Name>CAMRN</Name>
+					<Type>Normal</Type>
+					<Latitude>40.01730277777778</Latitude>
+					<Longitude>-73.86105833333333</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>HEREK</Name>
+					<Type>Normal</Type>
+					<Latitude>40.4276</Latitude>
+					<Longitude>-73.50265833333333</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>SEHDO</Name>
+					<Type>Normal</Type>
+					<Latitude>40.66247499999999</Latitude>
+					<Longitude>-73.47390833333334</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="4">
+					<Name>WUPMA</Name>
+					<Type>Normal</Type>
+					<Latitude>40.718516666666666</Latitude>
+					<Longitude>-73.55503055555555</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="5">
+					<Name>ALABE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.77783055555555</Latitude>
+					<Longitude>-73.48434444444445</Longitude>
+					<Altitude>01400</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="HOBAM">
+				<AppTr_Waypoint ID="1">
+					<Name>HOBAM</Name>
+					<Type>Normal</Type>
+					<Latitude>40.97615833333334</Latitude>
+					<Longitude>-73.61579166666665</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LAAZE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.84555833333334</Latitude>
+					<Longitude>-73.58277222222222</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>ALABE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.77783055555555</Latitude>
+					<Longitude>-73.48434444444445</Longitude>
+					<Altitude>01400</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="GPS14">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>LAAZE</Name>
+				<Type>Normal</Type>
+				<Latitude>40.84555833333334</Latitude>
+				<Longitude>-73.58277222222222</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ALABE</Name>
+				<Type>Normal</Type>
+				<Latitude>40.77783055555555</Latitude>
+				<Longitude>-73.48434444444445</Longitude>
+				<Altitude>01400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW14</Name>
+				<Type>Runway</Type>
+				<Latitude>40.73338611111111</Latitude>
+				<Longitude>-73.41993055555557</Longitude>
+				<Altitude>00137</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01800</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>146.20000000000002</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>DPK</Name>
+				<Type>Normal</Type>
+				<Latitude>40.79175</Latitude>
+				<Longitude>-73.30365833333333</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>DPK</Name>
+				<Type>Normal</Type>
+				<Latitude>40.79175</Latitude>
+				<Longitude>-73.30365833333333</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="JFK  ">
+				<AppTr_Waypoint ID="1">
+					<Name>JFK </Name>
+					<Type>Normal</Type>
+					<Latitude>40.632888888888886</Latitude>
+					<Longitude>-73.7713888888889</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>JUBIL</Name>
+					<Type>Normal</Type>
+					<Latitude>40.78283055555555</Latitude>
+					<Longitude>-73.66711111111113</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>LAAZE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.84555833333334</Latitude>
+					<Longitude>-73.58277222222222</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="ODALE">
+				<AppTr_Waypoint ID="1">
+					<Name>ODALE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.934524999999994</Latitude>
+					<Longitude>-73.476675</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LAAZE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.84555833333334</Latitude>
+					<Longitude>-73.58277222222222</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 1/2
+Sids: 2/2
 Stars: 6/6
-Appch: 0/0
+Appch: 2/2
 -->

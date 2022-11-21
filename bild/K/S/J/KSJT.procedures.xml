@@ -1,0 +1,393 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2022 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+	<Airport ICAOcode="KSJT">
+		<Approach Name="ILS03">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>BONNY</Name>
+				<Type>Normal</Type>
+				<Latitude>31.19960277777778</Latitude>
+				<Longitude>-100.66330833333333</Longitude>
+				<Altitude>03900</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WOOLE</Name>
+				<Type>Normal</Type>
+				<Latitude>31.27978611111111</Latitude>
+				<Longitude>-100.57615555555554</Longitude>
+				<Altitude>03900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>03824</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW03</Name>
+				<Type>Runway</Type>
+				<Latitude>31.34970277777778</Latitude>
+				<Longitude>-100.49986666666666</Longitude>
+				<Altitude>01968</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>38.2</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>SJT</Name>
+				<Type>Normal</Type>
+				<Latitude>31.374955555555555</Latitude>
+				<Longitude>-100.45486944444445</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>SJT</Name>
+				<Type>Normal</Type>
+				<Latitude>31.374955555555555</Latitude>
+				<Longitude>-100.45486944444445</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="CHILD">
+				<AppTr_Waypoint ID="1">
+					<Name>CHILD</Name>
+					<Type>Normal</Type>
+					<Latitude>31.06143611111111</Latitude>
+					<Longitude>-100.46128333333333</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="EDWAR">
+				<AppTr_Waypoint ID="1">
+					<Name>EDWAR</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27967222222222</Latitude>
+					<Longitude>-100.37599444444444</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="FELUV">
+				<AppTr_Waypoint ID="1">
+					<Name>FELUV</Name>
+					<Type>Normal</Type>
+					<Latitude>31.170658333333332</Latitude>
+					<Longitude>-100.28599166666666</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>BONNY</Name>
+					<Type>Normal</Type>
+					<Latitude>31.19960277777778</Latitude>
+					<Longitude>-100.66330833333333</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="JIGEM">
+				<AppTr_Waypoint ID="1">
+					<Name>JIGEM</Name>
+					<Type>Normal</Type>
+					<Latitude>31.5647</Latitude>
+					<Longitude>-100.64569444444444</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>BONNY</Name>
+					<Type>Normal</Type>
+					<Latitude>31.19960277777778</Latitude>
+					<Longitude>-100.66330833333333</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="SJT  ">
+				<AppTr_Waypoint ID="1">
+					<Name>SJT </Name>
+					<Type>Normal</Type>
+					<Latitude>31.374955555555555</Latitude>
+					<Longitude>-100.45486944444445</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TANKR">
+				<AppTr_Waypoint ID="1">
+					<Name>TANKR</Name>
+					<Type>Normal</Type>
+					<Latitude>31.448372222222222</Latitude>
+					<Longitude>-100.65132500000001</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="LOC03">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>BONNY</Name>
+				<Type>Normal</Type>
+				<Latitude>31.19960277777778</Latitude>
+				<Longitude>-100.66330833333333</Longitude>
+				<Altitude>04100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WOOLE</Name>
+				<Type>Normal</Type>
+				<Latitude>31.27978611111111</Latitude>
+				<Longitude>-100.57615555555554</Longitude>
+				<Altitude>03900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ERRNY</Name>
+				<Type>Normal</Type>
+				<Latitude>31.32561666666667</Latitude>
+				<Longitude>-100.52614166666666</Longitude>
+				<Altitude>02620</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW03</Name>
+				<Type>Runway</Type>
+				<Latitude>31.34970277777778</Latitude>
+				<Longitude>-100.49986666666666</Longitude>
+				<Altitude>01968</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>38.2</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>SJT</Name>
+				<Type>Normal</Type>
+				<Latitude>31.374955555555555</Latitude>
+				<Longitude>-100.45486944444445</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>SJT</Name>
+				<Type>Normal</Type>
+				<Latitude>31.374955555555555</Latitude>
+				<Longitude>-100.45486944444445</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="CHILD">
+				<AppTr_Waypoint ID="1">
+					<Name>CHILD</Name>
+					<Type>Normal</Type>
+					<Latitude>31.06143611111111</Latitude>
+					<Longitude>-100.46128333333333</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="EDWAR">
+				<AppTr_Waypoint ID="1">
+					<Name>EDWAR</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27967222222222</Latitude>
+					<Longitude>-100.37599444444444</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="FELUV">
+				<AppTr_Waypoint ID="1">
+					<Name>FELUV</Name>
+					<Type>Normal</Type>
+					<Latitude>31.170658333333332</Latitude>
+					<Longitude>-100.28599166666666</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>BONNY</Name>
+					<Type>Normal</Type>
+					<Latitude>31.19960277777778</Latitude>
+					<Longitude>-100.66330833333333</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="JIGEM">
+				<AppTr_Waypoint ID="1">
+					<Name>JIGEM</Name>
+					<Type>Normal</Type>
+					<Latitude>31.5647</Latitude>
+					<Longitude>-100.64569444444444</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>BONNY</Name>
+					<Type>Normal</Type>
+					<Latitude>31.19960277777778</Latitude>
+					<Longitude>-100.66330833333333</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="SJT  ">
+				<AppTr_Waypoint ID="1">
+					<Name>SJT </Name>
+					<Type>Normal</Type>
+					<Latitude>31.374955555555555</Latitude>
+					<Longitude>-100.45486944444445</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TANKR">
+				<AppTr_Waypoint ID="1">
+					<Name>TANKR</Name>
+					<Type>Normal</Type>
+					<Latitude>31.448372222222222</Latitude>
+					<Longitude>-100.65132500000001</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WOOLE</Name>
+					<Type>Normal</Type>
+					<Latitude>31.27978611111111</Latitude>
+					<Longitude>-100.57615555555554</Longitude>
+					<Altitude>04100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 2/2
+-->

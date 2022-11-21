@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KMRB">
-		<Sid Name="CLTCH3" Runways="ALL  ">
+		<Sid Name="CLTCH3" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>BUTRZ</Name>
 				<Type>Normal</Type>
@@ -80,7 +80,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="JDUBB4" Runways="ALL  ">
+		<Sid Name="JDUBB4" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>HAFNR</Name>
 				<Type>Normal</Type>
@@ -142,7 +142,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="SCRAM6" Runways="ALL  ">
+		<Sid Name="SCRAM6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>POOCH</Name>
 				<Type>Normal</Type>
@@ -183,6 +183,84 @@
 					<Longitude>-79.06045833333333</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
+		</Sid>
+		<Sid Name="TRIXY5" Runways="08,26">
+			<Sid_Transition Name="AML  ">
+				<SidTr_Waypoint ID="1">
+					<Name>TRIXY</Name>
+					<Type>Normal</Type>
+					<Latitude>39.13922222222222</Latitude>
+					<Longitude>-78.1211111111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>AML </Name>
+					<Type>Normal</Type>
+					<Latitude>38.934594444444436</Latitude>
+					<Longitude>-77.46670277777778</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="ESL  ">
+				<SidTr_Waypoint ID="1">
+					<Name>TRIXY</Name>
+					<Type>Normal</Type>
+					<Latitude>39.13922222222222</Latitude>
+					<Longitude>-78.1211111111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>ESL </Name>
+					<Type>Normal</Type>
+					<Latitude>39.22549166666666</Latitude>
+					<Longitude>-78.9895</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="LDN  ">
+				<SidTr_Waypoint ID="1">
+					<Name>TRIXY</Name>
+					<Type>Normal</Type>
+					<Latitude>39.13922222222222</Latitude>
+					<Longitude>-78.1211111111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>LDN </Name>
+					<Type>Normal</Type>
+					<Latitude>38.854397222222225</Latitude>
+					<Longitude>-78.20557222222223</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="08 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>78.7</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>TRIXY</Name>
+					<Type>Normal</Type>
+					<Latitude>39.13922222222222</Latitude>
+					<Longitude>-78.1211111111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="26 ">
+				<SidTr_Waypoint ID="2">
+					<Name>TRIXY</Name>
+					<Type>Normal</Type>
+					<Latitude>39.13922222222222</Latitude>
+					<Longitude>-78.1211111111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Star Name="HYPER8">
 			<Star_Waypoint ID="1">
@@ -315,7 +393,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 3/4
+Sids: 4/4
 Stars: 3/3
 Appch: 0/0
 -->

@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KDNL">
-		<Sid Name="AZALA4" Runways="ALL  ">
+		<Sid Name="AZALA4" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>NKLAS</Name>
 				<Type>Normal</Type>
@@ -38,7 +38,7 @@
 				<Longitude>-82.29556944444444</Longitude>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="CHATT6" Runways="ALL  ">
+		<Sid Name="CHATT6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>BRDYE</Name>
 				<Type>Normal</Type>
@@ -86,7 +86,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="MISTY6" Runways="ALL  ">
+		<Sid Name="MISTY6" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>PMPAS</Name>
 				<Type>Normal</Type>
@@ -112,7 +112,7 @@
 				<Longitude>-83.02714444444445</Longitude>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="NDINA5" Runways="ALL  ">
+		<Sid Name="NDINA5" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>PMPAS</Name>
 				<Type>Normal</Type>
@@ -132,7 +132,7 @@
 				<Longitude>-82.9357611111111</Longitude>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="SAMMI4" Runways="ALL  ">
+		<Sid Name="SAMMI4" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>TRPLE</Name>
 				<Type>Normal</Type>
@@ -152,10 +152,102 @@
 				<Longitude>-81.644625</Longitude>
 			</Sid_Waypoint>
 		</Sid>
+		<Approach Name="GPS11">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>JODVU</Name>
+				<Type>Normal</Type>
+				<Latitude>33.512077777777776</Latitude>
+				<Longitude>-82.25397777777778</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>JITOL</Name>
+				<Type>Normal</Type>
+				<Latitude>33.48571388888889</Latitude>
+				<Longitude>-82.12420555555555</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW11</Name>
+				<Type>Runway</Type>
+				<Latitude>33.46950833333334</Latitude>
+				<Longitude>-82.04480833333334</Longitude>
+				<Altitude>00472</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01400</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>107.7</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>JODVU</Name>
+				<Type>Normal</Type>
+				<Latitude>33.512077777777776</Latitude>
+				<Longitude>-82.25397777777778</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>JODVU</Name>
+				<Type>Normal</Type>
+				<Latitude>33.512077777777776</Latitude>
+				<Longitude>-82.25397777777778</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="FOGOB">
+				<AppTr_Waypoint ID="1">
+					<Name>FOGOB</Name>
+					<Type>Normal</Type>
+					<Latitude>33.40820277777778</Latitude>
+					<Longitude>-82.28392777777778</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>JODVU</Name>
+					<Type>Normal</Type>
+					<Latitude>33.512077777777776</Latitude>
+					<Longitude>-82.25397777777778</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="INIKE">
+				<AppTr_Waypoint ID="1">
+					<Name>INIKE</Name>
+					<Type>Normal</Type>
+					<Latitude>33.615944444444445</Latitude>
+					<Longitude>-82.22395555555556</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>JODVU</Name>
+					<Type>Normal</Type>
+					<Latitude>33.512077777777776</Latitude>
+					<Longitude>-82.25397777777778</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="JODVU">
+				<AppTr_Waypoint ID="1">
+					<Name>JODVU</Name>
+					<Type>Normal</Type>
+					<Latitude>33.512077777777776</Latitude>
+					<Longitude>-82.25397777777778</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 5/5
 Stars: 0/0
-Appch: 0/0
+Appch: 1/2
 -->

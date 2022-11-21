@@ -102,10 +102,10 @@ for (const thingeyKey in thingey) {
         let route = namedRoute[sidarname];
         if (route.sid) {
             sids++;
-            if (!route[RouteType["PD"]["2"]] && !route[RouteType["PD"]["5"]]
+            /*if (!route[RouteType["PD"]["2"]] && !route[RouteType["PD"]["5"]]
                 && !route[RouteType["PD"]["8"]] && !route[RouteType["PD"]["M"]]) {
                 continue;
-            }
+            }*/
             try {
                 let entrans = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]], route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
                     if (arr) out.push(arr);
@@ -120,7 +120,7 @@ for (const thingeyKey in thingey) {
                     if (arr) out.push(arr);
                     return out;
                 }, []);
-                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).join(",")}">\n`;
+                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim()).join(",")}">\n`;
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
@@ -223,10 +223,10 @@ for (const thingeyKey in thingey) {
             outstring += `${'\t'.repeat(--depth)}</Sid>\n`;
         } else if (route.star) {
             stars++;
-            if (!route[RouteType["PE"]["2"]] && !route[RouteType["PE"]["5"]]
+            /*if (!route[RouteType["PE"]["2"]] && !route[RouteType["PE"]["5"]]
                 && !route[RouteType["PE"]["8"]] && !route[RouteType["PE"]["M"]]) {
                 continue;
-            }
+            }*/
             outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}">\n`;
             try {
                 let trans = [route[RouteType["PE"]["1"]]].reduce((out, arr) => {
@@ -291,7 +291,7 @@ for (const thingeyKey in thingey) {
                 return out;
             }, []);
             let meatofit = [
-                "B", "D", "F", "G", "I", "J", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                "B", "D", "F", "G", "H", "I", "J", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
             ].map(it => route[RouteType["PF"][it]]).reduce((out, arr) => {
                 if (arr) out.push(arr);
                 return out;
@@ -338,14 +338,16 @@ for (const thingeyKey in thingey) {
                     }
                     break;
                 case "H" :
+                    changedName = `ILS${sidarname.substring(1, 4)}`;
                     // I think this is helleychoppers
                     break;
                 default:
                     console.error("Did not recognize ", sidarname.charAt(0));
             }
+            changedName = changedName.replace('-', '')
             if (changedName === "")
                 continue;
-            outstring += `${'\t'.repeat(depth++)}<Approach Name="${changedName}">\n`;
+            outstring += `${'\t'.repeat(depth++)}<Approach Name="${changedName.trim()}">\n`;
             for (const commonerlist of meatofit) {
                 for (const simpsKey in commonerlist) {
                     for (const simps of commonerlist[simpsKey]) {
@@ -403,7 +405,7 @@ for (const thingeyKey in thingey) {
 
                         outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
 
-                        outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
+                        outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident.trim()}</Name>\n`;
                         outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway" : "Normal"}</Type>\n`;
                         outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
                         outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;

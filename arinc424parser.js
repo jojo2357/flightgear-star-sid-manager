@@ -52,6 +52,7 @@ const RouteType = {
         "D": "VORDME Approach",
         "F": "Flight Management System (FMS) Approach",
         "G": "Instrument Guidance System (IGS) Approach",
+        "H": "Unknown Landing",
         "I": "Instrument Landing System (ILS) Approach",
         "J": "GNSS Landing System (GLS)Approach ",
         "L": "Localizer Only (LOC) Approach",
@@ -222,7 +223,7 @@ const childClasses = [
 
     },*/
     class SID_STAR extends ParseResult {
-        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
+        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d\-]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
 
         /** @type String */
         airportIDENT;
@@ -363,6 +364,9 @@ const childClasses = [
                     out.ICAO_Code = splitData[1];
 
                     out.routeType = RouteType[`P${splitData[2]}`][splitData[4]];
+
+                    if (!out.routeType)
+                        return ParseResult.ERROR;
 
                     if (splitData[2] === "E")
                         out.is_STAR = true;
@@ -618,8 +622,6 @@ function altitudeToXML(obj, depth) {
             break;
         // glide slope intersect at 2, floor at 1
         case "J": {
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
-            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
             break;

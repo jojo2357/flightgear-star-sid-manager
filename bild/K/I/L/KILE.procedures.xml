@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4484">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
 	<Airport ICAOcode="KILE">
-		<Sid Name="CONRA2" Runways="ALL  ">
+		<Sid Name="CONRA2" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>CONRA</Name>
 				<Type>Normal</Type>
@@ -54,10 +54,78 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
+		<Sid Name="LAMPS7" Runways="01,19">
+			<Sid_Transition Name="ACT  ">
+				<SidTr_Waypoint ID="1">
+					<Name>AGJ </Name>
+					<Type>Normal</Type>
+					<Latitude>31.185505555555554</Latitude>
+					<Longitude>-98.14185833333335</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>SONET</Name>
+					<Type>Normal</Type>
+					<Latitude>31.71251111111111</Latitude>
+					<Longitude>-97.60484722222222</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>ACT </Name>
+					<Type>Normal</Type>
+					<Latitude>31.662230555555553</Latitude>
+					<Longitude>-97.26901388888888</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="STV  ">
+				<SidTr_Waypoint ID="1">
+					<Name>AGJ </Name>
+					<Type>Normal</Type>
+					<Latitude>31.185505555555554</Latitude>
+					<Longitude>-98.14185833333335</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>STV </Name>
+					<Type>Normal</Type>
+					<Latitude>30.206758333333333</Latitude>
+					<Longitude>-98.70575555555557</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="01 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01248</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>11.8</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>AGJ </Name>
+					<Type>Normal</Type>
+					<Latitude>31.185505555555554</Latitude>
+					<Longitude>-98.14185833333335</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="19 ">
+				<SidTr_Waypoint ID="1">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01248</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>191.8</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>AGJ </Name>
+					<Type>Normal</Type>
+					<Latitude>31.185505555555554</Latitude>
+					<Longitude>-98.14185833333335</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 1/2
+Sids: 2/2
 Stars: 0/0
-Appch: 0/0
+Appch: 0/1
 -->
