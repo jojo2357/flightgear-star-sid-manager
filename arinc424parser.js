@@ -223,7 +223,7 @@ const childClasses = [
 
     },*/
     class SID_STAR extends ParseResult {
-        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d\-]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
+        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d\-]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.) {3}$/m;
 
         /** @type String */
         airportIDENT;
@@ -627,7 +627,25 @@ const childClasses = [
 
         static parse(dataIn) {
             if (dataIn.match(this.regexp)) {
-                let out = new Header();
+                let out = new ENROUTE_AIRWAYS();
+                out.source = dataIn;
+                out.recognizedLine = true;
+                return out;
+            }
+            return ParseResult.ERROR;
+        }
+    },
+    class AIRSPACE extends ParseResult {
+        static regexp = /^S[A-Z]U/m;
+
+        /**
+         * @type {string}
+         */
+        source;
+
+        static parse(dataIn) {
+            if (dataIn.match(this.regexp)) {
+                let out = new AIRSPACE();
                 out.source = dataIn;
                 out.recognizedLine = true;
                 return out;

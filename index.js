@@ -78,16 +78,24 @@ const thingey = it.reduce((out, curr, windex, array) => {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType] = {};
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT])
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT] = [];
-        if (!curr.fix_ident.match(/RW\d{2}/))
+        if (!curr.fix_ident.match(/RW\d{2}/)) {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
                 loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
                 obj: curr
             });
-        else
+        }
+        else {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
                 loc: it.some(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) ? it.find(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) : curr.fix_ident,
                 obj: curr
             });
+            if (!out[curr.airportIDENT].runweys)
+                out[curr.airportIDENT].runweys = [];
+            curr.fix_ident.substring(2).replace(/(\d{2})B/, "$1R,$1L").split(",").map(val => val.trim()).forEach(thin => {
+                if (!out[curr.airportIDENT].runweys.includes(thin))
+                    out[curr.airportIDENT].runweys.push(thin);
+            });
+        }
     }
     return out;
 }, {});
@@ -122,7 +130,9 @@ for (const thingeyKey in thingey) {
                     if (arr) out.push(arr);
                     return out;
                 }, []);
-                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
+
+                //todo replace all with not all
+                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace("ALL", thingey[thingeyKey].runweys.join(",")).replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
