@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KCLE">
 		<Sid Name="CAVVS4" Runways="06L,06R,10,24L,24R,28">
 			<Sid_Waypoint ID="1">
@@ -111,10 +111,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="10 ">
+			<RunwayTransition Runway="10">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(03000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -157,10 +159,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="28 ">
+			<RunwayTransition Runway="28">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02200)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -365,10 +369,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="10 ">
+			<RunwayTransition Runway="10">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(03000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -411,10 +417,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="28 ">
+			<RunwayTransition Runway="28">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02200)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -935,10 +943,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="10 ">
+			<RunwayTransition Runway="10">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(03000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -981,10 +991,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="28 ">
+			<RunwayTransition Runway="28">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02200)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1048,7 +1060,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</Star_Waypoint>
 		</Star>
-		<Approach Name="ILS06L">
+		<Approach Name="RNP06L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>BOEEE</Name>
 				<Type>Normal</Type>
@@ -1306,7 +1318,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS06R">
+		<Approach Name="RNP06R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>DILYN</Name>
 				<Type>Normal</Type>
@@ -1564,7 +1576,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS24L">
+		<Approach Name="RNP24L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ALOMR</Name>
 				<Type>Normal</Type>
@@ -1758,7 +1770,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS24R">
+		<Approach Name="RNP24R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>SHERK</Name>
 				<Type>Normal</Type>
@@ -1995,9 +2007,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>57.900000000000006</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -2270,9 +2282,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>238</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>200</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -2559,9 +2571,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>57.900000000000006</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -2830,9 +2842,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>238</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>200</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,10 +16,10 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KBOI">
-		<Sid Name="BOI3  " Runways="10B,28B">
-			<RunwayTransition Runway="10B">
+		<Sid Name="BOI3  " Runways="10R,10L,28R,28L">
+			<RunwayTransition Runway="10R,10L">
 				<SidTr_Waypoint ID="1">
 					<Name>BOI </Name>
 					<Type>Normal</Type>
@@ -29,7 +29,7 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="28B">
+			<RunwayTransition Runway="28R,28L">
 				<SidTr_Waypoint ID="1">
 					<Name>BOI </Name>
 					<Type>Normal</Type>
@@ -40,7 +40,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="GOWEN4" Runways="10B,28B">
+		<Sid Name="GOWEN4" Runways="10R,10L,28R,28L">
 			<Sid_Waypoint ID="1">
 				<Name>FIMGU</Name>
 				<Type>Normal</Type>
@@ -55,10 +55,12 @@
 				<Latitude>43.55281111111111</Latitude>
 				<Longitude>-116.192125</Longitude>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="10B">
+			<RunwayTransition Runway="10R,10L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(03600)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03600</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -73,7 +75,7 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="28B">
+			<RunwayTransition Runway="28R,28L">
 				<SidTr_Waypoint ID="3">
 					<Name>FIMGU</Name>
 					<Type>Normal</Type>
@@ -150,7 +152,7 @@
 		</Star>
 		<Star Name="SPUUD4">
 		</Star>
-		<Approach Name="ILS10L">
+		<Approach Name="RNP10L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>FATIB</Name>
 				<Type>Normal</Type>
@@ -352,7 +354,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS10R">
+		<Approach Name="RNP10R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>ISEBE</Name>
 				<Type>Normal</Type>
@@ -554,7 +556,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS28L">
+		<Approach Name="GPS28L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>SMYRF</Name>
 				<Type>Normal</Type>
@@ -644,7 +646,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS28L">
+		<Approach Name="RNP28L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>HOBSI</Name>
 				<Type>Normal</Type>
@@ -886,7 +888,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS28R">
+		<Approach Name="GPS28R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>CUBAR</Name>
 				<Type>Normal</Type>
@@ -984,7 +986,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS28R">
+		<Approach Name="RNP28R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>HAPNU</Name>
 				<Type>Normal</Type>

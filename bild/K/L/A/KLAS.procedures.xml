@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KLAS">
-		<Sid Name="FRNCK1" Runways="08B">
+		<Sid Name="FRNCK1" Runways="08R,08L">
 			<Sid_Waypoint ID="1">
 				<Name>AYVUH</Name>
 				<Type>Normal</Type>
@@ -47,10 +47,12 @@
 				<Latitude>37.681602777777776</Latitude>
 				<Longitude>-113.56075277777778</Longitude>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -66,7 +68,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="GIDGT2" Runways="01L,01R,08B,19L,19R,26B">
+		<Sid Name="GIDGT2" Runways="01L,01R,08R,08L,19L,19R,26R,26L">
 			<Sid_Transition Name="TUKRR">
 				<SidTr_Waypoint ID="1">
 					<Name>GIDGT</Name>
@@ -169,10 +171,12 @@
 					<Longitude>-114.24050277777778</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -311,10 +315,12 @@
 					<Longitude>-114.24050277777778</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -368,7 +374,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="HOOVR8" Runways="01B,08B,19B,26B">
+		<Sid Name="HOOVR8" Runways="01R,01L,08R,08L,19R,19L,26R,26L">
 			<Sid_Transition Name="BAVPE">
 				<SidTr_Waypoint ID="1">
 					<Name>CHALL</Name>
@@ -469,24 +475,26 @@
 					<Longitude>-113.01323333333333</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01B">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02500)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02500</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>13.9</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="JOHKR3" Runways="01B,08L,08R,19B,26L,26R">
+		<Sid Name="JOHKR3" Runways="01R,01L,08L,08R,19R,19L,26L,26R">
 			<Sid_Transition Name="KENNO">
 				<SidTr_Waypoint ID="1">
 					<Name>JOHKR</Name>
@@ -525,10 +533,12 @@
 					<Longitude>-117.310225</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01B">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -601,8 +611,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -643,10 +655,12 @@
 					<Longitude>-115.93851666666667</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -695,8 +709,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -784,7 +800,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="LOHLA3" Runways="01L,01R,08L,08R,19L,19R,26B">
+		<Sid Name="LOHLA3" Runways="01L,01R,08L,08R,19L,19R,26R,26L">
 			<Sid_Transition Name="JAYSN">
 				<SidTr_Waypoint ID="1">
 					<Name>LOHLA</Name>
@@ -867,8 +883,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -959,10 +977,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -992,7 +1012,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="MCCRN6" Runways="01B,08B,19B,26B">
+		<Sid Name="MCCRN6" Runways="01R,01L,08R,08L,19R,19L,26R,26L">
 			<Sid_Transition Name="HEC  ">
 				<SidTr_Waypoint ID="1">
 					<Name>RADYR</Name>
@@ -1059,32 +1079,36 @@
 					<Longitude>-115.76990555555557</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01B">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02600)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02600</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>13.9</Hdg_Crs_value>
 				</SidTr_Waypoint>
 				<SidTr_Waypoint ID="2">
-					<Name>VECTORS</Name>
+					<Name>(07000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>07000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>200</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="NIITZ3" Runways="01L,01R,08L,08R,19B,26L,26R">
+		<Sid Name="NIITZ3" Runways="01L,01R,08L,08R,19R,19L,26L,26R">
 			<Sid_Transition Name="HOCEE">
 				<SidTr_Waypoint ID="1">
 					<Name>NIITZ</Name>
@@ -1243,8 +1267,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1293,10 +1319,12 @@
 					<Longitude>-113.53356944444444</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1349,8 +1377,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1458,7 +1488,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="RADYR2" Runways="01B,08L,08R,19B,26L,26R">
+		<Sid Name="RADYR2" Runways="01R,01L,08L,08R,19R,19L,26L,26R">
 			<Sid_Transition Name="BLAQQ">
 				<SidTr_Waypoint ID="1">
 					<Name>RADYR</Name>
@@ -1603,10 +1633,12 @@
 					<Longitude>-115.74314166666667</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01B">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1685,8 +1717,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1737,10 +1771,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1765,8 +1801,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1830,7 +1868,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="RASLR3" Runways="01L,01R,08L,08R,19B,26L,26R">
+		<Sid Name="RASLR3" Runways="01L,01R,08L,08R,19R,19L,26L,26R">
 			<Sid_Transition Name="ZAYNE">
 				<SidTr_Waypoint ID="1">
 					<Name>RASLR</Name>
@@ -1949,8 +1987,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1995,10 +2035,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -2045,8 +2087,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -2142,7 +2186,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="RATPK3" Runways="01L,01R,08L,08R,19L,19R,26B">
+		<Sid Name="RATPK3" Runways="01L,01R,08L,08R,19L,19R,26R,26L">
 			<Sid_Transition Name="FRNCK">
 				<SidTr_Waypoint ID="1">
 					<Name>RATPK</Name>
@@ -2245,8 +2289,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="08R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -2385,10 +2431,12 @@
 					<Longitude>-114.62263055555555</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02682)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02682</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -2466,7 +2514,7 @@
 					<Name>BCE </Name>
 					<Type>Normal</Type>
 					<Latitude>37.689188888888886</Latitude>
-					<Longitude>-112.30389722222222</Longitude>
+					<Longitude>-112.30390277777778</Longitude>
 				</StarTr_Waypoint>
 				<StarTr_Waypoint ID="2">
 					<Name>HOLDM</Name>
@@ -2844,7 +2892,7 @@
 		</Star>
 		<Star Name="RNDRZ2">
 		</Star>
-		<Approach Name="ILS08R">
+		<Approach Name="RNV08R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>YAGGR</Name>
 				<Type>Normal</Type>
@@ -2944,7 +2992,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 		</Approach>
-		<Approach Name="ILS19L">
+		<Approach Name="RNP19L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>KIVEY</Name>
 				<Type>Normal</Type>
@@ -3036,7 +3084,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS19R">
+		<Approach Name="RNP19R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>KIVEY</Name>
 				<Type>Normal</Type>
@@ -3128,7 +3176,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS26L">
+		<Approach Name="RNV26L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>RELIN</Name>
 				<Type>Normal</Type>
@@ -3254,7 +3302,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS26R">
+		<Approach Name="RNV26R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>BJORG</Name>
 				<Type>Normal</Type>
@@ -3541,9 +3589,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>259</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -3708,9 +3756,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>259</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -4055,9 +4103,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>259</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -4220,9 +4268,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>259</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -4727,9 +4775,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>262.40000000000003</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>74</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -4888,9 +4936,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>262.40000000000003</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>74</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>

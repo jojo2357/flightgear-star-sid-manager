@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,27 +16,31 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KHPN">
 		<Sid Name="HPN7  " Runways="11,16,29,34">
-			<RunwayTransition Runway="11 ">
+			<RunwayTransition Runway="11">
 			</RunwayTransition>
-			<RunwayTransition Runway="16 ">
+			<RunwayTransition Runway="16">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00800)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>162.9</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="29 ">
+			<RunwayTransition Runway="29">
 			</RunwayTransition>
-			<RunwayTransition Runway="34 ">
+			<RunwayTransition Runway="34">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -45,10 +49,12 @@
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="PROP1 " Runways="16">
-			<RunwayTransition Runway="16 ">
+			<RunwayTransition Runway="16">
 				<SidTr_Waypoint ID="2">
-					<Name>VECTORS</Name>
+					<Name>(03000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -476,7 +482,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS16">
+		<Approach Name="RNP16">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>CZIMR</Name>
 				<Type>Normal</Type>
@@ -642,7 +648,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS34">
+		<Approach Name="RNP34">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>HAARP</Name>
 				<Type>Normal</Type>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KTOA">
-		<Sid Name="HAWWC3" Runways="11B">
+		<Sid Name="HAWWC3" Runways="11R,11L">
 			<Sid_Waypoint ID="1">
 				<Name>PIJIN</Name>
 				<Type>Normal</Type>
@@ -71,10 +71,12 @@
 					<Longitude>-119.01027777777777</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="11B">
+			<RunwayTransition Runway="11R,11L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02700)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02700</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -213,9 +215,20 @@
 				<Altitude>00149</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>VORRAD</Name>
+				<Type>VorRadialIntc</Type>
+				<Latitude>33.93315</Latitude>
+				<Longitude>118.4320138888889</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>294</Hdg_Crs_value>
+				<RadialtoIntercept>150</RadialtoIntercept>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>250</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -304,9 +317,20 @@
 				<Altitude>00149</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>VORRAD</Name>
+				<Type>VorRadialIntc</Type>
+				<Latitude>33.93315</Latitude>
+				<Longitude>118.4320138888889</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>294</Hdg_Crs_value>
+				<RadialtoIntercept>150</RadialtoIntercept>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>250</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -565,9 +589,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>135</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>75</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>

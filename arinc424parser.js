@@ -1,7 +1,7 @@
 /*
  * This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
  *
- * Copyright (c) 2022 jojo2357
+ * Copyright (c) 2022-2023 jojo2357
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -580,7 +580,61 @@ const childClasses = [
                 }
             }
         }
-    }
+    },
+    class HEADER extends ParseResult {
+        static regexp = /^HDR\d+/m;
+
+        /**
+         * @type {string}
+         */
+        source;
+
+        static parse(dataIn) {
+            if (dataIn.match(this.regexp)) {
+                let out = new Header();
+                out.source = dataIn;
+                out.recognizedLine = true;
+                return out;
+            }
+            return ParseResult.ERROR;
+        }
+    },
+    class MORA extends ParseResult {
+        static regexp = /^S {3}AS {7}[SN]\d{2}[EW]\d{3} {10}(UNK|\d{3})+ {3}\d+$/m;
+
+        /**
+         * @type {string}
+         */
+        source;
+
+        static parse(dataIn) {
+            if (dataIn.match(this.regexp)) {
+                let out = new Header();
+                out.source = dataIn;
+                out.recognizedLine = true;
+                return out;
+            }
+            return ParseResult.ERROR;
+        }
+    },
+    class ENROUTE_AIRWAYS extends ParseResult {
+        static regexp = /^S[A-Z]{3}ER {7}[A-Z]{5}. {6}[SN]\d{2}[EW]\d{3} {10}(UNK|\d{3})+ {3}\d+$/m;
+
+        /**
+         * @type {string}
+         */
+        source;
+
+        static parse(dataIn) {
+            if (dataIn.match(this.regexp)) {
+                let out = new Header();
+                out.source = dataIn;
+                out.recognizedLine = true;
+                return out;
+            }
+            return ParseResult.ERROR;
+        }
+    },
 ];
 
 /**

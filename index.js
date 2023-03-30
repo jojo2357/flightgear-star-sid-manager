@@ -1,7 +1,7 @@
 /*
  * This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
  *
- * Copyright (c) 2022 jojo2357
+ * Copyright (c) 2022-2023 jojo2357
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ const fs = require('fs');
 const {parseLine, RouteType, altitudeToXML} = require('./arinc424parser');
 const path = require("path");
 
-const data = fs.readFileSync("FAACIFP18").toString().split(/\r?\n/g);
+const data = fs.readFileSync("CIFP_230323/FAACIFP18").toString().split(/\r?\n/g);
 //^([ST])([A-Z]{3})([A-Z]) ([A-Z]{4})([\dA-Z]{2})([DEF])
 //let starz = data.map(dater => dater.match(/^([ST])([A-Z]{3})(P) ([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{6})/)).filter((dater) => dater);
 
@@ -29,6 +29,8 @@ const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine)
         out.push(vahl);
+    else
+        console.log(dater);
     return out;
 }, []);
 
@@ -120,7 +122,7 @@ for (const thingeyKey in thingey) {
                     if (arr) out.push(arr);
                     return out;
                 }, []);
-                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim()).join(",")}">\n`;
+                outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
@@ -180,17 +182,17 @@ for (const thingeyKey in thingey) {
                 }
                 for (const translist of trans) {
                     for (const simpsKey in translist) {
-                        outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey}">\n`;
+                        outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey.trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
                         for (const simps of translist[simpsKey]) {
                             if (typeof simps.loc === 'string' || simps.loc instanceof String) {
                                 // continue;
                                 if (simps.obj.fix_path_termination === "VA") {
                                     outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
-                                    outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Name>(${simps.obj.nav_altitude_1.substring(1)})</Name>\n`;
                                     outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
-                                    // outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                    // outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
+                                    outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
 
                                     outstring += altitudeToXML(simps.obj, depth);
 
@@ -338,7 +340,23 @@ for (const thingeyKey in thingey) {
                     }
                     break;
                 case "H" :
-                    changedName = `ILS${sidarname.substring(1, 4)}`;
+                    switch (sidarname.charAt(4)) {
+                        case " ":
+                            changedName = `RNV${sidarname.substring(1, 4)}`;
+                            break;
+                        case "Y":
+                            changedName = `GPS${sidarname.substring(1, 4)}`;
+                            break;
+                        case "Z":
+                            changedName = `RNP${sidarname.substring(1, 4)}`;
+                            break;
+                        case "X":
+                            changedName = `GPS${sidarname.substring(1, 4)}`;
+                            break;
+                        default:
+                            console.error("Did not recognize ", sidarname.charAt(4));
+                    }
+                    // changedName = `ILS${sidarname.substring(1, 4)}`;
                     // I think this is helleychoppers
                     break;
                 default:
@@ -384,10 +402,10 @@ for (const thingeyKey in thingey) {
                                 outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
                                 continue
                             } else if (simps.obj.fix_path_termination === "VI") {
-                                outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
 
-                                outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Name>DMEINTC</Name>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Type>DmeIntc</Type>\n`;
                                 // outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
                                 // outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
 
@@ -398,7 +416,26 @@ for (const thingeyKey in thingey) {
                                 outstring += `${'\t'.repeat(depth)}<Sp_Turn>${simps.obj.fix_turn_direction === "R" ? "Right" : simps.obj.fix_turn_direction === "L" ? "Left" : "Auto"}</Sp_Turn>\n`;
 
                                 outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                continue
+                                continue;
+                            } else if (simps.obj.fix_path_termination === "VR") {
+                                outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
+
+                                outstring += `${'\t'.repeat(depth)}<Name>VORRAD</Name>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Type>VorRadialIntc</Type>\n`;
+
+                                outstring += `${'\t'.repeat(depth)}<Latitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).latitude().value}</Latitude>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Longitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).longitude().value}</Longitude>\n`;
+
+                                outstring += altitudeToXML(simps.obj, depth);
+
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
+                                outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
+                                outstring += `${'\t'.repeat(depth)}<RadialtoIntercept>${simps.obj.fix_theta * 0.1}</RadialtoIntercept>\n`;
+
+                                outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                                continue;
+                            } else {
+                                console.log("What the hell?");
                             }
                             continue;
                         }
@@ -463,8 +500,8 @@ for (const thingeyKey in thingey) {
     outstring += `\t</Airport>\n</ProceduresDB>\n<!-- Completion Stats:\nSids: ${completedsids}/${sids}\nStars: ${completedstars}/${stars}\nAppch: ${completedapproaches}/${approaches}\n-->`;
     fs.mkdirSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "bild", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
-    fs.mkdirSync(path.join(process.cwd(), "mygame", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "mygame", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
+    fs.mkdirSync(path.join(process.cwd(), "Airports", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "Airports", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), outstring);
 }
 
 //console.log(thing);

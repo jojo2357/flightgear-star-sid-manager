@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KRNO">
 		<Sid Name="ALPYN1" Runways="35L,35R">
 			<Sid_Transition Name="YERIN">
@@ -78,7 +78,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="PVINE4" Runways="35B">
+		<Sid Name="PVINE4" Runways="35R,35L">
 			<Sid_Transition Name="CRDDZ">
 				<SidTr_Waypoint ID="1">
 					<Name>PVINE</Name>
@@ -143,10 +143,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04920)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04920</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -157,6 +159,62 @@
 					<Type>Normal</Type>
 					<Latitude>39.59741666666667</Latitude>
 					<Longitude>-119.76661388888888</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+		<Sid Name="SPRKS1" Runways="17R,17L,26,35R,35L">
+			<RunwayTransition Runway="17R,17L">
+				<SidTr_Waypoint ID="1">
+					<Name>(06600)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>06600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>167.10000000000002</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>FMG </Name>
+					<Type>Normal</Type>
+					<Latitude>39.531277777777774</Latitude>
+					<Longitude>-119.656075</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="26">
+				<SidTr_Waypoint ID="1">
+					<Name>(05000)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>257.2</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>FMG </Name>
+					<Type>Normal</Type>
+					<Latitude>39.531277777777774</Latitude>
+					<Longitude>-119.656075</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="35R,35L">
+				<SidTr_Waypoint ID="1">
+					<Name>(06800)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>06800</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>347.1</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>FMG </Name>
+					<Type>Normal</Type>
+					<Latitude>39.531277777777774</Latitude>
+					<Longitude>-119.656075</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
@@ -198,7 +256,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="ZEFFR7" Runways="17B">
+		<Sid Name="ZEFFR7" Runways="17R,17L">
 			<Sid_Transition Name="BLKJK">
 				<SidTr_Waypoint ID="1">
 					<Name>ZEFFR</Name>
@@ -295,10 +353,12 @@
 					<Longitude>-119.06121388888889</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04920)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04920</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -610,7 +670,7 @@
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</Star_Waypoint>
 		</Star>
-		<Approach Name="ILS17L">
+		<Approach Name="GPS17L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>WORTH</Name>
 				<Type>Normal</Type>
@@ -730,7 +790,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS17L">
+		<Approach Name="RNP17L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>HOGBO</Name>
 				<Type>Normal</Type>
@@ -996,7 +1056,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS17R">
+		<Approach Name="GPS17R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ZENDO</Name>
 				<Type>Normal</Type>
@@ -1124,7 +1184,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS17R">
+		<Approach Name="RNP17R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>BETYA</Name>
 				<Type>Normal</Type>
@@ -1390,87 +1450,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS35L">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>FMG</Name>
-				<Type>Normal</Type>
-				<Latitude>39.531277777777774</Latitude>
-				<Longitude>-119.656075</Longitude>
-				<Altitude>10000</Altitude>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>VCITY</Name>
-				<Type>Normal</Type>
-				<Latitude>39.42684166666666</Latitude>
-				<Longitude>-119.65643333333334</Longitude>
-				<Altitude>08900</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>WSHOE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.39623611111111</Latitude>
-				<Longitude>-119.66974722222223</Longitude>
-				<Altitude>07900</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>RSNAK</Name>
-				<Type>Normal</Type>
-				<Latitude>39.383736111111105</Latitude>
-				<Longitude>-119.68741111111112</Longitude>
-				<Altitude>07800</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>DONER</Name>
-				<Type>Normal</Type>
-				<Latitude>39.38006388888889</Latitude>
-				<Longitude>-119.69655277777778</Longitude>
-				<Altitude>07700</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>GRZLI</Name>
-				<Type>Normal</Type>
-				<Latitude>39.376358333333336</Latitude>
-				<Longitude>-119.72916388888889</Longitude>
-				<Altitude>07300</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>LDYBG</Name>
-				<Type>Normal</Type>
-				<Latitude>39.4113</Latitude>
-				<Longitude>-119.76948055555556</Longitude>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW35L</Name>
-				<Type>Runway</Type>
-				<Latitude>39.48636388888889</Latitude>
-				<Longitude>-119.76929166666666</Longitude>
-				<Altitude>04482</Altitude>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="4"-->
-				<Name>TAKLE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.69699444444444</Latitude>
-				<Longitude>-119.76871944444444</Longitude>
-				<Altitude>11000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>TAKLE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.69699444444444</Latitude>
-				<Longitude>-119.76871944444444</Longitude>
-				<Altitude>11000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-		</Approach>
-		<Approach Name="ILS35L">
+		<Approach Name="RNP35L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>MASUE</Name>
 				<Type>Normal</Type>
@@ -1562,85 +1542,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS35R">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>FMG</Name>
-				<Type>Normal</Type>
-				<Latitude>39.531277777777774</Latitude>
-				<Longitude>-119.656075</Longitude>
-				<Altitude>10000</Altitude>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>VRGNA</Name>
-				<Type>Normal</Type>
-				<Latitude>39.430052777777775</Latitude>
-				<Longitude>-119.65642222222223</Longitude>
-				<Altitude>08900</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>RLSTN</Name>
-				<Type>Normal</Type>
-				<Latitude>39.39720277777778</Latitude>
-				<Longitude>-119.67195833333334</Longitude>
-				<Altitude>07900</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="1"-->
-				<Name>URKBE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.38270277777778</Latitude>
-				<Longitude>-119.69780833333334</Longitude>
-				<Altitude>07600</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>TRMMR</Name>
-				<Type>Normal</Type>
-				<Latitude>39.37902777777778</Latitude>
-				<Longitude>-119.7208888888889</Longitude>
-				<Altitude>07400</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>ULOHA</Name>
-				<Type>Normal</Type>
-				<Latitude>39.41407222222222</Latitude>
-				<Longitude>-119.76700000000001</Longitude>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW35R</Name>
-				<Type>Runway</Type>
-				<Latitude>39.48913611111111</Latitude>
-				<Longitude>-119.76680555555555</Longitude>
-				<Altitude>04483</Altitude>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="4"-->
-				<Name>HOGBO</Name>
-				<Type>Normal</Type>
-				<Latitude>39.640058333333336</Latitude>
-				<Longitude>-119.766425</Longitude>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>TAKLE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.69699444444444</Latitude>
-				<Longitude>-119.76871944444444</Longitude>
-				<Altitude>11000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>TAKLE</Name>
-				<Type>Normal</Type>
-				<Latitude>39.69699444444444</Latitude>
-				<Longitude>-119.76871944444444</Longitude>
-				<Altitude>11000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</App_Waypoint>
-		</Approach>
-		<Approach Name="ILS35R">
+		<Approach Name="RNP35R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>MASUE</Name>
 				<Type>Normal</Type>
@@ -2197,9 +2099,9 @@
 				<Altitude>04462</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -2808,9 +2710,9 @@
 				<Altitude>04462</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -4087,7 +3989,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 4/4
+Sids: 5/5
 Stars: 9/9
-Appch: 22/23
+Appch: 20/23
 -->

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KNUQ">
-		<Sid Name="HOOKS2" Runways="14B">
+		<Sid Name="HOOKS2" Runways="14R,14L">
 			<Sid_Transition Name="SNS  ">
 				<SidTr_Waypoint ID="1">
 					<Name>HOOKS</Name>
@@ -35,7 +35,7 @@
 					<Longitude>-121.60318611111111</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="14B">
+			<RunwayTransition Runway="14R,14L">
 				<SidTr_Waypoint ID="1">
 					<Name>HOOKS</Name>
 					<Type>Normal</Type>
@@ -46,8 +46,8 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="OSI2  " Runways="14B,32B">
-			<RunwayTransition Runway="14B">
+		<Sid Name="OSI2  " Runways="14R,14L,32R,32L">
+			<RunwayTransition Runway="14R,14L">
 				<SidTr_Waypoint ID="1">
 					<Name>MEPVE</Name>
 					<Type>Normal</Type>
@@ -65,7 +65,7 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="32B">
+			<RunwayTransition Runway="32R,32L">
 				<SidTr_Waypoint ID="1">
 					<Name>EDOYE</Name>
 					<Type>Normal</Type>
@@ -81,86 +81,6 @@
 					<Longitude>-122.28130277777778</Longitude>
 					<Altitude>04000</Altitude>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
-			</RunwayTransition>
-		</Sid>
-		<Sid Name="SOLN3 " Runways="14B,32B">
-			<Sid_Transition Name="AVE  ">
-				<SidTr_Waypoint ID="1">
-					<Name>MOONY</Name>
-					<Type>Normal</Type>
-					<Latitude>37.138555555555556</Latitude>
-					<Longitude>-121.57210833333333</Longitude>
-					<Altitude>05300</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="2">
-					<Name>AVE </Name>
-					<Type>Normal</Type>
-					<Latitude>35.646975</Latitude>
-					<Longitude>-119.97860555555556</Longitude>
-				</SidTr_Waypoint>
-			</Sid_Transition>
-			<Sid_Transition Name="PXN  ">
-				<SidTr_Waypoint ID="1">
-					<Name>MOONY</Name>
-					<Type>Normal</Type>
-					<Latitude>37.138555555555556</Latitude>
-					<Longitude>-121.57210833333333</Longitude>
-					<Altitude>05300</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="2">
-					<Name>FEXUV</Name>
-					<Type>Normal</Type>
-					<Latitude>37.0274</Latitude>
-					<Longitude>-121.36185833333333</Longitude>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="3">
-					<Name>PXN </Name>
-					<Type>Normal</Type>
-					<Latitude>36.71545833333333</Latitude>
-					<Longitude>-120.77868333333332</Longitude>
-				</SidTr_Waypoint>
-			</Sid_Transition>
-			<RunwayTransition Runway="14B">
-				<SidTr_Waypoint ID="1">
-					<Name>MEPVE</Name>
-					<Type>Normal</Type>
-					<Latitude>37.32462777777778</Latitude>
-					<Longitude>-122.00107222222222</Longitude>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="3">
-					<Name>MOONY</Name>
-					<Type>Normal</Type>
-					<Latitude>37.138555555555556</Latitude>
-					<Longitude>-121.57210833333333</Longitude>
-					<Altitude>05300</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</SidTr_Waypoint>
-			</RunwayTransition>
-			<RunwayTransition Runway="32B">
-				<SidTr_Waypoint ID="1">
-					<Name>EDOYE</Name>
-					<Type>Normal</Type>
-					<Latitude>37.47878055555556</Latitude>
-					<Longitude>-122.08118055555556</Longitude>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="3">
-					<Name>NOCIP</Name>
-					<Type>Normal</Type>
-					<Latitude>37.36386666666667</Latitude>
-					<Longitude>-121.82035277777777</Longitude>
-					<Altitude>05000</Altitude>
-					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="4">
-					<Name>MOONY</Name>
-					<Type>Normal</Type>
-					<Latitude>37.138555555555556</Latitude>
-					<Longitude>-121.57210833333333</Longitude>
-					<Altitude>05300</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
@@ -283,9 +203,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>321.70000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>310</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -293,16 +213,16 @@
 			<App_Waypoint> <!--ID="6"-->
 				<Name>OAK</Name>
 				<Type>Normal</Type>
-				<Latitude>37.72592222222222</Latitude>
-				<Longitude>-122.2235861111111</Longitude>
+				<Latitude>37.725925000000004</Latitude>
+				<Longitude>-122.22359166666666</Longitude>
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="7"-->
 				<Name>OAK</Name>
 				<Type>Normal</Type>
-				<Latitude>37.72592222222222</Latitude>
-				<Longitude>-122.2235861111111</Longitude>
+				<Latitude>37.725925000000004</Latitude>
+				<Longitude>-122.22359166666666</Longitude>
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -366,9 +286,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>141.70000000000002</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -473,9 +393,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>321.70000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>310</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -483,16 +403,16 @@
 			<App_Waypoint> <!--ID="6"-->
 				<Name>OAK</Name>
 				<Type>Normal</Type>
-				<Latitude>37.72592222222222</Latitude>
-				<Longitude>-122.2235861111111</Longitude>
+				<Latitude>37.725925000000004</Latitude>
+				<Longitude>-122.22359166666666</Longitude>
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="7"-->
 				<Name>OAK</Name>
 				<Type>Normal</Type>
-				<Latitude>37.72592222222222</Latitude>
-				<Longitude>-122.2235861111111</Longitude>
+				<Latitude>37.725925000000004</Latitude>
+				<Longitude>-122.22359166666666</Longitude>
 				<Altitude>04000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -568,8 +488,8 @@
 				<AppTr_Waypoint ID="1">
 					<Name>OAK </Name>
 					<Type>Normal</Type>
-					<Latitude>37.72592222222222</Latitude>
-					<Longitude>-122.2235861111111</Longitude>
+					<Latitude>37.725925000000004</Latitude>
+					<Longitude>-122.22359166666666</Longitude>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>PEYIC</Name>
@@ -642,8 +562,8 @@
 				<AppTr_Waypoint ID="1">
 					<Name>OAK </Name>
 					<Type>Normal</Type>
-					<Latitude>37.72592222222222</Latitude>
-					<Longitude>-122.2235861111111</Longitude>
+					<Latitude>37.725925000000004</Latitude>
+					<Longitude>-122.22359166666666</Longitude>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>PEYIC</Name>
@@ -862,7 +782,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 3/3
+Sids: 2/2
 Stars: 1/1
 Appch: 7/7
 -->

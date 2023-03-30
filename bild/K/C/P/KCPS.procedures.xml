@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KCPS">
 		<Sid Name="GATWY1" Runways="ALL">
 			<Sid_Waypoint ID="1">
@@ -186,7 +186,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="LINDY8" Runways="05,12B,23,30B">
+		<Sid Name="LINDY8" Runways="05,12R,12L,23,30R,30L">
 			<Sid_Transition Name="ARG  ">
 				<SidTr_Waypoint ID="1">
 					<Name>STL </Name>
@@ -279,40 +279,48 @@
 					<Longitude>-91.70677222222221</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="05 ">
+			<RunwayTransition Runway="05">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00900)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00900</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>47</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>122.2</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="23 ">
+			<RunwayTransition Runway="23">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>02000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>227</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01600)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01600</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -487,9 +495,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>302.2</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -586,9 +594,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>302.2</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>

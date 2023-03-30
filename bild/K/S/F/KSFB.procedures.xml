@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,16 +16,16 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KSFB">
-		<Sid Name="SFB1  " Runways="09B,18,27B,36">
-			<RunwayTransition Runway="09B">
+		<Sid Name="SFB1  " Runways="09R,09L,18,27R,27L,36">
+			<RunwayTransition Runway="09R,09L">
 			</RunwayTransition>
-			<RunwayTransition Runway="18 ">
+			<RunwayTransition Runway="18">
 			</RunwayTransition>
-			<RunwayTransition Runway="27B">
+			<RunwayTransition Runway="27R,27L">
 			</RunwayTransition>
-			<RunwayTransition Runway="36 ">
+			<RunwayTransition Runway="36">
 			</RunwayTransition>
 		</Sid>
 		<Star Name="ALYNA3">
@@ -239,8 +239,8 @@
 				<StarTr_Waypoint ID="1">
 					<Name>RSW </Name>
 					<Type>Normal</Type>
-					<Latitude>26.529875</Latitude>
-					<Longitude>-81.77576666666667</Longitude>
+					<Latitude>26.52988611111111</Latitude>
+					<Longitude>-81.77576944444445</Longitude>
 				</StarTr_Waypoint>
 				<StarTr_Waypoint ID="2">
 					<Name>DOWNN</Name>
@@ -421,9 +421,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>94.9</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -450,8 +450,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.67090277777778</Latitude>
 					<Longitude>-81.45396944444445</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>UGMAH</Name>
@@ -468,8 +466,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.879769444444445</Latitude>
 					<Longitude>-81.4548888888889</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>UGMAH</Name>
@@ -526,9 +522,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>94.9</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>125</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -555,8 +551,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.67090277777778</Latitude>
 					<Longitude>-81.45396944444445</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>JORVU</Name>
@@ -583,8 +577,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.879769444444445</Latitude>
 					<Longitude>-81.4548888888889</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>JORVU</Name>
@@ -631,9 +623,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>274.90000000000003</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>280</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -660,8 +652,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.672330555555558</Latitude>
 					<Longitude>-80.99206666666666</Longitude>
-					<Altitude>01600</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>UXFIM</Name>
@@ -688,14 +678,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="3">
-					<Name>VOFOS</Name>
-					<Type>Normal</Type>
-					<Latitude>28.86751111111111</Latitude>
-					<Longitude>-80.99830277777778</Longitude>
-					<Altitude>01600</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="4">
 					<Name>UXFIM</Name>
 					<Type>Normal</Type>
 					<Latitude>28.781955555555555</Latitude>
@@ -756,9 +738,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>94.9</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>80</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -785,8 +767,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.67090277777778</Latitude>
 					<Longitude>-81.45396944444445</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>UGMAH</Name>
@@ -803,8 +783,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.879769444444445</Latitude>
 					<Longitude>-81.4548888888889</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>UGMAH</Name>
@@ -867,9 +845,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>94.9</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>125</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -896,8 +874,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.67090277777778</Latitude>
 					<Longitude>-81.45396944444445</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>JORVU</Name>
@@ -924,8 +900,6 @@
 					<Type>Normal</Type>
 					<Latitude>28.879769444444445</Latitude>
 					<Longitude>-81.4548888888889</Longitude>
-					<Altitude>02000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>JORVU</Name>
@@ -978,9 +952,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>274.90000000000003</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>280</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1035,14 +1009,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="3">
-					<Name>VOFOS</Name>
-					<Type>Normal</Type>
-					<Latitude>28.86751111111111</Latitude>
-					<Longitude>-80.99830277777778</Longitude>
-					<Altitude>01600</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="4">
 					<Name>UXFIM</Name>
 					<Type>Normal</Type>
 					<Latitude>28.781955555555555</Latitude>

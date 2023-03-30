@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KDVT">
-		<Sid Name="BNYRD6" Runways="25B">
+		<Sid Name="BNYRD6" Runways="25R,25L">
 			<Sid_Transition Name="TUS  ">
 				<SidTr_Waypoint ID="1">
 					<Name>TFD </Name>
@@ -33,7 +33,7 @@
 					<Longitude>-110.91485555555556</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>BNYRD</Name>
 					<Type>Normal</Type>
@@ -48,12 +48,14 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="DVT1  " Runways="07B,25B">
-			<RunwayTransition Runway="07B">
+		<Sid Name="DVT2  " Runways="07R,07L,25R,25L">
+			<RunwayTransition Runway="07R,07L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(02200)</Name>
 					<Type>ConstHdgtoAlt</Type>
-					<Altitude>01878</Altitude>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>74</Hdg_Crs_value>
@@ -73,10 +75,12 @@
 					<Longitude>-111.97020277777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01878)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01878</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -98,7 +102,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="FTHLS6" Runways="25B">
+		<Sid Name="FTHLS6" Runways="25R,25L">
 			<Sid_Transition Name="ABQ  ">
 				<SidTr_Waypoint ID="1">
 					<Name>FTHLS</Name>
@@ -165,7 +169,7 @@
 					<Longitude>-106.69660555555555</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>BROAK</Name>
 					<Type>Normal</Type>
@@ -180,7 +184,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="IZZZO7" Runways="25B">
+		<Sid Name="IZZZO7" Runways="25R,25L">
 			<Sid_Transition Name="BLH  ">
 				<SidTr_Waypoint ID="1">
 					<Name>IZZZO</Name>
@@ -235,7 +239,7 @@
 					<Longitude>-113.80315833333334</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>KEENS</Name>
 					<Type>Normal</Type>
@@ -250,7 +254,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="JUDTH7" Runways="25B">
+		<Sid Name="JUDTH7" Runways="25R,25L">
 			<Sid_Transition Name="MOHAK">
 				<SidTr_Waypoint ID="1">
 					<Name>JUDTH</Name>
@@ -265,7 +269,7 @@
 					<Longitude>-113.97209722222222</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>GBN </Name>
 					<Type>Normal</Type>
@@ -280,7 +284,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="KATMN6" Runways="25B">
+		<Sid Name="KATMN6" Runways="25R,25L">
 			<Sid_Transition Name="PHASE">
 				<SidTr_Waypoint ID="1">
 					<Name>KATMN</Name>
@@ -301,7 +305,7 @@
 					<Longitude>-109.15788888888889</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>ECLPS</Name>
 					<Type>Normal</Type>
@@ -316,7 +320,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="LALUZ6" Runways="25B">
+		<Sid Name="LALUZ6" Runways="25R,25L">
 			<Sid_Transition Name="ABQ  ">
 				<SidTr_Waypoint ID="1">
 					<Name>LALUZ</Name>
@@ -377,7 +381,7 @@
 					<Longitude>-109.14353055555557</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>FORPE</Name>
 					<Type>Normal</Type>
@@ -392,7 +396,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="MAYSA7" Runways="25B">
+		<Sid Name="MAYSA7" Runways="25R,25L">
 			<Sid_Transition Name="RRSTA">
 				<SidTr_Waypoint ID="1">
 					<Name>MAYSA</Name>
@@ -407,7 +411,7 @@
 					<Longitude>-113.06960277777777</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>ZEPER</Name>
 					<Type>Normal</Type>
@@ -424,7 +428,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SNOBL6" Runways="25B">
+		<Sid Name="SNOBL6" Runways="25R,25L">
 			<Sid_Transition Name="CARTL">
 				<SidTr_Waypoint ID="1">
 					<Name>SNOBL</Name>
@@ -537,7 +541,7 @@
 					<Longitude>-110.43520000000001</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>QUAKY</Name>
 					<Type>Normal</Type>
@@ -552,7 +556,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="YOTES6" Runways="25B">
+		<Sid Name="YOTES6" Runways="25R,25L">
 			<Sid_Transition Name="GCN  ">
 				<SidTr_Waypoint ID="1">
 					<Name>YOTES</Name>
@@ -595,7 +599,7 @@
 					<Longitude>-110.43520000000001</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
 					<Name>MRBIL</Name>
 					<Type>Normal</Type>

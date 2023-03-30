@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KHEF">
-		<Sid Name="ARSNL5" Runways="16B,34B">
+		<Sid Name="ARSNL5" Runways="16R,16L,34R,34L">
 			<Sid_Transition Name="FLUKY">
 				<SidTr_Waypoint ID="1">
 					<Name>CSN </Name>
@@ -149,10 +149,12 @@
 					<Longitude>-77.03643611111112</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="16B">
+			<RunwayTransition Runway="16R,16L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00800)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -175,10 +177,12 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="34B">
+			<RunwayTransition Runway="34R,34L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00800)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -202,7 +206,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="GABBE3" Runways="16B,34B">
+		<Sid Name="GABBE3" Runways="16R,16L,34R,34L">
 			<Sid_Transition Name="FLASK">
 				<SidTr_Waypoint ID="1">
 					<Name>GABBE</Name>
@@ -363,10 +367,12 @@
 					<Longitude>-79.05903888888889</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="16B">
+			<RunwayTransition Runway="16R,16L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00710)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00710</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -379,10 +385,12 @@
 					<Longitude>-77.64134444444444</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="34B">
+			<RunwayTransition Runway="34R,34L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00710)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00710</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -396,7 +404,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="HIICH2" Runways="16B,34L,34R">
+		<Sid Name="HIICH2" Runways="16R,16L,34L,34R">
 			<Sid_Transition Name="JERES">
 				<SidTr_Waypoint ID="1">
 					<Name>HIICH</Name>
@@ -533,10 +541,12 @@
 					<Longitude>-77.03643611111112</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="16B">
+			<RunwayTransition Runway="16R,16L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00710)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00710</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -916,8 +926,8 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>DUDNG</Name>
 				<Type>Normal</Type>
-				<Latitude>38.85509444444445</Latitude>
-				<Longitude>-77.61056388888888</Longitude>
+				<Latitude>38.848675</Latitude>
+				<Longitude>-77.60609444444444</Longitude>
 				<Altitude>02600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -1011,22 +1021,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="SHYLO">
-				<AppTr_Waypoint ID="1">
-					<Name>SHYLO</Name>
-					<Type>Normal</Type>
-					<Latitude>38.99486388888889</Latitude>
-					<Longitude>-77.52714166666667</Longitude>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>GIGEY</Name>
-					<Type>Normal</Type>
-					<Latitude>38.89349444444444</Latitude>
-					<Longitude>-77.6383027777778</Longitude>
-					<Altitude>03000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-			</App_Transition>
 		</Approach>
 		<Approach Name="RNV16R">
 			<App_Waypoint> <!--ID="1"-->
@@ -1040,16 +1034,16 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>TIKTE</Name>
 				<Type>Normal</Type>
-				<Latitude>38.85510000000001</Latitude>
-				<Longitude>-77.61361111111111</Longitude>
+				<Latitude>38.84851666666667</Latitude>
+				<Longitude>-77.60885555555555</Longitude>
 				<Altitude>02600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
 				<Name>WTRUS</Name>
 				<Type>Normal</Type>
-				<Latitude>38.81636388888888</Latitude>
-				<Longitude>-77.5856361111111</Longitude>
+				<Latitude>38.81622777777777</Latitude>
+				<Longitude>-77.58553611111111</Longitude>
 				<Altitude>02200</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -1135,22 +1129,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="SHYLO">
-				<AppTr_Waypoint ID="1">
-					<Name>SHYLO</Name>
-					<Type>Normal</Type>
-					<Latitude>38.99486388888889</Latitude>
-					<Longitude>-77.52714166666667</Longitude>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>ANECU</Name>
-					<Type>Normal</Type>
-					<Latitude>38.89383055555556</Latitude>
-					<Longitude>-77.64161666666668</Longitude>
-					<Altitude>03000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-			</App_Transition>
 		</Approach>
 		<Approach Name="RNV34L">
 			<App_Waypoint> <!--ID="1"-->
@@ -1184,7 +1162,7 @@
 				<Type>Normal</Type>
 				<Latitude>38.71064166666667</Latitude>
 				<Longitude>-77.509525</Longitude>
-				<Altitude>00345</Altitude>
+				<Altitude>00361</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint ID="4">

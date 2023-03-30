@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,10 +16,56 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KMHV">
+		<Sid Name="GLAZY1" Runways="12">
+			<Sid_Transition Name="JERID">
+				<SidTr_Waypoint ID="1">
+					<Name>GLAZY</Name>
+					<Type>Normal</Type>
+					<Latitude>34.851166666666664</Latitude>
+					<Longitude>-118.21633055555556</Longitude>
+					<Altitude>08000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>JERID</Name>
+					<Type>Normal</Type>
+					<Latitude>34.87283611111111</Latitude>
+					<Longitude>-118.37852222222222</Longitude>
+					<Altitude>08500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="PMD  ">
+				<SidTr_Waypoint ID="1">
+					<Name>GLAZY</Name>
+					<Type>Normal</Type>
+					<Latitude>34.851166666666664</Latitude>
+					<Longitude>-118.21633055555556</Longitude>
+					<Altitude>08000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>PMD </Name>
+					<Type>Normal</Type>
+					<Latitude>34.631397222222226</Latitude>
+					<Longitude>-118.06382222222223</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="12">
+				<SidTr_Waypoint ID="2">
+					<Name>GLAZY</Name>
+					<Type>Normal</Type>
+					<Latitude>34.851166666666664</Latitude>
+					<Longitude>-118.21633055555556</Longitude>
+					<Altitude>08000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
 		<Sid Name="JERID5" Runways="22,26,30">
-			<RunwayTransition Runway="22 ">
+			<RunwayTransition Runway="22">
 				<SidTr_Waypoint ID="1">
 					<Name>PGRAC</Name>
 					<Type>Normal</Type>
@@ -33,7 +79,7 @@
 					<Longitude>-118.37852222222222</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26 ">
+			<RunwayTransition Runway="26">
 				<SidTr_Waypoint ID="1">
 					<Name>OFYEP</Name>
 					<Type>Normal</Type>
@@ -47,7 +93,7 @@
 					<Longitude>-118.37852222222222</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="1">
 					<Name>SHAWK</Name>
 					<Type>Normal</Type>
@@ -65,7 +111,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 1/1
+Sids: 2/2
 Stars: 0/0
 Appch: 0/0
 -->

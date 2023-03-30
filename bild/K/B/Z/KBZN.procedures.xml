@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KBZN">
 		<Sid Name="BOBKT4" Runways="12,30">
 			<Sid_Transition Name="BIL  ">
@@ -85,10 +85,12 @@
 					<Longitude>-108.29971111111111</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12 ">
+			<RunwayTransition Runway="12">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04980)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04980</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -111,7 +113,7 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="2">
 					<Name>CHURC</Name>
 					<Type>Normal</Type>
@@ -135,7 +137,7 @@
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="BZN6  " Runways="12,30">
-			<RunwayTransition Runway="12 ">
+			<RunwayTransition Runway="12">
 				<SidTr_Waypoint ID="3">
 					<Name>BRIGR</Name>
 					<Type>Normal</Type>
@@ -149,7 +151,7 @@
 					<Longitude>-111.15545555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="3">
 					<Name>BRIGR</Name>
 					<Type>Normal</Type>
@@ -165,7 +167,7 @@
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="HIA5  " Runways="12,30">
-			<RunwayTransition Runway="12 ">
+			<RunwayTransition Runway="12">
 				<SidTr_Waypoint ID="3">
 					<Name>BRIGR</Name>
 					<Type>Normal</Type>
@@ -179,7 +181,7 @@
 					<Longitude>-112.16960833333334</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="3">
 					<Name>BRIGR</Name>
 					<Type>Normal</Type>
@@ -231,10 +233,12 @@
 					<Longitude>-112.16960833333334</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12 ">
+			<RunwayTransition Runway="12">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04980)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04980</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -261,7 +265,7 @@
 					<Longitude>-111.6494638888889</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="2">
 					<Name>RANCR</Name>
 					<Type>Normal</Type>
@@ -278,7 +282,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Approach Name="ILS12">
+		<Approach Name="RNP12">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>JURAL</Name>
 				<Type>Normal</Type>
@@ -690,10 +694,118 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="GPS30">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>LEVER</Name>
+				<Type>Normal</Type>
+				<Latitude>45.57220277777778</Latitude>
+				<Longitude>-111.26684444444444</Longitude>
+				<Altitude>09900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="1"-->
+				<Name>TIGRH</Name>
+				<Type>Normal</Type>
+				<Latitude>45.60405277777778</Latitude>
+				<Longitude>-111.1294611111111</Longitude>
+				<Altitude>07900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="1"-->
+				<Name>XTRAA</Name>
+				<Type>Normal</Type>
+				<Latitude>45.67164722222222</Latitude>
+				<Longitude>-111.07548055555554</Longitude>
+				<Altitude>06700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>HAZYL</Name>
+				<Type>Normal</Type>
+				<Latitude>45.712097222222226</Latitude>
+				<Longitude>-111.09182222222222</Longitude>
+				<Altitude>05900</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>STAMS</Name>
+				<Type>Normal</Type>
+				<Latitude>45.74548055555556</Latitude>
+				<Longitude>-111.11847499999999</Longitude>
+				<Altitude>05120</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>05120</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>XUJVO</Name>
+				<Type>Normal</Type>
+				<Latitude>45.77169722222222</Latitude>
+				<Longitude>-111.13943055555556</Longitude>
+				<Altitude>04507</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>317.8</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>THESE</Name>
+				<Type>Normal</Type>
+				<Latitude>45.95044166666667</Latitude>
+				<Longitude>-111.5408611111111</Longitude>
+				<Altitude>10000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>THESE</Name>
+				<Type>Normal</Type>
+				<Latitude>45.95044166666667</Latitude>
+				<Longitude>-111.5408611111111</Longitude>
+				<Altitude>10000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="GARNT">
+				<AppTr_Waypoint ID="1">
+					<Name>GARNT</Name>
+					<Type>Normal</Type>
+					<Latitude>45.41062222222222</Latitude>
+					<Longitude>-111.20248888888888</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LEVER</Name>
+					<Type>Normal</Type>
+					<Latitude>45.57220277777778</Latitude>
+					<Longitude>-111.26684444444444</Longitude>
+					<Altitude>09900</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="RATLL">
+				<AppTr_Waypoint ID="1">
+					<Name>RATLL</Name>
+					<Type>Normal</Type>
+					<Latitude>45.57434166666667</Latitude>
+					<Longitude>-111.45354722222223</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LEVER</Name>
+					<Type>Normal</Type>
+					<Latitude>45.57220277777778</Latitude>
+					<Longitude>-111.26684444444444</Longitude>
+					<Altitude>09900</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 4/4
 Stars: 0/0
-Appch: 2/3
+Appch: 3/4
 -->

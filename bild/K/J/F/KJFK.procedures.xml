@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KJFK">
-		<Sid Name="DEEZZ5" Runways="04B,13L,13R,22B,31L,31R">
+		<Sid Name="DEEZZ5" Runways="04R,04L,13L,13R,22R,22L,31L,31R">
 			<Sid_Waypoint ID="1">
 				<Name>DEEZZ</Name>
 				<Type>Normal</Type>
@@ -77,10 +77,12 @@
 					<Longitude>-75.40037777777779</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="04B">
+			<RunwayTransition Runway="04R,04L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00520)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00520</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -95,8 +97,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="13L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00520)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00520</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -111,8 +115,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="13R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00520)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00520</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -125,7 +131,7 @@
 					<Longitude>-73.77777777777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="22B">
+			<RunwayTransition Runway="22R,22L">
 				<SidTr_Waypoint ID="2">
 					<Name>DEEZZ</Name>
 					<Type>Normal</Type>
@@ -202,7 +208,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SKORR4" Runways="31L,31R">
+		<Sid Name="SKORR5" Runways="31L,31R">
 			<Sid_Transition Name="RNGRR">
 				<SidTr_Waypoint ID="1">
 					<Name>SKORR</Name>
@@ -574,7 +580,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS04L">
+		<Approach Name="RNP04L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>REPRE</Name>
 				<Type>Normal</Type>
@@ -630,7 +636,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 		</Approach>
-		<Approach Name="ILS04R">
+		<Approach Name="RNP04R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>VERRU</Name>
 				<Type>Normal</Type>
@@ -686,7 +692,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 		</Approach>
-		<Approach Name="ILS22L">
+		<Approach Name="RNP22L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>TUSTE</Name>
 				<Type>Normal</Type>
@@ -770,7 +776,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS31L">
+		<Approach Name="RNP31L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ZACHS</Name>
 				<Type>Normal</Type>
@@ -874,7 +880,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS31R">
+		<Approach Name="RNP31R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>CATOD</Name>
 				<Type>Normal</Type>
@@ -1059,9 +1065,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>43.800000000000004</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>99</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1786,9 +1792,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>43.800000000000004</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>99</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -3093,9 +3099,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>41</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>100</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -3150,9 +3156,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>41</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>100</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KMKC">
-		<Sid Name="CHIEF7" Runways="ALL">
+		<Sid Name="CHIEF8" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>MCI </Name>
 				<Type>Normal</Type>
@@ -60,13 +60,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="LAKES3" Runways="ALL">
-			<Sid_Waypoint ID="1">
-				<Name>MCI </Name>
-				<Type>Normal</Type>
-				<Latitude>39.28528333333333</Latitude>
-				<Longitude>-94.73706111111112</Longitude>
-			</Sid_Waypoint>
+		<Sid Name="LAKES4" Runways="01,03,19,21">
 			<Sid_Transition Name="COU  ">
 				<SidTr_Waypoint ID="1">
 					<Name>MCI </Name>
@@ -159,6 +153,64 @@
 					<Longitude>-91.44309166666667</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
+			<RunwayTransition Runway="01">
+				<SidTr_Waypoint ID="1">
+					<Name>(02000)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>11.700000000000001</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="03">
+				<SidTr_Waypoint ID="1">
+					<Name>(01900)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>01900</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>37.4</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="19">
+				<SidTr_Waypoint ID="1">
+					<Name>(01157)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>01157</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>191.70000000000002</Hdg_Crs_value>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>(02500)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>215</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="21">
+				<SidTr_Waypoint ID="1">
+					<Name>(02300)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>02300</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>217.4</Hdg_Crs_value>
+				</SidTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Sid Name="RACER7" Runways="ALL">
 			<Sid_Waypoint ID="1">
@@ -320,7 +372,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="TIFTO6" Runways="ALL">
+		<Sid Name="TIFTO7" Runways="ALL">
 			<Sid_Waypoint ID="1">
 				<Name>MCI </Name>
 				<Type>Normal</Type>

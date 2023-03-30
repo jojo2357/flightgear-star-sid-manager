@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KSJC">
-		<Sid Name="ALMDN4" Runways="12B">
+		<Sid Name="ALMDN4" Runways="12R,12L">
 			<Sid_Transition Name="HRNER">
 				<SidTr_Waypoint ID="1">
 					<Name>ALMDN</Name>
@@ -147,10 +147,12 @@
 					<Longitude>-121.03583333333333</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00570)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00570</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -178,7 +180,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="BMRNG4" Runways="12B">
+		<Sid Name="BMRNG4" Runways="12R,12L">
 			<Sid_Waypoint ID="1">
 				<Name>GRRIF</Name>
 				<Type>Normal</Type>
@@ -287,10 +289,12 @@
 					<Longitude>-121.03583333333333</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00570)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00570</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -306,7 +310,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="LOUPE5" Runways="30B">
+		<Sid Name="LOUPE5" Runways="30R,30L">
 			<Sid_Waypoint ID="1">
 				<Name>SJC </Name>
 				<Type>Normal</Type>
@@ -319,7 +323,7 @@
 				<Latitude>37.61698055555555</Latitude>
 				<Longitude>-121.96580555555555</Longitude>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="3">
 					<Name>BLNCH</Name>
 					<Type>Normal</Type>
@@ -328,7 +332,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SJC3  " Runways="30B">
+		<Sid Name="SJC3  " Runways="30R,30L">
 			<Sid_Transition Name="AVE  ">
 				<SidTr_Waypoint ID="1">
 					<Name>MOONY</Name>
@@ -357,7 +361,7 @@
 					<Longitude>-120.77868333333332</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="1">
 					<Name>MOONY</Name>
 					<Type>Normal</Type>
@@ -401,8 +405,10 @@
 			</Sid_Transition>
 			<RunwayTransition Runway="30L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00570)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00570</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -435,8 +441,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="30R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00570)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00570</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -468,7 +476,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SUNOL1" Runways="12B,30B">
+		<Sid Name="SUNOL1" Runways="12R,12L,30R,30L">
 			<Sid_Transition Name="LIN  ">
 				<SidTr_Waypoint ID="1">
 					<Name>SUNOL</Name>
@@ -501,12 +509,12 @@
 					<Longitude>-121.55165277777778</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="2">
 					<Name>OAK </Name>
 					<Type>Normal</Type>
-					<Latitude>37.72592222222222</Latitude>
-					<Longitude>-122.2235861111111</Longitude>
+					<Latitude>37.725925000000004</Latitude>
+					<Longitude>-122.22359166666666</Longitude>
 					<Altitude>04500</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
@@ -519,7 +527,7 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="3">
 					<Name>SUNOL</Name>
 					<Type>Normal</Type>
@@ -530,7 +538,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="TECKY4" Runways="12B">
+		<Sid Name="TECKY4" Runways="12R,12L">
 			<Sid_Transition Name="JFREE">
 				<SidTr_Waypoint ID="1">
 					<Name>TECKY</Name>
@@ -563,10 +571,12 @@
 					<Longitude>-121.00692777777778</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00570)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00570</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -848,7 +858,7 @@
 		</Star>
 		<Star Name="SILCN6">
 		</Star>
-		<Approach Name="ILS12L">
+		<Approach Name="RNP12L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>HINIR</Name>
 				<Type>Normal</Type>
@@ -980,7 +990,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS12R">
+		<Approach Name="RNP12R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>FOXAG</Name>
 				<Type>Normal</Type>
@@ -1112,7 +1122,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS30L">
+		<Approach Name="RNP30L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>WOXAR</Name>
 				<Type>Normal</Type>
@@ -1280,7 +1290,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS30R">
+		<Approach Name="RNP30R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>TUZGY</Name>
 				<Type>Normal</Type>

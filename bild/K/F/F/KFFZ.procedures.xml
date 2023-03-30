@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,10 +16,10 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KFFZ">
-		<Sid Name="MESA1 " Runways="04B,22B">
-			<RunwayTransition Runway="04B">
+		<Sid Name="MESA1 " Runways="04R,04L,22R,22L">
+			<RunwayTransition Runway="04R,04L">
 				<SidTr_Waypoint ID="3">
 					<Name>IFNUR</Name>
 					<Type>Normal</Type>
@@ -27,7 +27,7 @@
 					<Longitude>-111.82158333333334</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="22B">
+			<RunwayTransition Runway="22R,22L">
 				<SidTr_Waypoint ID="3">
 					<Name>IFNUR</Name>
 					<Type>Normal</Type>
@@ -36,11 +36,13 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SACAT3" Runways="04B,22L,22R">
-			<RunwayTransition Runway="04B">
+		<Sid Name="SACAT3" Runways="04R,04L,22L,22R">
+			<RunwayTransition Runway="04R,04L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01900)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01900</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -55,8 +57,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="22L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01900)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01900</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -77,8 +81,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="22R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01900)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01900</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KPRC">
-		<Sid Name="WNSKI2" Runways="03B,12,21B,30">
+		<Sid Name="WNSKI2" Runways="03R,03L,12,21R,21L,30">
 			<Sid_Transition Name="FERER">
 				<SidTr_Waypoint ID="1">
 					<Name>WNSKI</Name>
@@ -113,10 +113,12 @@
 					<Longitude>-113.064625</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="03B">
+			<RunwayTransition Runway="03R,03L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(05800)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>05800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -129,7 +131,7 @@
 					<Longitude>-112.25195277777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="12 ">
+			<RunwayTransition Runway="12">
 				<SidTr_Waypoint ID="1">
 					<Name>WNSKI</Name>
 					<Type>Normal</Type>
@@ -137,10 +139,12 @@
 					<Longitude>-112.25195277777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="21B">
+			<RunwayTransition Runway="21R,21L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(05800)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>05800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -153,10 +157,12 @@
 					<Longitude>-112.25195277777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30 ">
+			<RunwayTransition Runway="30">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(05700)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>05700</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -170,7 +176,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Approach Name="ILS03R">
+		<Approach Name="RNP03R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>HOLEB</Name>
 				<Type>Normal</Type>

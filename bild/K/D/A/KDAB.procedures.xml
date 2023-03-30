@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KDAB">
-		<Sid Name="ROYES7" Runways="07B,16,25B,34">
+		<Sid Name="ROYES7" Runways="07R,07L,16,25R,25L,34">
 			<Sid_Waypoint ID="1">
 				<Name>BARBS</Name>
 				<Type>Normal</Type>
@@ -37,10 +37,12 @@
 				<Latitude>30.338880555555555</Latitude>
 				<Longitude>-81.50992777777778</Longitude>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="07B">
+			<RunwayTransition Runway="07R,07L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -53,10 +55,12 @@
 					<Longitude>-81.40875555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="16 ">
+			<RunwayTransition Runway="16">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -69,10 +73,12 @@
 					<Longitude>-81.40875555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="25B">
+			<RunwayTransition Runway="25R,25L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -85,10 +91,12 @@
 					<Longitude>-81.40875555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="34 ">
+			<RunwayTransition Runway="34">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(04000)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>04000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -161,9 +169,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>70.2</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>175</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -268,9 +276,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>250.20000000000002</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>150</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -405,9 +413,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>70.2</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>175</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -518,9 +526,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>250.20000000000002</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>150</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>

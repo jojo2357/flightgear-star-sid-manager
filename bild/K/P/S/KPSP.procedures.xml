@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KPSP">
-		<Sid Name="CATH1 " Runways="13B,31B">
+		<Sid Name="CATH1 " Runways="13R,13L,31R,31L">
 			<Sid_Waypoint ID="1">
 				<Name>EMRUD</Name>
 				<Type>Normal</Type>
@@ -31,7 +31,7 @@
 				<Latitude>33.870013888888884</Latitude>
 				<Longitude>-116.42978333333333</Longitude>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="13B">
+			<RunwayTransition Runway="13R,13L">
 				<SidTr_Waypoint ID="4">
 					<Name>EMRUD</Name>
 					<Type>Normal</Type>
@@ -39,7 +39,7 @@
 					<Longitude>-116.25157499999999</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="31B">
+			<RunwayTransition Runway="31R,31L">
 				<SidTr_Waypoint ID="2">
 					<Name>PSP </Name>
 					<Type>Normal</Type>
@@ -54,8 +54,8 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="TRM6  " Runways="13B,31B">
-			<RunwayTransition Runway="13B">
+		<Sid Name="TRM6  " Runways="13R,13L,31R,31L">
+			<RunwayTransition Runway="13R,13L">
 				<SidTr_Waypoint ID="3">
 					<Name>TRM </Name>
 					<Type>Normal</Type>
@@ -63,7 +63,7 @@
 					<Longitude>-116.16019444444446</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="31B">
+			<RunwayTransition Runway="31R,31L">
 				<SidTr_Waypoint ID="3">
 					<Name>TRM </Name>
 					<Type>Normal</Type>
@@ -364,7 +364,7 @@
 				<Longitude>-116.40248888888888</Longitude>
 			</Star_Waypoint>
 		</Star>
-		<Approach Name="ILS13R">
+		<Approach Name="RNP13R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>WASAK</Name>
 				<Type>Normal</Type>
@@ -578,7 +578,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS31L">
+		<Approach Name="GPS31L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>TEVUC</Name>
 				<Type>Normal</Type>

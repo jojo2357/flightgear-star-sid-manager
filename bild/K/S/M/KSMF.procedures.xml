@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KSMF">
-		<Sid Name="FTHIL3" Runways="17B,35B">
+		<Sid Name="FTHIL3" Runways="17R,17L,35R,35L">
 			<Sid_Transition Name="FRA  ">
 				<SidTr_Waypoint ID="1">
 					<Name>FTHIL</Name>
@@ -39,10 +39,12 @@
 					<Longitude>-119.59544444444444</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00540)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00540</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -55,10 +57,12 @@
 					<Longitude>-120.42274166666667</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00540)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00540</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -72,7 +76,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="RVRCT4" Runways="35B">
+		<Sid Name="RVRCT4" Runways="35R,35L">
 			<Sid_Transition Name="MACUS">
 				<SidTr_Waypoint ID="1">
 					<Name>RVRCT</Name>
@@ -151,10 +155,12 @@
 					<Longitude>-117.65597777777778</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00540)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00540</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -168,7 +174,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SCTWN4" Runways="17B">
+		<Sid Name="SCTWN4" Runways="17R,17L">
 			<Sid_Transition Name="MACUS">
 				<SidTr_Waypoint ID="1">
 					<Name>SCTWN</Name>
@@ -253,10 +259,12 @@
 					<Longitude>-117.65597777777778</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00540)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00540</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -454,7 +462,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS17L">
+		<Approach Name="RNP17L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>UWFUR</Name>
 				<Type>Normal</Type>
@@ -606,7 +614,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS17R">
+		<Approach Name="RNP17R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>ZOLOV</Name>
 				<Type>Normal</Type>
@@ -742,7 +750,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS35L">
+		<Approach Name="RNP35L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>WOMAV</Name>
 				<Type>Normal</Type>
@@ -868,7 +876,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS35R">
+		<Approach Name="RNP35R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>JUNBO</Name>
 				<Type>Normal</Type>
@@ -1067,6 +1075,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>DIRBE</Name>
@@ -1129,9 +1139,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>167.8</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -1158,6 +1168,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>FAPIN</Name>
@@ -1220,9 +1232,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>347.8</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>320</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1323,6 +1335,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>DIRBE</Name>
@@ -1391,9 +1405,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>167.8</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -1420,6 +1434,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>FAPIN</Name>
@@ -1488,9 +1504,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>347.8</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>320</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1593,6 +1609,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>DIRBE</Name>
@@ -1685,6 +1703,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.89111388888889</Latitude>
 					<Longitude>-121.38741666666668</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>FAPIN</Name>
@@ -1793,6 +1813,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.21525277777778</Latitude>
 					<Longitude>-121.21211666666666</Longitude>
+					<Altitude>09000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>ELMAC</Name>
@@ -1885,6 +1907,8 @@
 					<Type>Normal</Type>
 					<Latitude>38.21525277777778</Latitude>
 					<Longitude>-121.21211666666666</Longitude>
+					<Altitude>09000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="2">
 					<Name>FIPIN</Name>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,15 +16,15 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KEUG">
-		<Sid Name="EUG1  " Runways="16B,34B">
-			<RunwayTransition Runway="16B">
+		<Sid Name="EUG1  " Runways="16R,16L,34R,34L">
+			<RunwayTransition Runway="16R,16L">
 			</RunwayTransition>
-			<RunwayTransition Runway="34B">
+			<RunwayTransition Runway="34R,34L">
 			</RunwayTransition>
 		</Sid>
-		<Approach Name="ILS16L">
+		<Approach Name="RNP16L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>WENUM</Name>
 				<Type>Normal</Type>
@@ -248,7 +248,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS16R">
+		<Approach Name="RNP16R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>FIDOL</Name>
 				<Type>Normal</Type>
@@ -494,7 +494,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS34L">
+		<Approach Name="RNP34L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>ZIMKE</Name>
 				<Type>Normal</Type>
@@ -728,7 +728,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS34R">
+		<Approach Name="RNP34R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>ICAVA</Name>
 				<Type>Normal</Type>
@@ -963,9 +963,9 @@
 				<Altitude>00415</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>164</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1064,9 +1064,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>164.4</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>230</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1165,9 +1165,9 @@
 				<Altitude>00415</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="4" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>164</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1272,9 +1272,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>164.4</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>230</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KBFL">
-		<Sid Name="MARIC4" Runways="12B,30B">
+		<Sid Name="MARIC4" Runways="12R,12L,30R,30L">
 			<Sid_Transition Name="GMN  ">
 				<SidTr_Waypoint ID="1">
 					<Name>MARIC</Name>
@@ -61,7 +61,7 @@
 					<Longitude>-118.57693888888889</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="3">
 					<Name>MARIC</Name>
 					<Type>Normal</Type>
@@ -69,7 +69,7 @@
 					<Longitude>-119.26969444444444</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="3">
 					<Name>MARIC</Name>
 					<Type>Normal</Type>
@@ -78,29 +78,33 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="MEADO5" Runways="12B,30B">
-			<RunwayTransition Runway="12B">
+		<Sid Name="OILDA1" Runways="12R,12L,30R,30L">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(06000)</Name>
 					<Type>ConstHdgtoAlt</Type>
-					<Altitude>03000</Altitude>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>06000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>121.30000000000001</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(06000)</Name>
 					<Type>ConstHdgtoAlt</Type>
-					<Altitude>03000</Altitude>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>06000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>301.3</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="WRING4" Runways="12B,30B">
+		<Sid Name="WRING4" Runways="12R,12L,30R,30L">
 			<Sid_Waypoint ID="1">
 				<Name>EHF </Name>
 				<Type>Normal</Type>
@@ -115,7 +119,7 @@
 				<Altitude>05400</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</Sid_Waypoint>
-			<RunwayTransition Runway="12B">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="2">
 					<Name>EHF </Name>
 					<Type>Normal</Type>
@@ -123,7 +127,7 @@
 					<Longitude>-119.09729444444443</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="1">
 					<Name>EHF </Name>
 					<Type>Normal</Type>

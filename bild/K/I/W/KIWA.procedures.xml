@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KIWA">
 		<Sid Name="BNYRD6" Runways="ALL">
 			<Sid_Waypoint ID="1">
@@ -360,8 +360,8 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="PXR1  " Runways="12B,30B">
-			<RunwayTransition Runway="12B">
+		<Sid Name="PXR1  " Runways="12R,12L,30R,30L">
+			<RunwayTransition Runway="12R,12L">
 				<SidTr_Waypoint ID="1">
 					<Name>IWA </Name>
 					<Type>Normal</Type>
@@ -377,7 +377,7 @@
 					<Longitude>-111.97020277777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="30B">
+			<RunwayTransition Runway="30R,30L">
 				<SidTr_Waypoint ID="2">
 					<Name>IWA </Name>
 					<Type>Normal</Type>
@@ -900,7 +900,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS30C">
+		<Approach Name="RNP30C">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>GYANT</Name>
 				<Type>Normal</Type>
@@ -1011,9 +1011,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>302.6</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>145</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -1180,9 +1180,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>302.6</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>145</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -1875,9 +1875,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>301.8</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>145</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>

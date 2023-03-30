@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KAPC">
-		<Sid Name="LIZRD5" Runways="01B,19B,24">
+		<Sid Name="LIZRD5" Runways="01R,01L,19R,19L,24">
 			<Sid_Transition Name="CROIT">
 				<SidTr_Waypoint ID="1">
 					<Name>LIZRD</Name>
@@ -53,8 +53,8 @@
 				<SidTr_Waypoint ID="3">
 					<Name>OAK </Name>
 					<Type>Normal</Type>
-					<Latitude>37.72592222222222</Latitude>
-					<Longitude>-122.2235861111111</Longitude>
+					<Latitude>37.725925000000004</Latitude>
+					<Longitude>-122.22359166666666</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
 			<Sid_Transition Name="PYE  ">
@@ -79,10 +79,12 @@
 					<Longitude>-122.86782777777778</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01B">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00436)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00436</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -103,7 +105,7 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="2">
 					<Name>LIZRD</Name>
 					<Type>Normal</Type>
@@ -113,10 +115,12 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="24 ">
+			<RunwayTransition Runway="24">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00436)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00436</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -132,11 +136,13 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="NAPAA4" Runways="01B,06,19B,24">
-			<RunwayTransition Runway="01B">
+		<Sid Name="NAPAA4" Runways="01R,01L,06,19R,19L,24">
+			<RunwayTransition Runway="01R,01L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00436)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00436</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -149,10 +155,12 @@
 					<Longitude>-122.37315277777778</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="06 ">
+			<RunwayTransition Runway="06">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00700)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00700</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -165,10 +173,12 @@
 					<Longitude>-122.37315277777778</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="19B">
+			<RunwayTransition Runway="19R,19L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00436)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00436</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -181,7 +191,7 @@
 					<Longitude>-122.37315277777778</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="24 ">
+			<RunwayTransition Runway="24">
 				<SidTr_Waypoint ID="1">
 					<Name>SGD </Name>
 					<Type>Normal</Type>
@@ -377,7 +387,7 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="24 ">
+			<RunwayTransition Runway="24">
 				<SidTr_Waypoint ID="2">
 					<Name>KLARK</Name>
 					<Type>Normal</Type>

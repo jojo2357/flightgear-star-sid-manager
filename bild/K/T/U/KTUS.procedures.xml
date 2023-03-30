@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KTUS">
 		<Sid Name="BURRO4" Runways="11L">
 			<Sid_Transition Name="BBALL">
@@ -141,8 +141,10 @@
 			</Sid_Transition>
 			<RunwayTransition Runway="11L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(03200)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>03200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -156,7 +158,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="TUS8  " Runways="03,11B,21,29B">
+		<Sid Name="TUS8  " Runways="03,11R,11L,21,29R,29L">
 			<Sid_Transition Name="BAYBI">
 				<SidTr_Waypoint ID="1">
 					<Name>TUS </Name>
@@ -265,7 +267,7 @@
 					<Longitude>-109.26308888888889</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="03 ">
+			<RunwayTransition Runway="03">
 				<SidTr_Waypoint ID="2">
 					<Name>TUS </Name>
 					<Type>Normal</Type>
@@ -273,7 +275,7 @@
 					<Longitude>-110.91485555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="11B">
+			<RunwayTransition Runway="11R,11L">
 				<SidTr_Waypoint ID="1">
 					<Name>TUS </Name>
 					<Type>Normal</Type>
@@ -281,7 +283,7 @@
 					<Longitude>-110.91485555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="21 ">
+			<RunwayTransition Runway="21">
 				<SidTr_Waypoint ID="2">
 					<Name>TUS </Name>
 					<Type>Normal</Type>
@@ -289,7 +291,7 @@
 					<Longitude>-110.91485555555556</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="29B">
+			<RunwayTransition Runway="29R,29L">
 				<SidTr_Waypoint ID="2">
 					<Name>TUS </Name>
 					<Type>Normal</Type>
@@ -470,7 +472,7 @@
 				<Longitude>-111.07803333333332</Longitude>
 			</Star_Waypoint>
 		</Star>
-		<Approach Name="ILS11L">
+		<Approach Name="GPS11L">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>LIPTE</Name>
 				<Type>Normal</Type>
@@ -620,7 +622,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS29R">
+		<Approach Name="GPS29R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ATOGE</Name>
 				<Type>Normal</Type>
@@ -791,9 +793,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>123</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>300</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -814,38 +816,6 @@
 				<Altitude>06000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Transition Name="DINGO">
-				<AppTr_Waypoint ID="1">
-					<Name>DINGO</Name>
-					<Type>Normal</Type>
-					<Latitude>32.49565</Latitude>
-					<Longitude>-111.54436666666668</Longitude>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>TACUB</Name>
-					<Type>Normal</Type>
-					<Latitude>32.43848333333333</Latitude>
-					<Longitude>-111.31974166666667</Longitude>
-					<Altitude>08000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>TACUB</Name>
-					<Type>Normal</Type>
-					<Latitude>32.43848333333333</Latitude>
-					<Longitude>-111.31974166666667</Longitude>
-					<Altitude>06000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="4">
-					<Name>LIPTE</Name>
-					<Type>Normal</Type>
-					<Latitude>32.30470833333333</Latitude>
-					<Longitude>-111.16141111111112</Longitude>
-					<Altitude>06000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-			</App_Transition>
 			<App_Transition Name="SSAND">
 				<AppTr_Waypoint ID="1">
 					<Name>SSAND</Name>
@@ -870,6 +840,24 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="4">
+					<Name>LIPTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.30470833333333</Latitude>
+					<Longitude>-111.16141111111112</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TACUB">
+				<AppTr_Waypoint ID="1">
+					<Name>TACUB</Name>
+					<Type>Normal</Type>
+					<Latitude>32.43848333333333</Latitude>
+					<Longitude>-111.31974166666667</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
 					<Name>LIPTE</Name>
 					<Type>Normal</Type>
 					<Latitude>32.30470833333333</Latitude>
@@ -936,9 +924,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>123</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>300</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -959,38 +947,6 @@
 				<Altitude>06000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Transition Name="DINGO">
-				<AppTr_Waypoint ID="1">
-					<Name>DINGO</Name>
-					<Type>Normal</Type>
-					<Latitude>32.49565</Latitude>
-					<Longitude>-111.54436666666668</Longitude>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>TACUB</Name>
-					<Type>Normal</Type>
-					<Latitude>32.43848333333333</Latitude>
-					<Longitude>-111.31974166666667</Longitude>
-					<Altitude>08000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>TACUB</Name>
-					<Type>Normal</Type>
-					<Latitude>32.43848333333333</Latitude>
-					<Longitude>-111.31974166666667</Longitude>
-					<Altitude>06000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="4">
-					<Name>LIPTE</Name>
-					<Type>Normal</Type>
-					<Latitude>32.30470833333333</Latitude>
-					<Longitude>-111.16141111111112</Longitude>
-					<Altitude>06000</Altitude>
-					<AltitudeRestriction>above</AltitudeRestriction>
-				</AppTr_Waypoint>
-			</App_Transition>
 			<App_Transition Name="SSAND">
 				<AppTr_Waypoint ID="1">
 					<Name>SSAND</Name>
@@ -1015,6 +971,24 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="4">
+					<Name>LIPTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.30470833333333</Latitude>
+					<Longitude>-111.16141111111112</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TACUB">
+				<AppTr_Waypoint ID="1">
+					<Name>TACUB</Name>
+					<Type>Normal</Type>
+					<Latitude>32.43848333333333</Latitude>
+					<Longitude>-111.31974166666667</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
 					<Name>LIPTE</Name>
 					<Type>Normal</Type>
 					<Latitude>32.30470833333333</Latitude>
@@ -1640,6 +1614,135 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="VOR11L">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>LIPTE</Name>
+				<Type>Normal</Type>
+				<Latitude>32.30470833333333</Latitude>
+				<Longitude>-111.16141111111112</Longitude>
+				<Altitude>06000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="1"-->
+				<Name>WASON</Name>
+				<Type>Normal</Type>
+				<Latitude>32.24617222222222</Latitude>
+				<Longitude>-111.09235833333334</Longitude>
+				<Altitude>05500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="1"-->
+				<Name>CALLS</Name>
+				<Type>Normal</Type>
+				<Latitude>32.21870833333334</Latitude>
+				<Longitude>-111.06000277777778</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>POCIB</Name>
+				<Type>Normal</Type>
+				<Latitude>32.1951</Latitude>
+				<Longitude>-111.03221111111111</Longitude>
+				<Altitude>04600</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>PARCS</Name>
+				<Type>Normal</Type>
+				<Latitude>32.155030555555555</Latitude>
+				<Longitude>-110.98509722222222</Longitude>
+				<Altitude>03480</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW11L</Name>
+				<Type>Runway</Type>
+				<Latitude>32.12336944444444</Latitude>
+				<Longitude>-110.9479138888889</Longitude>
+				<Altitude>02633</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>123.10000000000001</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>300</Hdg_Crs_value>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>RYN</Name>
+				<Type>Normal</Type>
+				<Latitude>32.13878888888889</Latitude>
+				<Longitude>-111.16149722222222</Longitude>
+				<Altitude>06000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>RYN</Name>
+				<Type>Normal</Type>
+				<Latitude>32.13878888888889</Latitude>
+				<Longitude>-111.16149722222222</Longitude>
+				<Altitude>06000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="SSAND">
+				<AppTr_Waypoint ID="1">
+					<Name>SSAND</Name>
+					<Type>Normal</Type>
+					<Latitude>32.159274999999994</Latitude>
+					<Longitude>-110.33089444444444</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>TUS </Name>
+					<Type>Normal</Type>
+					<Latitude>32.09520277777778</Latitude>
+					<Longitude>-110.91485555555556</Longitude>
+					<Altitude>10700</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>LIPTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.30470833333333</Latitude>
+					<Longitude>-111.16141111111112</Longitude>
+					<Altitude>07500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="4">
+					<Name>LIPTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.30470833333333</Latitude>
+					<Longitude>-111.16141111111112</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TACUB">
+				<AppTr_Waypoint ID="1">
+					<Name>TACUB</Name>
+					<Type>Normal</Type>
+					<Latitude>32.43848333333333</Latitude>
+					<Longitude>-111.31974166666667</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>LIPTE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.30470833333333</Latitude>
+					<Longitude>-111.16141111111112</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 		<Approach Name="VOR29R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ILEEN</Name>
@@ -1725,5 +1828,5 @@
 <!-- Completion Stats:
 Sids: 3/3
 Stars: 2/2
-Appch: 9/9
+Appch: 10/10
 -->

@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,10 +16,10 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KJAC">
 		<Sid Name="ALPIN3" Runways="19">
-			<RunwayTransition Runway="19 ">
+			<RunwayTransition Runway="19">
 				<SidTr_Waypoint ID="2">
 					<Name>KICNE</Name>
 					<Type>Normal</Type>
@@ -101,10 +101,12 @@
 					<Longitude>-111.8559722222222</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01 ">
+			<RunwayTransition Runway="01">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(06951)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>06951</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -127,7 +129,7 @@
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="GEYSR6" Runways="01">
-			<RunwayTransition Runway="01 ">
+			<RunwayTransition Runway="01">
 				<SidTr_Waypoint ID="1">
 					<Name>GIYER</Name>
 					<Type>Normal</Type>
@@ -164,7 +166,7 @@
 				<Longitude>-112.06391666666666</Longitude>
 			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="ILS01">
+		<Approach Name="GPS01">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>JEVIM</Name>
 				<Type>Normal</Type>
@@ -324,7 +326,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS01">
+		<Approach Name="RNP01">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>JEVIM</Name>
 				<Type>Normal</Type>
@@ -490,7 +492,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS19">
+		<Approach Name="GPS19">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>PREMO</Name>
 				<Type>Normal</Type>
@@ -750,7 +752,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS19">
+		<Approach Name="GPS19">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ZIBIV</Name>
 				<Type>Normal</Type>

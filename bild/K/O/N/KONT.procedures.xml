@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,9 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KONT">
-		<Sid Name="POM1  " Runways="08B,26B">
+		<Sid Name="POM1  " Runways="08R,08L,26R,26L">
 			<Sid_Transition Name="AVE  ">
 				<SidTr_Waypoint ID="1">
 					<Name>POM </Name>
@@ -151,7 +151,7 @@
 					<Longitude>-118.8613611111111</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 				<SidTr_Waypoint ID="3">
 					<Name>POM </Name>
 					<Type>Normal</Type>
@@ -161,7 +161,7 @@
 					<AltitudeRestriction>below</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="2">
 					<Name>POM </Name>
 					<Type>Normal</Type>
@@ -172,7 +172,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="RAJEE3" Runways="08B,26B">
+		<Sid Name="RAJEE3" Runways="08R,08L,26R,26L">
 			<Sid_Transition Name="AVRRY">
 				<SidTr_Waypoint ID="1">
 					<Name>RAJEE</Name>
@@ -403,10 +403,12 @@
 					<Longitude>-117.1162361111111</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01460)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01460</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -429,10 +431,12 @@
 					<AltitudeRestriction>below</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01460)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01460</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -456,7 +460,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="SNSHN5" Runways="08B,26B">
+		<Sid Name="SNSHN5" Runways="08R,08L,26R,26L">
 			<Sid_Transition Name="BEALE">
 				<SidTr_Waypoint ID="1">
 					<Name>SNSHN</Name>
@@ -755,10 +759,12 @@
 					<Longitude>-116.64469444444444</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="08B">
+			<RunwayTransition Runway="08R,08L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01460)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01460</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -787,10 +793,12 @@
 					<Longitude>-117.84032777777777</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="26B">
+			<RunwayTransition Runway="26R,26L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01460)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01460</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -1194,7 +1202,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS08L">
+		<Approach Name="RNP08L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>LOGJM</Name>
 				<Type>Normal</Type>
@@ -1366,7 +1374,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS08R">
+		<Approach Name="RNP08R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>STAAG</Name>
 				<Type>Normal</Type>
@@ -1530,7 +1538,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS26L">
+		<Approach Name="RNP26L">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>TESRE</Name>
 				<Type>Normal</Type>
@@ -1708,7 +1716,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS26R">
+		<Approach Name="RNP26R">
 			<App_Waypoint> <!--ID="2"-->
 				<Name>SCRIM</Name>
 				<Type>Normal</Type>

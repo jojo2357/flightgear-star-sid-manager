@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,13 +16,15 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KBFI">
 		<Sid Name="CBAIN1" Runways="32L">
 			<RunwayTransition Runway="32L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00540)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00540</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -78,15 +80,17 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="NEEDL1" Runways="32B">
-			<RunwayTransition Runway="32B">
+		<Sid Name="NEEDL1" Runways="32R,32L">
+			<RunwayTransition Runway="32R,32L">
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="NRVNA1" Runways="14R">
 			<RunwayTransition Runway="14R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(00700)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>00700</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -534,7 +538,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS14R">
+		<Approach Name="RNP14R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>JAMRO</Name>
 				<Type>Normal</Type>
@@ -644,8 +648,8 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ISOGE</Name>
 				<Type>Normal</Type>
-				<Latitude>47.64556944444444</Latitude>
-				<Longitude>-122.40037222222223</Longitude>
+				<Latitude>47.68889166666666</Latitude>
+				<Longitude>-122.4372388888889</Longitude>
 				<Altitude>01600</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
@@ -675,20 +679,27 @@
 				<Altitude>01500</Altitude>
 				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>BLAKO</Name>
-				<Type>Normal</Type>
-				<Latitude>47.32660277777778</Latitude>
-				<Longitude>-122.06813333333332</Longitude>
-				<Altitude>06400</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
+			<App_Waypoint> <!-- ID="6" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>206</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="7"-->
-				<Name>BLAKO</Name>
+				<Name>CIDUG</Name>
 				<Type>Normal</Type>
-				<Latitude>47.32660277777778</Latitude>
-				<Longitude>-122.06813333333332</Longitude>
-				<Altitude>06400</Altitude>
+				<Latitude>47.007802777777776</Latitude>
+				<Longitude>-122.38273055555555</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="8"-->
+				<Name>CIDUG</Name>
+				<Type>Normal</Type>
+				<Latitude>47.007802777777776</Latitude>
+				<Longitude>-122.38273055555555</Longitude>
+				<Altitude>05000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Transition Name="SEA  ">
@@ -701,16 +712,16 @@
 				<AppTr_Waypoint ID="2">
 					<Name>ISOGE</Name>
 					<Type>Normal</Type>
-					<Latitude>47.64556944444444</Latitude>
-					<Longitude>-122.40037222222223</Longitude>
+					<Latitude>47.68889166666666</Latitude>
+					<Longitude>-122.4372388888889</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="3">
 					<Name>ISOGE</Name>
 					<Type>Normal</Type>
-					<Latitude>47.64556944444444</Latitude>
-					<Longitude>-122.40037222222223</Longitude>
+					<Latitude>47.68889166666666</Latitude>
+					<Longitude>-122.4372388888889</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -720,19 +731,19 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>LACKR</Name>
 				<Type>Normal</Type>
-				<Latitude>47.37399722222222</Latitude>
-				<Longitude>-122.17109166666667</Longitude>
+				<Latitude>47.374025</Latitude>
+				<Longitude>-122.17101944444444</Longitude>
 				<Altitude>01800</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
 				<Name>DUANE</Name>
 				<Type>Normal</Type>
-				<Latitude>47.446372222222216</Latitude>
-				<Longitude>-122.23191944444444</Longitude>
+				<Latitude>47.442875</Latitude>
+				<Longitude>-122.22891944444444</Longitude>
 				<Altitude>01800</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Altitude>01743</Altitude>
+				<Altitude>01800</Altitude>
 				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
@@ -743,19 +754,11 @@
 				<Altitude>00071</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>ConstHdgtoAlt</Type>
-				<Altitude>00700</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
-				<Hdg_Crs_value>315</Hdg_Crs_value>
-			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
-				<Hdg_Crs>1</Hdg_Crs>
-				<Hdg_Crs_value>290</Hdg_Crs_value>
+				<Hdg_Crs_value>265</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->
@@ -779,8 +782,8 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ISOGE</Name>
 				<Type>Normal</Type>
-				<Latitude>47.64556944444444</Latitude>
-				<Longitude>-122.40037222222223</Longitude>
+				<Latitude>47.68889166666666</Latitude>
+				<Longitude>-122.4372388888889</Longitude>
 				<Altitude>02200</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -795,8 +798,8 @@
 			<App_Waypoint> <!--ID="2"-->
 				<Name>SOTEE</Name>
 				<Type>Normal</Type>
-				<Latitude>47.58390000000001</Latitude>
-				<Longitude>-122.34806111111111</Longitude>
+				<Latitude>47.58698888888889</Latitude>
+				<Longitude>-122.35068888888888</Longitude>
 				<Altitude>01080</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -816,20 +819,27 @@
 				<Altitude>01500</Altitude>
 				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>BLAKO</Name>
-				<Type>Normal</Type>
-				<Latitude>47.32660277777778</Latitude>
-				<Longitude>-122.06813333333332</Longitude>
-				<Altitude>06400</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
+			<App_Waypoint> <!-- ID="6" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>206</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="7"-->
-				<Name>BLAKO</Name>
+				<Name>CIDUG</Name>
 				<Type>Normal</Type>
-				<Latitude>47.32660277777778</Latitude>
-				<Longitude>-122.06813333333332</Longitude>
-				<Altitude>06400</Altitude>
+				<Latitude>47.007802777777776</Latitude>
+				<Longitude>-122.38273055555555</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="8"-->
+				<Name>CIDUG</Name>
+				<Type>Normal</Type>
+				<Latitude>47.007802777777776</Latitude>
+				<Longitude>-122.38273055555555</Longitude>
+				<Altitude>05000</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Transition Name="SEA  ">
@@ -842,16 +852,16 @@
 				<AppTr_Waypoint ID="2">
 					<Name>ISOGE</Name>
 					<Type>Normal</Type>
-					<Latitude>47.64556944444444</Latitude>
-					<Longitude>-122.40037222222223</Longitude>
+					<Latitude>47.68889166666666</Latitude>
+					<Longitude>-122.4372388888889</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint ID="3">
 					<Name>ISOGE</Name>
 					<Type>Normal</Type>
-					<Latitude>47.64556944444444</Latitude>
-					<Longitude>-122.40037222222223</Longitude>
+					<Latitude>47.68889166666666</Latitude>
+					<Longitude>-122.4372388888889</Longitude>
 					<Altitude>02200</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -861,16 +871,16 @@
 			<App_Waypoint> <!--ID="1"-->
 				<Name>LACKR</Name>
 				<Type>Normal</Type>
-				<Latitude>47.37399722222222</Latitude>
-				<Longitude>-122.17109166666667</Longitude>
+				<Latitude>47.374025</Latitude>
+				<Longitude>-122.17101944444444</Longitude>
 				<Altitude>02600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
 				<Name>DUANE</Name>
 				<Type>Normal</Type>
-				<Latitude>47.446372222222216</Latitude>
-				<Longitude>-122.23191944444444</Longitude>
+				<Latitude>47.442875</Latitude>
+				<Longitude>-122.22891944444444</Longitude>
 				<Altitude>01800</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -882,19 +892,11 @@
 				<Altitude>00071</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
-				<Type>ConstHdgtoAlt</Type>
-				<Altitude>00700</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
-				<Hdg_Crs_value>315</Hdg_Crs_value>
-			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
-				<Hdg_Crs>1</Hdg_Crs>
-				<Hdg_Crs_value>290</Hdg_Crs_value>
+				<Hdg_Crs_value>265</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="6"-->

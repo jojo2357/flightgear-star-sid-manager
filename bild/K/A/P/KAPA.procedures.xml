@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,27 +16,29 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KAPA">
-		<Sid Name="DENVR2" Runways="10,17B,28,35B">
-			<RunwayTransition Runway="10 ">
+		<Sid Name="DENVR2" Runways="10,17R,17L,28,35R,35L">
+			<RunwayTransition Runway="10">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(06600)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>06600</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>100</Hdg_Crs_value>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 			</RunwayTransition>
-			<RunwayTransition Runway="28 ">
+			<RunwayTransition Runway="28">
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="ECHOO1" Runways="17B,35B">
+		<Sid Name="ECHOO1" Runways="17R,17L,35R,35L">
 			<Sid_Transition Name="DUUZE">
 				<SidTr_Waypoint ID="1">
 					<Name>ECHOO</Name>
@@ -129,7 +131,7 @@
 					<Longitude>-101.37146944444444</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
 					<Name>BAPME</Name>
 					<Type>Normal</Type>
@@ -145,7 +147,7 @@
 					<Longitude>-104.14313611111112</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
 					<Name>BAPME</Name>
 					<Type>Normal</Type>
@@ -162,7 +164,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="MRSHH2" Runways="17B,35B">
+		<Sid Name="MRSHH2" Runways="17R,17L,35R,35L">
 			<Sid_Transition Name="CHUWY">
 				<SidTr_Waypoint ID="1">
 					<Name>MRSHH</Name>
@@ -287,7 +289,7 @@
 					<Longitude>-105.36733055555554</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
 					<Name>KRTMN</Name>
 					<Type>Normal</Type>
@@ -303,7 +305,7 @@
 					<Longitude>-104.6821388888889</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
 					<Name>KRTMN</Name>
 					<Type>Normal</Type>
@@ -772,7 +774,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="SKYEE1" Runways="17B,35B">
+		<Sid Name="SKYEE1" Runways="17R,17L,35R,35L">
 			<Sid_Transition Name="DAAYE">
 				<SidTr_Waypoint ID="1">
 					<Name>SKYEE</Name>
@@ -903,7 +905,7 @@
 					<Longitude>-103.51949722222223</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
 					<Name>SATLE</Name>
 					<Type>Normal</Type>
@@ -919,7 +921,7 @@
 					<Longitude>-104.84044999999999</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
 					<Name>SATLE</Name>
 					<Type>Normal</Type>
@@ -936,7 +938,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="WNGSS1" Runways="17B,35B">
+		<Sid Name="WNGSS1" Runways="17R,17L,35R,35L">
 			<Sid_Transition Name="CHNGY">
 				<SidTr_Waypoint ID="1">
 					<Name>WNGSS</Name>
@@ -1119,7 +1121,7 @@
 					<Longitude>-106.67128611111112</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="17B">
+			<RunwayTransition Runway="17R,17L">
 				<SidTr_Waypoint ID="1">
 					<Name>BUMPZ</Name>
 					<Type>Normal</Type>
@@ -1137,7 +1139,7 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="35B">
+			<RunwayTransition Runway="35R,35L">
 				<SidTr_Waypoint ID="1">
 					<Name>BUMPZ</Name>
 					<Type>Normal</Type>
@@ -2451,9 +2453,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>160</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -2511,7 +2513,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
-				<Name>YAGUG</Name>
+				<Name>RONNI</Name>
 				<Type>Normal</Type>
 				<Latitude>39.499769444444446</Latitude>
 				<Longitude>-104.84757777777777</Longitude>
@@ -2542,9 +2544,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>350</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>160</Hdg_Crs_value>
 				<Sp_Turn>Right</Sp_Turn>
@@ -2594,7 +2596,7 @@
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
-				<Name>CENTN</Name>
+				<Name>AFTRR</Name>
 				<Type>Normal</Type>
 				<Latitude>39.63959722222222</Latitude>
 				<Longitude>-104.8540388888889</Longitude>
@@ -2652,7 +2654,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="2"-->
-				<Name>YAGUG</Name>
+				<Name>RONNI</Name>
 				<Type>Normal</Type>
 				<Latitude>39.499769444444446</Latitude>
 				<Longitude>-104.84757777777777</Longitude>

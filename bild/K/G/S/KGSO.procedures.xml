@@ -1,7 +1,7 @@
 <!--
   ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
   ~
-  ~ Copyright (c) 2022 jojo2357
+  ~ Copyright (c) 2023 jojo2357
   ~
   ~  This program is free software: you can redistribute it and/or modify
   ~  it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4822">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
 	<Airport ICAOcode="KGSO">
 		<Sid Name="QUAK7 " Runways="ALL">
 			<Sid_Waypoint ID="1">
@@ -132,7 +132,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="TRI9  " Runways="05B,14,23B,32">
+		<Sid Name="TRI9  " Runways="05R,05L,14,23R,23L,32">
 			<Sid_Waypoint ID="1">
 				<Name>GSO </Name>
 				<Type>Normal</Type>
@@ -201,16 +201,16 @@
 					<Longitude>-80.919175</Longitude>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="05B">
+			<RunwayTransition Runway="05R,05L">
 			</RunwayTransition>
-			<RunwayTransition Runway="14 ">
+			<RunwayTransition Runway="14">
 			</RunwayTransition>
-			<RunwayTransition Runway="23B">
+			<RunwayTransition Runway="23R,23L">
 			</RunwayTransition>
-			<RunwayTransition Runway="32 ">
+			<RunwayTransition Runway="32">
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="TRSHA1" Runways="05L,05R,14,23B,32">
+		<Sid Name="TRSHA1" Runways="05L,05R,14,23R,23L,32">
 			<Sid_Waypoint ID="1">
 				<Name>WHAYN</Name>
 				<Type>Normal</Type>
@@ -265,8 +265,10 @@
 			</Sid_Transition>
 			<RunwayTransition Runway="05L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01440)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01440</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -281,8 +283,10 @@
 			</RunwayTransition>
 			<RunwayTransition Runway="05R">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01440)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01440</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -295,10 +299,12 @@
 					<Longitude>-80.34366666666666</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="14 ">
+			<RunwayTransition Runway="14">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01440)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01440</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -311,10 +317,12 @@
 					<Longitude>-80.34366666666666</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="23B">
+			<RunwayTransition Runway="23R,23L">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01440)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01440</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -327,10 +335,12 @@
 					<Longitude>-80.34366666666666</Longitude>
 				</SidTr_Waypoint>
 			</RunwayTransition>
-			<RunwayTransition Runway="32 ">
+			<RunwayTransition Runway="32">
 				<SidTr_Waypoint ID="1">
-					<Name>VECTORS</Name>
+					<Name>(01440)</Name>
 					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
 					<Altitude>01440</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
@@ -625,9 +635,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>54</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>330</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -732,9 +742,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>54</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>139.5</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -839,9 +849,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>325.20000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>307</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -908,9 +918,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>325.20000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>307</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1007,9 +1017,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>54</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>330</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
@@ -1112,9 +1122,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>54</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>139.5</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1225,9 +1235,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>325.20000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>307</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1300,9 +1310,9 @@
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>325.20000000000005</Hdg_Crs_value>
 			</App_Waypoint>
-			<App_Waypoint ID="5">
-				<Name>VECTORS</Name>
-				<Type>Vectors</Type>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>307</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
