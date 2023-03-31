@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
 	<Airport ICAOcode="KBLI">
 		<Sid Name="KIENO6" Runways="16,34">
 			<Sid_Transition Name="CVV  ">
@@ -85,6 +85,32 @@
 			</RunwayTransition>
 		</Sid>
 		<Star Name="MADEE4">
+			<Star_Transition Name="PAE  ">
+				<StarTr_Waypoint ID="1">
+					<Name>PAE </Name>
+					<Type>Normal</Type>
+					<Latitude>47.91983333333333</Latitude>
+					<Longitude>-122.27780277777777</Longitude>
+					<Altitude>16000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>EVRTT</Name>
+					<Type>Normal</Type>
+					<Latitude>48.03429444444444</Latitude>
+					<Longitude>-122.31088333333334</Longitude>
+					<Altitude>14000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="3">
+					<Name>MADEE</Name>
+					<Type>Normal</Type>
+					<Latitude>48.34491666666667</Latitude>
+					<Longitude>-122.40133611111112</Longitude>
+					<Altitude>07000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
+			</Star_Transition>
 		</Star>
 		<Approach Name="RNP16">
 			<App_Waypoint> <!--ID="2"-->
@@ -306,6 +332,178 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="ILS16">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>SECOG</Name>
+				<Type>Normal</Type>
+				<Latitude>48.99522222222222</Latitude>
+				<Longitude>-122.538325</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WUGUT</Name>
+				<Type>Normal</Type>
+				<Latitude>48.89528055555556</Latitude>
+				<Longitude>-122.537925</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW16</Name>
+				<Type>Runway</Type>
+				<Latitude>48.801872222222215</Latitude>
+				<Longitude>-122.53755555555556</Longitude>
+				<Altitude>00215</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>163.9</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>275</Hdg_Crs_value>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>TECUV</Name>
+				<Type>Normal</Type>
+				<Latitude>48.852786111111115</Latitude>
+				<Longitude>-122.96755277777778</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>TECUV</Name>
+				<Type>Normal</Type>
+				<Latitude>48.852786111111115</Latitude>
+				<Longitude>-122.96755277777778</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="HUH  ">
+				<AppTr_Waypoint ID="1">
+					<Name>HUH </Name>
+					<Type>Normal</Type>
+					<Latitude>48.94528611111111</Latitude>
+					<Longitude>-122.57925555555555</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>SECOG</Name>
+					<Type>Normal</Type>
+					<Latitude>48.99522222222222</Latitude>
+					<Longitude>-122.538325</Longitude>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>SECOG</Name>
+					<Type>Normal</Type>
+					<Latitude>48.99522222222222</Latitude>
+					<Longitude>-122.538325</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="LOC16">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>SECOG</Name>
+				<Type>Normal</Type>
+				<Latitude>48.99522222222222</Latitude>
+				<Longitude>-122.538325</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WUGUT</Name>
+				<Type>Normal</Type>
+				<Latitude>48.89528055555556</Latitude>
+				<Longitude>-122.537925</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>CEPUM</Name>
+				<Type>Normal</Type>
+				<Latitude>48.82185833333334</Latitude>
+				<Longitude>-122.53763611111111</Longitude>
+				<Altitude>00580</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW16</Name>
+				<Type>Runway</Type>
+				<Latitude>48.801872222222215</Latitude>
+				<Longitude>-122.53755555555556</Longitude>
+				<Altitude>00215</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>163.9</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>275</Hdg_Crs_value>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>TECUV</Name>
+				<Type>Normal</Type>
+				<Latitude>48.852786111111115</Latitude>
+				<Longitude>-122.96755277777778</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>TECUV</Name>
+				<Type>Normal</Type>
+				<Latitude>48.852786111111115</Latitude>
+				<Longitude>-122.96755277777778</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="HUH  ">
+				<AppTr_Waypoint ID="1">
+					<Name>HUH </Name>
+					<Type>Normal</Type>
+					<Latitude>48.94528611111111</Latitude>
+					<Longitude>-122.57925555555555</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>SECOG</Name>
+					<Type>Normal</Type>
+					<Latitude>48.99522222222222</Latitude>
+					<Longitude>-122.538325</Longitude>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>SECOG</Name>
+					<Type>Normal</Type>
+					<Latitude>48.99522222222222</Latitude>
+					<Longitude>-122.538325</Longitude>
+					<Altitude>02000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 		<Approach Name="GPS16">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>SECOG</Name>
@@ -475,5 +673,5 @@
 <!-- Completion Stats:
 Sids: 1/1
 Stars: 1/1
-Appch: 4/4
+Appch: 6/6
 -->

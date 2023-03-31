@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
 	<Airport ICAOcode="KFCM">
 		<Sid Name="COULT7" Runways="10R,10L,18,28R,28L,36">
 			<Sid_Transition Name="DLL  ">
@@ -96,7 +96,7 @@
 				</SidTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
-		<Sid Name="DWN8  " Runways="10R,10L,28L,28R">
+		<Sid Name="DWN8  " Runways="10R,10L,28L,28R,36">
 			<Sid_Waypoint ID="1">
 				<Name>MSP </Name>
 				<Type>Normal</Type>
@@ -124,7 +124,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="KBREW1" Runways="10R,10L,28L,28R">
+		<Sid Name="KBREW1" Runways="10R,10L,28L,28R,36">
 			<Sid_Waypoint ID="1">
 				<Name>GEP </Name>
 				<Type>Normal</Type>
@@ -168,7 +168,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="ORSKY3" Runways="10R,10L,28L,28R">
+		<Sid Name="ORSKY3" Runways="10R,10L,28L,28R,36">
 			<Sid_Waypoint ID="1">
 				<Name>MSP </Name>
 				<Type>Normal</Type>
@@ -220,7 +220,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="RST1  " Runways="10R,10L,28L,28R">
+		<Sid Name="RST1  " Runways="10R,10L,28L,28R,36">
 			<Sid_Waypoint ID="1">
 				<Name>FGT </Name>
 				<Type>Normal</Type>
@@ -268,7 +268,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="SCHEP1" Runways="10R,10L,28L,28R">
+		<Sid Name="SCHEP1" Runways="10R,10L,28L,28R,36">
 			<Sid_Waypoint ID="1">
 				<Name>HUGIR</Name>
 				<Type>Normal</Type>
@@ -635,6 +635,26 @@
 				<Latitude>45.14568611111111</Latitude>
 				<Longitude>-93.37318055555555</Longitude>
 			</Star_Waypoint>
+			<Star_Transition Name="FSD  ">
+				<StarTr_Waypoint ID="1">
+					<Name>FSD </Name>
+					<Type>Normal</Type>
+					<Latitude>43.64949166666666</Latitude>
+					<Longitude>-96.781125</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>RAZMU</Name>
+					<Type>Normal</Type>
+					<Latitude>44.234100000000005</Latitude>
+					<Longitude>-95.94810833333334</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="3">
+					<Name>ENCEE</Name>
+					<Type>Normal</Type>
+					<Latitude>44.58671944444444</Latitude>
+					<Longitude>-95.43330277777778</Longitude>
+				</StarTr_Waypoint>
+			</Star_Transition>
 		</Star>
 		<Star Name="GEP1  ">
 			<Star_Waypoint ID="1">
@@ -760,6 +780,88 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
+		<Approach Name="VOR36">
+			<App_Waypoint> <!--ID="2"-->
+				<Name>RIPNY</Name>
+				<Type>Normal</Type>
+				<Latitude>44.74443333333333</Latitude>
+				<Longitude>-93.52518055555556</Longitude>
+				<Altitude>02700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>NEADY</Name>
+				<Type>Normal</Type>
+				<Latitude>44.790366666666664</Latitude>
+				<Longitude>-93.47838611111112</Longitude>
+				<Altitude>01600</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>LOTIH</Name>
+				<Type>Normal</Type>
+				<Latitude>44.81868333333334</Latitude>
+				<Longitude>-93.44949722222223</Longitude>
+				<Altitude>00935</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>35</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>FCM</Name>
+				<Type>Normal</Type>
+				<Latitude>44.82535</Latitude>
+				<Longitude>-93.4426888888889</Longitude>
+				<Altitude>02700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>FCM</Name>
+				<Type>Normal</Type>
+				<Latitude>44.82535</Latitude>
+				<Longitude>-93.4426888888889</Longitude>
+				<Altitude>02700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="FCM  ">
+				<AppTr_Waypoint ID="1">
+					<Name>FCM </Name>
+					<Type>Normal</Type>
+					<Latitude>44.82535</Latitude>
+					<Longitude>-93.4426888888889</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>RIPNY</Name>
+					<Type>Normal</Type>
+					<Latitude>44.74443333333333</Latitude>
+					<Longitude>-93.52518055555556</Longitude>
+					<Altitude>02700</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>RIPNY</Name>
+					<Type>Normal</Type>
+					<Latitude>44.74443333333333</Latitude>
+					<Longitude>-93.52518055555556</Longitude>
+					<Altitude>02700</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="4">
+					<Name>RIPNY</Name>
+					<Type>Normal</Type>
+					<Latitude>44.74443333333333</Latitude>
+					<Longitude>-93.52518055555556</Longitude>
+					<Altitude>02700</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 		<Approach Name="ILS10R">
 			<App_Waypoint> <!--ID="1"-->
 				<Name>ZAMUD</Name>
@@ -1378,10 +1480,126 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="RNV36">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>OCEWA</Name>
+				<Type>Normal</Type>
+				<Latitude>44.65584444444445</Latitude>
+				<Longitude>-93.47989166666666</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>IJEYU</Name>
+				<Type>Normal</Type>
+				<Latitude>44.74030833333333</Latitude>
+				<Longitude>-93.46745277777778</Longitude>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>JESVA</Name>
+				<Type>Normal</Type>
+				<Latitude>44.791913888888885</Latitude>
+				<Longitude>-93.45983333333334</Longitude>
+				<Altitude>01500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW36</Name>
+				<Type>Runway</Type>
+				<Latitude>44.82174722222223</Latitude>
+				<Longitude>-93.45542222222223</Longitude>
+				<Altitude>00955</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>3</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>OCEWA</Name>
+				<Type>Normal</Type>
+				<Latitude>44.65584444444445</Latitude>
+				<Longitude>-93.47989166666666</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>OCEWA</Name>
+				<Type>Normal</Type>
+				<Latitude>44.65584444444445</Latitude>
+				<Longitude>-93.47989166666666</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="AHMIT">
+				<AppTr_Waypoint ID="1">
+					<Name>AHMIT</Name>
+					<Type>Normal</Type>
+					<Latitude>44.49794166666667</Latitude>
+					<Longitude>-93.19518055555557</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>OCEWA</Name>
+					<Type>Normal</Type>
+					<Latitude>44.65584444444445</Latitude>
+					<Longitude>-93.47989166666666</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="OCEWA">
+				<AppTr_Waypoint ID="1">
+					<Name>OCEWA</Name>
+					<Type>Normal</Type>
+					<Latitude>44.65584444444445</Latitude>
+					<Longitude>-93.47989166666666</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="PRAGS">
+				<AppTr_Waypoint ID="1">
+					<Name>PRAGS</Name>
+					<Type>Normal</Type>
+					<Latitude>44.520988888888894</Latitude>
+					<Longitude>-93.49589444444445</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>OCEWA</Name>
+					<Type>Normal</Type>
+					<Latitude>44.65584444444445</Latitude>
+					<Longitude>-93.47989166666666</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="WULEP">
+				<AppTr_Waypoint ID="1">
+					<Name>WULEP</Name>
+					<Type>Normal</Type>
+					<Latitude>44.59701388888889</Latitude>
+					<Longitude>-93.62119166666666</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>OCEWA</Name>
+					<Type>Normal</Type>
+					<Latitude>44.65584444444445</Latitude>
+					<Longitude>-93.47989166666666</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 8/8
 Stars: 4/4
-Appch: 6/6
+Appch: 8/8
 -->

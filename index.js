@@ -241,7 +241,7 @@ for (const thingeyKey in thingey) {
             }*/
             outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}">\n`;
             try {
-                let trans = [route[RouteType["PE"]["1"]]].reduce((out, arr) => {
+                let trans = [route[RouteType["PE"]["1"]], route[RouteType["PE"]["4"]], route[RouteType["PE"]["7"]], route[RouteType["PE"]["F"]]].reduce((out, arr) => {
                     if (arr) out.push(arr);
                     return out;
                 }, []);

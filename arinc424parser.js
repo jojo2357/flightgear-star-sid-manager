@@ -217,136 +217,223 @@ class Latongitude {
     }
 }
 
+class SID_STAR extends ParseResult {
+    static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d\-]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.) {2}(.)([AS ])(FL\d{3}|[\-\d ]{5})(FL\d{3}|[\-\d ]{5})(FL\d{3}|[\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.) {3}$/m;
+
+    /** @type String */
+    airportIDENT;
+
+    /** @type String */
+    ICAO_Code;
+
+    /**
+     * This requires all of Section Code, Subsection Type and Route Type
+     * @type String
+     */
+    routeType;
+
+    /** @type String */
+    SID_STAR_Ident;
+
+    /** @type String */
+    TRANS_IDENT;
+
+    /** @type String */
+    sequence_number;
+
+    /** @type String */
+    fix_ident;
+
+    /** @type String */
+    fix_ICAO;
+
+    /** @type String */
+    fix_type;
+
+    /** @type String */
+    fix_sequence;
+
+    /** @type String */
+    fix_description;
+
+    /** @type String */
+    fix_turn_direction;
+
+    /** @type String  */
+    fix_navigation_precision;
+
+    /** @type String */
+    fix_path_termination;
+
+    /** @type String */
+    fix_direction_valid;
+
+    /** @type String */
+    fix_path_navaid;
+
+    /** @type String */
+    fix_path_icao;
+
+    /** @type String */
+    fix_arc_radius;
+
+    /** @type String */
+    fix_theta;
+
+    /** @type String */
+    fix_rho;
+
+    /** @type String */
+    fix_magnetic_course;
+
+    /** @type String */
+    fix_distance;
+
+    /** @type String */
+    nav_type;
+
+    /** @type String */
+    nav_altitude;
+
+    /** @type String */
+    nav_atc_indicator;
+
+    /** @type String */
+    nav_altitude_1;
+
+    /** @type String */
+    nav_altitude_2;
+
+    /** @type String */
+    nav_transition_altitude;
+
+    /** @type String */
+    nav_speed_limit;
+
+    /** @type String */
+    nav_vert_angle;
+
+    /** @type String */
+    nav_fix;
+
+    /** @type String */
+    nav_sector;
+
+    /** @type String */
+    nav_icao;
+
+    /** @type String */
+    appendix_type;
+
+    /** @type String */
+    appendix_speed_limit;
+
+    /** @type String */
+    appendix_route_1;
+
+    /** @type String */
+    appendix_route_2;
+
+    /** @type boolean */
+    is_SID = false;
+
+    /** @type boolean */
+    is_STAR = false;
+
+    /** @type boolean */
+    is_APPROACH = false;
+
+    static parse(dataIn) {
+        let out = new SID_STAR();
+        dataIn = out.local_parse(dataIn);
+        if (!out.header || out.header.section !== "P" || out.header.subsection !== " ") {
+            return ParseResult.ERROR;
+        } else {
+            let splitData = dataIn.match(this.regexp);
+            if (!splitData)
+                return ParseResult.ERROR;
+            else {
+                out.source = splitData.shift();
+
+                out.airportIDENT = splitData[0];
+                out.ICAO_Code = splitData[1];
+
+                out.routeType = RouteType[`P${splitData[2]}`][splitData[4]];
+
+                if (!out.routeType)
+                    return ParseResult.ERROR;
+
+                if (splitData[2] === "E")
+                    out.is_STAR = true;
+                else if (splitData[2] === "D")
+                    out.is_SID = true;
+                else if (splitData[2] === "F")
+                    out.is_APPROACH = true;
+                else
+                    console.log("Unrecognized");
+
+                out.SID_STAR_Ident = splitData[3];
+                out.TRANS_IDENT = splitData[5];
+
+                if (out.is_SID) {
+                    out.TRANS_IDENT = out.TRANS_IDENT.replace("RW", "")
+                }
+
+                out.sequence_number = splitData[6];
+                out.fix_ident = splitData[7];
+                out.fix_ICAO = splitData[8];
+                out.fix_type = splitData[9];
+                out.fix_sequence = splitData[10];
+                if (splitData[10] === "1")
+                    out.continuationRecords = [];
+                else if (splitData[10] !== "0")
+                    return ParseResult.ERROR;
+                out.fix_description = splitData[11];
+                out.fix_turn_direction = splitData[12];
+                out.fix_navigation_precision = splitData[13];
+
+                out.fix_path_termination = splitData[14];
+                out.fix_direction_valid = splitData[15];
+                out.fix_path_navaid = splitData[16];
+                out.fix_path_icao = splitData[17];
+                out.fix_arc_radius = splitData[18];
+                out.fix_theta = splitData[19];
+                out.fix_rho = splitData[20];
+                out.fix_magnetic_course = splitData[21];
+                out.fix_distance = splitData[22];
+                out.nav_type = splitData[23] + splitData[24];
+                out.nav_altitude = splitData[25];
+                out.nav_atc_indicator = splitData[26];
+                out.nav_altitude_1 = splitData[27];
+                out.nav_altitude_2 = splitData[28];
+                out.nav_transition_altitude = splitData[29];
+                out.nav_speed_limit = splitData[30];
+                out.nav_vert_angle = splitData[31];
+                out.nav_fix = splitData[32];
+                out.nav_sector = splitData[33];
+                out.nav_icao = splitData[34];
+                out.appendix_type = splitData[35];
+                out.appendix_speed_limit = splitData[36];
+                out.appendix_route_1 = splitData[37];
+                out.appendix_route_2 = splitData[38];
+
+                out.completed = true;
+                out.recognizedLine = true;
+
+                return out;
+            }
+        }
+    }
+}
+
 const childClasses = [
     /*class SID_STAR_CONTINUATION extends ParseResult {
         static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{5}.)(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.)   $/m;
 
     },*/
-    class SID_STAR extends ParseResult {
-        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d\-]{4}.{2})(.|[\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)([AS ])([\-\d ]{5})([\-\d ]{5})([\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.) {3}$/m;
-
-        /** @type String */
-        airportIDENT;
-
-        /** @type String */
-        ICAO_Code;
-
-        /**
-         * This requires all of Section Code, Subsection Type and Route Type
-         * @type String
-         */
-        routeType;
-
-        /** @type String */
-        SID_STAR_Ident;
-
-        /** @type String */
-        TRANS_IDENT;
-
-        /** @type String */
-        sequence_number;
-
-        /** @type String */
-        fix_ident;
-
-        /** @type String */
-        fix_ICAO;
-
-        /** @type String */
-        fix_type;
-
-        /** @type String */
-        fix_sequence;
-
-        /** @type String */
-        fix_description;
-
-        /** @type String */
-        fix_turn_direction;
-
-        /** @type String  */
-        fix_navigation_precision;
-
-        /** @type String */
-        fix_path_termination;
-
-        /** @type String */
-        fix_direction_valid;
-
-        /** @type String */
-        fix_path_navaid;
-
-        /** @type String */
-        fix_path_icao;
-
-        /** @type String */
-        fix_arc_radius;
-
-        /** @type String */
-        fix_theta;
-
-        /** @type String */
-        fix_rho;
-
-        /** @type String */
-        fix_magnetic_course;
-
-        /** @type String */
-        fix_distance;
-
-        /** @type String */
-        nav_type;
-
-        /** @type String */
-        nav_altitude;
-
-        /** @type String */
-        nav_atc_indicator;
-
-        /** @type String */
-        nav_altitude_1;
-
-        /** @type String */
-        nav_altitude_2;
-
-        /** @type String */
-        nav_transition_altitude;
-
-        /** @type String */
-        nav_speed_limit;
-
-        /** @type String */
-        nav_vert_angle;
-
-        /** @type String */
-        nav_fix;
-
-        /** @type String */
-        nav_sector;
-
-        /** @type String */
-        nav_icao;
-
-        /** @type String */
-        appendix_type;
-
-        /** @type String */
-        appendix_speed_limit;
-
-        /** @type String */
-        appendix_route_1;
-
-        /** @type String */
-        appendix_route_2;
-
-        /** @type boolean */
-        is_SID = false;
-
-        /** @type boolean */
-        is_STAR = false;
-
-        /** @type boolean */
-        is_APPROACH = false;
+    SID_STAR,
+    class SID_STAR_ALTERNATIVE_RECORD extends SID_STAR {
+        static regexp = /^([A-Z]{4})([\dA-Z]{2})([DEF])(.{6})(.)([\dA-Z ]{5}) (\d{3})(.{5})([\dA-Z ][\dA-Z ])([ADEHPRTU ][A-Z ])([\dA-Z])([A-Z ]{4})([LRE ])([\d ]{3})([A-Z ]{2})([Y ])([\dA-Z ]{4})([A-Z\d ]{2})(.{6})(.{4})(.{4})(.{4})(.{4})(.)(.)  (.)(.)(FL\d{3}|[\-\d ]{5})(FL\d{3}|[\-\d ]{5})(FL\d{3}|[\-\d ]{5})([F\d ]{3})([-\d .]{4})([A-Z\d ]{5})(.)([A-Z\d ]{2})(.)(.)(.)(.)(.)(.) {3}$/m;
 
         static parse(dataIn) {
             let out = new SID_STAR();
@@ -581,12 +668,12 @@ const childClasses = [
             }
         }
     },
-    class HEADER extends ParseResult {
+/*    class HEADER extends ParseResult {
         static regexp = /^HDR\d+/m;
 
-        /**
+        /!**
          * @type {string}
-         */
+         *!/
         source;
 
         static parse(dataIn) {
@@ -602,9 +689,9 @@ const childClasses = [
     class MORA extends ParseResult {
         static regexp = /^S {3}AS {7}[SN]\d{2}[EW]\d{3} {10}(UNK|\d{3})+ {3}\d+$/m;
 
-        /**
+        /!**
          * @type {string}
-         */
+         *!/
         source;
 
         static parse(dataIn) {
@@ -620,9 +707,9 @@ const childClasses = [
     class ENROUTE_AIRWAYS extends ParseResult {
         static regexp = /^S[A-Z]{3}ER {7}[A-Z]{5}. {6}[SN]\d{2}[EW]\d{3} {10}(UNK|\d{3})+ {3}\d+$/m;
 
-        /**
+        /!**
          * @type {string}
-         */
+         *!/
         source;
 
         static parse(dataIn) {
@@ -638,9 +725,9 @@ const childClasses = [
     class AIRSPACE extends ParseResult {
         static regexp = /^S[A-Z]U/m;
 
-        /**
+        /!**
          * @type {string}
-         */
+         *!/
         source;
 
         static parse(dataIn) {
@@ -652,7 +739,7 @@ const childClasses = [
             }
             return ParseResult.ERROR;
         }
-    },
+    },*/
 ];
 
 /**
@@ -685,6 +772,7 @@ function altitudeToXML(obj, depth) {
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             break;
         }
+        case "G":
         case "H":
         case "V":
             out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;

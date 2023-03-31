@@ -1,0 +1,119 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KSRE">
+		<Approach Name="RNV16">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>CIDNU</Name>
+				<Type>Normal</Type>
+				<Latitude>35.45211944444445</Latitude>
+				<Longitude>-96.73046666666667</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>AGRAS</Name>
+				<Type>Normal</Type>
+				<Latitude>35.35412777777778</Latitude>
+				<Longitude>-96.69955555555556</Longitude>
+				<Altitude>02500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW16</Name>
+				<Type>Runway</Type>
+				<Latitude>35.28241666666667</Latitude>
+				<Longitude>-96.67699166666667</Longitude>
+				<Altitude>01068</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01423</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>159.5</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>FANAD</Name>
+				<Type>Normal</Type>
+				<Latitude>35.107461111111114</Latitude>
+				<Longitude>-96.62205555555555</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>FANAD</Name>
+				<Type>Normal</Type>
+				<Latitude>35.107461111111114</Latitude>
+				<Longitude>-96.62205555555555</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="CIDNU">
+				<AppTr_Waypoint ID="1">
+					<Name>CIDNU</Name>
+					<Type>Normal</Type>
+					<Latitude>35.45211944444445</Latitude>
+					<Longitude>-96.73046666666667</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="YOPUL">
+				<AppTr_Waypoint ID="1">
+					<Name>YOPUL</Name>
+					<Type>Normal</Type>
+					<Latitude>35.47296111111111</Latitude>
+					<Longitude>-96.63168611111111</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>CIDNU</Name>
+					<Type>Normal</Type>
+					<Latitude>35.45211944444445</Latitude>
+					<Longitude>-96.73046666666667</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="ZINOL">
+				<AppTr_Waypoint ID="1">
+					<Name>ZINOL</Name>
+					<Type>Normal</Type>
+					<Latitude>35.43119722222222</Latitude>
+					<Longitude>-96.8292</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>CIDNU</Name>
+					<Type>Normal</Type>
+					<Latitude>35.45211944444445</Latitude>
+					<Longitude>-96.73046666666667</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 1/1
+-->

@@ -1,0 +1,553 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KMQY">
+		<Approach Name="ILS32">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>OXCUH</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940949999999994</Latitude>
+				<Longitude>-86.44695555555556</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW32</Name>
+				<Type>Runway</Type>
+				<Latitude>36.00113888888889</Latitude>
+				<Longitude>-86.51093888888889</Longitude>
+				<Altitude>00569</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>321.20000000000005</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>90</Hdg_Crs_value>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>CUYAG</Name>
+				<Type>Normal</Type>
+				<Latitude>35.961061111111114</Latitude>
+				<Longitude>-86.37092499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>CUYAG</Name>
+				<Type>Normal</Type>
+				<Latitude>35.961061111111114</Latitude>
+				<Longitude>-86.37092499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="BNA  ">
+				<AppTr_Waypoint ID="1">
+					<Name>BNA </Name>
+					<Type>Normal</Type>
+					<Latitude>36.13696111111111</Latitude>
+					<Longitude>-86.68477222222222</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>JOPIV</Name>
+					<Type>Normal</Type>
+					<Latitude>35.84825833333334</Latitude>
+					<Longitude>-86.34868055555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>JOPIV</Name>
+					<Type>Normal</Type>
+					<Latitude>35.84825833333334</Latitude>
+					<Longitude>-86.34868055555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="LOC32">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>OXCUH</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940949999999994</Latitude>
+				<Longitude>-86.44695555555556</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>UJIVA</Name>
+				<Type>Normal</Type>
+				<Latitude>35.978408333333334</Latitude>
+				<Longitude>-86.48675833333333</Longitude>
+				<Altitude>01100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW32</Name>
+				<Type>Runway</Type>
+				<Latitude>36.00113888888889</Latitude>
+				<Longitude>-86.51093888888889</Longitude>
+				<Altitude>00569</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>321.20000000000005</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!-- ID="5" -->
+				<Name>DMEINTC</Name>
+				<Type>DmeIntc</Type>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>90</Hdg_Crs_value>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>CUYAG</Name>
+				<Type>Normal</Type>
+				<Latitude>35.961061111111114</Latitude>
+				<Longitude>-86.37092499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>CUYAG</Name>
+				<Type>Normal</Type>
+				<Latitude>35.961061111111114</Latitude>
+				<Longitude>-86.37092499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="BNA  ">
+				<AppTr_Waypoint ID="1">
+					<Name>BNA </Name>
+					<Type>Normal</Type>
+					<Latitude>36.13696111111111</Latitude>
+					<Longitude>-86.68477222222222</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>JOPIV</Name>
+					<Type>Normal</Type>
+					<Latitude>35.84825833333334</Latitude>
+					<Longitude>-86.34868055555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>JOPIV</Name>
+					<Type>Normal</Type>
+					<Latitude>35.84825833333334</Latitude>
+					<Longitude>-86.34868055555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="RNV01">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>ZOPUK</Name>
+				<Type>Normal</Type>
+				<Latitude>35.81095555555555</Latitude>
+				<Longitude>-86.53795833333334</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ODOSE</Name>
+				<Type>Normal</Type>
+				<Latitude>35.894194444444445</Latitude>
+				<Longitude>-86.53058888888889</Longitude>
+				<Altitude>02600</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WAXUV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.955675</Latitude>
+				<Longitude>-86.52513611111112</Longitude>
+				<Altitude>01420</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01424</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW01</Name>
+				<Type>Runway</Type>
+				<Latitude>36.000622222222226</Latitude>
+				<Longitude>-86.52114444444445</Longitude>
+				<Altitude>00564</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00943</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>6.1000000000000005</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>VADOW</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940425</Latitude>
+				<Longitude>-86.25672499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>VADOW</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940425</Latitude>
+				<Longitude>-86.25672499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="LENON">
+				<AppTr_Waypoint ID="1">
+					<Name>LENON</Name>
+					<Type>Normal</Type>
+					<Latitude>36.28264166666666</Latitude>
+					<Longitude>-86.19953611111112</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>EYXUR</Name>
+					<Type>Normal</Type>
+					<Latitude>35.80002222222222</Latitude>
+					<Longitude>-86.35403611111111</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>ZOPUK</Name>
+					<Type>Normal</Type>
+					<Latitude>35.81095555555555</Latitude>
+					<Longitude>-86.53795833333334</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="SYI  ">
+				<AppTr_Waypoint ID="1">
+					<Name>SYI </Name>
+					<Type>Normal</Type>
+					<Latitude>35.561975</Latitude>
+					<Longitude>-86.43915000000001</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>UMETE</Name>
+					<Type>Normal</Type>
+					<Latitude>35.683924999999995</Latitude>
+					<Longitude>-86.48746666666668</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>ZOPUK</Name>
+					<Type>Normal</Type>
+					<Latitude>35.81095555555555</Latitude>
+					<Longitude>-86.53795833333334</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="RNV14">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>HUDNU</Name>
+				<Type>Normal</Type>
+				<Latitude>36.16191388888888</Latitude>
+				<Longitude>-86.68251111111111</Longitude>
+				<Altitude>03100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>FAZIM</Name>
+				<Type>Normal</Type>
+				<Latitude>36.073625</Latitude>
+				<Longitude>-86.588175</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW14</Name>
+				<Type>Runway</Type>
+				<Latitude>36.01783611111111</Latitude>
+				<Longitude>-86.52871944444443</Longitude>
+				<Altitude>00593</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00943</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>141.1</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="HUDNU">
+				<AppTr_Waypoint ID="1">
+					<Name>HUDNU</Name>
+					<Type>Normal</Type>
+					<Latitude>36.16191388888888</Latitude>
+					<Longitude>-86.68251111111111</Longitude>
+					<Altitude>03100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="RNV19">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>WULIG</Name>
+				<Type>Normal</Type>
+				<Latitude>36.17666666666666</Latitude>
+				<Longitude>-86.43333333333334</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>ZIGRI</Name>
+				<Type>Normal</Type>
+				<Latitude>36.10062222222223</Latitude>
+				<Longitude>-86.50510833333333</Longitude>
+				<Altitude>02200</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>OGECU</Name>
+				<Type>Normal</Type>
+				<Latitude>36.04556944444444</Latitude>
+				<Longitude>-86.51464722222222</Longitude>
+				<Altitude>01140</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01140</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW19</Name>
+				<Type>Runway</Type>
+				<Latitude>36.015819444444446</Latitude>
+				<Longitude>-86.51979444444444</Longitude>
+				<Altitude>00566</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>190</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>VADOW</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940425</Latitude>
+				<Longitude>-86.25672499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>VADOW</Name>
+				<Type>Normal</Type>
+				<Latitude>35.940425</Latitude>
+				<Longitude>-86.25672499999999</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="LENON">
+				<AppTr_Waypoint ID="1">
+					<Name>LENON</Name>
+					<Type>Normal</Type>
+					<Latitude>36.28264166666666</Latitude>
+					<Longitude>-86.19953611111112</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>YOJIM</Name>
+					<Type>Normal</Type>
+					<Latitude>36.178016666666664</Latitude>
+					<Longitude>-86.27828888888888</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>WULIG</Name>
+					<Type>Normal</Type>
+					<Latitude>36.17666666666666</Latitude>
+					<Longitude>-86.43333333333334</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="SYI  ">
+				<AppTr_Waypoint ID="1">
+					<Name>SYI </Name>
+					<Type>Normal</Type>
+					<Latitude>35.561975</Latitude>
+					<Longitude>-86.43915000000001</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>VADOW</Name>
+					<Type>Normal</Type>
+					<Latitude>35.940425</Latitude>
+					<Longitude>-86.25672499999999</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="3">
+					<Name>YOJIM</Name>
+					<Type>Normal</Type>
+					<Latitude>36.178016666666664</Latitude>
+					<Longitude>-86.27828888888888</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="4">
+					<Name>WULIG</Name>
+					<Type>Normal</Type>
+					<Latitude>36.17666666666666</Latitude>
+					<Longitude>-86.43333333333334</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+		<Approach Name="RNV32">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>SHEHL</Name>
+				<Type>Normal</Type>
+				<Latitude>35.9404</Latitude>
+				<Longitude>-86.44637222222222</Longitude>
+				<Altitude>02100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>UJIVA</Name>
+				<Type>Normal</Type>
+				<Latitude>35.978408333333334</Latitude>
+				<Longitude>-86.48675833333333</Longitude>
+				<Altitude>01140</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01142</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW32</Name>
+				<Type>Runway</Type>
+				<Latitude>36.00113888888889</Latitude>
+				<Longitude>-86.51093888888889</Longitude>
+				<Altitude>00569</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>01500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>321.20000000000005</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>JOPIV</Name>
+				<Type>Normal</Type>
+				<Latitude>35.84825833333334</Latitude>
+				<Longitude>-86.34868055555556</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="JOPIV">
+				<AppTr_Waypoint ID="1">
+					<Name>JOPIV</Name>
+					<Type>Normal</Type>
+					<Latitude>35.84825833333334</Latitude>
+					<Longitude>-86.34868055555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 6/6
+-->

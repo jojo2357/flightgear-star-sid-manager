@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
 	<Airport ICAOcode="KRNT">
 		<Sid Name="BELVU4" Runways="34">
 			<RunwayTransition Runway="34">
@@ -402,6 +402,14 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</Star_Waypoint>
 			<Star_Transition Name="EPH  ">
+				<StarTr_Waypoint ID="1">
+					<Name>EPH </Name>
+					<Type>Normal</Type>
+					<Latitude>47.377919444444444</Latitude>
+					<Longitude>-119.42400277777779</Longitude>
+					<Altitude>FL180</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
 				<StarTr_Waypoint ID="2">
 					<Name>SKYKO</Name>
 					<Type>Normal</Type>
@@ -414,6 +422,22 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 			<Star_Transition Name="ODESS">
+				<StarTr_Waypoint ID="1">
+					<Name>ODESS</Name>
+					<Type>Normal</Type>
+					<Latitude>47.136894444444444</Latitude>
+					<Longitude>-117.97418611111111</Longitude>
+					<Altitude>FL180</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>EPH </Name>
+					<Type>Normal</Type>
+					<Latitude>47.377919444444444</Latitude>
+					<Longitude>-119.42400277777779</Longitude>
+					<Altitude>FL180</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</StarTr_Waypoint>
 				<StarTr_Waypoint ID="3">
 					<Name>SKYKO</Name>
 					<Type>Normal</Type>
@@ -620,10 +644,102 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="RNV34">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>ZULOD</Name>
+				<Type>Normal</Type>
+				<Latitude>47.34562777777778</Latitude>
+				<Longitude>-122.137625</Longitude>
+				<Altitude>02200</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>FESLA</Name>
+				<Type>Normal</Type>
+				<Latitude>47.42374444444444</Latitude>
+				<Longitude>-122.20525277777777</Longitude>
+				<Altitude>01600</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WUREK</Name>
+				<Type>Normal</Type>
+				<Latitude>47.44446666666666</Latitude>
+				<Longitude>-122.20838333333334</Longitude>
+				<Altitude>01100</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>01102</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>RW34</Name>
+				<Type>Runway</Type>
+				<Latitude>47.48672222222222</Latitude>
+				<Longitude>-122.21477222222222</Longitude>
+				<Altitude>00086</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00432</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>337.20000000000005</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>SEKIE</Name>
+				<Type>Normal</Type>
+				<Latitude>47.63881388888889</Latitude>
+				<Longitude>-122.1894638888889</Longitude>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>WUNVA</Name>
+				<Type>Normal</Type>
+				<Latitude>47.73070555555555</Latitude>
+				<Longitude>-122.0467</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="7"-->
+				<Name>WUNVA</Name>
+				<Type>Normal</Type>
+				<Latitude>47.73070555555555</Latitude>
+				<Longitude>-122.0467</Longitude>
+				<Altitude>03000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="LIGBE">
+				<AppTr_Waypoint ID="1">
+					<Name>LIGBE</Name>
+					<Type>Normal</Type>
+					<Latitude>47.113475</Latitude>
+					<Longitude>-122.241575</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>ZULOD</Name>
+					<Type>Normal</Type>
+					<Latitude>47.34562777777778</Latitude>
+					<Longitude>-122.137625</Longitude>
+					<Altitude>02200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="ZULOD">
+				<AppTr_Waypoint ID="1">
+					<Name>ZULOD</Name>
+					<Type>Normal</Type>
+					<Latitude>47.34562777777778</Latitude>
+					<Longitude>-122.137625</Longitude>
+					<Altitude>02200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 2/2
 Stars: 4/4
-Appch: 2/2
+Appch: 3/3
 -->

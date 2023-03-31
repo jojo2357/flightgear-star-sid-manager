@@ -16,9 +16,17 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.4814">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
 	<Airport ICAOcode="KLNA">
 		<Star Name="JESTR1">
+			<Star_Waypoint ID="1">
+				<Name>JESTR</Name>
+				<Type>Normal</Type>
+				<Latitude>27.690236111111112</Latitude>
+				<Longitude>-80.49865277777778</Longitude>
+				<Altitude>FL190</Altitude>
+				<AltitudeRestriction>below</AltitudeRestriction>
+			</Star_Waypoint>
 			<Star_Waypoint ID="2">
 				<Name>POLOO</Name>
 				<Type>Normal</Type>
@@ -45,6 +53,38 @@
 				<Altitude>05000</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</Star_Waypoint>
+			<Star_Transition Name="DEBRL">
+				<StarTr_Waypoint ID="1">
+					<Name>DEBRL</Name>
+					<Type>Normal</Type>
+					<Latitude>29.296869444444443</Latitude>
+					<Longitude>-81.13413333333334</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>JESTR</Name>
+					<Type>Normal</Type>
+					<Latitude>27.690236111111112</Latitude>
+					<Longitude>-80.49865277777778</Longitude>
+					<Altitude>FL190</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+				</StarTr_Waypoint>
+			</Star_Transition>
+			<Star_Transition Name="HIBAC">
+				<StarTr_Waypoint ID="1">
+					<Name>HIBAC</Name>
+					<Type>Normal</Type>
+					<Latitude>29.094063888888886</Latitude>
+					<Longitude>-79.56795833333334</Longitude>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint ID="2">
+					<Name>JESTR</Name>
+					<Type>Normal</Type>
+					<Latitude>27.690236111111112</Latitude>
+					<Longitude>-80.49865277777778</Longitude>
+					<Altitude>FL190</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+				</StarTr_Waypoint>
+			</Star_Transition>
 		</Star>
 		<Star Name="MLB2  ">
 			<Star_Waypoint ID="1">
@@ -152,10 +192,110 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
+		<Approach Name="RNV34">
+			<App_Waypoint> <!--ID="1"-->
+				<Name>KISEC</Name>
+				<Type>Normal</Type>
+				<Latitude>26.51100277777778</Latitude>
+				<Longitude>-79.96369166666668</Longitude>
+				<Altitude>02300</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>JOVLI</Name>
+				<Type>Normal</Type>
+				<Latitude>26.538466666666668</Latitude>
+				<Longitude>-80.02149722222222</Longitude>
+				<Altitude>01700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="2"-->
+				<Name>WIBGA</Name>
+				<Type>Normal</Type>
+				<Latitude>26.565605555555557</Latitude>
+				<Longitude>-80.05502222222222</Longitude>
+				<Altitude>00800</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="3"-->
+				<Name>NUYIT</Name>
+				<Type>Normal</Type>
+				<Latitude>26.58271111111111</Latitude>
+				<Longitude>-80.07616666666667</Longitude>
+				<Altitude>00240</Altitude>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint ID="4">
+				<Name>VECTORS</Name>
+				<Type>ConstHdgtoAlt</Type>
+				<Altitude>00700</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>319</Hdg_Crs_value>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="5"-->
+				<Name>UGLEE</Name>
+				<Type>Normal</Type>
+				<Latitude>26.467691666666664</Latitude>
+				<Longitude>-80.10121666666666</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Waypoint> <!--ID="6"-->
+				<Name>UGLEE</Name>
+				<Type>Normal</Type>
+				<Latitude>26.467691666666664</Latitude>
+				<Longitude>-80.10121666666666</Longitude>
+				<Altitude>02000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</App_Waypoint>
+			<App_Transition Name="KISEC">
+				<AppTr_Waypoint ID="1">
+					<Name>KISEC</Name>
+					<Type>Normal</Type>
+					<Latitude>26.51100277777778</Latitude>
+					<Longitude>-79.96369166666668</Longitude>
+					<Altitude>02300</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="MRLIN">
+				<AppTr_Waypoint ID="1">
+					<Name>MRLIN</Name>
+					<Type>Normal</Type>
+					<Latitude>26.500933333333332</Latitude>
+					<Longitude>-79.76601111111111</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>KISEC</Name>
+					<Type>Normal</Type>
+					<Latitude>26.51100277777778</Latitude>
+					<Longitude>-79.96369166666668</Longitude>
+					<Altitude>02300</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="VURYU">
+				<AppTr_Waypoint ID="1">
+					<Name>VURYU</Name>
+					<Type>Normal</Type>
+					<Latitude>26.45248611111111</Latitude>
+					<Longitude>-79.89735</Longitude>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint ID="2">
+					<Name>KISEC</Name>
+					<Type>Normal</Type>
+					<Latitude>26.51100277777778</Latitude>
+					<Longitude>-79.96369166666668</Longitude>
+					<Altitude>02300</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 0/0
 Stars: 3/3
-Appch: 0/2
+Appch: 1/3
 -->
