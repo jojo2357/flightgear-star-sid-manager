@@ -17,8 +17,47 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 const fs = require('fs');
-const {parseLine, RouteType, altitudeToXML} = require('./arinc424parser');
+const {parseLine, RouteType, altitudeToXML, Latongitude} = require('./arinc424parser');
 const path = require("path");
+
+const oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
+
+let airpourtCode;
+let discoveredRunways = {};
+
+for (let i = 2; i < oldData.length; i++) {
+    if (oldData[i].match(/^1\s/)) {
+        let exploded = oldData[i].match(/^1\s+(-?\d+)\s+\d\s+\d\s+([A-Z]{0,4})\s/);
+        if (!exploded) {
+            airpourtCode = undefined;
+            continue;
+        }
+        airpourtCode = exploded[2];
+        discoveredRunways[airpourtCode] = [];
+    } else if (!airpourtCode) {
+        continue;
+    } else if (oldData[i].match(/^100\s/)) {
+        let exploded = oldData[i].match(/^100\s+\d+(?:\.\d+)?\s+\d+\s+\d+\s+\d+(?:\.\d+)?\s+\d\s+\d\s+\d\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)(?:\s+\d+\.\d+\s+\d+\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+))?/);
+        if (discoveredRunways[airpourtCode].every(rwy => rwy.ident !== exploded[1])) {
+            let latnum = Number.parseFloat(exploded[2]);
+            let lonnum = Number.parseFloat(exploded[3]);
+            discoveredRunways[airpourtCode].push({
+                ident: exploded[1],
+                lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
+                lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
+            });
+            if (exploded.length > 4) {
+                latnum = Number.parseFloat(exploded[5]);
+                lonnum = Number.parseFloat(exploded[6]);
+                discoveredRunways[airpourtCode].push({
+                    ident: exploded[4],
+                    lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
+                    lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
+                })
+            }
+        }
+    }
+}
 
 const data = fs.readFileSync("CIFP_230323/FAACIFP18").toString().split(/\r?\n/g);
 //^([ST])([A-Z]{3})([A-Z]) ([A-Z]{4})([\dA-Z]{2})([DEF])
@@ -29,8 +68,8 @@ const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine)
         out.push(vahl);
-    else
-        console.log(dater);
+    else ;
+    // console.log(dater);
     return out;
 }, []);
 
@@ -62,9 +101,60 @@ console.log(bars.map((bar, windex) => `${bar.source}`).join('\n'));
     return out;
 }, {});*/
 
+let movedRunways = {};
+
+const worldDist = 0.00005;
 const thingey = it.reduce((out, curr, windex, array) => {
+    if (curr.parentident) {
+        if (!out[curr.parentident])
+            out[curr.parentident] = {};
+        if (!out[curr.parentident].runweys)
+            out[curr.parentident].runweys = [];
+        curr.ident.substring(2).replace(/(\d{2})B/, "$1R,$1L").split(",").map(val => val.trim()).forEach(thin => {
+            if (!out[curr.parentident].runweys.includes(thin))
+                out[curr.parentident].runweys.push(thin);
+        });
+    }
+    if (curr.parentident && discoveredRunways[curr.parentident] && curr.ident.match(/\d{2}/)) {
+        if (!movedRunways[curr.parentident]) {
+            movedRunways[curr.parentident] = [];
+        }
+        discoveredRunways[curr.parentident].map(it => Latongitude.distance(it.lat, it.lon, curr.rwylatitude, curr.rwylongitude));
+
+        if (discoveredRunways[curr.parentident].some(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist)) {
+            if (discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident === curr.ident.substring(2).trim())) {
+                // console.log("Close cousin");
+            } else {
+                // different ident?
+                if (discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 18) - 4 < 4)) {
+                    // console.log("I moved");
+                    movedRunways[curr.parentident].push({
+                        orig: discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).find(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 18) - 4 < 4).ident,
+                        neww: curr.ident.substring(2).trim()
+                    });
+                } else {
+                    if (discoveredRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 18) - 4 < 4)) {
+                        // console.log("???");
+                        movedRunways[curr.parentident].push({
+                            orig: discoveredRunways[curr.parentident].find(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 18) - 4 < 4).ident,
+                            neww: curr.ident.substring(2).trim()
+                        });
+                    } else {
+                        // console.log("Im missing");
+                    }
+                }
+            }
+        } else if (discoveredRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 18) - 4 < 4)) {
+            movedRunways[curr.parentident].push({
+                orig: discoveredRunways[curr.parentident].find(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 18) - 4 < 4).ident,
+                neww: curr.ident.substring(2).trim()
+            });
+        } else {
+            // console.log("Unrelated?");
+        }
+    }
     process.stdout.write(`Parsing ${windex}/${array.length}\r`);
-    if (curr.airportIDENT) {
+    if (curr.airportIDENT && discoveredRunways[curr.airportIDENT]) {
         if (!out[curr.airportIDENT])
             out[curr.airportIDENT] = {};
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident])
@@ -83,8 +173,7 @@ const thingey = it.reduce((out, curr, windex, array) => {
                 loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
                 obj: curr
             });
-        }
-        else {
+        } else {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
                 loc: it.some(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) ? it.find(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) : curr.fix_ident,
                 obj: curr
@@ -99,6 +188,15 @@ const thingey = it.reduce((out, curr, windex, array) => {
     }
     return out;
 }, {});
+
+for (const movedRunwaysKey in movedRunways) {
+    let outstring = `<PropertyList build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
+
+    fs.mkdirSync(path.join(process.cwd(), "bild", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "bild", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
+    fs.mkdirSync(path.join(process.cwd(), "Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
+}
 
 for (const thingeyKey in thingey) {
     process.stdout.write(`Running on ${thingeyKey}  \r`);
@@ -116,6 +214,7 @@ for (const thingeyKey in thingey) {
                 && !route[RouteType["PD"]["8"]] && !route[RouteType["PD"]["M"]]) {
                 continue;
             }*/
+            let sidplaced = false;
             try {
                 let entrans = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]], route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
                     if (arr) out.push(arr);
@@ -131,7 +230,8 @@ for (const thingeyKey in thingey) {
                     return out;
                 }, []);
 
-                //todo replace all with not all
+                sidplaced = true;
+
                 outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace("ALL", thingey[thingeyKey].runweys.join(",")).replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
@@ -230,9 +330,10 @@ for (const thingeyKey in thingey) {
                 }
                 completedsids++;
             } catch (E) {
-                console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`);
+                console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`, E);
             }
-            outstring += `${'\t'.repeat(--depth)}</Sid>\n`;
+            if (sidplaced)
+                outstring += `${'\t'.repeat(--depth)}</Sid>\n`;
         } else if (route.star) {
             stars++;
             /*if (!route[RouteType["PE"]["2"]] && !route[RouteType["PE"]["5"]]

@@ -203,6 +203,16 @@ class Latongitude {
     hemisphere;
 
     /**
+     * @param {Latongitude} lata
+     * @param {Latongitude} lona
+     * @param {Latongitude} latb
+     * @param {Latongitude} lonb
+     */
+    static distance(lata, lona, latb, lonb) {
+        return (Math.pow(lata.value - latb.value, 2) + Math.pow(lona.value - lonb.value, 2));
+    }
+
+    /**
      * @param {String} hemisphere
      * @param {number|number[]} value
      */
@@ -764,42 +774,46 @@ function parse(dataIn) {
 
 function altitudeToXML(obj, depth) {
     let out = "";
+    let dispalt1 = obj.nav_altitude_1;
+    dispalt1 = dispalt1.match(/(FL)?(\d+)/) ? dispalt1.match(/(FL)?(\d+)/)[2] + (dispalt1.match(/(FL)?(\d+)/)[1] ? "00" : "") : "";
+    let dispalt2 = obj.nav_altitude_2;
+    dispalt2 = dispalt2.match(/(FL)?(\d+)/) ? dispalt2.match(/(FL)?(\d+)/)[2] + (dispalt2.match(/(FL)?(\d+)/)[1] ? "00" : "") : "";
     switch (obj.nav_altitude) {
         case "B": {
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt2}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             break;
         }
         case "G":
         case "H":
         case "V":
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt2}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
             break;
         // glide slope intersect at 2, floor at 1
         case "J": {
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_2}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt2}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
             break;
         }
         case "+": {
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             break;
         }
         case "-": {
-            out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
             out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
             break;
         }
         case "I":
         case " ": {
-            if (obj.nav_altitude_1.trim().length) {
-                out += `${'\t'.repeat(depth)}<Altitude>${obj.nav_altitude_1}</Altitude>\n`;
+            if (dispalt1.trim().length) {
+                out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
                 out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
             }
             break;
@@ -814,5 +828,6 @@ function altitudeToXML(obj, depth) {
 module.exports = {
     parseLine: parseLine,
     RouteType: RouteType,
-    altitudeToXML: altitudeToXML
+    altitudeToXML: altitudeToXML,
+    Latongitude: Latongitude,
 };
