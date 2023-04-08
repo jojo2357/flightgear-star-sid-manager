@@ -18,6 +18,57 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
 	<Airport ICAOcode="KKNB">
+		<Sid Name="KACIR2" Runways="01,19">
+			<Sid_Transition Name="BCE  ">
+				<SidTr_Waypoint ID="1">
+					<Name>KACIR</Name>
+					<Type>Normal</Type>
+					<Latitude>36.991911111111115</Latitude>
+					<Longitude>-112.23944722222222</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>BCE </Name>
+					<Type>Normal</Type>
+					<Latitude>37.689188888888886</Latitude>
+					<Longitude>-112.30390277777778</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="JALMA">
+				<SidTr_Waypoint ID="1">
+					<Name>KACIR</Name>
+					<Type>Normal</Type>
+					<Latitude>36.991911111111115</Latitude>
+					<Longitude>-112.23944722222222</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>JALMA</Name>
+					<Type>Normal</Type>
+					<Latitude>36.55958888888889</Latitude>
+					<Longitude>-112.19995833333333</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="01">
+				<SidTr_Waypoint ID="2">
+					<Name>KACIR</Name>
+					<Type>Normal</Type>
+					<Latitude>36.991911111111115</Latitude>
+					<Longitude>-112.23944722222222</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="19">
+				<SidTr_Waypoint ID="2">
+					<Name>JOVBA</Name>
+					<Type>Normal</Type>
+					<Latitude>36.889874999999996</Latitude>
+					<Longitude>-112.42680000000001</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>KACIR</Name>
+					<Type>Normal</Type>
+					<Latitude>36.991911111111115</Latitude>
+					<Longitude>-112.23944722222222</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Approach Name="RNV01">
 			<App_Waypoint> <!--ID="1"-->
@@ -104,7 +155,7 @@
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
-Sids: 0/1
+Sids: 1/1
 Stars: 0/0
 Appch: 1/1
 -->
