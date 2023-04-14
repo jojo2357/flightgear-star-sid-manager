@@ -1,0 +1,353 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KEKX">
+		<Approach Name="ILS05">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>RISZO</Name>
+					<Type>Normal</Type>
+					<Latitude>37.55062777777778</Latitude>
+					<Longitude>-86.10488611111111</Longitude>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>CIHAD</Name>
+					<Type>Normal</Type>
+					<Latitude>37.61909722222222</Latitude>
+					<Longitude>-86.01400833333334</Longitude>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Altitude>02500</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW05</Name>
+					<Type>Runway</Type>
+					<Latitude>37.68034722222222</Latitude>
+					<Longitude>-85.93256944444445</Longitude>
+					<Altitude>00799</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>49.6</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!-- ID="5" -->
+					<Name>DMEINTC</Name>
+					<Type>DmeIntc</Type>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>290</Hdg_Crs_value>
+					<Sp_Turn>Left</Sp_Turn>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>MYS</Name>
+					<Type>Normal</Type>
+					<Latitude>37.89406666666667</Latitude>
+					<Longitude>-86.24452777777778</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="7"-->
+					<Name>MYS</Name>
+					<Type>Normal</Type>
+					<Latitude>37.89406666666667</Latitude>
+					<Longitude>-86.24452777777778</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="MYS  ">
+					<AppTr_Waypoint ID="1">
+						<Name>MYS </Name>
+						<Type>Normal</Type>
+						<Latitude>37.89406666666667</Latitude>
+						<Longitude>-86.24452777777778</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>RISZO</Name>
+						<Type>Normal</Type>
+						<Latitude>37.55062777777778</Latitude>
+						<Longitude>-86.10488611111111</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>RISZO</Name>
+						<Type>Normal</Type>
+						<Latitude>37.55062777777778</Latitude>
+						<Longitude>-86.10488611111111</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+			<Approach Name="LOC05">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>RISZO</Name>
+						<Type>Normal</Type>
+						<Latitude>37.55062777777778</Latitude>
+						<Longitude>-86.10488611111111</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>CIHAD</Name>
+						<Type>Normal</Type>
+						<Latitude>37.61909722222222</Latitude>
+						<Longitude>-86.01400833333334</Longitude>
+						<Altitude>02500</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>WAKUS</Name>
+						<Type>Normal</Type>
+						<Latitude>37.65510833333333</Latitude>
+						<Longitude>-85.96615277777778</Longitude>
+						<Altitude>01260</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>RW05</Name>
+						<Type>Runway</Type>
+						<Latitude>37.68034722222222</Latitude>
+						<Longitude>-85.93256944444445</Longitude>
+						<Altitude>00799</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>01200</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>49.6</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!-- ID="5" -->
+						<Name>DMEINTC</Name>
+						<Type>DmeIntc</Type>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>290</Hdg_Crs_value>
+						<Sp_Turn>Left</Sp_Turn>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>MYS</Name>
+						<Type>Normal</Type>
+						<Latitude>37.89406666666667</Latitude>
+						<Longitude>-86.24452777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="7"-->
+						<Name>MYS</Name>
+						<Type>Normal</Type>
+						<Latitude>37.89406666666667</Latitude>
+						<Longitude>-86.24452777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="MYS  ">
+						<AppTr_Waypoint ID="1">
+							<Name>MYS </Name>
+							<Type>Normal</Type>
+							<Latitude>37.89406666666667</Latitude>
+							<Longitude>-86.24452777777778</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>RISZO</Name>
+							<Type>Normal</Type>
+							<Latitude>37.55062777777778</Latitude>
+							<Longitude>-86.10488611111111</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>RISZO</Name>
+							<Type>Normal</Type>
+							<Latitude>37.55062777777778</Latitude>
+							<Longitude>-86.10488611111111</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+				<Approach Name="RNV05">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>RISZO</Name>
+							<Type>Normal</Type>
+							<Latitude>37.55062777777778</Latitude>
+							<Longitude>-86.10488611111111</Longitude>
+							<Altitude>02500</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>CIHAD</Name>
+							<Type>Normal</Type>
+							<Latitude>37.61909722222222</Latitude>
+							<Longitude>-86.01400833333334</Longitude>
+							<Altitude>02500</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>RW05</Name>
+							<Type>Runway</Type>
+							<Latitude>37.68034722222222</Latitude>
+							<Longitude>-85.93256944444445</Longitude>
+							<Altitude>00799</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>00968</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>49.6</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>ZIBET</Name>
+							<Type>Normal</Type>
+							<Latitude>37.74892222222223</Latitude>
+							<Longitude>-85.84110833333332</Longitude>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>HERMS</Name>
+							<Type>Normal</Type>
+							<Latitude>37.69172777777777</Latitude>
+							<Longitude>-85.46440277777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="7"-->
+							<Name>HERMS</Name>
+							<Type>Normal</Type>
+							<Latitude>37.69172777777777</Latitude>
+							<Longitude>-85.46440277777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="OSINE">
+							<AppTr_Waypoint ID="1">
+								<Name>OSINE</Name>
+								<Type>Normal</Type>
+								<Latitude>37.53350833333333</Latitude>
+								<Longitude>-86.31939999999999</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>RISZO</Name>
+								<Type>Normal</Type>
+								<Latitude>37.55062777777778</Latitude>
+								<Longitude>-86.10488611111111</Longitude>
+								<Altitude>02500</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+						<App_Transition Name="RISZO">
+							<AppTr_Waypoint ID="1">
+								<Name>RISZO</Name>
+								<Type>Normal</Type>
+								<Latitude>37.55062777777778</Latitude>
+								<Longitude>-86.10488611111111</Longitude>
+								<Altitude>02500</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+					<Approach Name="RNV23">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>ZOMDA</Name>
+								<Type>Normal</Type>
+								<Latitude>37.746625</Latitude>
+								<Longitude>-85.70052777777778</Longitude>
+								<Altitude>02500</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>JEXUD</Name>
+								<Type>Normal</Type>
+								<Latitude>37.74084166666667</Latitude>
+								<Longitude>-85.82667222222223</Longitude>
+								<Altitude>02500</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>WUXAX</Name>
+								<Type>Normal</Type>
+								<Latitude>37.69727499999999</Latitude>
+								<Longitude>-85.910025</Longitude>
+								<Altitude>00965</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint ID="4">
+								<Name>VECTORS</Name>
+								<Type>ConstHdgtoAlt</Type>
+								<Altitude>01176</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>239.70000000000002</Hdg_Crs_value>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>YOYGU</Name>
+								<Type>Normal</Type>
+								<Latitude>37.66054166666667</Latitude>
+								<Longitude>-85.98014166666667</Longitude>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>RISZO</Name>
+								<Type>Normal</Type>
+								<Latitude>37.55062777777778</Latitude>
+								<Longitude>-86.10488611111111</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="7"-->
+								<Name>RISZO</Name>
+								<Type>Normal</Type>
+								<Latitude>37.55062777777778</Latitude>
+								<Longitude>-86.10488611111111</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="JBEAM">
+								<AppTr_Waypoint ID="1">
+									<Name>JBEAM</Name>
+									<Type>Normal</Type>
+									<Latitude>37.79103611111111</Latitude>
+									<Longitude>-85.64281944444444</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>ZOMDA</Name>
+									<Type>Normal</Type>
+									<Latitude>37.746625</Latitude>
+									<Longitude>-85.70052777777778</Longitude>
+									<Altitude>02500</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 4/4
+-->

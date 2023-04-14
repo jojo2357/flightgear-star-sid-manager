@@ -1,0 +1,399 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KSGJ">
+		<Star Name="HOTAR1">
+			<Star_Waypoint ID="1">
+				<Name>JABOR</Name>
+				<Type>Normal</Type>
+				<Latitude>30.81443888888889</Latitude>
+				<Longitude>-81.09364722222222</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="2">
+				<Name>HOTAR</Name>
+				<Type>Normal</Type>
+				<Latitude>30.63981111111111</Latitude>
+				<Longitude>-81.11269722222222</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="3">
+				<Name>HABIK</Name>
+				<Type>Normal</Type>
+				<Latitude>30.151313888888886</Latitude>
+				<Longitude>-81.27571944444445</Longitude>
+			</Star_Waypoint>
+			<Star_Transition Name="BASLE">
+					<StarTr_Waypoint ID="1">
+						<Name>BASLE</Name>
+						<Type>Normal</Type>
+						<Latitude>32.16204444444445</Latitude>
+						<Longitude>-80.76348055555556</Longitude>
+					</StarTr_Waypoint>
+						<StarTr_Waypoint ID="2">
+							<Name>WYTOK</Name>
+							<Type>Normal</Type>
+							<Latitude>31.207080555555553</Latitude>
+							<Longitude>-81.05055833333333</Longitude>
+						</StarTr_Waypoint>
+							<StarTr_Waypoint ID="3">
+								<Name>JABOR</Name>
+								<Type>Normal</Type>
+								<Latitude>30.81443888888889</Latitude>
+								<Longitude>-81.09364722222222</Longitude>
+							</StarTr_Waypoint>
+						</Star_Transition>
+					</Star>
+						<Approach Name="ILS31">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>JOSEX</Name>
+								<Type>Normal</Type>
+								<Latitude>29.853958333333335</Latitude>
+								<Longitude>-81.18029722222224</Longitude>
+								<Altitude>01600</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>HAMGO</Name>
+								<Type>Normal</Type>
+								<Latitude>29.906575</Latitude>
+								<Longitude>-81.25901944444445</Longitude>
+								<Altitude>01600</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Altitude>01600</Altitude>
+								<AltitudeRestriction>below</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>CFSJN</Name>
+								<Type>Normal</Type>
+								<Latitude>29.955825</Latitude>
+								<Longitude>-81.33229166666666</Longitude>
+								<Altitude>00063</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!-- ID="4" -->
+								<Name>DMEINTC</Name>
+								<Type>DmeIntc</Type>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>311.5</Hdg_Crs_value>
+								<Sp_Turn>Auto</Sp_Turn>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>BUNDE</Name>
+								<Type>Normal</Type>
+								<Latitude>30.06963611111111</Latitude>
+								<Longitude>-81.40583055555557</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>BUNDE</Name>
+								<Type>Normal</Type>
+								<Latitude>30.06963611111111</Latitude>
+								<Longitude>-81.40583055555557</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="COBOK">
+								<AppTr_Waypoint ID="1">
+									<Name>COBOK</Name>
+									<Type>Normal</Type>
+									<Latitude>29.808480555555555</Latitude>
+									<Longitude>-81.11269722222222</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>JOSEX</Name>
+									<Type>Normal</Type>
+									<Latitude>29.853958333333335</Latitude>
+									<Longitude>-81.18029722222224</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+							<Approach Name="LOC31">
+								<App_Waypoint> <!--ID="1"-->
+									<Name>JOSEX</Name>
+									<Type>Normal</Type>
+									<Latitude>29.853958333333335</Latitude>
+									<Longitude>-81.18029722222224</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</App_Waypoint>
+								<App_Waypoint> <!--ID="2"-->
+									<Name>HAMGO</Name>
+									<Type>Normal</Type>
+									<Latitude>29.906575</Latitude>
+									<Longitude>-81.25901944444445</Longitude>
+									<Altitude>01600</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</App_Waypoint>
+								<App_Waypoint> <!--ID="3"-->
+									<Name>CFSJN</Name>
+									<Type>Normal</Type>
+									<Latitude>29.955825</Latitude>
+									<Longitude>-81.33229166666666</Longitude>
+									<Altitude>00063</Altitude>
+									<AltitudeRestriction>at</AltitudeRestriction>
+								</App_Waypoint>
+								<App_Waypoint> <!-- ID="4" -->
+									<Name>DMEINTC</Name>
+									<Type>DmeIntc</Type>
+									<Hdg_Crs>1</Hdg_Crs>
+									<Hdg_Crs_value>311.5</Hdg_Crs_value>
+									<Sp_Turn>Auto</Sp_Turn>
+								</App_Waypoint>
+								<App_Waypoint> <!--ID="5"-->
+									<Name>BUNDE</Name>
+									<Type>Normal</Type>
+									<Latitude>30.06963611111111</Latitude>
+									<Longitude>-81.40583055555557</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</App_Waypoint>
+								<App_Waypoint> <!--ID="6"-->
+									<Name>BUNDE</Name>
+									<Type>Normal</Type>
+									<Latitude>30.06963611111111</Latitude>
+									<Longitude>-81.40583055555557</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</App_Waypoint>
+								<App_Transition Name="COBOK">
+									<AppTr_Waypoint ID="1">
+										<Name>COBOK</Name>
+										<Type>Normal</Type>
+										<Latitude>29.808480555555555</Latitude>
+										<Longitude>-81.11269722222222</Longitude>
+										<Altitude>03000</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</AppTr_Waypoint>
+									<AppTr_Waypoint ID="2">
+										<Name>JOSEX</Name>
+										<Type>Normal</Type>
+										<Latitude>29.853958333333335</Latitude>
+										<Longitude>-81.18029722222224</Longitude>
+										<Altitude>03000</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</AppTr_Waypoint>
+								</App_Transition>
+							</Approach>
+								<Approach Name="RNV13">
+									<App_Waypoint> <!--ID="1"-->
+										<Name>TUNJU</Name>
+										<Type>Normal</Type>
+										<Latitude>30.071916666666667</Latitude>
+										<Longitude>-81.51443611111111</Longitude>
+										<Altitude>02000</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</App_Waypoint>
+									<App_Waypoint> <!--ID="2"-->
+										<Name>UDUZO</Name>
+										<Type>Normal</Type>
+										<Latitude>30.01265</Latitude>
+										<Longitude>-81.42149722222223</Longitude>
+										<Altitude>01600</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</App_Waypoint>
+									<App_Waypoint> <!--ID="3"-->
+										<Name>RW13</Name>
+										<Type>Runway</Type>
+										<Latitude>29.9657</Latitude>
+										<Longitude>-81.34801944444445</Longitude>
+										<Altitude>00068</Altitude>
+										<AltitudeRestriction>at</AltitudeRestriction>
+									</App_Waypoint>
+									<App_Waypoint ID="4">
+										<Name>VECTORS</Name>
+										<Type>ConstHdgtoAlt</Type>
+										<Altitude>00357</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+										<Hdg_Crs>1</Hdg_Crs>
+										<Hdg_Crs_value>130.3</Hdg_Crs_value>
+									</App_Waypoint>
+									<App_Waypoint> <!--ID="5"-->
+										<Name>YUTKA</Name>
+										<Type>Normal</Type>
+										<Latitude>29.844619444444444</Latitude>
+										<Longitude>-81.15910000000001</Longitude>
+										<Altitude>02000</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</App_Waypoint>
+									<App_Waypoint> <!--ID="6"-->
+										<Name>YUTKA</Name>
+										<Type>Normal</Type>
+										<Latitude>29.844619444444444</Latitude>
+										<Longitude>-81.15910000000001</Longitude>
+										<Altitude>02000</Altitude>
+										<AltitudeRestriction>above</AltitudeRestriction>
+									</App_Waypoint>
+									<App_Transition Name="CRG  ">
+										<AppTr_Waypoint ID="1">
+											<Name>CRG </Name>
+											<Type>Normal</Type>
+											<Latitude>30.338880555555555</Latitude>
+											<Longitude>-81.50992777777778</Longitude>
+										</AppTr_Waypoint>
+										<AppTr_Waypoint ID="2">
+											<Name>ORSOF</Name>
+											<Type>Normal</Type>
+											<Latitude>30.13929444444444</Latitude>
+											<Longitude>-81.45764722222222</Longitude>
+											<Altitude>02100</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</AppTr_Waypoint>
+										<AppTr_Waypoint ID="3">
+											<Name>TUNJU</Name>
+											<Type>Normal</Type>
+											<Latitude>30.071916666666667</Latitude>
+											<Longitude>-81.51443611111111</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</AppTr_Waypoint>
+									</App_Transition>
+									<App_Transition Name="MATEO">
+										<AppTr_Waypoint ID="1">
+											<Name>MATEO</Name>
+											<Type>Normal</Type>
+											<Latitude>29.76686388888889</Latitude>
+											<Longitude>-81.4535</Longitude>
+										</AppTr_Waypoint>
+										<AppTr_Waypoint ID="2">
+											<Name>EFURO</Name>
+											<Type>Normal</Type>
+											<Latitude>30.00451388888889</Latitude>
+											<Longitude>-81.57114722222222</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</AppTr_Waypoint>
+										<AppTr_Waypoint ID="3">
+											<Name>TUNJU</Name>
+											<Type>Normal</Type>
+											<Latitude>30.071916666666667</Latitude>
+											<Longitude>-81.51443611111111</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</AppTr_Waypoint>
+									</App_Transition>
+								</Approach>
+									<Approach Name="RNV31">
+										<App_Waypoint> <!--ID="1"-->
+											<Name>YUTKA</Name>
+											<Type>Normal</Type>
+											<Latitude>29.844619444444444</Latitude>
+											<Longitude>-81.15910000000001</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</App_Waypoint>
+										<App_Waypoint> <!--ID="2"-->
+											<Name>ODREC</Name>
+											<Type>Normal</Type>
+											<Latitude>29.904730555555556</Latitude>
+											<Longitude>-81.25281944444444</Longitude>
+											<Altitude>01700</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</App_Waypoint>
+										<App_Waypoint> <!--ID="3"-->
+											<Name>RW31</Name>
+											<Type>Runway</Type>
+											<Latitude>29.955702777777777</Latitude>
+											<Longitude>-81.33239999999999</Longitude>
+											<Altitude>00060</Altitude>
+											<AltitudeRestriction>at</AltitudeRestriction>
+										</App_Waypoint>
+										<App_Waypoint ID="4">
+											<Name>VECTORS</Name>
+											<Type>ConstHdgtoAlt</Type>
+											<Altitude>00218</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+											<Hdg_Crs>1</Hdg_Crs>
+											<Hdg_Crs_value>310.40000000000003</Hdg_Crs_value>
+										</App_Waypoint>
+										<App_Waypoint> <!--ID="5"-->
+											<Name>UDUZO</Name>
+											<Type>Normal</Type>
+											<Latitude>30.01265</Latitude>
+											<Longitude>-81.42149722222223</Longitude>
+										</App_Waypoint>
+										<App_Waypoint> <!--ID="6"-->
+											<Name>ORSOF</Name>
+											<Type>Normal</Type>
+											<Latitude>30.13929444444444</Latitude>
+											<Longitude>-81.45764722222222</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</App_Waypoint>
+										<App_Waypoint> <!--ID="7"-->
+											<Name>ORSOF</Name>
+											<Type>Normal</Type>
+											<Latitude>30.13929444444444</Latitude>
+											<Longitude>-81.45764722222222</Longitude>
+											<Altitude>02000</Altitude>
+											<AltitudeRestriction>above</AltitudeRestriction>
+										</App_Waypoint>
+										<App_Transition Name="DOOKY">
+											<AppTr_Waypoint ID="1">
+												<Name>DOOKY</Name>
+												<Type>Normal</Type>
+												<Latitude>29.835375</Latitude>
+												<Longitude>-81.06386944444445</Longitude>
+											</AppTr_Waypoint>
+											<AppTr_Waypoint ID="2">
+												<Name>YUTKA</Name>
+												<Type>Normal</Type>
+												<Latitude>29.844619444444444</Latitude>
+												<Longitude>-81.15910000000001</Longitude>
+												<Altitude>02000</Altitude>
+												<AltitudeRestriction>above</AltitudeRestriction>
+											</AppTr_Waypoint>
+										</App_Transition>
+										<App_Transition Name="MACMN">
+											<AppTr_Waypoint ID="1">
+												<Name>MACMN</Name>
+												<Type>Normal</Type>
+												<Latitude>29.768105555555557</Latitude>
+												<Longitude>-81.12065833333334</Longitude>
+											</AppTr_Waypoint>
+											<AppTr_Waypoint ID="2">
+												<Name>YUTKA</Name>
+												<Type>Normal</Type>
+												<Latitude>29.844619444444444</Latitude>
+												<Longitude>-81.15910000000001</Longitude>
+												<Altitude>02000</Altitude>
+												<AltitudeRestriction>above</AltitudeRestriction>
+											</AppTr_Waypoint>
+										</App_Transition>
+										<App_Transition Name="YUTKA">
+											<AppTr_Waypoint ID="1">
+												<Name>YUTKA</Name>
+												<Type>Normal</Type>
+												<Latitude>29.844619444444444</Latitude>
+												<Longitude>-81.15910000000001</Longitude>
+												<Altitude>02000</Altitude>
+												<AltitudeRestriction>above</AltitudeRestriction>
+											</AppTr_Waypoint>
+										</App_Transition>
+									</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 1/1
+Appch: 4/4
+-->

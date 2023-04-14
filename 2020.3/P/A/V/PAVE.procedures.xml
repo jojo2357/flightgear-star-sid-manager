@@ -1,0 +1,219 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="PAVE">
+		<Sid Name="FYU3  " Runways="04,22">
+			<Sid_Waypoint ID="1">
+				<Name>CUBRA</Name>
+				<Type>Normal</Type>
+				<Latitude>66.85607499999999</Latitude>
+				<Longitude>-145.97700833333334</Longitude>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="2">
+				<Name>FYU </Name>
+				<Type>Normal</Type>
+				<Latitude>66.57425277777777</Latitude>
+				<Longitude>-145.27665833333336</Longitude>
+			</Sid_Waypoint>
+			<RunwayTransition Runway="03">
+					<SidTr_Waypoint ID="1">
+						<Name>(1075)</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Latitude>0.000000</Latitude>
+						<Longitude>0.000000</Longitude>
+						<Altitude>01075</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>44.2</Hdg_Crs_value>
+					</SidTr_Waypoint>
+					<SidTr_Waypoint ID="2">
+						<Name>CUBRA</Name>
+						<Type>Normal</Type>
+						<Latitude>66.85607499999999</Latitude>
+						<Longitude>-145.97700833333334</Longitude>
+					</SidTr_Waypoint>
+				</RunwayTransition>
+				<RunwayTransition Runway="21">
+						<SidTr_Waypoint ID="1">
+							<Name>(1075)</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Latitude>0.000000</Latitude>
+							<Longitude>0.000000</Longitude>
+							<Altitude>01075</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>224.20000000000002</Hdg_Crs_value>
+						</SidTr_Waypoint>
+						<SidTr_Waypoint ID="2">
+							<Name>CUBRA</Name>
+							<Type>Normal</Type>
+							<Latitude>66.85607499999999</Latitude>
+							<Longitude>-145.97700833333334</Longitude>
+						</SidTr_Waypoint>
+					</RunwayTransition>
+				</Sid>
+					<Approach Name="RNV04">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>VENAE</Name>
+							<Type>Normal</Type>
+							<Latitude>66.82667777777777</Latitude>
+							<Longitude>-146.63894444444443</Longitude>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>COROM</Name>
+							<Type>Normal</Type>
+							<Latitude>66.95151944444444</Latitude>
+							<Longitude>-146.53702222222222</Longitude>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>TANPE</Name>
+							<Type>Normal</Type>
+							<Latitude>67.00229999999999</Latitude>
+							<Longitude>-146.39726944444445</Longitude>
+							<Altitude>00767</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>00974</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>29.1</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>VENAE</Name>
+							<Type>Normal</Type>
+							<Latitude>66.82667777777777</Latitude>
+							<Longitude>-146.63894444444443</Longitude>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>VENAE</Name>
+							<Type>Normal</Type>
+							<Latitude>66.82667777777777</Latitude>
+							<Longitude>-146.63894444444443</Longitude>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="CURUP">
+							<AppTr_Waypoint ID="1">
+								<Name>CURUP</Name>
+								<Type>Normal</Type>
+								<Latitude>66.67942777777779</Latitude>
+								<Longitude>-146.7382638888889</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>VENAE</Name>
+								<Type>Normal</Type>
+								<Latitude>66.82667777777777</Latitude>
+								<Longitude>-146.63894444444443</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+						<App_Transition Name="VENAE">
+							<AppTr_Waypoint ID="1">
+								<Name>VENAE</Name>
+								<Type>Normal</Type>
+								<Latitude>66.82667777777777</Latitude>
+								<Longitude>-146.63894444444443</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+						<Approach Name="RNV22">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>APORE</Name>
+								<Type>Normal</Type>
+								<Latitude>66.98402777777777</Latitude>
+								<Longitude>-145.88877222222223</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>MAHED</Name>
+								<Type>Normal</Type>
+								<Latitude>67.02499444444445</Latitude>
+								<Longitude>-146.14639722222222</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>TODCO</Name>
+								<Type>Normal</Type>
+								<Latitude>67.01504166666666</Latitude>
+								<Longitude>-146.33542777777777</Longitude>
+								<Altitude>00771</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint ID="4">
+								<Name>VECTORS</Name>
+								<Type>ConstHdgtoAlt</Type>
+								<Altitude>00974</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>244.4</Hdg_Crs_value>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>AVPOW</Name>
+								<Type>Normal</Type>
+								<Latitude>66.8611</Latitude>
+								<Longitude>-145.48941666666664</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>AVPOW</Name>
+								<Type>Normal</Type>
+								<Latitude>66.8611</Latitude>
+								<Longitude>-145.48941666666664</Longitude>
+								<Altitude>02200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="AVPOW">
+								<AppTr_Waypoint ID="1">
+									<Name>AVPOW</Name>
+									<Type>Normal</Type>
+									<Latitude>66.8611</Latitude>
+									<Longitude>-145.48941666666664</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>APORE</Name>
+									<Type>Normal</Type>
+									<Latitude>66.98402777777777</Latitude>
+									<Longitude>-145.88877222222223</Longitude>
+									<Altitude>02200</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 0/0
+Appch: 2/2
+-->

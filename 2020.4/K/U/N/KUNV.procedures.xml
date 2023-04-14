@@ -1,0 +1,423 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KUNV">
+		<Approach Name="ILS24">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>CFBGX</Name>
+					<Type>Normal</Type>
+					<Latitude>40.971158333333335</Latitude>
+					<Longitude>-77.63703055555557</Longitude>
+					<Altitude>03400</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>WOREX</Name>
+					<Type>Normal</Type>
+					<Latitude>40.92245555555555</Latitude>
+					<Longitude>-77.72185</Longitude>
+					<Altitude>03400</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Altitude>03400</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW24</Name>
+					<Type>Runway</Type>
+					<Latitude>40.855577777777775</Latitude>
+					<Longitude>-77.83794722222221</Longitude>
+					<Altitude>01247</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>02600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>243.8</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>PSB</Name>
+					<Type>Normal</Type>
+					<Latitude>40.91625833333333</Latitude>
+					<Longitude>-77.99271666666667</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>PSB</Name>
+					<Type>Normal</Type>
+					<Latitude>40.91625833333333</Latitude>
+					<Longitude>-77.99271666666667</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="PSB  ">
+					<AppTr_Waypoint ID="1">
+						<Name>PSB </Name>
+						<Type>Normal</Type>
+						<Latitude>40.91625833333333</Latitude>
+						<Longitude>-77.99271666666667</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>PENUE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91075277777777</Latitude>
+						<Longitude>-77.74219722222222</Longitude>
+						<Altitude>04800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>PENUE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91075277777777</Latitude>
+						<Longitude>-77.74219722222222</Longitude>
+						<Altitude>03900</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="RASHE">
+					<AppTr_Waypoint ID="1">
+						<Name>RASHE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.676677777777776</Latitude>
+						<Longitude>-77.64415000000001</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>PENUE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91075277777777</Latitude>
+						<Longitude>-77.74219722222222</Longitude>
+						<Altitude>04800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>PENUE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91075277777777</Latitude>
+						<Longitude>-77.74219722222222</Longitude>
+						<Altitude>03900</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+			<Approach Name="LOC24">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>CFBGX</Name>
+						<Type>Normal</Type>
+						<Latitude>40.971158333333335</Latitude>
+						<Longitude>-77.63703055555557</Longitude>
+						<Altitude>03900</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>PENUE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91075277777777</Latitude>
+						<Longitude>-77.74219722222222</Longitude>
+						<Altitude>03100</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>RW24</Name>
+						<Type>Runway</Type>
+						<Latitude>40.855577777777775</Latitude>
+						<Longitude>-77.83794722222221</Longitude>
+						<Altitude>01247</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>02600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>243.8</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="5"-->
+						<Name>PSB</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91625833333333</Latitude>
+						<Longitude>-77.99271666666667</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>PSB</Name>
+						<Type>Normal</Type>
+						<Latitude>40.91625833333333</Latitude>
+						<Longitude>-77.99271666666667</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="PSB  ">
+						<AppTr_Waypoint ID="1">
+							<Name>PSB </Name>
+							<Type>Normal</Type>
+							<Latitude>40.91625833333333</Latitude>
+							<Longitude>-77.99271666666667</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>PENUE</Name>
+							<Type>Normal</Type>
+							<Latitude>40.91075277777777</Latitude>
+							<Longitude>-77.74219722222222</Longitude>
+							<Altitude>04800</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>PENUE</Name>
+							<Type>Normal</Type>
+							<Latitude>40.91075277777777</Latitude>
+							<Longitude>-77.74219722222222</Longitude>
+							<Altitude>03900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="RASHE">
+						<AppTr_Waypoint ID="1">
+							<Name>RASHE</Name>
+							<Type>Normal</Type>
+							<Latitude>40.676677777777776</Latitude>
+							<Longitude>-77.64415000000001</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>PENUE</Name>
+							<Type>Normal</Type>
+							<Latitude>40.91075277777777</Latitude>
+							<Longitude>-77.74219722222222</Longitude>
+							<Altitude>04800</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>PENUE</Name>
+							<Type>Normal</Type>
+							<Latitude>40.91075277777777</Latitude>
+							<Longitude>-77.74219722222222</Longitude>
+							<Altitude>03900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+				<Approach Name="RNV06">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>HIMAB</Name>
+							<Type>Normal</Type>
+							<Latitude>40.72271666666667</Latitude>
+							<Longitude>-78.06730833333333</Longitude>
+							<Altitude>04100</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="1"-->
+							<Name>JIDIN</Name>
+							<Type>Normal</Type>
+							<Latitude>40.752072222222225</Latitude>
+							<Longitude>-78.01677777777778</Longitude>
+							<Altitude>03700</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>TOYOS</Name>
+							<Type>Normal</Type>
+							<Latitude>40.783427777777774</Latitude>
+							<Longitude>-77.96270833333334</Longitude>
+							<Altitude>03200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>CUDBA</Name>
+							<Type>Normal</Type>
+							<Latitude>40.81516111111111</Latitude>
+							<Longitude>-77.90789722222223</Longitude>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Altitude>02200</Altitude>
+							<AltitudeRestriction>below</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>RW06</Name>
+							<Type>Runway</Type>
+							<Latitude>40.84444444444445</Latitude>
+							<Longitude>-77.857225</Longitude>
+							<Altitude>01277</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>01431</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>63.7</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>HUXET</Name>
+							<Type>Normal</Type>
+							<Latitude>40.98393611111111</Latitude>
+							<Longitude>-77.61474166666666</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>HUXET</Name>
+							<Type>Normal</Type>
+							<Latitude>40.98393611111111</Latitude>
+							<Longitude>-77.61474166666666</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="PSB  ">
+							<AppTr_Waypoint ID="1">
+								<Name>PSB </Name>
+								<Type>Normal</Type>
+								<Latitude>40.91625833333333</Latitude>
+								<Longitude>-77.99271666666667</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>HIMAB</Name>
+								<Type>Normal</Type>
+								<Latitude>40.72271666666667</Latitude>
+								<Longitude>-78.06730833333333</Longitude>
+								<Altitude>04800</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="3">
+								<Name>HIMAB</Name>
+								<Type>Normal</Type>
+								<Latitude>40.72271666666667</Latitude>
+								<Longitude>-78.06730833333333</Longitude>
+								<Altitude>04100</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+					<Approach Name="RNV24">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>HUXET</Name>
+								<Type>Normal</Type>
+								<Latitude>40.98393611111111</Latitude>
+								<Longitude>-77.61474166666666</Longitude>
+								<Altitude>04000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="1"-->
+								<Name>JOMIV</Name>
+								<Type>Normal</Type>
+								<Latitude>40.95274166666667</Latitude>
+								<Longitude>-77.66913333333333</Longitude>
+								<Altitude>03600</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>GEKDE</Name>
+								<Type>Normal</Type>
+								<Latitude>40.92375277777777</Latitude>
+								<Longitude>-77.7196</Longitude>
+								<Altitude>03400</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>RW24</Name>
+								<Type>Runway</Type>
+								<Latitude>40.855577777777775</Latitude>
+								<Longitude>-77.83794722222221</Longitude>
+								<Altitude>01247</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint ID="4">
+								<Name>VECTORS</Name>
+								<Type>ConstHdgtoAlt</Type>
+								<Altitude>01418</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>243.8</Hdg_Crs_value>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>HIMAB</Name>
+								<Type>Normal</Type>
+								<Latitude>40.72271666666667</Latitude>
+								<Longitude>-78.06730833333333</Longitude>
+								<Altitude>04100</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>HIMAB</Name>
+								<Type>Normal</Type>
+								<Latitude>40.72271666666667</Latitude>
+								<Longitude>-78.06730833333333</Longitude>
+								<Altitude>04100</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="PSB  ">
+								<AppTr_Waypoint ID="1">
+									<Name>PSB </Name>
+									<Type>Normal</Type>
+									<Latitude>40.91625833333333</Latitude>
+									<Longitude>-77.99271666666667</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>HUXET</Name>
+									<Type>Normal</Type>
+									<Latitude>40.98393611111111</Latitude>
+									<Longitude>-77.61474166666666</Longitude>
+									<Altitude>04800</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="3">
+									<Name>HUXET</Name>
+									<Type>Normal</Type>
+									<Latitude>40.98393611111111</Latitude>
+									<Longitude>-77.61474166666666</Longitude>
+									<Altitude>04000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+							<App_Transition Name="RASHE">
+								<AppTr_Waypoint ID="1">
+									<Name>RASHE</Name>
+									<Type>Normal</Type>
+									<Latitude>40.676677777777776</Latitude>
+									<Longitude>-77.64415000000001</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>HUXET</Name>
+									<Type>Normal</Type>
+									<Latitude>40.98393611111111</Latitude>
+									<Longitude>-77.61474166666666</Longitude>
+									<Altitude>04800</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="3">
+									<Name>HUXET</Name>
+									<Type>Normal</Type>
+									<Latitude>40.98393611111111</Latitude>
+									<Longitude>-77.61474166666666</Longitude>
+									<Altitude>04000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 4/4
+-->

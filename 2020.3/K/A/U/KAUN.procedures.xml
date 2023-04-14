@@ -1,0 +1,131 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KAUN">
+			<Approach Name="RNV07">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>CITXU</Name>
+					<Type>Normal</Type>
+					<Latitude>38.93603333333333</Latitude>
+					<Longitude>-121.31146666666666</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>YADFY</Name>
+					<Type>Normal</Type>
+					<Latitude>38.94653055555555</Latitude>
+					<Longitude>-121.1837888888889</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW07</Name>
+					<Type>Runway</Type>
+					<Latitude>38.95435555555556</Latitude>
+					<Longitude>-121.08749999999999</Longitude>
+					<Altitude>01538</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01848</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>68</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>AVPEY</Name>
+					<Type>Normal</Type>
+					<Latitude>38.96543611111111</Latitude>
+					<Longitude>-120.94934166666667</Longitude>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>EKUJA</Name>
+					<Type>Normal</Type>
+					<Latitude>39.10516944444445</Latitude>
+					<Longitude>-121.06622222222222</Longitude>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="7"-->
+					<Name>MRGGO</Name>
+					<Type>Normal</Type>
+					<Latitude>39.22229166666666</Latitude>
+					<Longitude>-121.2786611111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="8"-->
+					<Name>MRGGO</Name>
+					<Type>Normal</Type>
+					<Latitude>39.22229166666666</Latitude>
+					<Longitude>-121.2786611111111</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="CITXU">
+					<AppTr_Waypoint ID="1">
+						<Name>CITXU</Name>
+						<Type>Normal</Type>
+						<Latitude>38.93603333333333</Latitude>
+						<Longitude>-121.31146666666666</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="MRGGO">
+					<AppTr_Waypoint ID="1">
+						<Name>MRGGO</Name>
+						<Type>Normal</Type>
+						<Latitude>39.22229166666666</Latitude>
+						<Longitude>-121.2786611111111</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CITXU</Name>
+						<Type>Normal</Type>
+						<Latitude>38.93603333333333</Latitude>
+						<Longitude>-121.31146666666666</Longitude>
+						<Altitude>03500</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="ROZZY">
+					<AppTr_Waypoint ID="1">
+						<Name>ROZZY</Name>
+						<Type>Normal</Type>
+						<Latitude>38.745124999999994</Latitude>
+						<Longitude>-121.25048611111112</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CITXU</Name>
+						<Type>Normal</Type>
+						<Latitude>38.93603333333333</Latitude>
+						<Longitude>-121.31146666666666</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 1/1
+-->

@@ -1,0 +1,383 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KEDJ">
+		<Approach Name="VOR25">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>ZEDIN</Name>
+					<Type>Normal</Type>
+					<Latitude>40.4688</Latitude>
+					<Longitude>-83.55686388888888</Longitude>
+					<Altitude>04000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>DUVEC</Name>
+					<Type>Normal</Type>
+					<Latitude>40.41115555555555</Latitude>
+					<Longitude>-83.71260555555556</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>CADAY</Name>
+					<Type>Normal</Type>
+					<Latitude>40.39534166666667</Latitude>
+					<Longitude>-83.75519166666666</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>GIRSE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.374725000000005</Latitude>
+					<Longitude>-83.81061388888888</Longitude>
+					<Altitude>01166</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="4"-->
+					<Name>ROD</Name>
+					<Type>Normal</Type>
+					<Latitude>40.2878</Latitude>
+					<Longitude>-84.04309722222222</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>ROD</Name>
+					<Type>Normal</Type>
+					<Latitude>40.2878</Latitude>
+					<Longitude>-84.04309722222222</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="ROD  ">
+					<AppTr_Waypoint ID="1">
+						<Name>ROD </Name>
+						<Type>Normal</Type>
+						<Latitude>40.2878</Latitude>
+						<Longitude>-84.04309722222222</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>ZEDIN</Name>
+						<Type>Normal</Type>
+						<Latitude>40.4688</Latitude>
+						<Longitude>-83.55686388888888</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>ZEDIN</Name>
+						<Type>Normal</Type>
+						<Latitude>40.4688</Latitude>
+						<Longitude>-83.55686388888888</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+			<Approach Name="RNV07">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>ROD</Name>
+						<Type>Normal</Type>
+						<Latitude>40.2878</Latitude>
+						<Longitude>-84.04309722222222</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>JOLIS</Name>
+						<Type>Normal</Type>
+						<Latitude>40.341033333333336</Latitude>
+						<Longitude>-83.92723333333333</Longitude>
+						<Altitude>02700</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>CUPMO</Name>
+						<Type>Normal</Type>
+						<Latitude>40.35983888888889</Latitude>
+						<Longitude>-83.86230555555555</Longitude>
+						<Altitude>01680</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Altitude>01686</Altitude>
+						<AltitudeRestriction>below</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>RW07</Name>
+						<Type>Runway</Type>
+						<Latitude>40.36986111111111</Latitude>
+						<Longitude>-83.82763055555556</Longitude>
+						<Altitude>01144</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>01600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>74.3</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="5"-->
+						<Name>BUTYN</Name>
+						<Type>Normal</Type>
+						<Latitude>40.43868611111111</Latitude>
+						<Longitude>-84.28944722222222</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>BUTYN</Name>
+						<Type>Normal</Type>
+						<Latitude>40.43868611111111</Latitude>
+						<Longitude>-84.28944722222222</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="DANEI">
+						<AppTr_Waypoint ID="1">
+							<Name>DANEI</Name>
+							<Type>Normal</Type>
+							<Latitude>40.20267777777778</Latitude>
+							<Longitude>-83.63931666666667</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>ROD </Name>
+							<Type>Normal</Type>
+							<Latitude>40.2878</Latitude>
+							<Longitude>-84.04309722222222</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>ROD </Name>
+							<Type>Normal</Type>
+							<Latitude>40.2878</Latitude>
+							<Longitude>-84.04309722222222</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+				<Approach Name="RNV25">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>ZEDIN</Name>
+							<Type>Normal</Type>
+							<Latitude>40.4688</Latitude>
+							<Longitude>-83.55686388888888</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>NEPPI</Name>
+							<Type>Normal</Type>
+							<Latitude>40.40680833333333</Latitude>
+							<Longitude>-83.69941666666666</Longitude>
+							<Altitude>02900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>FEDIS</Name>
+							<Type>Normal</Type>
+							<Latitude>40.39118611111111</Latitude>
+							<Longitude>-83.75370277777778</Longitude>
+							<Altitude>02040</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Altitude>02053</Altitude>
+							<AltitudeRestriction>below</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>RW25</Name>
+							<Type>Runway</Type>
+							<Latitude>40.37470833333333</Latitude>
+							<Longitude>-83.81084444444444</Longitude>
+							<Altitude>01162</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>01900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>254.4</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>ROD</Name>
+							<Type>Normal</Type>
+							<Latitude>40.2878</Latitude>
+							<Longitude>-84.04309722222222</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>ROD</Name>
+							<Type>Normal</Type>
+							<Latitude>40.2878</Latitude>
+							<Longitude>-84.04309722222222</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="DANEI">
+							<AppTr_Waypoint ID="1">
+								<Name>DANEI</Name>
+								<Type>Normal</Type>
+								<Latitude>40.20267777777778</Latitude>
+								<Longitude>-83.63931666666667</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>ZEDIN</Name>
+								<Type>Normal</Type>
+								<Latitude>40.4688</Latitude>
+								<Longitude>-83.55686388888888</Longitude>
+								<Altitude>04000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="3">
+								<Name>ZEDIN</Name>
+								<Type>Normal</Type>
+								<Latitude>40.4688</Latitude>
+								<Longitude>-83.55686388888888</Longitude>
+								<Altitude>04000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+						<App_Transition Name="ROD  ">
+							<AppTr_Waypoint ID="1">
+								<Name>ROD </Name>
+								<Type>Normal</Type>
+								<Latitude>40.2878</Latitude>
+								<Longitude>-84.04309722222222</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>ZEDIN</Name>
+								<Type>Normal</Type>
+								<Latitude>40.4688</Latitude>
+								<Longitude>-83.55686388888888</Longitude>
+								<Altitude>04000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="3">
+								<Name>ZEDIN</Name>
+								<Type>Normal</Type>
+								<Latitude>40.4688</Latitude>
+								<Longitude>-83.55686388888888</Longitude>
+								<Altitude>04000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+					<Approach Name="VOR07">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>ROD</Name>
+								<Type>Normal</Type>
+								<Latitude>40.2878</Latitude>
+								<Longitude>-84.04309722222222</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>JEDRI</Name>
+								<Type>Normal</Type>
+								<Latitude>40.33136944444445</Latitude>
+								<Longitude>-83.92885277777778</Longitude>
+								<Altitude>02800</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>PURBE</Name>
+								<Type>Normal</Type>
+								<Latitude>40.36989722222222</Latitude>
+								<Longitude>-83.82741666666666</Longitude>
+								<Altitude>01148</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint ID="4">
+								<Name>VECTORS</Name>
+								<Type>ConstHdgtoAlt</Type>
+								<Altitude>01522</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>68.5</Hdg_Crs_value>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>ROD</Name>
+								<Type>Normal</Type>
+								<Latitude>40.2878</Latitude>
+								<Longitude>-84.04309722222222</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>ROD</Name>
+								<Type>Normal</Type>
+								<Latitude>40.2878</Latitude>
+								<Longitude>-84.04309722222222</Longitude>
+								<Altitude>03000</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="BUTYN">
+								<AppTr_Waypoint ID="1">
+									<Name>BUTYN</Name>
+									<Type>Normal</Type>
+									<Latitude>40.43868611111111</Latitude>
+									<Longitude>-84.28944722222222</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>ROD </Name>
+									<Type>Normal</Type>
+									<Latitude>40.2878</Latitude>
+									<Longitude>-84.04309722222222</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+							<App_Transition Name="DANEI">
+								<AppTr_Waypoint ID="1">
+									<Name>DANEI</Name>
+									<Type>Normal</Type>
+									<Latitude>40.20267777777778</Latitude>
+									<Longitude>-83.63931666666667</Longitude>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="2">
+									<Name>ROD </Name>
+									<Type>Normal</Type>
+									<Latitude>40.2878</Latitude>
+									<Longitude>-84.04309722222222</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+								<AppTr_Waypoint ID="3">
+									<Name>ROD </Name>
+									<Type>Normal</Type>
+									<Latitude>40.2878</Latitude>
+									<Longitude>-84.04309722222222</Longitude>
+									<Altitude>03000</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 4/4
+-->

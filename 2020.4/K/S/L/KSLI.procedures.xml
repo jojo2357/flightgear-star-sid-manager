@@ -1,0 +1,327 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KSLI">
+		<Sid Name="HAWWC3" Runways="04R,22L">
+			<Sid_Waypoint ID="1">
+				<Name>PIJIN</Name>
+				<Type>Normal</Type>
+				<Latitude>33.867552777777775</Latitude>
+				<Longitude>-118.32855555555555</Longitude>
+				<Altitude>04000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="2">
+				<Name>HAWWC</Name>
+				<Type>Normal</Type>
+				<Latitude>33.915255555555554</Latitude>
+				<Longitude>-118.4141</Longitude>
+				<Altitude>05000</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</Sid_Waypoint>
+			<Sid_Transition Name="IKAYE">
+				<SidTr_Waypoint ID="1">
+					<Name>HAWWC</Name>
+					<Type>Normal</Type>
+					<Latitude>33.915255555555554</Latitude>
+					<Longitude>-118.4141</Longitude>
+					<Altitude>05000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>WROBN</Name>
+					<Type>Normal</Type>
+					<Latitude>34.007469444444446</Latitude>
+					<Longitude>-118.49447222222221</Longitude>
+					<Altitude>06000</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="3">
+					<Name>ORIYL</Name>
+					<Type>Normal</Type>
+					<Latitude>34.053549999999994</Latitude>
+					<Longitude>-118.59279722222222</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="4">
+					<Name>MOOOS</Name>
+					<Type>Normal</Type>
+					<Latitude>34.05130277777777</Latitude>
+					<Longitude>-118.76081111111111</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="5">
+					<Name>IKAYE</Name>
+					<Type>Normal</Type>
+					<Latitude>34.143055555555556</Latitude>
+					<Longitude>-119.01027777777777</Longitude>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<RunwayTransition Runway="04R">
+				<SidTr_Waypoint ID="1">
+						<Name>(0540)</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Latitude>0.000000</Latitude>
+						<Longitude>0.000000</Longitude>
+						<Altitude>00540</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>41</Hdg_Crs_value>
+						</SidTr_Waypoint>
+					<SidTr_Waypoint ID="3">
+						<Name>PIJIN</Name>
+						<Type>Normal</Type>
+						<Latitude>33.867552777777775</Latitude>
+						<Longitude>-118.32855555555555</Longitude>
+						<Altitude>04000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</SidTr_Waypoint>
+				</RunwayTransition>
+				<RunwayTransition Runway="22L">
+					<SidTr_Waypoint ID="1">
+							<Name>(0540)</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Latitude>0.000000</Latitude>
+							<Longitude>0.000000</Longitude>
+							<Altitude>00540</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>221</Hdg_Crs_value>
+							</SidTr_Waypoint>
+						<SidTr_Waypoint ID="3">
+							<Name>PIJIN</Name>
+							<Type>Normal</Type>
+							<Latitude>33.867552777777775</Latitude>
+							<Longitude>-118.32855555555555</Longitude>
+							<Altitude>04000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</SidTr_Waypoint>
+					</RunwayTransition>
+				</Sid>
+				<Star Name="EMMLN1">
+					<Star_Waypoint ID="1">
+						<Name>APLES</Name>
+						<Type>Normal</Type>
+						<Latitude>34.54846666666666</Latitude>
+						<Longitude>-117.14948333333335</Longitude>
+						<Altitude>10000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="2">
+						<Name>EMMLN</Name>
+						<Type>Normal</Type>
+						<Latitude>34.440802777777776</Latitude>
+						<Longitude>-117.21494722222222</Longitude>
+					</Star_Waypoint>
+					<Star_Waypoint ID="3">
+						<Name>CAPTZ</Name>
+						<Type>Normal</Type>
+						<Latitude>34.284391666666664</Latitude>
+						<Longitude>-117.30972222222222</Longitude>
+						<Altitude>10000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="4">
+						<Name>RRIZE</Name>
+						<Type>Normal</Type>
+						<Latitude>34.086816666666664</Latitude>
+						<Longitude>-117.42888055555555</Longitude>
+						<Altitude>08100</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="5">
+						<Name>PDZ </Name>
+						<Type>Normal</Type>
+						<Latitude>33.91833611111111</Latitude>
+						<Longitude>-117.52999722222222</Longitude>
+						<Altitude>06000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="6">
+						<Name>DOWDD</Name>
+						<Type>Normal</Type>
+						<Latitude>33.98541388888889</Latitude>
+						<Longitude>-117.83216666666667</Longitude>
+						<Altitude>06000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="7">
+						<Name>AHEIM</Name>
+						<Type>Normal</Type>
+						<Latitude>33.82031388888889</Latitude>
+						<Longitude>-117.91194722222222</Longitude>
+						<Altitude>06000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Waypoint ID="8">
+						<Name>SLI </Name>
+						<Type>Normal</Type>
+						<Latitude>33.783300000000004</Latitude>
+						<Longitude>-118.05475833333334</Longitude>
+						<Altitude>06000</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</Star_Waypoint>
+					<Star_Transition Name="DAG  ">
+						<StarTr_Waypoint ID="1">
+								<Name>DAG </Name>
+								<Type>Normal</Type>
+								<Latitude>34.96245833333334</Latitude>
+								<Longitude>-116.57816666666666</Longitude>
+							</StarTr_Waypoint>
+							<StarTr_Waypoint ID="2">
+									<Name>BASAL</Name>
+									<Type>Normal</Type>
+									<Latitude>34.757775</Latitude>
+									<Longitude>-116.86183055555556</Longitude>
+									<Altitude>10000</Altitude>
+									<AltitudeRestriction>at</AltitudeRestriction>
+								</StarTr_Waypoint>
+								<StarTr_Waypoint ID="3">
+										<Name>APLES</Name>
+										<Type>Normal</Type>
+										<Latitude>34.54846666666666</Latitude>
+										<Longitude>-117.14948333333335</Longitude>
+										<Altitude>10000</Altitude>
+										<AltitudeRestriction>at</AltitudeRestriction>
+									</StarTr_Waypoint>
+								</Star_Transition>
+								<Star_Transition Name="HEC  ">
+									<StarTr_Waypoint ID="1">
+											<Name>HEC </Name>
+											<Type>Normal</Type>
+											<Latitude>34.797019444444445</Latitude>
+											<Longitude>-116.46292222222222</Longitude>
+										</StarTr_Waypoint>
+										<StarTr_Waypoint ID="2">
+												<Name>GILLM</Name>
+												<Type>Normal</Type>
+												<Latitude>34.62495833333334</Latitude>
+												<Longitude>-116.93976388888889</Longitude>
+											</StarTr_Waypoint>
+											<StarTr_Waypoint ID="3">
+													<Name>APLES</Name>
+													<Type>Normal</Type>
+													<Latitude>34.54846666666666</Latitude>
+													<Longitude>-117.14948333333335</Longitude>
+													<Altitude>10000</Altitude>
+													<AltitudeRestriction>at</AltitudeRestriction>
+												</StarTr_Waypoint>
+											</Star_Transition>
+										</Star>
+										<Star Name="KAYOH8">
+											<Star_Waypoint ID="1">
+												<Name>KAYOH</Name>
+												<Type>Normal</Type>
+												<Latitude>33.78033333333333</Latitude>
+												<Longitude>-117.59014444444443</Longitude>
+											</Star_Waypoint>
+											<Star_Waypoint ID="2">
+												<Name>JOGIT</Name>
+												<Type>Normal</Type>
+												<Latitude>33.78176111111111</Latitude>
+												<Longitude>-117.78085277777778</Longitude>
+											</Star_Waypoint>
+											<Star_Waypoint ID="3">
+												<Name>SLI </Name>
+												<Type>Normal</Type>
+												<Latitude>33.783300000000004</Latitude>
+												<Longitude>-118.05475833333334</Longitude>
+											</Star_Waypoint>
+											<Star_Transition Name="HEC  ">
+												<StarTr_Waypoint ID="1">
+														<Name>HEC </Name>
+														<Type>Normal</Type>
+														<Latitude>34.797019444444445</Latitude>
+														<Longitude>-116.46292222222222</Longitude>
+													</StarTr_Waypoint>
+													<StarTr_Waypoint ID="2">
+															<Name>BULGY</Name>
+															<Type>Normal</Type>
+															<Latitude>34.66782499999999</Latitude>
+															<Longitude>-116.62194444444444</Longitude>
+														</StarTr_Waypoint>
+														<StarTr_Waypoint ID="3">
+																<Name>DAWNA</Name>
+																<Type>Normal</Type>
+																<Latitude>34.26497777777778</Latitude>
+																<Longitude>-117.11306111111111</Longitude>
+															</StarTr_Waypoint>
+															<StarTr_Waypoint ID="4">
+																	<Name>HDF </Name>
+																	<Type>Normal</Type>
+																	<Latitude>33.77633055555556</Latitude>
+																	<Longitude>-117.185325</Longitude>
+																</StarTr_Waypoint>
+																<StarTr_Waypoint ID="5">
+																		<Name>FRETS</Name>
+																		<Type>Normal</Type>
+																		<Latitude>33.77954166666667</Latitude>
+																		<Longitude>-117.49768888888889</Longitude>
+																	</StarTr_Waypoint>
+																	<StarTr_Waypoint ID="6">
+																			<Name>KAYOH</Name>
+																			<Type>Normal</Type>
+																			<Latitude>33.78033333333333</Latitude>
+																			<Longitude>-117.59014444444443</Longitude>
+																		</StarTr_Waypoint>
+																	</Star_Transition>
+																	<Star_Transition Name="PSP  ">
+																		<StarTr_Waypoint ID="1">
+																				<Name>PSP </Name>
+																				<Type>Normal</Type>
+																				<Latitude>33.870013888888884</Latitude>
+																				<Longitude>-116.42978333333333</Longitude>
+																			</StarTr_Waypoint>
+																			<StarTr_Waypoint ID="2">
+																					<Name>AHLEX</Name>
+																					<Type>Normal</Type>
+																					<Latitude>33.882313888888895</Latitude>
+																					<Longitude>-116.68959444444445</Longitude>
+																				</StarTr_Waypoint>
+																				<StarTr_Waypoint ID="3">
+																						<Name>BANDS</Name>
+																						<Type>Normal</Type>
+																						<Latitude>33.889608333333335</Latitude>
+																						<Longitude>-116.84948055555556</Longitude>
+																					</StarTr_Waypoint>
+																					<StarTr_Waypoint ID="4">
+																							<Name>HDF </Name>
+																							<Type>Normal</Type>
+																							<Latitude>33.77633055555556</Latitude>
+																							<Longitude>-117.185325</Longitude>
+																						</StarTr_Waypoint>
+																						<StarTr_Waypoint ID="5">
+																								<Name>FRETS</Name>
+																								<Type>Normal</Type>
+																								<Latitude>33.77954166666667</Latitude>
+																								<Longitude>-117.49768888888889</Longitude>
+																							</StarTr_Waypoint>
+																							<StarTr_Waypoint ID="6">
+																									<Name>KAYOH</Name>
+																									<Type>Normal</Type>
+																									<Latitude>33.78033333333333</Latitude>
+																									<Longitude>-117.59014444444443</Longitude>
+																								</StarTr_Waypoint>
+																							</Star_Transition>
+																						</Star>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 2/2
+Appch: 0/0
+-->

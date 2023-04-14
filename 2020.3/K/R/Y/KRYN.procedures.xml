@@ -1,0 +1,268 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KRYN">
+		<Sid Name="ALMON1" Runways="06R,24L">
+			<RunwayTransition Runway="06R">
+				<SidTr_Waypoint ID="1">
+					<Name>ZILIG</Name>
+					<Type>Normal</Type>
+					<Latitude>32.154355555555554</Latitude>
+					<Longitude>-111.13263055555555</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>ALMON</Name>
+					<Type>Normal</Type>
+					<Latitude>32.38355</Latitude>
+					<Longitude>-111.49475833333334</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="24L">
+				<SidTr_Waypoint ID="1">
+					<Name>JUPIN</Name>
+					<Type>Normal</Type>
+					<Latitude>32.12608055555555</Latitude>
+					<Longitude>-111.22550277777778</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>ALMON</Name>
+					<Type>Normal</Type>
+					<Latitude>32.38355</Latitude>
+					<Longitude>-111.49475833333334</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+			<Approach Name="NDB06R">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>HUGUN</Name>
+					<Type>Normal</Type>
+					<Latitude>32.12259166666667</Latitude>
+					<Longitude>-111.46315555555556</Longitude>
+					<Altitude>06600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>JOTED</Name>
+					<Type>Normal</Type>
+					<Latitude>32.13012777777778</Latitude>
+					<Longitude>-111.3244361111111</Longitude>
+					<Altitude>05200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>FISBI</Name>
+					<Type>Normal</Type>
+					<Latitude>32.134797222222225</Latitude>
+					<Longitude>-111.23706944444444</Longitude>
+					<Altitude>03540</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>MACJE</Name>
+					<Type>Normal</Type>
+					<Latitude>32.13767222222223</Latitude>
+					<Longitude>-111.17910277777779</Longitude>
+					<Altitude>02454</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>02819</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>74.5</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!-- ID="5" -->
+					<Name>DMEINTC</Name>
+					<Type>DmeIntc</Type>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>170</Hdg_Crs_value>
+					<Sp_Turn>Right</Sp_Turn>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>JOTED</Name>
+					<Type>Normal</Type>
+					<Latitude>32.13012777777778</Latitude>
+					<Longitude>-111.3244361111111</Longitude>
+					<Altitude>05200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="7"-->
+					<Name>JOTED</Name>
+					<Type>Normal</Type>
+					<Latitude>32.13012777777778</Latitude>
+					<Longitude>-111.3244361111111</Longitude>
+					<Altitude>05200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="TUS  ">
+					<AppTr_Waypoint ID="1">
+						<Name>TUS </Name>
+						<Type>Normal</Type>
+						<Latitude>32.09520277777778</Latitude>
+						<Longitude>-110.91485555555556</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>RYN </Name>
+						<Type>Normal</Type>
+						<Latitude>32.13878888888889</Latitude>
+						<Longitude>-111.16149722222222</Longitude>
+						<Altitude>06800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>JOTED</Name>
+						<Type>Normal</Type>
+						<Latitude>32.13012777777778</Latitude>
+						<Longitude>-111.3244361111111</Longitude>
+						<Altitude>05200</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="4">
+						<Name>JOTED</Name>
+						<Type>Normal</Type>
+						<Latitude>32.13012777777778</Latitude>
+						<Longitude>-111.3244361111111</Longitude>
+						<Altitude>05200</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="ZEKAP">
+					<AppTr_Waypoint ID="1">
+						<Name>ZEKAP</Name>
+						<Type>Normal</Type>
+						<Latitude>32.32812222222223</Latitude>
+						<Longitude>-111.39181944444445</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>HUGUN</Name>
+						<Type>Normal</Type>
+						<Latitude>32.12259166666667</Latitude>
+						<Longitude>-111.46315555555556</Longitude>
+						<Altitude>06600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+				<Approach Name="RNV06R">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>HILIX</Name>
+						<Type>Normal</Type>
+						<Latitude>32.07901666666667</Latitude>
+						<Longitude>-111.37954444444443</Longitude>
+						<Altitude>05800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>WIKIM</Name>
+						<Type>Normal</Type>
+						<Latitude>32.10386666666667</Latitude>
+						<Longitude>-111.29830833333332</Longitude>
+						<Altitude>04500</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>XOXUJ</Name>
+						<Type>Normal</Type>
+						<Latitude>32.13565</Latitude>
+						<Longitude>-111.19409444444445</Longitude>
+						<Altitude>02703</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>02900</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>58.300000000000004</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="5"-->
+						<Name>JIPSY</Name>
+						<Type>Normal</Type>
+						<Latitude>32.19999722222222</Latitude>
+						<Longitude>-111.49809444444445</Longitude>
+						<Altitude>07000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>JIPSY</Name>
+						<Type>Normal</Type>
+						<Latitude>32.19999722222222</Latitude>
+						<Longitude>-111.49809444444445</Longitude>
+						<Altitude>07000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="ALMON">
+						<AppTr_Waypoint ID="1">
+							<Name>ALMON</Name>
+							<Type>Normal</Type>
+							<Latitude>32.38355</Latitude>
+							<Longitude>-111.49475833333334</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>JIPSY</Name>
+							<Type>Normal</Type>
+							<Latitude>32.19999722222222</Latitude>
+							<Longitude>-111.49809444444445</Longitude>
+							<Altitude>07000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>HILIX</Name>
+							<Type>Normal</Type>
+							<Latitude>32.07901666666667</Latitude>
+							<Longitude>-111.37954444444443</Longitude>
+							<Altitude>05800</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="TUS  ">
+						<AppTr_Waypoint ID="1">
+							<Name>TUS </Name>
+							<Type>Normal</Type>
+							<Latitude>32.09520277777778</Latitude>
+							<Longitude>-110.91485555555556</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>HILIX</Name>
+							<Type>Normal</Type>
+							<Latitude>32.07901666666667</Latitude>
+							<Longitude>-111.37954444444443</Longitude>
+							<Altitude>05900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>HILIX</Name>
+							<Type>Normal</Type>
+							<Latitude>32.07901666666667</Latitude>
+							<Longitude>-111.37954444444443</Longitude>
+							<Altitude>05800</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 0/0
+Appch: 2/2
+-->

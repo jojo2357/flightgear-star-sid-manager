@@ -1,0 +1,515 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KZZV">
+		<Approach Name="ILS22">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>CEVAY</Name>
+					<Type>Normal</Type>
+					<Latitude>40.10761388888889</Latitude>
+					<Longitude>-81.74862777777778</Longitude>
+					<Altitude>02600</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="1"-->
+					<Name>PENIC</Name>
+					<Type>Normal</Type>
+					<Latitude>40.077877777777786</Latitude>
+					<Longitude>-81.7746611111111</Longitude>
+					<Altitude>02700</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>PROLE</Name>
+					<Type>Normal</Type>
+					<Latitude>40.023630555555556</Latitude>
+					<Longitude>-81.82209166666667</Longitude>
+					<Altitude>02600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Altitude>02600</Altitude>
+					<AltitudeRestriction>below</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW22</Name>
+					<Type>Runway</Type>
+					<Latitude>39.950450000000004</Latitude>
+					<Longitude>-81.885925</Longitude>
+					<Altitude>00917</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>01400</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>219.8</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!-- ID="5" -->
+					<Name>DMEINTC</Name>
+					<Type>DmeIntc</Type>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>360</Hdg_Crs_value>
+					<Sp_Turn>Left</Sp_Turn>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>CEVAY</Name>
+					<Type>Normal</Type>
+					<Latitude>40.10761388888889</Latitude>
+					<Longitude>-81.74862777777778</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="7"-->
+					<Name>CEVAY</Name>
+					<Type>Normal</Type>
+					<Latitude>40.10761388888889</Latitude>
+					<Longitude>-81.74862777777778</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="AMALE">
+					<AppTr_Waypoint ID="1">
+						<Name>AMALE</Name>
+						<Type>Normal</Type>
+						<Latitude>39.95453055555556</Latitude>
+						<Longitude>-82.15205</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CINAB</Name>
+						<Type>Normal</Type>
+						<Latitude>40.014580555555554</Latitude>
+						<Longitude>-82.13448055555557</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="CINAB">
+					<AppTr_Waypoint ID="1">
+						<Name>CINAB</Name>
+						<Type>Normal</Type>
+						<Latitude>40.014580555555554</Latitude>
+						<Longitude>-82.13448055555557</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="MUNOE">
+					<AppTr_Waypoint ID="1">
+						<Name>MUNOE</Name>
+						<Type>Normal</Type>
+						<Latitude>39.89518333333333</Latitude>
+						<Longitude>-81.63951944444445</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>SABGE</Name>
+						<Type>Normal</Type>
+						<Latitude>39.960119444444445</Latitude>
+						<Longitude>-81.63374444444446</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="SABGE">
+					<AppTr_Waypoint ID="1">
+						<Name>SABGE</Name>
+						<Type>Normal</Type>
+						<Latitude>39.960119444444445</Latitude>
+						<Longitude>-81.63374444444446</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="ZZV  ">
+					<AppTr_Waypoint ID="1">
+						<Name>ZZV </Name>
+						<Type>Normal</Type>
+						<Latitude>39.94085833333333</Latitude>
+						<Longitude>-81.8926027777778</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+			<Approach Name="LOC22">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="1"-->
+						<Name>PENIC</Name>
+						<Type>Normal</Type>
+						<Latitude>40.077877777777786</Latitude>
+						<Longitude>-81.7746611111111</Longitude>
+						<Altitude>02700</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>PROLE</Name>
+						<Type>Normal</Type>
+						<Latitude>40.023630555555556</Latitude>
+						<Longitude>-81.82209166666667</Longitude>
+						<Altitude>02600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>JAVOG</Name>
+						<Type>Normal</Type>
+						<Latitude>39.97753611111111</Latitude>
+						<Longitude>-81.86231944444444</Longitude>
+						<Altitude>01540</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>RW22</Name>
+						<Type>Runway</Type>
+						<Latitude>39.950450000000004</Latitude>
+						<Longitude>-81.885925</Longitude>
+						<Altitude>00917</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>01400</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>219.8</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!-- ID="5" -->
+						<Name>DMEINTC</Name>
+						<Type>DmeIntc</Type>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>360</Hdg_Crs_value>
+						<Sp_Turn>Left</Sp_Turn>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="7"-->
+						<Name>CEVAY</Name>
+						<Type>Normal</Type>
+						<Latitude>40.10761388888889</Latitude>
+						<Longitude>-81.74862777777778</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="AMALE">
+						<AppTr_Waypoint ID="1">
+							<Name>AMALE</Name>
+							<Type>Normal</Type>
+							<Latitude>39.95453055555556</Latitude>
+							<Longitude>-82.15205</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>CINAB</Name>
+							<Type>Normal</Type>
+							<Latitude>40.014580555555554</Latitude>
+							<Longitude>-82.13448055555557</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="CINAB">
+						<AppTr_Waypoint ID="1">
+							<Name>CINAB</Name>
+							<Type>Normal</Type>
+							<Latitude>40.014580555555554</Latitude>
+							<Longitude>-82.13448055555557</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="MUNOE">
+						<AppTr_Waypoint ID="1">
+							<Name>MUNOE</Name>
+							<Type>Normal</Type>
+							<Latitude>39.89518333333333</Latitude>
+							<Longitude>-81.63951944444445</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>SABGE</Name>
+							<Type>Normal</Type>
+							<Latitude>39.960119444444445</Latitude>
+							<Longitude>-81.63374444444446</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="SABGE">
+						<AppTr_Waypoint ID="1">
+							<Name>SABGE</Name>
+							<Type>Normal</Type>
+							<Latitude>39.960119444444445</Latitude>
+							<Longitude>-81.63374444444446</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="ZZV  ">
+						<AppTr_Waypoint ID="1">
+							<Name>ZZV </Name>
+							<Type>Normal</Type>
+							<Latitude>39.94085833333333</Latitude>
+							<Longitude>-81.8926027777778</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>CEVAY</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10761388888889</Latitude>
+							<Longitude>-81.74862777777778</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+				<Approach Name="RNV04">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>RUTEE</Name>
+							<Type>Normal</Type>
+							<Latitude>39.78366111111111</Latitude>
+							<Longitude>-82.03076944444445</Longitude>
+							<Altitude>02800</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>CANSI</Name>
+							<Type>Normal</Type>
+							<Latitude>39.86685833333333</Latitude>
+							<Longitude>-81.95862777777778</Longitude>
+							<Altitude>02600</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>GIRNS</Name>
+							<Type>Normal</Type>
+							<Latitude>39.91410833333333</Latitude>
+							<Longitude>-81.91755833333333</Longitude>
+							<Altitude>01500</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Altitude>01514</Altitude>
+							<AltitudeRestriction>below</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>RW04</Name>
+							<Type>Runway</Type>
+							<Latitude>39.939049999999995</Latitude>
+							<Longitude>-81.89585000000001</Longitude>
+							<Altitude>00941</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>01150</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>39.800000000000004</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>TWAES</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10669166666667</Latitude>
+							<Longitude>-81.74943611111111</Longitude>
+							<Altitude>02900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>TWAES</Name>
+							<Type>Normal</Type>
+							<Latitude>40.10669166666667</Latitude>
+							<Longitude>-81.74943611111111</Longitude>
+							<Altitude>02900</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="RUTEE">
+							<AppTr_Waypoint ID="1">
+								<Name>RUTEE</Name>
+								<Type>Normal</Type>
+								<Latitude>39.78366111111111</Latitude>
+								<Longitude>-82.03076944444445</Longitude>
+								<Altitude>02800</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+					<Approach Name="RNV22">
+							<App_Waypoint> <!--ID="1"-->
+								<Name>TWAES</Name>
+								<Type>Normal</Type>
+								<Latitude>40.10669166666667</Latitude>
+								<Longitude>-81.74943611111111</Longitude>
+								<Altitude>02900</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>PROLE</Name>
+								<Type>Normal</Type>
+								<Latitude>40.023630555555556</Latitude>
+								<Longitude>-81.82209166666667</Longitude>
+								<Altitude>02600</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="2"-->
+								<Name>NODSE</Name>
+								<Type>Normal</Type>
+								<Latitude>39.97954166666667</Latitude>
+								<Longitude>-81.86056944444444</Longitude>
+								<Altitude>01580</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Altitude>01585</Altitude>
+								<AltitudeRestriction>below</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="3"-->
+								<Name>RW22</Name>
+								<Type>Runway</Type>
+								<Latitude>39.950450000000004</Latitude>
+								<Longitude>-81.885925</Longitude>
+								<Altitude>00917</Altitude>
+								<AltitudeRestriction>at</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint ID="4">
+								<Name>VECTORS</Name>
+								<Type>ConstHdgtoAlt</Type>
+								<Altitude>01092</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+								<Hdg_Crs>1</Hdg_Crs>
+								<Hdg_Crs_value>219.9</Hdg_Crs_value>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="5"-->
+								<Name>RUTEE</Name>
+								<Type>Normal</Type>
+								<Latitude>39.78366111111111</Latitude>
+								<Longitude>-82.03076944444445</Longitude>
+								<Altitude>02800</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Waypoint> <!--ID="6"-->
+								<Name>RUTEE</Name>
+								<Type>Normal</Type>
+								<Latitude>39.78366111111111</Latitude>
+								<Longitude>-82.03076944444445</Longitude>
+								<Altitude>02800</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</App_Waypoint>
+							<App_Transition Name="TWAES">
+								<AppTr_Waypoint ID="1">
+									<Name>TWAES</Name>
+									<Type>Normal</Type>
+									<Latitude>40.10669166666667</Latitude>
+									<Longitude>-81.74943611111111</Longitude>
+									<Altitude>02900</Altitude>
+									<AltitudeRestriction>above</AltitudeRestriction>
+								</AppTr_Waypoint>
+							</App_Transition>
+						</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 4/4
+-->

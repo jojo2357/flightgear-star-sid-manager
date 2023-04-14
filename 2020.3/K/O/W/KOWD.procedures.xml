@@ -1,0 +1,251 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KOWD">
+		<Star Name="WOONS2">
+			<Star_Waypoint ID="1">
+				<Name>ORW </Name>
+				<Type>Normal</Type>
+				<Latitude>41.55640277777777</Latitude>
+				<Longitude>-71.99935277777777</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="2">
+				<Name>JEWIT</Name>
+				<Type>Normal</Type>
+				<Latitude>41.69608888888889</Latitude>
+				<Longitude>-71.82588333333334</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="3">
+				<Name>FOSTY</Name>
+				<Type>Normal</Type>
+				<Latitude>41.843183333333336</Latitude>
+				<Longitude>-71.64203888888889</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="4">
+				<Name>HEFTY</Name>
+				<Type>Normal</Type>
+				<Latitude>41.90533055555555</Latitude>
+				<Longitude>-71.56399722222221</Longitude>
+			</Star_Waypoint>
+			<Star_Waypoint ID="5">
+				<Name>WOONS</Name>
+				<Type>Normal</Type>
+				<Latitude>41.95057500000001</Latitude>
+				<Longitude>-71.50703888888889</Longitude>
+			</Star_Waypoint>
+		</Star>
+			<Approach Name="LOC35">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>CURLI</Name>
+					<Type>Normal</Type>
+					<Latitude>42.01528888888889</Latitude>
+					<Longitude>-71.06509444444444</Longitude>
+					<Altitude>02200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>STOGE</Name>
+					<Type>Normal</Type>
+					<Latitude>42.11901388888889</Latitude>
+					<Longitude>-71.13053888888889</Longitude>
+					<Altitude>01400</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>DIKEY</Name>
+					<Type>Normal</Type>
+					<Latitude>42.1582</Latitude>
+					<Longitude>-71.15532777777779</Longitude>
+					<Altitude>00580</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW35</Name>
+					<Type>Runway</Type>
+					<Latitude>42.18384444444444</Latitude>
+					<Longitude>-71.17156666666668</Longitude>
+					<Altitude>00087</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00449</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>349.8</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>MILIS</Name>
+					<Type>Normal</Type>
+					<Latitude>42.105163888888896</Latitude>
+					<Longitude>-71.3115611111111</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>MILIS</Name>
+					<Type>Normal</Type>
+					<Latitude>42.105163888888896</Latitude>
+					<Longitude>-71.3115611111111</Longitude>
+					<Altitude>03000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="PVD  ">
+					<AppTr_Waypoint ID="1">
+						<Name>PVD </Name>
+						<Type>Normal</Type>
+						<Latitude>41.72434166666667</Latitude>
+						<Longitude>-71.42964166666667</Longitude>
+						<Altitude>02200</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>CURLI</Name>
+						<Type>Normal</Type>
+						<Latitude>42.01528888888889</Latitude>
+						<Longitude>-71.06509444444444</Longitude>
+						<Altitude>02200</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="STOGE">
+					<AppTr_Waypoint ID="1">
+						<Name>STOGE</Name>
+						<Type>Normal</Type>
+						<Latitude>42.11901388888889</Latitude>
+						<Longitude>-71.13053888888889</Longitude>
+						<Altitude>02100</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+				<Approach Name="RNV35">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>CURLI</Name>
+						<Type>Normal</Type>
+						<Latitude>42.01528888888889</Latitude>
+						<Longitude>-71.06509444444444</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>CUPUG</Name>
+						<Type>Normal</Type>
+						<Latitude>42.108580555555555</Latitude>
+						<Longitude>-71.12394722222221</Longitude>
+						<Altitude>01700</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>FIGOL</Name>
+						<Type>Normal</Type>
+						<Latitude>42.159708333333334</Latitude>
+						<Longitude>-71.15628333333333</Longitude>
+						<Altitude>00600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Altitude>00600</Altitude>
+						<AltitudeRestriction>below</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>RW35</Name>
+						<Type>Runway</Type>
+						<Latitude>42.18384444444444</Latitude>
+						<Longitude>-71.17156666666668</Longitude>
+						<Altitude>00087</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>00344</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>349.8</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="5"-->
+						<Name>DEGEY</Name>
+						<Type>Normal</Type>
+						<Latitude>42.23211666666667</Latitude>
+						<Longitude>-71.20213611111112</Longitude>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>WHYBE</Name>
+						<Type>Normal</Type>
+						<Latitude>42.253841666666666</Latitude>
+						<Longitude>-71.41653611111111</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="7"-->
+						<Name>WHYBE</Name>
+						<Type>Normal</Type>
+						<Latitude>42.253841666666666</Latitude>
+						<Longitude>-71.41653611111111</Longitude>
+						<Altitude>03000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="BURDY">
+						<AppTr_Waypoint ID="1">
+							<Name>BURDY</Name>
+							<Type>Normal</Type>
+							<Latitude>41.95531666666667</Latitude>
+							<Longitude>-70.95206944444445</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>CURLI</Name>
+							<Type>Normal</Type>
+							<Latitude>42.01528888888889</Latitude>
+							<Longitude>-71.06509444444444</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="WOONS">
+						<AppTr_Waypoint ID="1">
+							<Name>WOONS</Name>
+							<Type>Normal</Type>
+							<Latitude>41.95057500000001</Latitude>
+							<Longitude>-71.50703888888889</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>DODNE</Name>
+							<Type>Normal</Type>
+							<Latitude>41.9798</Latitude>
+							<Longitude>-71.16622500000001</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="3">
+							<Name>CURLI</Name>
+							<Type>Normal</Type>
+							<Latitude>42.01528888888889</Latitude>
+							<Longitude>-71.06509444444444</Longitude>
+							<Altitude>03000</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 1/1
+Appch: 2/2
+-->

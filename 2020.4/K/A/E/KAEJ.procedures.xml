@@ -1,0 +1,135 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KAEJ">
+		<Sid Name="PUBLO1" Runways="15">
+			<Sid_Waypoint ID="1">
+				<Name>CEMIP</Name>
+				<Type>Normal</Type>
+				<Latitude>38.72389444444445</Latitude>
+				<Longitude>-106.08360833333333</Longitude>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="2">
+				<Name>FETUB</Name>
+				<Type>Normal</Type>
+				<Latitude>38.60471944444445</Latitude>
+				<Longitude>-106.01965</Longitude>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="3">
+				<Name>HIDMA</Name>
+				<Type>Normal</Type>
+				<Latitude>38.479147222222224</Latitude>
+				<Longitude>-105.900025</Longitude>
+				<Altitude>15500</Altitude>
+				<AltitudeRestriction>above</AltitudeRestriction>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="4">
+				<Name>COLLM</Name>
+				<Type>Normal</Type>
+				<Latitude>38.387686111111115</Latitude>
+				<Longitude>-105.74120555555555</Longitude>
+			</Sid_Waypoint>
+			<Sid_Waypoint ID="5">
+				<Name>PUB </Name>
+				<Type>Normal</Type>
+				<Latitude>38.29425277777777</Latitude>
+				<Longitude>-104.42944722222222</Longitude>
+			</Sid_Waypoint>
+		</Sid>
+		<Approach Name="RNV33">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>BUBYO</Name>
+					<Type>Normal</Type>
+					<Latitude>38.575611111111115</Latitude>
+					<Longitude>-106.04076666666667</Longitude>
+					<Altitude>12600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>AKNAC</Name>
+					<Type>Normal</Type>
+					<Latitude>38.70178888888889</Latitude>
+					<Longitude>-106.07074722222222</Longitude>
+					<Altitude>10300</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>ROBVY</Name>
+					<Type>Normal</Type>
+					<Latitude>38.78294722222222</Latitude>
+					<Longitude>-106.10673888888887</Longitude>
+					<Altitude>08420</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>08350</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>329.90000000000003</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>KANON</Name>
+					<Type>Normal</Type>
+					<Latitude>38.39590277777778</Latitude>
+					<Longitude>-105.99182222222223</Longitude>
+					<Altitude>16000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>KANON</Name>
+					<Type>Normal</Type>
+					<Latitude>38.39590277777778</Latitude>
+					<Longitude>-105.99182222222223</Longitude>
+					<Altitude>16000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="KANON">
+					<AppTr_Waypoint ID="1">
+						<Name>KANON</Name>
+						<Type>Normal</Type>
+						<Latitude>38.39590277777778</Latitude>
+						<Longitude>-105.99182222222223</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>FIKEX</Name>
+						<Type>Normal</Type>
+						<Latitude>38.48576111111111</Latitude>
+						<Longitude>-106.01626388888889</Longitude>
+						<Altitude>14300</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>BUBYO</Name>
+						<Type>Normal</Type>
+						<Latitude>38.575611111111115</Latitude>
+						<Longitude>-106.04076666666667</Longitude>
+						<Altitude>12600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 0/0
+Appch: 1/1
+-->

@@ -1,0 +1,165 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="KELY">
+		<Sid Name="ELY2  " Runways="12,18,30,36">
+			<RunwayTransition Runway="12">
+				<SidTr_Waypoint ID="3">
+					<Name>EPUHE</Name>
+					<Type>Normal</Type>
+					<Latitude>39.01393888888889</Latitude>
+					<Longitude>-114.72375555555556</Longitude>
+					<Altitude>10600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="18">
+				<SidTr_Waypoint ID="2">
+					<Name>EPUHE</Name>
+					<Type>Normal</Type>
+					<Latitude>39.01393888888889</Latitude>
+					<Longitude>-114.72375555555556</Longitude>
+					<Altitude>10600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="30">
+				<SidTr_Waypoint ID="3">
+					<Name>FAPGI</Name>
+					<Type>Normal</Type>
+					<Latitude>39.62913611111111</Latitude>
+					<Longitude>-114.79458055555556</Longitude>
+					<Altitude>10600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="36">
+				<SidTr_Waypoint ID="1">
+					<Name>FAPGI</Name>
+					<Type>Normal</Type>
+					<Latitude>39.62913611111111</Latitude>
+					<Longitude>-114.79458055555556</Longitude>
+					<Altitude>10600</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+		</Sid>
+			<Approach Name="RNV18">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>JAMOP</Name>
+					<Type>Normal</Type>
+					<Latitude>39.50866388888888</Latitude>
+					<Longitude>-114.80181388888889</Longitude>
+					<Altitude>09500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>FEILL</Name>
+					<Type>Normal</Type>
+					<Latitude>39.421974999999996</Latitude>
+					<Longitude>-114.7998611111111</Longitude>
+					<Altitude>08500</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>RW18</Name>
+					<Type>Runway</Type>
+					<Latitude>39.30881944444444</Latitude>
+					<Longitude>-114.83564444444443</Longitude>
+					<Altitude>06275</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>06652</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>179.8</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>ZOLOB</Name>
+					<Type>Normal</Type>
+					<Latitude>39.23591944444444</Latitude>
+					<Longitude>-114.85866666666666</Longitude>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>DOTME</Name>
+					<Type>Normal</Type>
+					<Latitude>38.84019444444445</Latitude>
+					<Longitude>-114.64814444444444</Longitude>
+					<Altitude>12000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="7"-->
+					<Name>DOTME</Name>
+					<Type>Normal</Type>
+					<Latitude>38.84019444444445</Latitude>
+					<Longitude>-114.64814444444444</Longitude>
+					<Altitude>12000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="FAPGI">
+					<AppTr_Waypoint ID="1">
+						<Name>FAPGI</Name>
+						<Type>Normal</Type>
+						<Latitude>39.62913611111111</Latitude>
+						<Longitude>-114.79458055555556</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>JAMOP</Name>
+						<Type>Normal</Type>
+						<Latitude>39.50866388888888</Latitude>
+						<Longitude>-114.80181388888889</Longitude>
+						<Altitude>09500</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="INGOL">
+					<AppTr_Waypoint ID="1">
+						<Name>INGOL</Name>
+						<Type>Normal</Type>
+						<Latitude>39.67474166666667</Latitude>
+						<Longitude>-115.079425</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>GUSME</Name>
+						<Type>Normal</Type>
+						<Latitude>39.54953888888888</Latitude>
+						<Longitude>-114.86991388888889</Longitude>
+						<Altitude>10600</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="3">
+						<Name>JAMOP</Name>
+						<Type>Normal</Type>
+						<Latitude>39.50866388888888</Latitude>
+						<Longitude>-114.80181388888889</Longitude>
+						<Altitude>09500</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 0/0
+Appch: 1/2
+-->

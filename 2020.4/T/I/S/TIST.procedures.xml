@@ -1,0 +1,103 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="TIST">
+		<Approach Name="RNV10">
+				<App_Waypoint> <!--ID="1"-->
+					<Name>KUTHO</Name>
+					<Type>Normal</Type>
+					<Latitude>18.328363888888887</Latitude>
+					<Longitude>-65.18016111111112</Longitude>
+					<Altitude>02800</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="2"-->
+					<Name>JAQYY</Name>
+					<Type>Normal</Type>
+					<Latitude>18.332172222222223</Latitude>
+					<Longitude>-65.09265</Longitude>
+					<Altitude>02100</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="3"-->
+					<Name>LOGVY</Name>
+					<Type>Normal</Type>
+					<Latitude>18.335416666666664</Latitude>
+					<Longitude>-65.01732777777777</Longitude>
+					<Altitude>00708</Altitude>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint ID="4">
+					<Name>VECTORS</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Altitude>00424</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>100.4</Hdg_Crs_value>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="5"-->
+					<Name>OSSEL</Name>
+					<Type>Normal</Type>
+					<Latitude>18.13122222222222</Latitude>
+					<Longitude>-64.90719444444444</Longitude>
+					<Altitude>02800</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Waypoint> <!--ID="6"-->
+					<Name>OSSEL</Name>
+					<Type>Normal</Type>
+					<Latitude>18.13122222222222</Latitude>
+					<Longitude>-64.90719444444444</Longitude>
+					<Altitude>02800</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+				</App_Waypoint>
+				<App_Transition Name="KUTHO">
+					<AppTr_Waypoint ID="1">
+						<Name>KUTHO</Name>
+						<Type>Normal</Type>
+						<Latitude>18.328363888888887</Latitude>
+						<Longitude>-65.18016111111112</Longitude>
+						<Altitude>02800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+				<App_Transition Name="TOURO">
+					<AppTr_Waypoint ID="1">
+						<Name>TOURO</Name>
+						<Type>Normal</Type>
+						<Latitude>18.480566666666665</Latitude>
+						<Longitude>-65.46471666666667</Longitude>
+					</AppTr_Waypoint>
+					<AppTr_Waypoint ID="2">
+						<Name>KUTHO</Name>
+						<Type>Normal</Type>
+						<Latitude>18.328363888888887</Latitude>
+						<Longitude>-65.18016111111112</Longitude>
+						<Altitude>02800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</AppTr_Waypoint>
+				</App_Transition>
+			</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 0/0
+Stars: 0/0
+Appch: 1/1
+-->

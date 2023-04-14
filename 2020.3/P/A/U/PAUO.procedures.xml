@@ -1,0 +1,213 @@
+<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) 2023 jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+	<Airport ICAOcode="PAUO">
+		<Sid Name="BGQ2  " Runways="13,31">
+			<RunwayTransition Runway="13">
+				<SidTr_Waypoint ID="1">
+					<Name>NIYTI</Name>
+					<Type>Normal</Type>
+					<Latitude>61.719202777777774</Latitude>
+					<Longitude>-150.01495555555556</Longitude>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint ID="2">
+					<Name>BGQ </Name>
+					<Type>Normal</Type>
+					<Latitude>61.569433333333336</Latitude>
+					<Longitude>-149.96715833333332</Longitude>
+				</SidTr_Waypoint>
+			</RunwayTransition>
+			<RunwayTransition Runway="31">
+					<SidTr_Waypoint ID="1">
+						<Name>(0800)</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Latitude>0.000000</Latitude>
+						<Longitude>0.000000</Longitude>
+						<Altitude>00800</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>312.70000000000005</Hdg_Crs_value>
+					</SidTr_Waypoint>
+					<SidTr_Waypoint ID="2">
+						<Name>BGQ </Name>
+						<Type>Normal</Type>
+						<Latitude>61.569433333333336</Latitude>
+						<Longitude>-149.96715833333332</Longitude>
+					</SidTr_Waypoint>
+				</RunwayTransition>
+			</Sid>
+				<Approach Name="RNV13">
+					<App_Waypoint> <!--ID="1"-->
+						<Name>FODVU</Name>
+						<Type>Normal</Type>
+						<Latitude>61.9793388888889</Latitude>
+						<Longitude>-150.288525</Longitude>
+						<Altitude>03100</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="2"-->
+						<Name>COVEV</Name>
+						<Type>Normal</Type>
+						<Latitude>61.840136111111114</Latitude>
+						<Longitude>-150.14148333333333</Longitude>
+						<Altitude>02000</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="3"-->
+						<Name>KOTRE</Name>
+						<Type>Normal</Type>
+						<Latitude>61.76631666666666</Latitude>
+						<Longitude>-150.0641138888889</Longitude>
+						<Altitude>00395</Altitude>
+						<AltitudeRestriction>at</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint ID="4">
+						<Name>VECTORS</Name>
+						<Type>ConstHdgtoAlt</Type>
+						<Altitude>00615</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+						<Hdg_Crs>1</Hdg_Crs>
+						<Hdg_Crs_value>132.6</Hdg_Crs_value>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="5"-->
+						<Name>ZUSRA</Name>
+						<Type>Normal</Type>
+						<Latitude>61.94212222222222</Latitude>
+						<Longitude>-150.44632777777778</Longitude>
+						<Altitude>03100</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Waypoint> <!--ID="6"-->
+						<Name>ZUSRA</Name>
+						<Type>Normal</Type>
+						<Latitude>61.94212222222222</Latitude>
+						<Longitude>-150.44632777777778</Longitude>
+						<Altitude>03100</Altitude>
+						<AltitudeRestriction>above</AltitudeRestriction>
+					</App_Waypoint>
+					<App_Transition Name="FODVU">
+						<AppTr_Waypoint ID="1">
+							<Name>FODVU</Name>
+							<Type>Normal</Type>
+							<Latitude>61.9793388888889</Latitude>
+							<Longitude>-150.288525</Longitude>
+							<Altitude>03100</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+					<App_Transition Name="ZUSRA">
+						<AppTr_Waypoint ID="1">
+							<Name>ZUSRA</Name>
+							<Type>Normal</Type>
+							<Latitude>61.94212222222222</Latitude>
+							<Longitude>-150.44632777777778</Longitude>
+						</AppTr_Waypoint>
+						<AppTr_Waypoint ID="2">
+							<Name>FODVU</Name>
+							<Type>Normal</Type>
+							<Latitude>61.9793388888889</Latitude>
+							<Longitude>-150.288525</Longitude>
+							<Altitude>03100</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</AppTr_Waypoint>
+					</App_Transition>
+				</Approach>
+					<Approach Name="RNV31">
+						<App_Waypoint> <!--ID="1"-->
+							<Name>NAYBI</Name>
+							<Type>Normal</Type>
+							<Latitude>61.57505833333334</Latitude>
+							<Longitude>-149.8655861111111</Longitude>
+							<Altitude>03200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="2"-->
+							<Name>JABUV</Name>
+							<Type>Normal</Type>
+							<Latitude>61.66550833333333</Latitude>
+							<Longitude>-149.9591333333333</Longitude>
+							<Altitude>02100</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="3"-->
+							<Name>PEDTI</Name>
+							<Type>Normal</Type>
+							<Latitude>61.741550000000004</Latitude>
+							<Longitude>-150.03825</Longitude>
+							<Altitude>00453</Altitude>
+							<AltitudeRestriction>at</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint ID="4">
+							<Name>VECTORS</Name>
+							<Type>ConstHdgtoAlt</Type>
+							<Altitude>00615</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+							<Hdg_Crs>1</Hdg_Crs>
+							<Hdg_Crs_value>312.8</Hdg_Crs_value>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="5"-->
+							<Name>TADYU</Name>
+							<Type>Normal</Type>
+							<Latitude>61.53832222222222</Latitude>
+							<Longitude>-150.02183333333335</Longitude>
+							<Altitude>03200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Waypoint> <!--ID="6"-->
+							<Name>TADYU</Name>
+							<Type>Normal</Type>
+							<Latitude>61.53832222222222</Latitude>
+							<Longitude>-150.02183333333335</Longitude>
+							<Altitude>03200</Altitude>
+							<AltitudeRestriction>above</AltitudeRestriction>
+						</App_Waypoint>
+						<App_Transition Name="NAYBI">
+							<AppTr_Waypoint ID="1">
+								<Name>NAYBI</Name>
+								<Type>Normal</Type>
+								<Latitude>61.57505833333334</Latitude>
+								<Longitude>-149.8655861111111</Longitude>
+								<Altitude>03200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+						<App_Transition Name="TADYU">
+							<AppTr_Waypoint ID="1">
+								<Name>TADYU</Name>
+								<Type>Normal</Type>
+								<Latitude>61.53832222222222</Latitude>
+								<Longitude>-150.02183333333335</Longitude>
+							</AppTr_Waypoint>
+							<AppTr_Waypoint ID="2">
+								<Name>NAYBI</Name>
+								<Type>Normal</Type>
+								<Latitude>61.57505833333334</Latitude>
+								<Longitude>-149.8655861111111</Longitude>
+								<Altitude>03200</Altitude>
+								<AltitudeRestriction>above</AltitudeRestriction>
+							</AppTr_Waypoint>
+						</App_Transition>
+					</Approach>
+	</Airport>
+</ProceduresDB>
+<!-- Completion Stats:
+Sids: 1/1
+Stars: 0/0
+Appch: 2/2
+-->
