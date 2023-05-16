@@ -333,13 +333,13 @@ for (const thingeyKey in thingey) {
                 }
                 for (const translist of trans) {
                     for (const simpsKey in translist) {
-                        future_branch_outstring += `${'\t'.repeat(depth)}<RunwayTransition Runway="${simpsKey.trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey.trim().replace(/(\d{2})B/, "$1R,$1L").split(",").map(rwy => movedRunways[thingeyKey].some(mapping => mapping.neww === rwy) ? movedRunways[thingeyKey].find(mapping => mapping.neww === rwy).orig : rwy).join(",")}">\n`;
+                        future_branch_outstring += `${'\t'.repeat(depth)}<RunwayTransition Runway="${simpsKey.match(/(?<=RW).*$/)[0].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
+                        current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${simpsKey.match(/(?<=RW).*$/)[0].trim().replace(/(\d{2})B/, "$1R,$1L").split(",").map(rwy => movedRunways[thingeyKey].some(mapping => mapping.neww === rwy) ? movedRunways[thingeyKey].find(mapping => mapping.neww === rwy).orig : rwy).join(",")}">\n`;
                         for (const simps of translist[simpsKey]) {
                             if (typeof simps.loc === 'string' || simps.loc instanceof String) {
                                 // continue;
                                 if (simps.obj.fix_path_termination === "VA") {
-                                    future_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                    future_branch_outstring += `${'\t'.repeat(depth)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
                                     current_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
                                     future_branch_outstring += `${'\t'.repeat(depth)}<Name>(${simps.obj.nav_altitude_1.substring(1)})</Name>\n`;
@@ -412,6 +412,12 @@ for (const thingeyKey in thingey) {
                     if (arr) out.push(arr);
                     return out;
                 }, []);
+                //unused and i dont know how. makes me sadge :(
+                let rwyTrans = [route[RouteType["PE"]["3"]], route[RouteType["PE"]["6"]],
+                    route[RouteType["PE"]["9"]], route[RouteType["PE"]["S"]]].reduce((out, arr) => {
+                    if (arr) out.push(arr);
+                    return out;
+                }, []);
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
@@ -446,7 +452,7 @@ for (const thingeyKey in thingey) {
                             if (typeof simps.loc === 'string' || simps.loc instanceof String)
                                 continue;
 
-                            future_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
                             current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
                             future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
@@ -554,7 +560,7 @@ for (const thingeyKey in thingey) {
             changedName = changedName.replace('-', '')
             if (changedName === "")
                 continue;
-            future_branch_outstring += `${'\t'.repeat(depth++)}<Approach Name="${changedName.trim()}">\n`;
+            future_branch_outstring += `${'\t'.repeat(depth)}<Approach Name="${changedName.trim()}">\n`;
             current_branch_outstring += `${'\t'.repeat(depth++)}<Approach Name="${(changedName.substring(0, 3) + (movedRunways[thingeyKey].some(change => change.neww === changedName.substring(3)) ? movedRunways[thingeyKey].find(change => change.neww === changedName.substring(3)).orig : changedName.substring(3))).trim()}">\n`;
             for (const commonerlist of meatofit) {
                 for (const simpsKey in commonerlist) {
@@ -690,7 +696,7 @@ for (const thingeyKey in thingey) {
                         if (typeof simps.loc === 'string' || simps.loc instanceof String) {
                             // continue;
                             if (simps.obj.fix_path_termination === "VI") {
-                                future_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
                                 current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
                                 future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
