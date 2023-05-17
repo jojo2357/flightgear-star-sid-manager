@@ -815,6 +815,10 @@ function altitudeToXML(obj, depth) {
             if (dispalt1.trim().length) {
                 out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
                 out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
+            } else {
+                out += `${'\t'.repeat(depth)}<Altitude>0</Altitude>\n`;
+                out += `${'\t'.repeat(depth)}<AltitudeCons>0</AltitudeCons>\n`;
+                out += `${'\t'.repeat(depth)}<AltitudeRestriction>at</AltitudeRestriction>\n`;
             }
             break;
         }

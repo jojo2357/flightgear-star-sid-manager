@@ -448,9 +448,9 @@ for (const thingeyKey in thingey) {
                     return out;
                 }, []);
                 if (rwyTrans.length) {
-                    for (const rwyTran of rwyTrans) {
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Star Name="${sidarname}" Runways="${Object.keys(rwyTran)[0].match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}" Runways="${Object.keys(rwyTran)[0].match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
+                    for (const rwyTran in rwyTrans[0]) {
+                        future_branch_outstring += `${'\t'.repeat(depth)}<Star Name="${sidarname}.${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().slice(0,2)}" Runways="${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
+                        current_branch_outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}.${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().slice(0,2)}" Runways="${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
                         for (const commonerlist of commoners) {
                             for (const simpsKey in commonerlist) {
                                 for (const simps of commonerlist[simpsKey]) {
@@ -476,6 +476,28 @@ for (const thingeyKey in thingey) {
                                     current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                                 }
                             }
+                        }
+                        for (const simps of rwyTrans[0][rwyTran]) {
+                            if (typeof simps.loc === 'string' || simps.loc instanceof String)
+                                continue;
+
+                            future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
+
+                            future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
+                            future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
+                            future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
+                            future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
+
+                            future_branch_outstring += altitudeToXML(simps.obj, depth);
+                            current_branch_outstring += altitudeToXML(simps.obj, depth);
+
+                            future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                         }
                         for (const translist of trans) {
                             for (const simpsKey in translist) {
@@ -507,31 +529,7 @@ for (const thingeyKey in thingey) {
                                 current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
                             }
                         }
-                        for (const rwyTranKey in rwyTran) {
-                            for (const simps of rwyTran[rwyTranKey]) {
-                                if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                    continue;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
-                            }
-                            // console.log(rwyTranKey);
-                        }
+                        // console.log(rwyTranKey);
                         future_branch_outstring += `${'\t'.repeat(--depth)}</Star>\n`;
                         current_branch_outstring += `${'\t'.repeat(depth)}</Star>\n`;
                     }
