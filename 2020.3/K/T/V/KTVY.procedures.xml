@@ -20,7 +20,7 @@
 	<Airport ICAOcode="KTVY">
 		<Sid Name="STACO2" Runways="17,35">
 			<RunwayTransition Runway="17">
-				<SidTr_Waypoint ID="1">
+				<RwyTr_Waypoint ID="1">
 					<Name>(5500)</Name>
 					<Type>ConstHdgtoAlt</Type>
 					<Latitude>0.000000</Latitude>
@@ -29,8 +29,8 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>166.10000000000002</Hdg_Crs_value>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="2">
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="2">
 					<Name>HOKPI</Name>
 					<Type>Normal</Type>
 					<Latitude>40.64055</Latitude>
@@ -38,8 +38,8 @@
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="3">
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="3">
 					<Name>ZESER</Name>
 					<Type>Normal</Type>
 					<Latitude>40.73594722222222</Latitude>
@@ -47,18 +47,18 @@
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="4">
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="4">
 					<Name>STACO</Name>
 					<Type>Normal</Type>
 					<Latitude>40.82219722222222</Latitude>
 					<Longitude>-112.41959722222222</Longitude>
 					<Altitude>09000</Altitude>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
+				</RwyTr_Waypoint>
 			</RunwayTransition>
 			<RunwayTransition Runway="35">
-				<SidTr_Waypoint ID="1">
+				<RwyTr_Waypoint ID="1">
 					<Name>(4900)</Name>
 					<Type>ConstHdgtoAlt</Type>
 					<Latitude>0.000000</Latitude>
@@ -67,8 +67,8 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Hdg_Crs>1</Hdg_Crs>
 					<Hdg_Crs_value>346.1</Hdg_Crs_value>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="2">
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="2">
 					<Name>ZESER</Name>
 					<Type>Normal</Type>
 					<Latitude>40.73594722222222</Latitude>
@@ -76,15 +76,15 @@
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint ID="3">
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="3">
 					<Name>STACO</Name>
 					<Type>Normal</Type>
 					<Latitude>40.82219722222222</Latitude>
 					<Longitude>-112.41959722222222</Longitude>
 					<Altitude>09000</Altitude>
 					<AltitudeRestriction>at</AltitudeRestriction>
-				</SidTr_Waypoint>
+				</RwyTr_Waypoint>
 			</RunwayTransition>
 		</Sid>
 		<Approach Name="ILS17">
@@ -93,6 +93,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>06100</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
@@ -101,22 +102,24 @@
 				<Type>Normal</Type>
 				<Latitude>40.713680555555555</Latitude>
 				<Longitude>-112.35281944444444</Longitude>
+				<Speed>   </Speed>
+				<AltitudeRestriction>between</AltitudeRestriction>
 				<Altitude>06100</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
 				<Altitude>06100</Altitude>
-				<AltitudeRestriction>below</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint> <!--ID="3"-->
 				<Name>RW17</Name>
 				<Type>Runway</Type>
 				<Latitude>40.62092500000001</Latitude>
 				<Longitude>-112.35094722222222</Longitude>
+				<Speed>   </Speed>
 				<Altitude>04328</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint ID="4">
 				<Name>VECTORS</Name>
 				<Type>ConstHdgtoAlt</Type>
+				<Speed>   </Speed>
 				<Altitude>05400</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Hdg_Crs>1</Hdg_Crs>
@@ -125,6 +128,7 @@
 			<App_Waypoint> <!-- ID="5" -->
 				<Name>DMEINTC</Name>
 				<Type>DmeIntc</Type>
+				<Speed>   </Speed>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
@@ -137,6 +141,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
@@ -146,6 +151,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -154,6 +160,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -163,6 +170,7 @@
 					<Type>Normal</Type>
 					<Latitude>41.050558333333335</Latitude>
 					<Longitude>-112.42467777777777</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -172,6 +180,7 @@
 					<Type>Normal</Type>
 					<Latitude>41.02107222222222</Latitude>
 					<Longitude>-112.35908055555555</Longitude>
+					<Speed>   </Speed>
 					<Altitude>12000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -180,6 +189,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -190,6 +200,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.83901111111111</Latitude>
 					<Longitude>-112.1605</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -199,6 +210,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -209,6 +221,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -220,6 +233,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08100</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -228,6 +242,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.713680555555555</Latitude>
 				<Longitude>-112.35281944444444</Longitude>
+				<Speed>   </Speed>
 				<Altitude>06100</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -236,12 +251,14 @@
 				<Type>Runway</Type>
 				<Latitude>40.62092500000001</Latitude>
 				<Longitude>-112.35094722222222</Longitude>
+				<Speed>   </Speed>
 				<Altitude>04328</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint ID="4">
 				<Name>VECTORS</Name>
 				<Type>ConstHdgtoAlt</Type>
+				<Speed>   </Speed>
 				<Altitude>05400</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Hdg_Crs>1</Hdg_Crs>
@@ -250,6 +267,7 @@
 			<App_Waypoint> <!-- ID="5" -->
 				<Name>DMEINTC</Name>
 				<Type>DmeIntc</Type>
+				<Speed>   </Speed>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
@@ -262,6 +280,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
@@ -271,6 +290,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -279,6 +299,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -288,6 +309,7 @@
 					<Type>Normal</Type>
 					<Latitude>41.050558333333335</Latitude>
 					<Longitude>-112.42467777777777</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -297,6 +319,7 @@
 					<Type>Normal</Type>
 					<Latitude>41.02107222222222</Latitude>
 					<Longitude>-112.35908055555555</Longitude>
+					<Speed>   </Speed>
 					<Altitude>12000</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -305,6 +328,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -315,6 +339,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.83901111111111</Latitude>
 					<Longitude>-112.1605</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -324,6 +349,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -334,6 +360,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -345,6 +372,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08100</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -353,6 +381,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.713680555555555</Latitude>
 				<Longitude>-112.35281944444444</Longitude>
+				<Speed>   </Speed>
 				<Altitude>06100</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -361,12 +390,14 @@
 				<Type>Runway</Type>
 				<Latitude>40.62092500000001</Latitude>
 				<Longitude>-112.35094722222222</Longitude>
+				<Speed>   </Speed>
 				<Altitude>04328</Altitude>
 				<AltitudeRestriction>at</AltitudeRestriction>
 			</App_Waypoint>
 			<App_Waypoint ID="4">
 				<Name>VECTORS</Name>
 				<Type>ConstHdgtoAlt</Type>
+				<Speed>   </Speed>
 				<Altitude>04800</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Hdg_Crs>1</Hdg_Crs>
@@ -377,6 +408,7 @@
 				<Type>Normal</Type>
 				<Latitude>40.82644166666667</Latitude>
 				<Longitude>-112.35511666666666</Longitude>
+				<Speed>   </Speed>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
@@ -386,6 +418,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -394,6 +427,7 @@
 				<Type>Normal</Type>
 				<Latitude>41.02107222222222</Latitude>
 				<Longitude>-112.35908055555555</Longitude>
+				<Speed>   </Speed>
 				<Altitude>08600</Altitude>
 				<AltitudeRestriction>above</AltitudeRestriction>
 			</App_Waypoint>
@@ -403,6 +437,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.7035</Latitude>
 					<Longitude>-112.31493888888888</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -412,6 +447,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>09800</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -420,6 +456,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -430,6 +467,7 @@
 					<Type>Normal</Type>
 					<Latitude>41.050558333333335</Latitude>
 					<Longitude>-112.42467777777777</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -439,6 +477,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>
@@ -449,6 +488,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.83901111111111</Latitude>
 					<Longitude>-112.1605</Longitude>
+					<Speed>   </Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -458,6 +498,7 @@
 					<Type>Normal</Type>
 					<Latitude>40.82644166666667</Latitude>
 					<Longitude>-112.35511666666666</Longitude>
+					<Speed>   </Speed>
 					<Altitude>08100</Altitude>
 					<AltitudeRestriction>above</AltitudeRestriction>
 				</AppTr_Waypoint>

@@ -780,19 +780,17 @@ function altitudeToXML(obj, depth) {
     dispalt2 = dispalt2.match(/(FL)?(\d+)/) ? dispalt2.match(/(FL)?(\d+)/)[2] + (dispalt2.match(/(FL)?(\d+)/)[1] ? "00" : "") : "";
     switch (obj.nav_altitude) {
         case "B": {
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>between</AltitudeRestriction>\n`;
             out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
-            out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
             out += `${'\t'.repeat(depth)}<Altitude>${dispalt2}</Altitude>\n`;
-            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             break;
         }
         case "G":
         case "H":
         case "V":
+            out += `${'\t'.repeat(depth)}<AltitudeRestriction>between</AltitudeRestriction>\n`;
             out += `${'\t'.repeat(depth)}<Altitude>${dispalt1}</Altitude>\n`;
-            out += `${'\t'.repeat(depth)}<AltitudeRestriction>above</AltitudeRestriction>\n`;
             out += `${'\t'.repeat(depth)}<Altitude>${dispalt2}</Altitude>\n`;
-            out += `${'\t'.repeat(depth)}<AltitudeRestriction>below</AltitudeRestriction>\n`;
             break;
         // glide slope intersect at 2, floor at 1
         case "J": {
