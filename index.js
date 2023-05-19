@@ -22,7 +22,7 @@ const path = require("path");
 
 const oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
-let debugAirports = ["KLAS"]//, "KLAX", "KABQ", "KSNA", "KHOU"];
+let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
 let airpourtCode;
@@ -67,56 +67,28 @@ for (let i = 2; i < oldData.length; i++) {
 }
 
 const data = fs.readFileSync("CIFP_230518/FAACIFP18").toString().split(/\r?\n/g);
-//^([ST])([A-Z]{3})([A-Z]) ([A-Z]{4})([\dA-Z]{2})([DEF])
-//let starz = data.map(dater => dater.match(/^([ST])([A-Z]{3})(P) ([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{6})/)).filter((dater) => dater);
 
 /** @type {ParseResult[]} */
 const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine)
         out.push(vahl);
-    else ;
+    else ;//if (dater.startsWith("SUSAP KLASK2"))
     // console.log(dater);
     return out;
 }, []);
 
-/*let starz = data.map(dater => dater.match(/^S([A-Z]{3})P ([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{6})([\dFMSTV])(.{5}) (\d{3})([\dA-Z ]{5})([\dA-Z][\dA-Z ])([ADEHPRTU])([A-Z ])([\dA-Z]).*$/)).filter((dater) => dater);
-console.log(starz[0]);
-console.log(starz.filter(star => star.includes("LEENA7")).map(item => item[2]), starz.length);
-
-/**
- * @type {SID_STAR[]}
- */
-/*let bars = starz.filter(star => star.includes("LEENA7")).map(star => parseLine(star.input));
-console.log(bars, bars.length, data.filter(line => line.includes("LEENA7")).length, data.filter(line => line.includes("LEENA7") && bars.every(bar => bar.source !== line)));
-for (let i = 1; i <= 132; i++) {
-    process.stdout.write(!(i % 10) ? (i / 10 % 10).toString() : " ");
-}
-console.log();
-for (let i = 1; i <= 132; i++) {
-    process.stdout.write((i % 10).toString());
-}
-console.log();
-console.log(bars.map((bar, windex) => `${bar.source}`).join('\n'));
-
-/*const thing = bars.reduce((out, curr) => {
-    if (!out[curr.routeType])
-        out[curr.routeType] = {};
-    if (!out[curr.routeType][curr.TRANS_IDENT])
-        out[curr.routeType][curr.TRANS_IDENT] = [];
-    out[curr.routeType][curr.TRANS_IDENT].push(it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident);
-    return out;
-}, {});*/
-
 let movedRunways = {};
 
 const worldDist = 0.00005;
+// todo rename this shit
 const thingey = it.reduce((out, curr, windex, array) => {
     if (curr.parentident) {
         if (!out[curr.parentident])
             out[curr.parentident] = {};
         if (!out[curr.parentident].runweys)
             out[curr.parentident].runweys = [];
+        // todo C is a runway, did you somehow forget that?
         curr.ident.substring(2).replace(/(\d{2})B/, "$1R,$1L").split(",").map(val => val.trim()).forEach(thin => {
             if (!out[curr.parentident].runweys.includes(thin))
                 out[curr.parentident].runweys.push(thin);
@@ -234,12 +206,9 @@ for (const thingeyKey in thingey) {
     let completedsids = 0, completedstars = 0, completedapproaches = 0;
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
+        // todo consolidate this if tree
         if (route.sid) {
             sids++;
-            /*if (!route[RouteType["PD"]["2"]] && !route[RouteType["PD"]["5"]]
-                && !route[RouteType["PD"]["8"]] && !route[RouteType["PD"]["M"]]) {
-                continue;
-            }*/
             let sidplaced = false;
             try {
                 let entrans = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]], route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
@@ -263,14 +232,8 @@ for (const thingeyKey in thingey) {
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
-                            // future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                            // current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
                             future_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, false);
                             current_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, true);
-
-                            // future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Waypoint>\n`;
-                            // current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Waypoint>\n`;
                         }
                     }
                 }
@@ -279,14 +242,8 @@ for (const thingeyKey in thingey) {
                         future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Transition Name="${simpsKey}">\n`;
                         current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Transition Name="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
-                            // future_branch_outstring += `${'\t'.repeat(depth)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                            // current_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
                             future_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, false);
                             current_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, true);
-
-                            // future_branch_outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
-                            // current_branch_outstring += `${'\t'.repeat(depth)}</SidTr_Waypoint>\n`;
                         }
                         future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Transition>\n`;
                         current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Transition>\n`;
@@ -298,14 +255,8 @@ for (const thingeyKey in thingey) {
                             future_branch_outstring += `${'\t'.repeat(depth)}<RunwayTransition Runway="${runwey}">\n`;
                             current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${runwey}">\n`;
                             for (const simps of translist[simpsKey]) {
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
                                 future_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, false);
                                 current_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, true);
-
-                                // future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
                             }
                             future_branch_outstring += `${'\t'.repeat(--depth)}</RunwayTransition>\n`;
                             current_branch_outstring += `${'\t'.repeat(depth)}</RunwayTransition>\n`;
@@ -348,40 +299,22 @@ for (const thingeyKey in thingey) {
                         for (const commonerlist of commoners) {
                             for (const simpsKey in commonerlist) {
                                 for (const simps of commonerlist[simpsKey]) {
-                                    // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
-                                    // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
-
                                     future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
                                     current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-
-                                    // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                                    // current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                                 }
                             }
                         }
                         for (const simps of rwyTrans[0][rwyTran]) {
-                            // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
-                            // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
-
                             future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
                             current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-
-                            // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                            current_branch_outstring += `<!--${'\t'.repeat(depth)}</Star_Waypoint>\n-->`;
                         }
                         for (const translist of trans) {
                             for (const simpsKey in translist) {
                                 future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
                                 current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
                                 for (const simps of translist[simpsKey]) {
-                                    // future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint>\n`;
-                                    // current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint>\n`;
-
                                     future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
                                     current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
-
-                                    // future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
-                                    // current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
                                 }
                                 future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
                                 current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
@@ -397,14 +330,8 @@ for (const thingeyKey in thingey) {
                     for (const commonerlist of commoners) {
                         for (const simpsKey in commonerlist) {
                             for (const simps of commonerlist[simpsKey]) {
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
-
                                 future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
                                 current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-
-                                // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                             }
                         }
                     }
@@ -413,14 +340,8 @@ for (const thingeyKey in thingey) {
                             future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
                             current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
                             for (const simps of translist[simpsKey]) {
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint>\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint>\n`;
-
                                 future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
                                 current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
-
-                                // future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
-                                // current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
                             }
                             future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
                             current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
@@ -448,68 +369,43 @@ for (const thingeyKey in thingey) {
             }, []);
             let changedName = "";
             switch (sidarname.charAt(0)) {
+                case "H":
+                    changedName = `RNV${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
                 case "I":
-                    changedName = `ILS${sidarname.substring(1, 4)}`;
-                    break;
-                case "S":
-                    changedName = `VOR${sidarname.substring(1, 4)}`;
-                    break;
-                case "D":
-                    changedName = `VOR${sidarname.substring(1, 4)}`;
+                    changedName = `ILS${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "L":
-                    changedName = `LOC${sidarname.substring(1, 4)}`;
-                    break;
-                case "N":
-                    changedName = `NDB${sidarname.substring(1, 4)}`;
-                    break;
-                case "X":
-                    changedName = `LDA${sidarname.substring(1, 4)}`;
-                    break;
-                case "Q":
-                    changedName = `NDB${sidarname.substring(1, 4)}`;
+                    changedName = `VDM${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "R":
-                    switch (sidarname.charAt(4)) {
-                        case " ":
-                            changedName = `RNV${sidarname.substring(1, 4)}`;
-                            break;
-                        case "Y":
-                            changedName = `GPS${sidarname.substring(1, 4)}`;
-                            break;
-                        case "Z":
-                            changedName = `RNP${sidarname.substring(1, 4)}`;
-                            break;
-                        case "X":
-                            changedName = `GPS${sidarname.substring(1, 4)}`;
-                            break;
-                        default:
-                            console.error("Did not recognize ", sidarname.charAt(4));
-                    }
+                    changedName = `RNV${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
-                case "H" :
-                    switch (sidarname.charAt(4)) {
-                        case " ":
-                            changedName = `RNV${sidarname.substring(1, 4)}`;
-                            break;
-                        case "Y":
-                            changedName = `GPS${sidarname.substring(1, 4)}`;
-                            break;
-                        case "Z":
-                            changedName = `RNP${sidarname.substring(1, 4)}`;
-                            break;
-                        case "X":
-                            changedName = `GPS${sidarname.substring(1, 4)}`;
-                            break;
-                        default:
-                            console.error("Did not recognize ", sidarname.charAt(4));
-                    }
-                    // changedName = `ILS${sidarname.substring(1, 4)}`;
-                    // I think this is helleychoppers
+                case "S":
+                    changedName = `VOR${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "B":
+                    changedName = `LBC${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "Q":
+                    changedName = `NDM${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "D":
+                    changedName = `TAC${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "X":
+                    changedName = `LDA${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 default:
-                    console.error("Did not recognize ", sidarname.charAt(0));
+                    changedName = sidarname;
+                    console.log("Bad", sidarname);
+                    // H => RNV08R, borrow last char
+                    // I => ILS
+                    // L => ILS ???
+                    // R => RNV, borrow last char
+                    // S => VOR
             }
+            changedName += sidarname.slice(1, ["R", "L", "C"].includes(sidarname.charAt(3)) ? 4 : 3);
             changedName = changedName.replace('-', '')
             if (changedName === "")
                 continue;
@@ -617,6 +513,8 @@ function getAltitudes(obj, tabs = "") {
     return out;
 }
 
+// todo next waypt to fix some things
+// todo use old runway so that 2020.3 actually works
 function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextWaypt) {
     if (waypt.obj.fix_path_termination === "FM") {
         return specialWaypt(waypt, tagName, tabDepth, useOldRunway);
@@ -631,14 +529,18 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "DF":
         case "RF":
         case "IF":
+        case "AF":
+        case "FC":
+        case "PI":
             out += waypt.obj.fix_ident;
             break;
         case "VA":
+        case "FA":
         case "CA":
-            out += `(${waypt.obj.nav_altitude_1})`;
+            out += `(${waypt.obj.nav_altitude_1.length ? waypt.obj.nav_altitude_1 : waypt.obj.nav_altitude_2})`;
             break;
         case "VI":
-            out += `(INTC)`;
+            out += `(INTC)`; // this might be const hdg to alt with a split with intc
             break;
         case "CF":
             out += waypt.obj.fix_ident; // cousin of above, really the second half therin
@@ -647,8 +549,15 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "VD":
             out += "(VECTORS)";
             break;
+        case "CD":
+            out += waypt.obj.nav_fix;
+            break;
+        case "VR":
+            out += waypt.obj.fix_path_navaid;
+            break;
         case "HM":
         case "HF":
+        case "HA":
             out += waypt.obj.fix_ident;
             break;
         default:
@@ -663,10 +572,14 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "DF":
         case "RF":
         case "TF":
+        case "AF":
+        case "FC":
+        case "PI":
             out += 'Normal';
             break;
         case "VA":
         case "CA":
+        case "FA":
             out += 'ConstHdgtoAlt';
             break;
         case "VI":
@@ -679,8 +592,15 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "VD":
             out += "Vectors";
             break;
+        case "CD":
+            out += "DmeInc";
+            break;
+        case "VR":
+            out += "VorRadialIntc";
+            break;
         case "HM":
         case "HF":
+        case "HA":
             out += "Hold";
     }
     out += "</Type>\n";
@@ -694,8 +614,12 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "DF":
         case "RF":
         case "TF":
+        case "AF":
+        case "PI":
+        case "FC":
         case "HM":
         case "HF":
+        case "HA":
         case "CF": // see above comments
             if (waypt.loc.reallatitude) {
                 latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
@@ -713,6 +637,8 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 console.log("FUUUUUCK");
             }
             break;
+        case "VR":
+        case "CD":
         case "VD": {
             let loc = it.find(thing => thing.ident && thing.ident.trim() === waypt.obj.fix_path_navaid.trim());
 
@@ -731,6 +657,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         }
             break;
         case "VA":
+        case "FA":
         case "CA":
         case "VI":
         case "VM":
@@ -767,23 +694,29 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
 
     // Hdg
-    if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "VI" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
+    if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "FA" || waypt.obj.fix_path_termination === "VI" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
     } else if (waypt.obj.fix_path_termination === "CA") {
         out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
-    } else if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {
+    } else if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF" || waypt.obj.fix_path_termination === "HA") {
         out += `${tabs}<Hld_Rad_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hld_Rad_value>\n`;
         out += `${tabs}<Hld_Time_or_Dist>${waypt.obj.fix_distance.startsWith("T") ? "Time" : "Dist"}</Hld_Time_or_Dist>\n`;
         out += `${tabs}<Hld_td_value>${waypt.obj.fix_distance.match(/\d+/) * 0.1}</Hld_td_value>\n`;
         out += `${tabs}<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>\n`
+    } else if (waypt.obj.fix_path_termination === "VR") {
+        // console.log();
+        out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
+        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+        out += `${tabs}<RadialtoIntercept>${Number.parseInt(waypt.obj.fix_theta) * 0.1}</RadialtoIntercept>\n`
+        // RadialtoIntercept
     }
     // else if (waypt.obj.fix_magnetic_course.trim().length > 0)
     //     console.log("AAAAAA");
 
     // turn dir
-    if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {
+    if (waypt.obj.fix_path_termination === "HA" || waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {
         out += `${tabs}<Hld_Turn>${waypt.obj.fix_turn_direction.trim().length === 0 ? "Auto" : waypt.obj.fix_turn_direction === "R" ? "Right" : "Left"}</Hld_Turn>\n`;
     } else
         out += `${tabs}<Sp_Turn>${waypt.obj.fix_turn_direction.trim().length === 0 ? "Auto" : waypt.obj.fix_turn_direction === "R" ? "Right" : "Left"}</Sp_Turn>\n`;

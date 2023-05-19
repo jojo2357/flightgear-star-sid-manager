@@ -227,7 +227,7 @@ class Latongitude {
     }
 
     static toAbsNumber(latongitude) {
-        return latongitude.value * (latongitude.hemisphere === "S" || latongitude.hemisphere === "W" ? -1 : 1);
+        return latongitude ? latongitude.value * (latongitude.hemisphere === "S" || latongitude.hemisphere === "W" ? -1 : 1) : 0;
     }
 }
 
