@@ -66,7 +66,7 @@ for (let i = 2; i < oldData.length; i++) {
     }
 }
 
-const data = fs.readFileSync("CIFP_230323/FAACIFP18").toString().split(/\r?\n/g);
+const data = fs.readFileSync("CIFP_230518/FAACIFP18").toString().split(/\r?\n/g);
 //^([ST])([A-Z]{3})([A-Z]) ([A-Z]{4})([\dA-Z]{2})([DEF])
 //let starz = data.map(dater => dater.match(/^([ST])([A-Z]{3})(P) ([A-Z]{4})([\dA-Z]{2})([DEF])([A-Z\d]{6})/)).filter((dater) => dater);
 

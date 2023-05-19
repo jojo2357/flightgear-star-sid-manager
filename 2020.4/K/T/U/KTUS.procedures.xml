@@ -16,7 +16,7 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KTUS">
 		<Sid Name="BURRO4" Runways="11L">
 			<Sid_Transition Name="BBALL">
@@ -422,15 +422,6 @@
 			</RunwayTransition>
 		</Sid>
 		<Sid Name="WLDKT3" Runways="29R">
-			<Sid_Waypoint ID="2">
-				<Name>WLDKT</Name>
-				<Type>Normal</Type>
-				<Latitude>32.22435277777778</Latitude>
-				<Longitude>-111.06703333333333</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
 			<Sid_Transition Name="BBALL">
 				<SidTr_Waypoint ID="1">
 					<Name>WLDKT</Name>
@@ -538,6 +529,27 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</Sid_Transition>
+			<RunwayTransition Runway="29R">
+				<RwyTr_Waypoint ID="1">
+					<Name>(3200)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>03200</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>303</Hdg_Crs_value>
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="2">
+					<Name>WLDKT</Name>
+					<Type>Normal</Type>
+					<Latitude>32.22435277777778</Latitude>
+					<Longitude>-111.06703333333333</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Star Name="DINGO5.11" Runways="11L">
 			<Star_Waypoint> <!--ID="1"-->

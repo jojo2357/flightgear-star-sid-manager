@@ -16,18 +16,9 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="PAKV">
 		<Sid Name="IPOXE2" Runways="21">
-			<Sid_Waypoint ID="1">
-				<Name>IPOXE</Name>
-				<Type>Normal</Type>
-				<Latitude>64.29263333333334</Latitude>
-				<Longitude>-158.8057</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
 			<Sid_Transition Name="EDMON">
 				<SidTr_Waypoint ID="1">
 					<Name>IPOXE</Name>
@@ -106,17 +97,19 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</Sid_Transition>
+			<RunwayTransition Runway="21">
+				<RwyTr_Waypoint ID="1">
+					<Name>IPOXE</Name>
+					<Type>Normal</Type>
+					<Latitude>64.29263333333334</Latitude>
+					<Longitude>-158.8057</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Sid Name="KACLE2" Runways="03">
-			<Sid_Waypoint ID="1">
-				<Name>KACLE</Name>
-				<Type>Normal</Type>
-				<Latitude>64.35683055555555</Latitude>
-				<Longitude>-158.64839166666664</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
 			<Sid_Transition Name="EDMON">
 				<SidTr_Waypoint ID="1">
 					<Name>KACLE</Name>
@@ -195,6 +188,17 @@
 					<AltitudeRestriction>at</AltitudeRestriction>
 				</SidTr_Waypoint>
 			</Sid_Transition>
+			<RunwayTransition Runway="03">
+				<RwyTr_Waypoint ID="1">
+					<Name>KACLE</Name>
+					<Type>Normal</Type>
+					<Latitude>64.35683055555555</Latitude>
+					<Longitude>-158.64839166666664</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Approach Name="RNV03">
 			<App_Waypoint> <!--ID="1"-->

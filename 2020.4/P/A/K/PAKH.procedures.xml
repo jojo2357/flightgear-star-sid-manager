@@ -16,35 +16,39 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="PAKH">
 		<Sid Name="JOGMO1" Runways="04">
-			<Sid_Waypoint ID="2">
-				<Name>CODUR</Name>
-				<Type>Normal</Type>
-				<Latitude>56.830911111111114</Latitude>
-				<Longitude>-154.51539722222222</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
-			<Sid_Waypoint ID="3">
-				<Name>JOGMO</Name>
-				<Type>Normal</Type>
-				<Latitude>57.12425</Latitude>
-				<Longitude>-154.78665833333335</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
-			<Sid_Waypoint ID="4">
-				<Name>JOGMO</Name>
-				<Type>Normal</Type>
-				<Latitude>57.12425</Latitude>
-				<Longitude>-154.78665833333335</Longitude>
-				<Altitude>11000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</Sid_Waypoint>
+			<RunwayTransition Runway="04">
+				<RwyTr_Waypoint ID="1">
+					<Name>(1000)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>01000</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>44.300000000000004</Hdg_Crs_value>
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="2">
+					<Name>CODUR</Name>
+					<Type>Normal</Type>
+					<Latitude>56.830911111111114</Latitude>
+					<Longitude>-154.51539722222222</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="3">
+					<Name>JOGMO</Name>
+					<Type>Normal</Type>
+					<Latitude>57.12425</Latitude>
+					<Longitude>-154.78665833333335</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 	</Airport>
 </ProceduresDB>

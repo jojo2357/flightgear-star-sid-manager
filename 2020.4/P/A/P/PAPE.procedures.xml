@@ -16,26 +16,30 @@
   ~  You should have received a copy of the GNU General Public License
   ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
-<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6786">
+<ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="PAPE">
 		<Sid Name="CILAC3" Runways="20">
-			<Sid_Waypoint ID="2">
-				<Name>CILAC</Name>
-				<Type>Normal</Type>
-				<Latitude>55.666666666666664</Latitude>
-				<Longitude>-159.5</Longitude>
-				<Altitude>0</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
-			</Sid_Waypoint>
-			<Sid_Waypoint ID="3">
-				<Name>CILAC</Name>
-				<Type>Normal</Type>
-				<Latitude>55.666666666666664</Latitude>
-				<Longitude>-159.5</Longitude>
-				<Altitude>10000</Altitude>
-				<AltitudeRestriction>above</AltitudeRestriction>
-			</Sid_Waypoint>
+			<RunwayTransition Runway="20">
+				<RwyTr_Waypoint ID="1">
+					<Name>(0530)</Name>
+					<Type>ConstHdgtoAlt</Type>
+					<Latitude>0.000000</Latitude>
+					<Longitude>0.000000</Longitude>
+					<Altitude>00530</Altitude>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Hdg_Crs>1</Hdg_Crs>
+					<Hdg_Crs_value>203.20000000000002</Hdg_Crs_value>
+				</RwyTr_Waypoint>
+				<RwyTr_Waypoint ID="2">
+					<Name>CILAC</Name>
+					<Type>Normal</Type>
+					<Latitude>55.666666666666664</Latitude>
+					<Longitude>-159.5</Longitude>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+				</RwyTr_Waypoint>
+			</RunwayTransition>
 		</Sid>
 		<Approach Name="RNV02">
 			<App_Waypoint> <!--ID="1"-->
