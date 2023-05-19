@@ -19,496 +19,662 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KCWF">
 		<Approach Name="ILS15">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>ROCCE</Name>
+			<App_Waypoint>
+				<Name>ROCCE</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>30.449022222222222</Latitude>
 				<Longitude>-93.27488055555555</Longitude>
-				<Speed>   </Speed>
-				<Altitude>01900</Altitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>02000</Altitude>
+				<AltitudeCons>01900</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>MOSSY</Name>
+			<App_Waypoint>
+				<Name>MOSSY</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>30.306644444444444</Latitude>
 				<Longitude>-93.19617777777778</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01900</Altitude>
-				<Altitude>01820</Altitude>
+				<AltitudeCons>01820</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW15</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW15 </Name><!-- CF -->
+				<Type>Normal</Type>
 				<Latitude>30.22385833333333</Latitude>
 				<Longitude>-93.15050277777779</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00070</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="4"-->
-				<Name>LCH</Name>
+			<App_Waypoint>
+				<Name>LCH  </Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>30.141513888888888</Latitude>
 				<Longitude>-93.10556944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>LCH</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>LCH  </Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>30.141513888888888</Latitude>
 				<Longitude>-93.10556944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>328</Hld_Rad_value>
+				<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
+				<Hld_td_value>1</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="LCH  ">
-				<AppTr_Waypoint ID="1">
-					<Name>LCH </Name>
+				<AppTr_Waypoint>
+					<Name>LCH  </Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.141513888888888</Latitude>
 					<Longitude>-93.10556944444444</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>MOSSY</Name>
+				<AppTr_Waypoint>
+					<Name>MOSSY</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.306644444444444</Latitude>
 					<Longitude>-93.19617777777778</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>MOSSY</Name>
-					<Type>Normal</Type>
-					<Latitude>30.306644444444444</Latitude>
-					<Longitude>-93.19617777777778</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- PI -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="PLRMO">
-				<AppTr_Waypoint ID="1">
-					<Name>PLRMO</Name>
+				<AppTr_Waypoint>
+					<Name>PLRMO</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.2906</Latitude>
 					<Longitude>-92.75268888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>ROCCE</Name>
-					<Type>Normal</Type>
-					<Latitude>30.449022222222222</Latitude>
-					<Longitude>-93.27488055555555</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- AF -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="STRUT">
-				<AppTr_Waypoint ID="1">
-					<Name>STRUT</Name>
+				<AppTr_Waypoint>
+					<Name>STRUT</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.155491666666666</Latitude>
 					<Longitude>-93.49731666666666</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>ROCCE</Name>
-					<Type>Normal</Type>
-					<Latitude>30.449022222222222</Latitude>
-					<Longitude>-93.27488055555555</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- AF -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Right</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="LOC15">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>ROCCE</Name>
+			<App_Waypoint>
+				<Name>ROCCE</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>30.449022222222222</Latitude>
 				<Longitude>-93.27488055555555</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>MOSSY</Name>
+			<App_Waypoint>
+				<Name>MOSSY</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>30.306644444444444</Latitude>
 				<Longitude>-93.19617777777778</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW15</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW15 </Name><!-- CF -->
+				<Type>Normal</Type>
 				<Latitude>30.22385833333333</Latitude>
 				<Longitude>-93.15050277777779</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00070</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="4"-->
-				<Name>LCH</Name>
+			<App_Waypoint>
+				<Name>LCH  </Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>30.141513888888888</Latitude>
 				<Longitude>-93.10556944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>LCH</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>LCH  </Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>30.141513888888888</Latitude>
 				<Longitude>-93.10556944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>328</Hld_Rad_value>
+				<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
+				<Hld_td_value>1</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="LCH  ">
-				<AppTr_Waypoint ID="1">
-					<Name>LCH </Name>
+				<AppTr_Waypoint>
+					<Name>LCH  </Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.141513888888888</Latitude>
 					<Longitude>-93.10556944444444</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>MOSSY</Name>
+				<AppTr_Waypoint>
+					<Name>MOSSY</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.306644444444444</Latitude>
 					<Longitude>-93.19617777777778</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>MOSSY</Name>
-					<Type>Normal</Type>
-					<Latitude>30.306644444444444</Latitude>
-					<Longitude>-93.19617777777778</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- PI -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="PLRMO">
-				<AppTr_Waypoint ID="1">
-					<Name>PLRMO</Name>
+				<AppTr_Waypoint>
+					<Name>PLRMO</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.2906</Latitude>
 					<Longitude>-92.75268888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>ROCCE</Name>
-					<Type>Normal</Type>
-					<Latitude>30.449022222222222</Latitude>
-					<Longitude>-93.27488055555555</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- AF -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="STRUT">
-				<AppTr_Waypoint ID="1">
-					<Name>STRUT</Name>
+				<AppTr_Waypoint>
+					<Name>STRUT</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.155491666666666</Latitude>
 					<Longitude>-93.49731666666666</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>ROCCE</Name>
-					<Type>Normal</Type>
-					<Latitude>30.449022222222222</Latitude>
-					<Longitude>-93.27488055555555</Longitude>
-					<Speed>   </Speed>
+				<AppTr_Waypoint>
+					<Name></Name><!-- AF -->
+					<Type></Type>
+					<Latitude></Latitude>
+					<Longitude></Longitude>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Right</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="RNV15">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>CEVKU</Name>
+			<App_Waypoint>
+				<Name>CEVKU</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>30.399538888888888</Latitude>
 				<Longitude>-93.24748888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>DAYAG</Name>
+			<App_Waypoint>
+				<Name>DAYAG</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>30.310452777777776</Latitude>
 				<Longitude>-93.19828055555556</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW15</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW15 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>30.22385833333333</Latitude>
 				<Longitude>-93.15050277777779</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00070</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(00216)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00216</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>154.4</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>FERDU</Name>
+			<App_Waypoint>
+				<Name>FERDU</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>30.03075</Latitude>
 				<Longitude>-93.04434166666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>FERDU</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>FERDU</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>30.03075</Latitude>
 				<Longitude>-93.04434166666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>334.5</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="HATHA">
-				<AppTr_Waypoint ID="1">
-					<Name>HATHA</Name>
+				<AppTr_Waypoint>
+					<Name>HATHA</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.311641666666667</Latitude>
 					<Longitude>-92.70261944444445</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>EPOYO</Name>
+				<AppTr_Waypoint>
+					<Name>EPOYO</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.449194444444444</Latitude>
 					<Longitude>-93.13604166666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02600</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>CEVKU</Name>
+				<AppTr_Waypoint>
+					<Name>CEVKU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.399538888888888</Latitude>
 					<Longitude>-93.24748888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="LCH  ">
-				<AppTr_Waypoint ID="1">
-					<Name>LCH </Name>
+				<AppTr_Waypoint>
+					<Name>LCH  </Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.141513888888888</Latitude>
 					<Longitude>-93.10556944444444</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>CEVKU</Name>
+				<AppTr_Waypoint>
+					<Name>CEVKU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.399538888888888</Latitude>
 					<Longitude>-93.24748888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-over</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>CEVKU</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>CEVKU</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>30.399538888888888</Latitude>
 					<Longitude>-93.24748888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>154.4</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="STRUT">
-				<AppTr_Waypoint ID="1">
-					<Name>STRUT</Name>
+				<AppTr_Waypoint>
+					<Name>STRUT</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>30.155491666666666</Latitude>
 					<Longitude>-93.49731666666666</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>DUREC</Name>
+				<AppTr_Waypoint>
+					<Name>DUREC</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.35535555555556</Latitude>
 					<Longitude>-93.36198888888887</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>CEVKU</Name>
+				<AppTr_Waypoint>
+					<Name>CEVKU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.399538888888888</Latitude>
 					<Longitude>-93.24748888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="RNV33">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>FERDU</Name>
+			<App_Waypoint>
+				<Name>FERDU</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>30.03075</Latitude>
 				<Longitude>-93.04434166666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>GOGNE</Name>
+			<App_Waypoint>
+				<Name>GOGNE</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>30.121208333333335</Latitude>
 				<Longitude>-93.09399166666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW33</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW33 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>30.197316666666666</Latitude>
 				<Longitude>-93.13587777777778</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00069</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(00217)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00217</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>334.5</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>CEVKU</Name>
+			<App_Waypoint>
+				<Name>CEVKU</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>30.399538888888888</Latitude>
 				<Longitude>-93.24748888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>CEVKU</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>CEVKU</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>30.399538888888888</Latitude>
 				<Longitude>-93.24748888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>154.4</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="CIPDA">
-				<AppTr_Waypoint ID="1">
-					<Name>CIPDA</Name>
+				<AppTr_Waypoint>
+					<Name>CIPDA</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>29.9056</Latitude>
 					<Longitude>-93.17335</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>FERDU</Name>
+				<AppTr_Waypoint>
+					<Name>FERDU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.03075</Latitude>
 					<Longitude>-93.04434166666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="FERDU">
-				<AppTr_Waypoint ID="1">
-					<Name>FERDU</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>FERDU</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>30.03075</Latitude>
 					<Longitude>-93.04434166666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>334.5</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="GUSTI">
-				<AppTr_Waypoint ID="1">
-					<Name>GUSTI</Name>
+				<AppTr_Waypoint>
+					<Name>GUSTI</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>29.970927777777774</Latitude>
 					<Longitude>-92.90980277777778</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>FERDU</Name>
+				<AppTr_Waypoint>
+					<Name>FERDU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>30.03075</Latitude>
 					<Longitude>-93.04434166666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

@@ -19,121 +19,164 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KADT">
 		<Approach Name="RNV17">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>HOMIM</Name>
+			<App_Waypoint>
+				<Name>HOMIM</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>40.089061111111114</Latitude>
 				<Longitude>-101.08226388888887</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>05000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>IHUKY</Name>
+			<App_Waypoint>
+				<Name>IHUKY</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>39.94023055555555</Latitude>
 				<Longitude>-101.05878055555554</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>04800</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>HORUK</Name>
+			<App_Waypoint>
+				<Name>HORUK</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>39.87992222222222</Latitude>
 				<Longitude>-101.04929722222222</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>03640</Altitude>
+				<AltitudeCons>03640</AltitudeCons>
 				<AltitudeRestriction>between</AltitudeRestriction>
-				<Altitude>03640</Altitude>
-				<Altitude>03640</Altitude>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW17</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW17 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>39.84824444444445</Latitude>
 				<Longitude>-101.04431944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>03031</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(03500)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>03500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>167.10000000000002</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>HOMIM</Name>
+			<App_Waypoint>
+				<Name>HOMIM</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>40.089061111111114</Latitude>
 				<Longitude>-101.08226388888887</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>05000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>HOMIM</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>HOMIM</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>40.089061111111114</Latitude>
 				<Longitude>-101.08226388888887</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>05000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>167.10000000000002</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>5</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="HOMIM">
-				<AppTr_Waypoint ID="1">
-					<Name>HOMIM</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>HOMIM</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>40.089061111111114</Latitude>
 					<Longitude>-101.08226388888887</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>05000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>167.10000000000002</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>5</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="JITAM">
-				<AppTr_Waypoint ID="1">
-					<Name>JITAM</Name>
+				<AppTr_Waypoint>
+					<Name>JITAM</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>40.10699722222222</Latitude>
 					<Longitude>-100.88819444444445</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>HOMIM</Name>
+				<AppTr_Waypoint>
+					<Name>HOMIM</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>40.089061111111114</Latitude>
 					<Longitude>-101.08226388888887</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>05000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="WIXAR">
-				<AppTr_Waypoint ID="1">
-					<Name>WIXAR</Name>
+				<AppTr_Waypoint>
+					<Name>WIXAR</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>40.07080277777778</Latitude>
 					<Longitude>-101.27623055555556</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>HOMIM</Name>
+				<AppTr_Waypoint>
+					<Name>HOMIM</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>40.089061111111114</Latitude>
 					<Longitude>-101.08226388888887</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>05000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

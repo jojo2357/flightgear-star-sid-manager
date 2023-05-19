@@ -19,156 +19,222 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KISQ">
 		<Approach Name="RNV10">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>HALKI</Name>
+			<App_Waypoint>
+				<Name>HALKI</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>45.974922222222226</Latitude>
 				<Longitude>-86.473325</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>ZIRET</Name>
+			<App_Waypoint>
+				<Name>ZIRET</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>45.97504444444444</Latitude>
 				<Longitude>-86.308375</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02400</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>WUXUL</Name>
+			<App_Waypoint>
+				<Name>WUXUL</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>45.97501944444445</Latitude>
 				<Longitude>-86.23243888888888</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01380</Altitude>
-				<Altitude>01388</Altitude>
+				<AltitudeCons>01388</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW10</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW10 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>45.974975</Latitude>
 				<Longitude>-86.18225555555556</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00719</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(01060)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01060</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>95.10000000000001</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>DUCER</Name>
+			<App_Waypoint>
+				<Name>DUCER</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>45.974225000000004</Latitude>
 				<Longitude>-85.87103888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>DUCER</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>DUCER</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>45.974225000000004</Latitude>
 				<Longitude>-85.87103888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>275.3</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="HALKI">
-				<AppTr_Waypoint ID="1">
-					<Name>HALKI</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>HALKI</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>45.974922222222226</Latitude>
 					<Longitude>-86.473325</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02600</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>94.9</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="RNV28">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>DUCER</Name>
+			<App_Waypoint>
+				<Name>DUCER</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>45.974225000000004</Latitude>
 				<Longitude>-85.87103888888888</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>EDLUC</Name>
+			<App_Waypoint>
+				<Name>EDLUC</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>45.97472777777778</Latitude>
 				<Longitude>-86.03583055555555</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02400</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>NEKIY</Name>
+			<App_Waypoint>
+				<Name>NEKIY</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>45.97488333333334</Latitude>
 				<Longitude>-86.11478888888888</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01340</Altitude>
-				<Altitude>01348</Altitude>
+				<AltitudeCons>01348</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW28</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW28 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>45.97495277777778</Latitude>
 				<Longitude>-86.16258333333334</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00711</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(01020)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01020</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>275.1</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>HALKI</Name>
+			<App_Waypoint>
+				<Name>HALKI</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>45.974922222222226</Latitude>
 				<Longitude>-86.473325</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>HALKI</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>HALKI</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>45.974922222222226</Latitude>
 				<Longitude>-86.473325</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>94.9</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="DUCER">
-				<AppTr_Waypoint ID="1">
-					<Name>DUCER</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>DUCER</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>45.974225000000004</Latitude>
 					<Longitude>-85.87103888888888</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02600</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>275.3</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

@@ -19,156 +19,222 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KEBS">
 		<Approach Name="RNV14">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>HOGOD</Name>
+			<App_Waypoint>
+				<Name>HOGOD</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>42.605475</Latitude>
 				<Longitude>-94.03581944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>WANPO</Name>
+			<App_Waypoint>
+				<Name>WANPO</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>42.505941666666665</Latitude>
 				<Longitude>-93.93761944444445</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>ZOKOV</Name>
+			<App_Waypoint>
+				<Name>ZOKOV</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>42.461727777777774</Latitude>
 				<Longitude>-93.894125</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01640</Altitude>
-				<Altitude>01655</Altitude>
+				<AltitudeCons>01655</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW14</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW14 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>42.440155555555556</Latitude>
 				<Longitude>-93.87293333333332</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>01146</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(01367)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01367</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>140.9</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>OLTOE</Name>
+			<App_Waypoint>
+				<Name>OLTOE</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>42.28494166666667</Latitude>
 				<Longitude>-93.72101666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>OLTOE</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>OLTOE</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>42.28494166666667</Latitude>
 				<Longitude>-93.72101666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>321.1</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="HOGOD">
-				<AppTr_Waypoint ID="1">
-					<Name>HOGOD</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>HOGOD</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>42.605475</Latitude>
 					<Longitude>-94.03581944444444</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>03000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>140.9</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="RNV32">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>OLTOE</Name>
+			<App_Waypoint>
+				<Name>OLTOE</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>42.28494166666667</Latitude>
 				<Longitude>-93.72101666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>BLDSO</Name>
+			<App_Waypoint>
+				<Name>BLDSO</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>42.36644166666667</Latitude>
 				<Longitude>-93.80066666666666</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>DOVVA</Name>
+			<App_Waypoint>
+				<Name>DOVVA</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>42.41138055555555</Latitude>
 				<Longitude>-93.84469999999999</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01620</Altitude>
-				<Altitude>01639</Altitude>
+				<AltitudeCons>01639</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW32</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW32 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>42.43161111111111</Latitude>
 				<Longitude>-93.86454444444445</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>01161</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(01372)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01372</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>321</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>HOGOD</Name>
+			<App_Waypoint>
+				<Name>HOGOD</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>42.605475</Latitude>
 				<Longitude>-94.03581944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>HOGOD</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>HOGOD</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>42.605475</Latitude>
 				<Longitude>-94.03581944444444</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>140.9</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="OLTOE">
-				<AppTr_Waypoint ID="1">
-					<Name>OLTOE</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>OLTOE</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>42.28494166666667</Latitude>
 					<Longitude>-93.72101666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>03000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>321.1</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

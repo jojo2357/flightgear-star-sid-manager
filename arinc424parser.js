@@ -225,6 +225,10 @@ class Latongitude {
         } else this.value = value;
         this.hemisphere = hemisphere;
     }
+
+    static toAbsNumber(latongitude) {
+        return latongitude.value * (latongitude.hemisphere === "S" || latongitude.hemisphere === "W" ? -1 : 1);
+    }
 }
 
 class SID_STAR extends ParseResult {

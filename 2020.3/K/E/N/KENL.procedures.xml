@@ -19,146 +19,210 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KENL">
 		<Approach Name="RNV18">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>HUTWI</Name>
+			<App_Waypoint>
+				<Name>HUTWI</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>38.719252777777776</Latitude>
 				<Longitude>-89.08869166666666</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>QIMLA</Name>
+			<App_Waypoint>
+				<Name>QIMLA</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>38.60218055555556</Latitude>
 				<Longitude>-89.09041666666666</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02100</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>YIRBU</Name>
+			<App_Waypoint>
+				<Name>YIRBU</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>38.54675833333334</Latitude>
 				<Longitude>-89.09123055555555</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01040</Altitude>
-				<Altitude>01041</Altitude>
+				<AltitudeCons>01041</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW18</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW18 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>38.52173333333334</Latitude>
 				<Longitude>-89.09159722222222</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00564</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(00880)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00880</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>182.70000000000002</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>WOKSO</Name>
+			<App_Waypoint>
+				<Name>WOKSO</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>38.311144444444444</Latitude>
 				<Longitude>-89.094675</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>WOKSO</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>WOKSO</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>38.311144444444444</Latitude>
 				<Longitude>-89.094675</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>2.7</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="HUTWI">
-				<AppTr_Waypoint ID="1">
-					<Name>HUTWI</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>HUTWI</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>38.719252777777776</Latitude>
 					<Longitude>-89.08869166666666</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02600</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>182.70000000000002</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="RNV36">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>WOKSO</Name>
+			<App_Waypoint>
+				<Name>WOKSO</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>38.311144444444444</Latitude>
 				<Longitude>-89.094675</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>YEJUL</Name>
+			<App_Waypoint>
+				<Name>YEJUL</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>38.428327777777774</Latitude>
 				<Longitude>-89.09296388888887</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02100</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW36</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW36 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>38.508002777777776</Latitude>
 				<Longitude>-89.09179722222223</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00579</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(00784)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00784</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>2.7</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>HUTWI</Name>
+			<App_Waypoint>
+				<Name>HUTWI</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>38.719252777777776</Latitude>
 				<Longitude>-89.08869166666666</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>HUTWI</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>HUTWI</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>38.719252777777776</Latitude>
 				<Longitude>-89.08869166666666</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02600</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>182.70000000000002</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="WOKSO">
-				<AppTr_Waypoint ID="1">
-					<Name>WOKSO</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>WOKSO</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>38.311144444444444</Latitude>
 					<Longitude>-89.094675</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02600</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>2.7</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

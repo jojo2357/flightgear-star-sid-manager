@@ -19,139 +19,188 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="PAPM">
 		<Approach Name="RNV14">
-			<App_Waypoint> <!--ID="1"-->
-				<Name>FELTI</Name>
+			<App_Waypoint>
+				<Name>FELTI</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>59.18811944444444</Latitude>
 				<Longitude>-161.98306666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>CAYRO</Name>
+			<App_Waypoint>
+				<Name>CAYRO</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>59.101625000000006</Latitude>
 				<Longitude>-161.9036861111111</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>01700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="2"-->
-				<Name>JEPRU</Name>
+			<App_Waypoint>
+				<Name>JEPRU</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>59.05562222222222</Latitude>
 				<Longitude>-161.86163333333332</Longitude>
-				<Speed>   </Speed>
-				<AltitudeRestriction>between</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00720</Altitude>
-				<Altitude>00731</Altitude>
+				<AltitudeCons>00731</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="3"-->
-				<Name>RW14</Name>
-				<Type>Runway</Type>
+			<App_Waypoint>
+				<Name>RW14 </Name><!-- TF -->
+				<Type>Normal</Type>
 				<Latitude>59.02402222222222</Latitude>
 				<Longitude>-161.8328611111111</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>00057</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint ID="4">
-				<Name>VECTORS</Name>
+			<App_Waypoint>
+				<Name>(00420)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
-				<Speed>   </Speed>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>00420</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
-				<Hdg_Crs>1</Hdg_Crs>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
 				<Hdg_Crs_value>143.8</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="5"-->
-				<Name>FELTI</Name>
+			<App_Waypoint>
+				<Name>FELTI</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>59.18811944444444</Latitude>
 				<Longitude>-161.98306666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-over</Flytype>
 				<Altitude>02500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Right</Sp_Turn>
 			</App_Waypoint>
-			<App_Waypoint> <!--ID="6"-->
-				<Name>FELTI</Name>
-				<Type>Normal</Type>
+			<App_Waypoint>
+				<Name>FELTI</Name><!-- HM -->
+				<Type>Hold</Type>
 				<Latitude>59.18811944444444</Latitude>
 				<Longitude>-161.98306666666667</Longitude>
-				<Speed>   </Speed>
+				<Flytype>Fly-by</Flytype>
 				<Altitude>02500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>143.70000000000002</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="FELTI">
-				<AppTr_Waypoint ID="1">
-					<Name>FELTI</Name>
-					<Type>Normal</Type>
+				<AppTr_Waypoint>
+					<Name>FELTI</Name><!-- HF -->
+					<Type>Hold</Type>
 					<Latitude>59.18811944444444</Latitude>
 					<Longitude>-161.98306666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02500</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>143.70000000000002</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Left</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="OSE  ">
-				<AppTr_Waypoint ID="1">
-					<Name>OSE </Name>
+				<AppTr_Waypoint>
+					<Name>OSE  </Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>60.791308333333326</Latitude>
 					<Longitude>-161.87276111111112</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>AKUWU</Name>
+				<AppTr_Waypoint>
+					<Name>AKUWU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>59.31666666666667</Latitude>
 					<Longitude>-161.86666666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>03500</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>FELTI</Name>
+				<AppTr_Waypoint>
+					<Name>FELTI</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>59.18811944444444</Latitude>
 					<Longitude>-161.98306666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02500</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="TOG  ">
-				<AppTr_Waypoint ID="1">
-					<Name>TOG </Name>
+				<AppTr_Waypoint>
+					<Name>TOG  </Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>59.06356666666667</Latitude>
 					<Longitude>-160.37492222222224</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="2">
-					<Name>AKUWU</Name>
+				<AppTr_Waypoint>
+					<Name>AKUWU</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>59.31666666666667</Latitude>
 					<Longitude>-161.86666666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>05000</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint ID="3">
-					<Name>FELTI</Name>
+				<AppTr_Waypoint>
+					<Name>FELTI</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>59.18811944444444</Latitude>
 					<Longitude>-161.98306666666667</Longitude>
-					<Speed>   </Speed>
+					<Flytype>Fly-by</Flytype>
 					<Altitude>02500</Altitude>
+					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>

@@ -22,7 +22,7 @@ const path = require("path");
 
 const oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
-let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
+let debugAirports = ["KLAS"]//, "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
 let airpourtCode;
@@ -263,26 +263,14 @@ for (const thingeyKey in thingey) {
                 for (const commonerlist of commoners) {
                     for (const simpsKey in commonerlist) {
                         for (const simps of commonerlist[simpsKey]) {
-                            if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                continue;
+                            // future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            // current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            future_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, false);
+                            current_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, true);
 
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-
-                            future_branch_outstring += altitudeToXML(simps.obj, depth);
-                            current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                            future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Waypoint>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Waypoint>\n`;
+                            // future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Waypoint>\n`;
+                            // current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Waypoint>\n`;
                         }
                     }
                 }
@@ -291,50 +279,14 @@ for (const thingeyKey in thingey) {
                         future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Transition Name="${simpsKey}">\n`;
                         current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Transition Name="${simpsKey}">\n`;
                         for (const simps of translist[simpsKey]) {
-                            if (typeof simps.loc === 'string' || simps.loc instanceof String) {
-                                // continue;
-                                if (simps.obj.fix_path_termination === "VI") {
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            // future_branch_outstring += `${'\t'.repeat(depth)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            // current_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                    // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                    // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+                            future_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, false);
+                            current_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, true);
 
-                                    future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                    current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                    future_branch_outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}</SidTr_Waypoint>\n`;
-                                }
-                                continue;
-                            }
-
-                            future_branch_outstring += `${'\t'.repeat(depth++)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<SidTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-
-                            future_branch_outstring += altitudeToXML(simps.obj, depth);
-                            current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                            future_branch_outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}</SidTr_Waypoint>\n`;
+                            // future_branch_outstring += `${'\t'.repeat(--depth)}</SidTr_Waypoint>\n`;
+                            // current_branch_outstring += `${'\t'.repeat(depth)}</SidTr_Waypoint>\n`;
                         }
                         future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Transition>\n`;
                         current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Transition>\n`;
@@ -344,118 +296,19 @@ for (const thingeyKey in thingey) {
                     for (const simpsKey in translist) {
                         for (const runwey of simpsKey.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L").split(",")) {
                             future_branch_outstring += `${'\t'.repeat(depth)}<RunwayTransition Runway="${runwey}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${runwey}">\n`;
-                        for (const simps of translist[simpsKey]) {
-                            // continue;
-                            //todo add more terminations
-                            if (simps.obj.fix_path_termination === "VA") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${runwey}">\n`;
+                            for (const simps of translist[simpsKey]) {
+                                // future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>(${simps.obj.nav_altitude_1.substring(1)})</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>(${simps.obj.nav_altitude_1.substring(1)})</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
+                                future_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, false);
+                                current_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, true);
 
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
-                            } else if (simps.obj.fix_path_termination === "VM") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
-                            } else if (simps.obj.fix_path_termination === "VD") {
-                                let navloc = it.find(val => val.ident && simps.obj.fix_path_navaid === val.ident);
-
-                                if (!navloc)
-                                    continue;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>${navloc.ident.trim()}</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>${navloc.ident.trim()}</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>DmeIntc</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>DmeIntc</Type>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${navloc.vorLatitude ? ((navloc.vorLatitude.hemisphere === "N" ? 1 : -1) * navloc.vorLatitude.value) : (navloc.DMELatitude.hemisphere === "N" ? 1 : -1) * navloc.DMELatitude.value}</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${navloc.vorLatitude ? ((navloc.vorLatitude.hemisphere === "N" ? 1 : -1) * navloc.vorLatitude.value) : (navloc.DMELatitude.hemisphere === "N" ? 1 : -1) * navloc.DMELatitude.value}</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>${navloc.vorLongitude ? ((navloc.vorLongitude.hemisphere === "E" ? 1 : -1) * navloc.vorLongitude.value) : (navloc.DMELongitude.hemisphere === "N" ? 1 : -1) * navloc.DMELongitude.value}</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>${navloc.vorLongitude ? ((navloc.vorLongitude.hemisphere === "E" ? 1 : -1) * navloc.vorLongitude.value) : (navloc.DMELongitude.hemisphere === "N" ? 1 : -1) * navloc.DMELongitude.value}</Longitude>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<DMEtoIntercept>${Number.parseInt(simps.obj.fix_distance) * (0.1)}</DMEtoIntercept>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<DMEtoIntercept>${Number.parseInt(simps.obj.fix_distance) * (0.1)}</DMEtoIntercept>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
-                            } else if (simps.obj.fix_path_termination === "DF" || simps.obj.fix_path_termination === "IF" || simps.obj.fix_path_termination === "TF" || simps.obj.fix_path_termination === "CF") {
-                                if (!(typeof simps.loc === 'string' || simps.loc instanceof String)) {
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth++)}<RwyTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-
-                                    future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                    current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                    future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
-                                } else
-                                    console.log("Fuck");
-                            } else if (translist[simpsKey].length === 1)
-                                console.log("NOOO, bad");
-                        }
-                        future_branch_outstring += `${'\t'.repeat(--depth)}</RunwayTransition>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}</RunwayTransition>\n`;
+                                // future_branch_outstring += `${'\t'.repeat(--depth)}</RwyTr_Waypoint>\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth)}</RwyTr_Waypoint>\n`;
+                            }
+                            future_branch_outstring += `${'\t'.repeat(--depth)}</RunwayTransition>\n`;
+                            current_branch_outstring += `${'\t'.repeat(depth)}</RunwayTransition>\n`;
                         }
                     }
                 }
@@ -495,82 +348,40 @@ for (const thingeyKey in thingey) {
                         for (const commonerlist of commoners) {
                             for (const simpsKey in commonerlist) {
                                 for (const simps of commonerlist[simpsKey]) {
-                                    if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                        continue;
+                                    // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
+                                    // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
 
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                    future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
+                                    current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
 
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                                    future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                    current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                    future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
+                                    // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
+                                    // current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                                 }
                             }
                         }
                         for (const simps of rwyTrans[0][rwyTran]) {
-                            if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                continue;
+                            // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
+                            // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
 
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
+                            future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
+                            current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
 
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                            future_branch_outstring += altitudeToXML(simps.obj, depth);
-                            current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                            future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
+                            // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
+                            current_branch_outstring += `<!--${'\t'.repeat(depth)}</Star_Waypoint>\n-->`;
                         }
                         for (const translist of trans) {
                             for (const simpsKey in translist) {
                                 future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
                                 current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
                                 for (const simps of translist[simpsKey]) {
-                                    if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                        continue;
+                                    // future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint>\n`;
+                                    // current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint>\n`;
 
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                    future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
+                                    current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
 
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                    future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                                    future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                    current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                    future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
-                                    current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
+                                    // future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
+                                    // current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
                                 }
                                 future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
                                 current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
@@ -586,28 +397,14 @@ for (const thingeyKey in thingey) {
                     for (const commonerlist of commoners) {
                         for (const simpsKey in commonerlist) {
                             for (const simps of commonerlist[simpsKey]) {
-                                if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                    continue;
+                                // future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint>\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint>\n`;
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Star_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
+                                current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
+                                // future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Waypoint>\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth)}</Star_Waypoint>\n`;
                             }
                         }
                     }
@@ -616,28 +413,14 @@ for (const thingeyKey in thingey) {
                             future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
                             current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
                             for (const simps of translist[simpsKey]) {
-                                if (typeof simps.loc === 'string' || simps.loc instanceof String)
-                                    continue;
+                                // future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint>\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint>\n`;
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<StarTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                                future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
+                                current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
+                                // future_branch_outstring += `${'\t'.repeat(--depth)}</StarTr_Waypoint>\n`;
+                                // current_branch_outstring += `${'\t'.repeat(depth)}</StarTr_Waypoint>\n`;
                             }
                             future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
                             current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
@@ -735,137 +518,14 @@ for (const thingeyKey in thingey) {
             for (const commonerlist of meatofit) {
                 for (const simpsKey in commonerlist) {
                     for (const simps of commonerlist[simpsKey]) {
-                        if (typeof simps.loc === 'string' || simps.loc instanceof String) {
-                            // continue;
-                            if (simps.obj.fix_path_termination === "IF") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                        // future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint>\n`;
+                        // current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint>\n`;
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
+                        future_branch_outstring += wayptToString(simps, "App_Waypoint", depth, false);
+                        current_branch_outstring += wayptToString(simps, "App_Waypoint", depth, true);
 
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                                continue
-                            } else if (simps.obj.fix_path_termination === "CA") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>ConstHdgtoAlt</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                                continue
-                            } else if (simps.obj.fix_path_termination === "VI") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>DMEINTC</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>DMEINTC</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>DmeIntc</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>DmeIntc</Type>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Sp_Turn>${simps.obj.fix_turn_direction === "R" ? "Right" : simps.obj.fix_turn_direction === "L" ? "Left" : "Auto"}</Sp_Turn>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Sp_Turn>${simps.obj.fix_turn_direction === "R" ? "Right" : simps.obj.fix_turn_direction === "L" ? "Left" : "Auto"}</Sp_Turn>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                                continue;
-                            } else if (simps.obj.fix_path_termination === "VR") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!-- ID="${simps.obj.sequence_number.charAt(1)}" -->\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>VORRAD</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>VORRAD</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>VorRadialIntc</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>VorRadialIntc</Type>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).latitude().value}</Latitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).latitude().value}</Latitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).longitude().value}</Longitude>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>${it.find(val => val.ident && simps.obj.fix_path_navaid && val.ident.trim() === simps.obj.fix_path_navaid.trim()).longitude().value}</Longitude>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<RadialtoIntercept>${simps.obj.fix_theta * 0.1}</RadialtoIntercept>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<RadialtoIntercept>${simps.obj.fix_theta * 0.1}</RadialtoIntercept>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                                continue;
-                            } else {
-                                // VD (heading to distance), VA (hdg to alt), CD (hdg to distance), CF
-                                console.log("What the hell?", simps.obj.fix_path_termination);
-                            }
-                            continue;
-                        }
-
-                        future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint> <!--ID="${simps.obj.sequence_number.charAt(1)}"-->\n`;
-
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident.trim()}</Name>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.obj.fix_type === "PG" ? movedRunways[thingeyKey].some(change => change.neww === simps.loc.ident.trim()) ? movedRunways[thingeyKey].find(change => change.neww === simps.loc.ident.trim()).orig : simps.loc.ident.trim() : simps.loc.ident.trim()}</Name>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway" : "Normal"}</Type>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Type>${simps.obj.fix_type === "PG" ? "Runway" : "Normal"}</Type>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                        future_branch_outstring += altitudeToXML(simps.obj, depth);
-                        current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                        future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
+                        // future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
+                        // current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
                     }
                 }
             }
@@ -874,54 +534,14 @@ for (const thingeyKey in thingey) {
                     future_branch_outstring += `${'\t'.repeat(depth)}<App_Transition Name="${simpsKey}">\n`;
                     current_branch_outstring += `${'\t'.repeat(depth++)}<App_Transition Name="${simpsKey}">\n`;
                     for (const simps of translist[simpsKey]) {
-                        if (typeof simps.loc === 'string' || simps.loc instanceof String) {
-                            // continue;
-                            if (simps.obj.fix_path_termination === "VI") {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
+                        // future_branch_outstring += `${'\t'.repeat(depth)}<AppTr_Waypoint>\n`;
+                        // current_branch_outstring += `${'\t'.repeat(depth++)}<AppTr_Waypoint>\n`;
 
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Name>VECTORS</Name>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Type>Vectors</Type>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>0.000000</Latitude>\n`;
-                                // future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>0.000000</Longitude>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
+                        future_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, false);
+                        current_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, true);
 
-                                future_branch_outstring += altitudeToXML(simps.obj, depth);
-                                current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs>1</Hdg_Crs>\n`;
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}<Hdg_Crs_value>${Number.parseInt(simps.obj.fix_magnetic_course) * (simps.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
-
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                            }
-                            continue;
-                        }
-
-                        future_branch_outstring += `${'\t'.repeat(depth)}<AppTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<AppTr_Waypoint ID="${simps.obj.sequence_number.charAt(1)}">\n`;
-
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Name>${simps.loc.ident}</Name>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Type>Normal</Type>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Latitude>${simps.loc.latitude().value}</Latitude>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Longitude>-${simps.loc.longitude().value}</Longitude>\n`;
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}<Speed>${simps.obj.nav_speed_limit}</Speed>\n`;
-
-                        future_branch_outstring += altitudeToXML(simps.obj, depth);
-                        current_branch_outstring += altitudeToXML(simps.obj, depth);
-
-                        future_branch_outstring += `${'\t'.repeat(--depth)}</AppTr_Waypoint>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}</AppTr_Waypoint>\n`;
+                        // future_branch_outstring += `${'\t'.repeat(--depth)}</AppTr_Waypoint>\n`;
+                        // current_branch_outstring += `${'\t'.repeat(depth)}</AppTr_Waypoint>\n`;
                     }
                     future_branch_outstring += `${'\t'.repeat(--depth)}</App_Transition>\n`;
                     current_branch_outstring += `${'\t'.repeat(depth)}</App_Transition>\n`;
@@ -949,3 +569,264 @@ for (const thingeyKey in thingey) {
 //console.log(thing);
 
 console.log();
+
+function getAltitudeRestriction(nav_altitude) {
+    let out = "<AltitudeRestriction>";
+    switch (nav_altitude) {
+        case "B":
+        case "G":
+        case "H":
+        case "V":
+            out += `between`;
+            break;
+        case "+": {
+            out += `above`;
+            break;
+        }
+        case "-": {
+            out += `below`;
+            break;
+        }
+        case "J":
+        case "I":
+        case " ": {
+            out += `at`;
+            break;
+        }
+
+        default:
+            console.log("Unrecognized nav alt", nav_altitude);
+    }
+    return out + '</AltitudeRestriction>\n';
+}
+
+function getAltitudes(obj, tabs = "") {
+    let out = "";
+
+    let dispalt1 = obj.nav_altitude_1;
+    dispalt1 = (dispalt1.match(/(FL)?(\d+)/) ? dispalt1.match(/(FL)?(\d+)/)[2] + (dispalt1.match(/(FL)?(\d+)/)[1] ? "00" : "") : "").trim();
+    let dispalt2 = obj.nav_altitude_2;
+    dispalt2 = (dispalt2.match(/(FL)?(\d+)/) ? dispalt2.match(/(FL)?(\d+)/)[2] + (dispalt2.match(/(FL)?(\d+)/)[1] ? "00" : "") : "").trim();
+
+    if (dispalt1.length === 0) dispalt1 = "0";
+    if (dispalt2.length === 0) dispalt2 = "0";
+
+    out += `${tabs}<Altitude>${dispalt1}</Altitude>\n`;
+    out += `${tabs}<AltitudeCons>${dispalt2}</AltitudeCons>\n`;
+
+    return out;
+}
+
+function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextWaypt) {
+    if (waypt.obj.fix_path_termination === "FM") {
+        return specialWaypt(waypt, tagName, tabDepth, useOldRunway);
+    }
+    let out = `${'\t'.repeat(tabDepth)}<${tagName}>\n`;
+    // console.log();
+    // name
+    const tabs = '\t'.repeat(tabDepth + 1);
+    out += `${tabs}<Name>`;
+    switch (waypt.obj.fix_path_termination) {
+        case "TF":
+        case "DF":
+        case "RF":
+        case "IF":
+            out += waypt.obj.fix_ident;
+            break;
+        case "VA":
+        case "CA":
+            out += `(${waypt.obj.nav_altitude_1})`;
+            break;
+        case "VI":
+            out += `(INTC)`;
+            break;
+        case "CF":
+            out += waypt.obj.fix_ident; // cousin of above, really the second half therin
+            break;
+        case "VM":
+        case "VD":
+            out += "(VECTORS)";
+            break;
+        case "HM":
+        case "HF":
+            out += waypt.obj.fix_ident;
+            break;
+        default:
+            console.log("Unrecognized:", waypt.obj.fix_path_termination);
+    }
+    out += `</Name><!-- ${waypt.obj.fix_path_termination} -->\n`;
+
+    // type
+    out += `${tabs}<Type>`;
+    switch (waypt.obj.fix_path_termination) {
+        case "IF":
+        case "DF":
+        case "RF":
+        case "TF":
+            out += 'Normal';
+            break;
+        case "VA":
+        case "CA":
+            out += 'ConstHdgtoAlt';
+            break;
+        case "VI":
+            out += 'Intc';
+            break;
+        case "CF":
+            out += 'Normal';
+            break;
+        case "VM":
+        case "VD":
+            out += "Vectors";
+            break;
+        case "HM":
+        case "HF":
+            out += "Hold";
+    }
+    out += "</Type>\n";
+
+    // lat/lon
+    let latstr = `${tabs}<Latitude>`;
+    let lonstr = `${tabs}<Longitude>`;
+
+    switch (waypt.obj.fix_path_termination) {
+        case "IF":
+        case "DF":
+        case "RF":
+        case "TF":
+        case "HM":
+        case "HF":
+        case "CF": // see above comments
+            if (waypt.loc.reallatitude) {
+                latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
+                lonstr += Latongitude.toAbsNumber(waypt.loc.reallongtude);
+            } else if (waypt.loc.vorLatitude){
+                latstr += Latongitude.toAbsNumber(waypt.loc.vorLatitude);
+                lonstr += Latongitude.toAbsNumber(waypt.loc.vorLongitude);
+            } else if (waypt.loc.DMELatitude){
+                latstr += Latongitude.toAbsNumber(waypt.loc.DMELatitude);
+                lonstr += Latongitude.toAbsNumber(waypt.loc.DMELongitude);
+            } else if (waypt.loc.rwylatitude){
+                latstr += Latongitude.toAbsNumber(waypt.loc.rwylatitude);
+                lonstr += Latongitude.toAbsNumber(waypt.loc.rwylongitude);
+            } else {
+                console.log("FUUUUUCK");
+            }
+            break;
+        case "VD": {
+            let loc = it.find(thing => thing.ident && thing.ident.trim() === waypt.obj.fix_path_navaid.trim());
+
+            if (loc.vorLatitude){
+                latstr += Latongitude.toAbsNumber(loc.vorLatitude);
+                lonstr += Latongitude.toAbsNumber(loc.vorLongitude);
+            } else if (loc.DMELatitude){
+                latstr += Latongitude.toAbsNumber(loc.DMELatitude);
+                lonstr += Latongitude.toAbsNumber(loc.DMELongitude);
+            } else if (loc.reallatitude) {
+                latstr += Latongitude.toAbsNumber(loc.reallatitude);
+                lonstr += Latongitude.toAbsNumber(loc.reallongtude);
+            } else {
+                console.log("FUUUUUCK");
+            }
+        }
+            break;
+        case "VA":
+        case "CA":
+        case "VI":
+        case "VM":
+            // todo should be coords of waypt referred to;
+            latstr += "0";
+            lonstr += "0";
+            break;
+        default:
+            console.log("Fuck", waypt.obj.fix_path_termination);
+    }
+
+    out += `${latstr}</Latitude>\n${lonstr}</Longitude>\n`;
+
+    if (waypt.obj.fix_description.charAt(1) === "Y") {
+        out += `${tabs}<Flytype>Fly-over</Flytype>\n`;
+    } else {
+        out += `${tabs}<Flytype>Fly-by</Flytype>\n`;
+    }
+
+    // Speed
+    // if (waypt.obj.nav_speed_limit.trim().length)
+    //     out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
+
+    // Altitude
+    out += getAltitudes(waypt.obj, tabs);
+
+    // Altitude Restriction
+    out += tabs + getAltitudeRestriction(waypt.obj.nav_altitude);
+
+    // Speed
+    if (waypt.obj.nav_speed_limit.trim().length === 0)
+        out += `${tabs}<Speed>0</Speed>\n`;
+    else
+        out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
+
+    // Hdg
+    if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "VI" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
+        out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
+        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+    } else if (waypt.obj.fix_path_termination === "CA") {
+        out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
+        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+    } else if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {
+        out += `${tabs}<Hld_Rad_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hld_Rad_value>\n`;
+        out += `${tabs}<Hld_Time_or_Dist>${waypt.obj.fix_distance.startsWith("T") ? "Time" : "Dist"}</Hld_Time_or_Dist>\n`;
+        out += `${tabs}<Hld_td_value>${waypt.obj.fix_distance.match(/\d+/) * 0.1}</Hld_td_value>\n`;
+        out += `${tabs}<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>\n`
+    }
+    // else if (waypt.obj.fix_magnetic_course.trim().length > 0)
+    //     console.log("AAAAAA");
+
+    // turn dir
+    if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {
+        out += `${tabs}<Hld_Turn>${waypt.obj.fix_turn_direction.trim().length === 0 ? "Auto" : waypt.obj.fix_turn_direction === "R" ? "Right" : "Left"}</Hld_Turn>\n`;
+    } else
+        out += `${tabs}<Sp_Turn>${waypt.obj.fix_turn_direction.trim().length === 0 ? "Auto" : waypt.obj.fix_turn_direction === "R" ? "Right" : "Left"}</Sp_Turn>\n`;
+
+    return out + `${'\t'.repeat(tabDepth)}</${tagName}>\n`;
+}
+
+function specialWaypt(waypt, tagName, tabDepth, useOldRunway, nextWaypt) {
+    const tabs = '\t'.repeat(tabDepth + 1);
+
+    let out = `${'\t'.repeat(tabDepth)}<${tagName}>\n`;
+
+    out += `${tabs}<Name>${waypt.obj.fix_ident}</Name>\n`;
+    out += `${tabs}<Type>Normal</Type>\n`;
+
+    let latstr = `${tabs}<Latitude>`;
+    let lonstr = `${tabs}<Longitude>`;
+
+    latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
+    lonstr += Latongitude.toAbsNumber(waypt.loc.reallongtude);
+
+    out += `${latstr}</Latitude>\n${lonstr}</Longitude>\n`;
+
+    if (waypt.obj.nav_speed_limit.trim().length)
+        out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
+    else
+        out += `${tabs}<Speed>0</Speed>\n`;
+
+    out += getAltitudes(waypt.obj, tabs);
+    out += tabs + getAltitudeRestriction(waypt.obj.nav_altitude);
+
+    out += `${'\t'.repeat(tabDepth)}</${tagName}>\n`;
+    out += `${'\t'.repeat(tabDepth)}<${tagName}>\n`;
+
+    out += `${tabs}<Name>(VECTORS)</Name>\n`;
+    out += `${tabs}<Type>Vectors</Type>\n`;
+
+    out += `${tabs}<Latitude>0</Latitude>\n${tabs}<Longitude>0</Longitude>\n`;
+
+    out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
+    out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+
+    out += `${'\t'.repeat(tabDepth)}</${tagName}>\n`;
+
+    return out;
+}
