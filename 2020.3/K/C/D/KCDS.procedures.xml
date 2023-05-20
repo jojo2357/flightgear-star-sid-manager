@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KCDS">
-		<Approach Name="RNV36">
+		<Approach Name="RNV 36">
 			<App_Waypoint>
 				<Name>FIPIT</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -228,7 +228,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VOR36">
+		<Approach Name="VOR 36">
 			<App_Waypoint>
 				<Name>CDS  </Name><!-- IF -->
 				<Type>Normal</Type>
@@ -254,15 +254,17 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name></Name><!-- FA -->
-				<Type></Type>
-				<Latitude></Latitude>
-				<Longitude></Longitude>
+				<Name>(03400)</Name><!-- FA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>03400</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>352</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -295,10 +297,10 @@
 			</App_Waypoint>
 			<App_Transition Name="CDS  ">
 				<AppTr_Waypoint>
-					<Name></Name><!-- PI -->
-					<Type></Type>
-					<Latitude></Latitude>
-					<Longitude></Longitude>
+					<Name>CDS  </Name><!-- PI -->
+					<Type>Normal</Type>
+					<Latitude>34.36906388888889</Latitude>
+					<Longitude>-100.28902777777778</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>03500</Altitude>
 					<AltitudeCons>0</AltitudeCons>

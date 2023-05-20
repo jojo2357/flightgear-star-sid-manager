@@ -70,11 +70,11 @@ const data = fs.readFileSync("CIFP_230518/FAACIFP18").toString().split(/\r?\n/g)
 
 /** @type {ParseResult[]} */
 const it = data.reduce((out, dater) => {
-    let vahl = parseLine(dater);
+    let vahl = parseLine(dater); // todo investigate why no location for KAPF
     if (vahl.recognizedLine)
         out.push(vahl);
-    else ;//if (dater.startsWith("SUSAP KLASK2"))
-    // console.log(dater);
+    else //if (dater.startsWith("SUSAD KAPF"))
+    //console.log(dater);
     return out;
 }, []);
 
@@ -381,11 +381,15 @@ for (const thingeyKey in thingey) {
                 case "R":
                     changedName = `RNV${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
+                case "V":
                 case "S":
                     changedName = `VOR${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "B":
                     changedName = `LBC${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "N":
+                    changedName = `NDB${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "Q":
                     changedName = `NDM${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
@@ -396,20 +400,21 @@ for (const thingeyKey in thingey) {
                 case "X":
                     changedName = `LDA${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
+                case "P":
+                    changedName = `GPS${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
+                case "U":
+                    changedName = `SDF${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    break;
                 default:
                     changedName = sidarname;
-                    console.log("Bad", sidarname);
-                    // H => RNV08R, borrow last char
-                    // I => ILS
-                    // L => ILS ???
-                    // R => RNV, borrow last char
-                    // S => VOR
             }
             changedName += sidarname.slice(1, ["R", "L", "C"].includes(sidarname.charAt(3)) ? 4 : 3);
             changedName = changedName.replace('-', '')
             if (changedName === "")
                 continue;
             future_branch_outstring += `${'\t'.repeat(depth)}<Approach Name="${changedName.trim()}">\n`;
+            // todo runway swapping sooner
             current_branch_outstring += `${'\t'.repeat(depth++)}<Approach Name="${(changedName.substring(0, 3) + (movedRunways[thingeyKey].some(change => change.neww === changedName.substring(3)) ? movedRunways[thingeyKey].find(change => change.neww === changedName.substring(3)).orig : changedName.substring(3))).trim()}">\n`;
             for (const commonerlist of meatofit) {
                 for (const simpsKey in commonerlist) {
@@ -430,14 +435,8 @@ for (const thingeyKey in thingey) {
                     future_branch_outstring += `${'\t'.repeat(depth)}<App_Transition Name="${simpsKey}">\n`;
                     current_branch_outstring += `${'\t'.repeat(depth++)}<App_Transition Name="${simpsKey}">\n`;
                     for (const simps of translist[simpsKey]) {
-                        // future_branch_outstring += `${'\t'.repeat(depth)}<AppTr_Waypoint>\n`;
-                        // current_branch_outstring += `${'\t'.repeat(depth++)}<AppTr_Waypoint>\n`;
-
                         future_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, false);
                         current_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, true);
-
-                        // future_branch_outstring += `${'\t'.repeat(--depth)}</AppTr_Waypoint>\n`;
-                        // current_branch_outstring += `${'\t'.repeat(depth)}</AppTr_Waypoint>\n`;
                     }
                     future_branch_outstring += `${'\t'.repeat(--depth)}</App_Transition>\n`;
                     current_branch_outstring += `${'\t'.repeat(depth)}</App_Transition>\n`;
@@ -560,6 +559,8 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "HA":
             out += waypt.obj.fix_ident;
             break;
+        case "CI":
+            break;
         default:
             console.log("Unrecognized:", waypt.obj.fix_path_termination);
     }
@@ -620,7 +621,6 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "HM":
         case "HF":
         case "HA":
-        case "CF": // see above comments
             if (waypt.loc.reallatitude) {
                 latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
                 lonstr += Latongitude.toAbsNumber(waypt.loc.reallongtude);
@@ -634,12 +634,14 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 latstr += Latongitude.toAbsNumber(waypt.loc.rwylatitude);
                 lonstr += Latongitude.toAbsNumber(waypt.loc.rwylongitude);
             } else {
-                console.log("FUUUUUCK");
+                console.log("FUUUUUCK", waypt.loc);
             }
             break;
         case "VR":
         case "CD":
-        case "VD": {
+        case "VD":
+        case "CF": // see above comments
+            {
             let loc = it.find(thing => thing.ident && thing.ident.trim() === waypt.obj.fix_path_navaid.trim());
 
             if (loc.vorLatitude){
@@ -652,13 +654,16 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 latstr += Latongitude.toAbsNumber(loc.reallatitude);
                 lonstr += Latongitude.toAbsNumber(loc.reallongtude);
             } else {
-                console.log("FUUUUUCK");
+                console.log("FUUUUUCK", loc);
             }
-        }
             break;
-        case "VA":
+        }
         case "FA":
+        case "VA":
         case "CA":
+            latstr += "0";
+            lonstr += "0";
+            break;
         case "VI":
         case "VM":
             // todo should be coords of waypt referred to;
@@ -704,7 +709,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         out += `${tabs}<Hld_Rad_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hld_Rad_value>\n`;
         out += `${tabs}<Hld_Time_or_Dist>${waypt.obj.fix_distance.startsWith("T") ? "Time" : "Dist"}</Hld_Time_or_Dist>\n`;
         out += `${tabs}<Hld_td_value>${waypt.obj.fix_distance.match(/\d+/) * 0.1}</Hld_td_value>\n`;
-        out += `${tabs}<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>\n`
+        out += `${tabs}<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>\n`;
     } else if (waypt.obj.fix_path_termination === "VR") {
         // console.log();
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;

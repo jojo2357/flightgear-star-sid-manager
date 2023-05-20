@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KMDD">
-		<Approach Name="RNV25">
+		<Approach Name="RNV 25">
 			<App_Waypoint>
 				<Name>CIRIT</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -140,7 +140,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV34">
+		<Approach Name="RNV 34">
 			<App_Waypoint>
 				<Name>UMCEJ</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -250,7 +250,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VOR25">
+		<Approach Name="VOR 25">
 			<App_Waypoint>
 				<Name>ROGNY</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -343,10 +343,10 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name></Name><!-- AF -->
-					<Type></Type>
-					<Latitude></Latitude>
-					<Longitude></Longitude>
+					<Name>ROGNY</Name><!-- AF -->
+					<Type>Normal</Type>
+					<Latitude>32.108038888888885</Latitude>
+					<Longitude>-101.87777777777777</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>04500</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -369,10 +369,10 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name></Name><!-- AF -->
-					<Type></Type>
-					<Latitude></Latitude>
-					<Longitude></Longitude>
+					<Name>ROGNY</Name><!-- AF -->
+					<Type>Normal</Type>
+					<Latitude>32.108038888888885</Latitude>
+					<Longitude>-101.87777777777777</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>04500</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -382,10 +382,104 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="VORA OR">
+			<App_Waypoint>
+				<Name>MAF  </Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>32.009344444444444</Latitude>
+				<Longitude>-102.19038888888889</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>04800</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>MAPDD</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>32.03202777777778</Latitude>
+				<Longitude>-102.10834444444444</Longitude>
+				<Flytype>Fly-over</Flytype>
+				<Altitude>02805</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>(03205)</Name><!-- CA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>03205</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
+				<Hdg_Crs_value>61</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>MERGE</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>32.285061111111105</Latitude>
+				<Longitude>-102.14625</Longitude>
+				<Flytype>Fly-over</Flytype>
+				<Altitude>04500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>MERGE</Name><!-- HM -->
+				<Type>Hold</Type>
+				<Latitude>32.285061111111105</Latitude>
+				<Longitude>-102.14625</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>04500</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>177</Hld_Rad_value>
+				<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
+				<Hld_td_value>1</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Left</Hld_Turn>
+			</App_Waypoint>
+			<App_Transition Name="MAF  ">
+				<AppTr_Waypoint>
+					<Name>MAF  </Name><!-- PI -->
+					<Type>Normal</Type>
+					<Latitude>32.009344444444444</Latitude>
+					<Longitude>-102.19038888888889</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>05100</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Left</Sp_Turn>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint>
+					<Name>MAF  </Name><!-- CF -->
+					<Type>Normal</Type>
+					<Latitude>32.009344444444444</Latitude>
+					<Longitude>-102.19038888888889</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>04800</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 0/0
 Stars: 0/0
-Appch: 3/4
+Appch: 4/4
 -->

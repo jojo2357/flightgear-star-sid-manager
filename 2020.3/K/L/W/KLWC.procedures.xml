@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.6789">
 	<Airport ICAOcode="KLWC">
-		<Approach Name="RNV15">
+		<Approach Name="RNV 15">
 			<App_Waypoint>
 				<Name>RIBCO</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -168,7 +168,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV33">
+		<Approach Name="RNV 33">
 			<App_Waypoint>
 				<Name>GOLEY</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -330,10 +330,122 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
+		<Approach Name="VDMA DM">
+			<App_Waypoint>
+				<Name>DERRI</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>39.049125000000004</Latitude>
+				<Longitude>-95.31837222222222</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>02900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>MADHU</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>39.01285</Latitude>
+				<Longitude>-95.22375555555556</Longitude>
+				<Flytype>Fly-over</Flytype>
+				<Altitude>00833</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>(01233)</Name><!-- CA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>01233</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>0</Hdg_Crs>
+				<Hdg_Crs_value>111</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>DERRI</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>39.049125000000004</Latitude>
+				<Longitude>-95.31837222222222</Longitude>
+				<Flytype>Fly-over</Flytype>
+				<Altitude>02900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Left</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>DERRI</Name><!-- HM -->
+				<Type>Hold</Type>
+				<Latitude>39.049125000000004</Latitude>
+				<Longitude>-95.31837222222222</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>02900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hld_Rad_value>111</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>4</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
+			</App_Waypoint>
+			<App_Transition Name="DERRI">
+				<AppTr_Waypoint>
+					<Name>DERRI</Name><!-- HF -->
+					<Type>Hold</Type>
+					<Latitude>39.049125000000004</Latitude>
+					<Longitude>-95.31837222222222</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>02900</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Hld_Rad_value>111</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
+			<App_Transition Name="TOP  ">
+				<AppTr_Waypoint>
+					<Name>TOP  </Name><!-- IF -->
+					<Type>Normal</Type>
+					<Latitude>39.137077777777776</Latitude>
+					<Longitude>-95.54916944444444</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
+				</AppTr_Waypoint>
+				<AppTr_Waypoint>
+					<Name>DERRI</Name><!-- TF -->
+					<Type>Normal</Type>
+					<Latitude>39.049125000000004</Latitude>
+					<Longitude>-95.31837222222222</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>02900</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 	</Airport>
 </ProceduresDB>
 <!-- Completion Stats:
 Sids: 0/0
 Stars: 0/0
-Appch: 2/3
+Appch: 3/3
 -->
