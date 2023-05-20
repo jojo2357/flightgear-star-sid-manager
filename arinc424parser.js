@@ -682,6 +682,68 @@ const childClasses = [
             }
         }
     },
+    class AIRPORT extends ParseResult {
+        static regexp = /^(.{4})(.{2})A([A-Z\d ]{3}).{2} {3}(\d)([\d ]{5})([\d ]{3})([YN ])([HSWU ])([NS])(\d{2})(\d{2})(\d{2})(\d{2})([EW])(\d{3})(\d{2})(\d{2})(\d{2})([EWT ][\d ]{4})([\-\d ][\d ]{4})([ \d]{3})(.{4})(.{2})([\d ]{5})([\d ]{5})(.)(.{3})(.)(.)(.{3}).{4}(.{30})$/m;
+
+        ident;
+        ICAO;
+        speedLimitAltitude;
+        longestRunwayLength;
+        ataDesig;
+
+        latitude() { return this.airpotLatitude}
+        longitude() { return this.airpotLongitude}
+
+        airpotLatitude;
+        airpotLongitude;
+
+
+        static parse(dataIn) {
+            let out = new AIRPORT();
+            dataIn = out.local_parse(dataIn);
+            if (!out.header || !(out.header.section === "P" && out.header.subsection === " ")) {
+                return ParseResult.ERROR;
+            } else {
+                let splitData = dataIn.match(this.regexp);
+                if (!splitData)
+                    return ParseResult.ERROR;
+                else {
+                    out.source = splitData.shift();
+
+                    out.ident = splitData[0];
+                    out.ICAO = splitData[1];
+                    out.ataDesig = splitData[2];
+                    if (splitData[3] !== "0")
+                        return ParseResult.ERROR;
+                    out.speedLimitAltitude = splitData[4];
+                    out.longestRunwayLength = splitData[5];
+                    out.ifrCapable = splitData[6];
+                    out.longestRwySurface = splitData[7];
+
+                    out.rwylatitude = new Latongitude(splitData[8], splitData.slice(9, 9 + 4).map(val => Number.parseInt(val)));
+                    out.rwylongitude = new Latongitude(splitData[13], splitData.slice(14, 14 + 4).map(val => Number.parseInt(val)));
+
+                    out.magneticVariation = splitData[18];
+                    out.elevation = splitData[19];
+                    out.speedLimit = splitData[20];
+                    out.recommendedNavaid = splitData[21];
+                    out.navaidICAO = splitData[22];
+                    out.transitionAltitude = splitData[23];
+                    out.transitionLevel = splitData[24];
+                    out.isPublic = splitData[25];
+                    out.timezone = splitData[26];
+                    out.daylight = splitData[27];
+                    out.magneticOrTrue = splitData[28];
+                    out.datumCode = splitData[29];
+                    out.fieldName = splitData[30];
+
+                    out.recognizedLine = true;
+                    out.completed = true;
+                    return out;
+                }
+            }
+        }
+    },
 /*    class HEADER extends ParseResult {
         static regexp = /^HDR\d+/m;
 

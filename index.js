@@ -23,7 +23,7 @@ const path = require("path");
 const oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
 let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
-let debug = false;
+let debug = true;
 
 let airpourtCode;
 let discoveredRunways = {};
@@ -73,8 +73,8 @@ const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater); // todo investigate why no location for KAPF
     if (vahl.recognizedLine)
         out.push(vahl);
-    else //if (dater.startsWith("SUSAD KAPF"))
-    //console.log(dater);
+    else if (dater.startsWith("SUSAD KAPF"))
+        console.log(dater);
     return out;
 }, []);
 
@@ -368,48 +368,49 @@ for (const thingeyKey in thingey) {
                 return out;
             }, []);
             let changedName = "";
+            const simpleRunwayNames = ["R", "L", "C", " "];
             switch (sidarname.charAt(0)) {
                 case "H":
-                    changedName = `RNV${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `RNV${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "I":
-                    changedName = `ILS${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `ILS${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "L":
-                    changedName = `VDM${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `VDM${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "R":
-                    changedName = `RNV${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `RNV${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "V":
                 case "S":
-                    changedName = `VOR${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `VOR${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "B":
-                    changedName = `LBC${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `LBC${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "N":
-                    changedName = `NDB${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `NDB${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "Q":
-                    changedName = `NDM${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `NDM${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "D":
-                    changedName = `TAC${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `TAC${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "X":
-                    changedName = `LDA${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `LDA${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "P":
-                    changedName = `GPS${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `GPS${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 case "U":
-                    changedName = `SDF${sidarname.charAt(4) === " " ? !["R", "L", "C"].includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
+                    changedName = `SDF${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
                     break;
                 default:
                     changedName = sidarname;
             }
-            changedName += sidarname.slice(1, ["R", "L", "C"].includes(sidarname.charAt(3)) ? 4 : 3);
+            changedName += sidarname.slice(1, simpleRunwayNames.includes(sidarname.charAt(3)) ? 4 : 3);
             changedName = changedName.replace('-', '')
             if (changedName === "")
                 continue;
@@ -482,6 +483,7 @@ function getAltitudeRestriction(nav_altitude) {
             out += `below`;
             break;
         }
+        case "X":
         case "J":
         case "I":
         case " ": {
@@ -525,6 +527,12 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     out += `${tabs}<Name>`;
     switch (waypt.obj.fix_path_termination) {
         case "TF":
+            if (useOldRunway && waypt.obj.fix_ident.match(/RW\d{2}/)) {
+                out += "RW" + newRunwayToOld(waypt.obj.airportIDENT, waypt.obj.fix_ident.slice(2))
+            } else {
+                out += waypt.obj.fix_ident;
+            }
+            break;
         case "DF":
         case "RF":
         case "IF":
@@ -621,6 +629,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "HM":
         case "HF":
         case "HA":
+        case "CF": // see above comments
             if (waypt.loc.reallatitude) {
                 latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
                 lonstr += Latongitude.toAbsNumber(waypt.loc.reallongtude);
@@ -633,6 +642,9 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             } else if (waypt.loc.rwylatitude){
                 latstr += Latongitude.toAbsNumber(waypt.loc.rwylatitude);
                 lonstr += Latongitude.toAbsNumber(waypt.loc.rwylongitude);
+            } else if (waypt.loc.airpotLatitude){
+                latstr += Latongitude.toAbsNumber(waypt.loc.airpotLatitude);
+                lonstr += Latongitude.toAbsNumber(waypt.loc.airpotLongitude);
             } else {
                 console.log("FUUUUUCK", waypt.loc);
             }
@@ -640,9 +652,13 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "VR":
         case "CD":
         case "VD":
-        case "CF": // see above comments
             {
             let loc = it.find(thing => thing.ident && thing.ident.trim() === waypt.obj.fix_path_navaid.trim());
+
+            if (!loc) {
+                console.log("Couldnt find", waypt.obj.fix_path_navaid.trim(), "and", waypt.obj.fix_ident);
+                break;
+            }
 
             if (loc.vorLatitude){
                 latstr += Latongitude.toAbsNumber(loc.vorLatitude);
@@ -653,6 +669,9 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             } else if (loc.reallatitude) {
                 latstr += Latongitude.toAbsNumber(loc.reallatitude);
                 lonstr += Latongitude.toAbsNumber(loc.reallongtude);
+            } else if (loc.airpotLatitude){
+                latstr += Latongitude.toAbsNumber(loc.airpotLatitude);
+                lonstr += Latongitude.toAbsNumber(loc.airpotLongitude);
             } else {
                 console.log("FUUUUUCK", loc);
             }
@@ -661,6 +680,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "FA":
         case "VA":
         case "CA":
+        case "CI":
             latstr += "0";
             lonstr += "0";
             break;
@@ -767,4 +787,12 @@ function specialWaypt(waypt, tagName, tabDepth, useOldRunway, nextWaypt) {
     out += `${'\t'.repeat(tabDepth)}</${tagName}>\n`;
 
     return out;
+}
+
+function newRunwayToOld(airport, currentRunway) {
+    return movedRunways[airport].some(renameObj => renameObj.neww === currentRunway.trim()) ? movedRunways[airport].find(renameObj => renameObj.neww === currentRunway.trim()).orig : currentRunway;
+}
+
+function oldRunwayToNew(airport, oldRunway) {
+    return movedRunways[airport].some(renameObj => renameObj.orig === oldRunway.trim()) ? movedRunways[airport].find(renameObj => renameObj.orig === oldRunway.trim()).neww : oldRunway;
 }
