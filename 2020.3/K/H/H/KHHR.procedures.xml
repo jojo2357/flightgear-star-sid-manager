@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KHHR">
-		<Sid Name="SPACX2.07 " Runways="07">
+		<Sid Name="SPACX2.07" Runways="07">
 			<Sid_Waypoint>
 				<Name>(00580)</Name><!-- VA -->
 				<Type>ConstHdgtoAlt</Type>
@@ -64,7 +64,7 @@
 				<Hdg_Crs_value>200</Hdg_Crs_value>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="SPACX2.25 " Runways="25">
+		<Sid Name="SPACX2.25" Runways="25">
 			<Sid_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
@@ -77,6 +77,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>252.8</Hdg_Crs_value>
+				<RadialtoIntercept>19.900000000000006</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -110,7 +111,7 @@
 				<Hdg_Crs_value>200</Hdg_Crs_value>
 			</Sid_Waypoint>
 		</Sid>
-		<Star Name="EMMLN1" Runways="ALL">
+		<Star Name="EMMLN1">
 			<Star_Waypoint>
 				<Name>APLES</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -160,7 +161,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
 			<Star_Waypoint>
-				<Name>PDZ  </Name><!-- TF -->
+				<Name>PDZ</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>33.91833611111111</Latitude>
 				<Longitude>-117.52999722222222</Longitude>
@@ -199,7 +200,7 @@
 			</Star_Waypoint>
 			<Star_Transition Name="DAG">
 				<StarTr_Waypoint>
-					<Name>DAG  </Name><!-- IF -->
+					<Name>DAG</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>34.96245833333334</Latitude>
 					<Longitude>-116.57816666666666</Longitude>
@@ -225,7 +226,7 @@
 			</Star_Transition>
 			<Star_Transition Name="HEC">
 				<StarTr_Waypoint>
-					<Name>HEC  </Name><!-- IF -->
+					<Name>HEC</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>34.797019444444445</Latitude>
 					<Longitude>-116.46292222222222</Longitude>
@@ -250,7 +251,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Star Name="IRNMN2" Runways="ALL">
+		<Star Name="IRNMN2">
 			<Star_Waypoint>
 				<Name>IRNMN</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -638,7 +639,7 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Star Name="RYDRR2" Runways="ALL">
+		<Star Name="RYDRR2">
 			<Star_Waypoint>
 				<Name>RYDRR</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -993,6 +994,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>210</Hdg_Crs_value>
+				<RadialtoIntercept>350</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -1039,7 +1041,7 @@
 			</App_Transition>
 			<App_Transition Name="SLI">
 				<AppTr_Waypoint>
-					<Name>SLI  </Name><!-- FC -->
+					<Name>SLI</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>33.783300000000004</Latitude>
 					<Longitude>-118.05475833333334</Longitude>
@@ -1116,7 +1118,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SLI  </Name><!-- TF -->
+				<Name>SLI</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>33.783300000000004</Latitude>
 				<Longitude>-118.05475833333334</Longitude>
@@ -1128,7 +1130,7 @@
 				<Sp_Turn>Right</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SLI  </Name><!-- HM -->
+				<Name>SLI</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>33.783300000000004</Latitude>
 				<Longitude>-118.05475833333334</Longitude>
@@ -1145,7 +1147,7 @@
 			</App_Waypoint>
 			<App_Transition Name="SLI">
 				<AppTr_Waypoint>
-					<Name>SLI  </Name><!-- IF -->
+					<Name>SLI</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>33.783300000000004</Latitude>
 					<Longitude>-118.05475833333334</Longitude>
@@ -1282,8 +1284,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW25 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW25</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>33.92315555555555</Latitude>
 				<Longitude>-118.3285638888889</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1337,7 +1339,7 @@
 			</App_Waypoint>
 			<App_Transition Name="PDZ">
 				<AppTr_Waypoint>
-					<Name>PDZ  </Name><!-- IF -->
+					<Name>PDZ</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>33.91833611111111</Latitude>
 					<Longitude>-117.52999722222222</Longitude>
@@ -1375,7 +1377,7 @@
 			</App_Transition>
 			<App_Transition Name="SLI">
 				<AppTr_Waypoint>
-					<Name>SLI  </Name><!-- IF -->
+					<Name>SLI</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>33.783300000000004</Latitude>
 					<Longitude>-118.05475833333334</Longitude>
@@ -1451,6 +1453,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>210</Hdg_Crs_value>
+				<RadialtoIntercept>350</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -1523,7 +1526,7 @@
 			</App_Transition>
 			<App_Transition Name="SLI">
 				<AppTr_Waypoint>
-					<Name>SLI  </Name><!-- IF -->
+					<Name>SLI</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>33.783300000000004</Latitude>
 					<Longitude>-118.05475833333334</Longitude>

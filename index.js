@@ -228,7 +228,6 @@ for (const currentAirport in thingey) {
         let oldName = sidarname;
         let newName = sidarname;
 
-        // todo consolidate this if tree
         if (route.sid) {
             wayptTag = "Sid_Waypoint";
             transitionWaypointTag = "SidTr_Waypoint";
@@ -396,8 +395,8 @@ for (const currentAirport in thingey) {
                 else
                     oldRunway = newRunway.endsWith("B") ? newRunwayToOld(currentAirport, newRunway.slice(0, 2) + "R").slice(0,2) + "B" : newRunwayToOld(currentAirport, newRunway);
 
-                current_branch_outstring += baseTabs + `<${mainTag} Name="${oldName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${oldRunway.trim()}`}"${!route.approach ? ` Runways="${oldRunway === "ALL" ? oldRunway : repeatsFor.map(it => newRunwayToOld(currentAirport, runwayTransKey.slice(0, 2) + it)).join(',')}"` : ""}>\n`;
-                future_branch_outstring += baseTabs + `<${mainTag} Name="${newName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${newRunway.trim()}`}"${!route.approach ? ` Runways="${newRunway === "ALL" ? newRunway : repeatsFor.map(it => runwayTransKey.slice(0, 2) + it).join(',')}"` : ""}>\n`;
+                current_branch_outstring += baseTabs + `<${mainTag} Name="${oldName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${oldRunway.trim()}`}"${!route.approach && oldRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => newRunwayToOld(currentAirport, runwayTransKey.slice(0, 2) + it)).join(',')}"` : ""}>\n`;
+                future_branch_outstring += baseTabs + `<${mainTag} Name="${newName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${newRunway.trim()}`}"${!route.approach && newRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => runwayTransKey.slice(0, 2) + it).join(',')}"` : ""}>\n`;
 
                 let runwayArray = onlyNone ? [] : runwayTransitions[runwayTransKey];
 
@@ -433,9 +432,9 @@ for (const currentAirport in thingey) {
 
                     if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident) runwayArr = runwayArr.slice(1);
                     else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident) runwayArr = runwayArr.slice(0, -1);
-                    for (const regularTransitionElement of runwayArr) { //todo change to index
-                        current_branch_outstring += wayptToString(regularTransitionElement, transitionWaypointTag, 4, true);
-                        future_branch_outstring += wayptToString(regularTransitionElement, transitionWaypointTag, 4, false);
+                    for (let i = 0; i < runwayArr.length; i++) {
+                        current_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, true, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
+                        future_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, false, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
                     }
 
                     current_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
@@ -511,8 +510,6 @@ function getAltitudes(obj, tabs = "") {
     return out;
 }
 
-// todo next waypt to fix some things
-// todo use old runway so that 2020.3 actually works
 function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextWaypt) {
     // RF way be special
     if (waypt.obj.fix_path_termination === "FM") {
@@ -526,7 +523,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     switch (waypt.obj.fix_path_termination) {
         case "TF":
             if (useOldRunway && waypt.obj.fix_ident.match(/RW\d{2}/)) {
-                out += "RW" + newRunwayToOld(waypt.obj.airportIDENT, waypt.obj.fix_ident.slice(2))
+                out += "RW" + newRunwayToOld(waypt.obj.airportIDENT, waypt.obj.fix_ident.slice(2)).trim()
             } else {
                 out += waypt.obj.fix_ident.trim();
             }
@@ -574,11 +571,18 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
 
     // type
     out += `${tabs}<Type>`;
+
     switch (waypt.obj.fix_path_termination) {
+        case "TF":
+        case "CF":
+            if (waypt.obj.is_APPROACH && waypt.loc.ident.match(/RW\d{2}/)) {
+                out += "Runway";
+            } else
+                out += 'Normal';
+            break;
         case "IF":
         case "DF":
         case "RF":
-        case "TF":
         case "AF":
         case "FC":
         case "PI":
@@ -591,9 +595,6 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             break;
         case "VI":
             out += 'Intc';
-            break;
-        case "CF":
-            out += 'Normal';
             break;
         case "VM":
         case "VD":
@@ -734,7 +735,10 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     // Hdg
     if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "FA" || waypt.obj.fix_path_termination === "VI" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
-        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
+        if (waypt.obj.fix_path_termination === "VI" && nextWaypt) {
+            out += `${tabs}<RadialtoIntercept>${2 * (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 180) - (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 360) + 180}</RadialtoIntercept>\n`
+        }
     } else if (waypt.obj.fix_path_termination === "CA") {
         out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
@@ -750,8 +754,6 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         out += `${tabs}<RadialtoIntercept>${Number.parseInt(waypt.obj.fix_theta) * 0.1}</RadialtoIntercept>\n`
         // RadialtoIntercept
     }
-    // else if (waypt.obj.fix_magnetic_course.trim().length > 0)
-    //     console.log("AAAAAA");
 
     // turn dir
     if (waypt.obj.fix_path_termination === "HA" || waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF") {

@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KGCN">
-		<Sid Name="GRAND4" Runways="ALL">
+		<Sid Name="GRAND4">
 			<Sid_Waypoint>
 				<Name>(07000)</Name><!-- VA -->
 				<Type>ConstHdgtoAlt</Type>
@@ -45,6 +45,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>178</Hdg_Crs_value>
+				<RadialtoIntercept>16</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -60,7 +61,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="PARKS4" Runways="ALL">
+		<Sid Name="PARKS4">
 			<Sid_Waypoint>
 				<Name>(VECTORS)</Name><!-- VD -->
 				<Type>Vectors</Type>
@@ -87,6 +88,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>273</Hdg_Crs_value>
+				<RadialtoIntercept>59</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -102,7 +104,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
-				<Name>PGS  </Name><!-- TF -->
+				<Name>PGS</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>35.62471111111111</Latitude>
 				<Longitude>-113.54446666666666</Longitude>
@@ -114,7 +116,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="ILS03 ">
+		<Approach Name="ILS03">
 			<App_Waypoint>
 				<Name>CARMS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -140,8 +142,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW03 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW03</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>35.94298333333333</Latitude>
 				<Longitude>-112.15686111111111</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -177,6 +179,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>180</Hdg_Crs_value>
+				<RadialtoIntercept>24.30000000000001</RadialtoIntercept>
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -249,7 +252,7 @@
 			</App_Transition>
 			<App_Transition Name="GCN">
 				<AppTr_Waypoint>
-					<Name>GCN  </Name><!-- IF -->
+					<Name>GCN</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>35.96034166666667</Latitude>
 					<Longitude>-112.14604722222224</Longitude>
@@ -274,7 +277,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM03 ">
+		<Approach Name="VDM03">
 			<App_Waypoint>
 				<Name>CARMS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -300,8 +303,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW03 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW03</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>35.94298333333333</Latitude>
 				<Longitude>-112.15686111111111</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -337,6 +340,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>180</Hdg_Crs_value>
+				<RadialtoIntercept>24.30000000000001</RadialtoIntercept>
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -409,7 +413,7 @@
 			</App_Transition>
 			<App_Transition Name="GCN">
 				<AppTr_Waypoint>
-					<Name>GCN  </Name><!-- IF -->
+					<Name>GCN</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>35.96034166666667</Latitude>
 					<Longitude>-112.14604722222224</Longitude>
@@ -434,7 +438,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV03 ">
+		<Approach Name="RNV03">
 			<App_Waypoint>
 				<Name>CARMS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -460,8 +464,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW03 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW03</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>35.94298333333333</Latitude>
 				<Longitude>-112.15686111111111</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -541,7 +545,7 @@
 			</App_Transition>
 			<App_Transition Name="GCN">
 				<AppTr_Waypoint>
-					<Name>GCN  </Name><!-- IF -->
+					<Name>GCN</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>35.96034166666667</Latitude>
 					<Longitude>-112.14604722222224</Longitude>

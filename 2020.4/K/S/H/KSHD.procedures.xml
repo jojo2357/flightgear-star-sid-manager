@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KSHD">
-		<Sid Name="SNDOA3.05 " Runways="05">
+		<Sid Name="SNDOA3.05" Runways="05">
 			<Sid_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
@@ -31,6 +31,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>60</Hdg_Crs_value>
+				<RadialtoIntercept>216</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -52,7 +53,7 @@
 				<Hdg_Crs_value>36</Hdg_Crs_value>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="SNDOA3.23 " Runways="23">
+		<Sid Name="SNDOA3.23" Runways="23">
 			<Sid_Waypoint>
 				<Name>(01601)</Name><!-- VA -->
 				<Type>ConstHdgtoAlt</Type>
@@ -79,10 +80,11 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>200</Hdg_Crs_value>
+				<RadialtoIntercept>36</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
-				<Name>MOL  </Name><!-- CF -->
+				<Name>MOL</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>37.900524999999995</Latitude>
 				<Longitude>-79.10688888888888</Longitude>
@@ -112,7 +114,7 @@
 				<Hdg_Crs_value>216</Hdg_Crs_value>
 			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="ILS05 ">
+		<Approach Name="ILS05">
 			<App_Waypoint>
 				<Name>GABEL</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -150,8 +152,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW05 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW05</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>38.25736666666667</Latitude>
 				<Longitude>-78.90289444444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -176,7 +178,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- DF -->
+				<Name>SH</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -188,7 +190,7 @@
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- HM -->
+				<Name>SH</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -243,7 +245,7 @@
 			</App_Transition>
 			<App_Transition Name="MOL">
 				<AppTr_Waypoint>
-					<Name>MOL  </Name><!-- FC -->
+					<Name>MOL</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>37.900524999999995</Latitude>
 					<Longitude>-79.10688888888888</Longitude>
@@ -294,7 +296,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM05 ">
+		<Approach Name="VDM05">
 			<App_Waypoint>
 				<Name>GABEL</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -332,8 +334,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW05 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW05</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>38.25736666666667</Latitude>
 				<Longitude>-78.90289444444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -358,7 +360,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- DF -->
+				<Name>SH</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -370,7 +372,7 @@
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- HM -->
+				<Name>SH</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -425,7 +427,7 @@
 			</App_Transition>
 			<App_Transition Name="MOL">
 				<AppTr_Waypoint>
-					<Name>MOL  </Name><!-- FC -->
+					<Name>MOL</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>37.900524999999995</Latitude>
 					<Longitude>-79.10688888888888</Longitude>
@@ -476,9 +478,9 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="NDB05 ">
+		<Approach Name="NDB05">
 			<App_Waypoint>
-				<Name>SH   </Name><!-- IF -->
+				<Name>SH</Name><!-- IF -->
 				<Type>Normal</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -490,8 +492,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW05 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW05</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>38.25736666666667</Latitude>
 				<Longitude>-78.90289444444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -516,7 +518,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- DF -->
+				<Name>SH</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -528,7 +530,7 @@
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>SH   </Name><!-- HM -->
+				<Name>SH</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>38.2018</Latitude>
 				<Longitude>-78.95731111111111</Longitude>
@@ -557,7 +559,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- TF -->
+					<Name>SH</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -569,7 +571,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- PI -->
+					<Name>SH</Name><!-- PI -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -583,7 +585,7 @@
 			</App_Transition>
 			<App_Transition Name="MOL">
 				<AppTr_Waypoint>
-					<Name>MOL  </Name><!-- IF -->
+					<Name>MOL</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>37.900524999999995</Latitude>
 					<Longitude>-79.10688888888888</Longitude>
@@ -595,7 +597,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- TF -->
+					<Name>SH</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -607,7 +609,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- PI -->
+					<Name>SH</Name><!-- PI -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -633,7 +635,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- TF -->
+					<Name>SH</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -645,7 +647,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>SH   </Name><!-- PI -->
+					<Name>SH</Name><!-- PI -->
 					<Type>Normal</Type>
 					<Latitude>38.2018</Latitude>
 					<Longitude>-78.95731111111111</Longitude>
@@ -658,7 +660,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV05 ">
+		<Approach Name="RNV05">
 			<App_Waypoint>
 				<Name>GABEL</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -684,8 +686,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW05 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW05</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>38.25736666666667</Latitude>
 				<Longitude>-78.90289444444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -803,7 +805,7 @@
 			</App_Transition>
 			<App_Transition Name="MOL">
 				<AppTr_Waypoint>
-					<Name>MOL  </Name><!-- IF -->
+					<Name>MOL</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>37.900524999999995</Latitude>
 					<Longitude>-79.10688888888888</Longitude>
@@ -816,7 +818,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV23 ">
+		<Approach Name="RNV23">
 			<App_Waypoint>
 				<Name>ADIOS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -866,8 +868,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW23 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW23</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>38.270316666666666</Latitude>
 				<Longitude>-78.88996666666668</Longitude>
 				<Flytype>Fly-over</Flytype>

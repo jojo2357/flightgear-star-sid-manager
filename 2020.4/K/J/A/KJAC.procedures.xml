@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KJAC">
-		<Sid Name="ALPIN4" Runways="ALL">
+		<Sid Name="ALPIN4">
 			<Sid_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
@@ -31,6 +31,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>200</Hdg_Crs_value>
+				<RadialtoIntercept>12</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -47,7 +48,7 @@
 			</Sid_Waypoint>
 			<Sid_Transition Name="BPI">
 				<SidTr_Waypoint>
-					<Name>BPI  </Name><!-- TF -->
+					<Name>BPI</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>42.57944722222223</Latitude>
 					<Longitude>-110.10921388888889</Longitude>
@@ -61,7 +62,7 @@
 			</Sid_Transition>
 			<Sid_Transition Name="IDA">
 				<SidTr_Waypoint>
-					<Name>IDA  </Name><!-- TF -->
+					<Name>IDA</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.51900555555555</Latitude>
 					<Longitude>-112.06391666666666</Longitude>
@@ -115,7 +116,7 @@
 			</Sid_Waypoint>
 			<Sid_Transition Name="BOY">
 				<SidTr_Waypoint>
-					<Name>BOY  </Name><!-- TF -->
+					<Name>BOY</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.46315277777778</Latitude>
 					<Longitude>-108.29971111111111</Longitude>
@@ -129,7 +130,7 @@
 			</Sid_Transition>
 			<Sid_Transition Name="DNW">
 				<SidTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -182,7 +183,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Sid Name="GEYSR6" Runways="ALL">
+		<Sid Name="GEYSR6">
 			<Sid_Waypoint>
 				<Name>GIYER</Name><!-- CF -->
 				<Type>Normal</Type>
@@ -207,6 +208,7 @@
 				<Speed>0</Speed>
 				<Hdg_Crs>1</Hdg_Crs>
 				<Hdg_Crs_value>37</Hdg_Crs_value>
+				<RadialtoIntercept>196.9</RadialtoIntercept>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
@@ -222,7 +224,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
-				<Name>DNW  </Name><!-- TF -->
+				<Name>DNW</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -234,7 +236,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="TETON3" Runways="ALL">
+		<Sid Name="TETON3">
 			<Sid_Waypoint>
 				<Name>(06851)</Name><!-- VA -->
 				<Type>ConstHdgtoAlt</Type>
@@ -262,7 +264,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 			<Sid_Waypoint>
-				<Name>IDA  </Name><!-- TF -->
+				<Name>IDA</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>43.51900555555555</Latitude>
 				<Longitude>-112.06391666666666</Longitude>
@@ -300,8 +302,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW01 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW01</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>43.59919444444445</Latitude>
 				<Longitude>-110.74171944444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -324,7 +326,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- TF -->
+				<Name>DNW</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -336,7 +338,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- HM -->
+				<Name>DNW</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -514,8 +516,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW01 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW01</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>43.59919444444445</Latitude>
 				<Longitude>-110.74171944444446</Longitude>
 				<Flytype>Fly-by</Flytype>
@@ -550,7 +552,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- TF -->
+				<Name>DNW</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -562,7 +564,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- HM -->
+				<Name>DNW</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -781,7 +783,7 @@
 			</App_Waypoint>
 			<App_Transition Name="DNW">
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- IF -->
+					<Name>DNW</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -941,7 +943,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1015,7 +1017,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1114,8 +1116,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1167,7 +1169,7 @@
 			</App_Waypoint>
 			<App_Transition Name="DNW">
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- IF -->
+					<Name>DNW</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1193,7 +1195,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1231,7 +1233,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1282,8 +1284,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1323,7 +1325,7 @@
 			</App_Waypoint>
 			<App_Transition Name="JAC">
 				<AppTr_Waypoint>
-					<Name>JAC  </Name><!-- IF -->
+					<Name>JAC</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>43.62103888888889</Latitude>
 					<Longitude>-110.73168611111112</Longitude>
@@ -1373,7 +1375,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1385,7 +1387,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- FC -->
+					<Name>DNW</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1462,8 +1464,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1529,7 +1531,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1591,7 +1593,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1678,8 +1680,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1719,7 +1721,7 @@
 			</App_Waypoint>
 			<App_Transition Name="JAC">
 				<AppTr_Waypoint>
-					<Name>JAC  </Name><!-- IF -->
+					<Name>JAC</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>43.62103888888889</Latitude>
 					<Longitude>-110.73168611111112</Longitude>
@@ -1769,7 +1771,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1781,7 +1783,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- FC -->
+					<Name>DNW</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1870,8 +1872,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- CF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- CF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -1937,7 +1939,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -1999,7 +2001,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -2098,8 +2100,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW01 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW01</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>43.59919444444445</Latitude>
 				<Longitude>-110.74171944444446</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -2136,7 +2138,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- TF -->
+				<Name>DNW</Name><!-- TF -->
 				<Type>Normal</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -2148,7 +2150,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- HM -->
+				<Name>DNW</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -2179,7 +2181,7 @@
 			</App_Transition>
 			<App_Transition Name="JAC">
 				<AppTr_Waypoint>
-					<Name>JAC  </Name><!-- IF -->
+					<Name>JAC</Name><!-- IF -->
 					<Type>Normal</Type>
 					<Latitude>43.62103888888889</Latitude>
 					<Longitude>-110.73168611111112</Longitude>
@@ -2292,8 +2294,8 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW19 </Name><!-- TF -->
-				<Type>Normal</Type>
+				<Name>RW19</Name><!-- TF -->
+				<Type>Runway</Type>
 				<Latitude>43.61548055555556</Latitude>
 				<Longitude>-110.73377777777779</Longitude>
 				<Flytype>Fly-over</Flytype>
@@ -2371,7 +2373,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -2409,7 +2411,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
@@ -2422,7 +2424,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VOR01 ">
+		<Approach Name="VOR01">
 			<App_Waypoint>
 				<Name>ODREE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -2484,7 +2486,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>JAC  </Name><!-- DF -->
+				<Name>JAC</Name><!-- DF -->
 				<Type>Normal</Type>
 				<Latitude>43.62103888888889</Latitude>
 				<Longitude>-110.73168611111112</Longitude>
@@ -2508,7 +2510,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- CF -->
+				<Name>DNW</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -2520,7 +2522,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>DNW  </Name><!-- HM -->
+				<Name>DNW</Name><!-- HM -->
 				<Type>Hold</Type>
 				<Latitude>43.82827777777778</Latitude>
 				<Longitude>-110.335475</Longitude>
@@ -2588,7 +2590,7 @@
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VOR19 ">
+		<Approach Name="VOR19">
 			<App_Waypoint>
 				<Name>MEPLE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -2626,7 +2628,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>JAC  </Name><!-- CF -->
+				<Name>JAC</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>43.62103888888889</Latitude>
 				<Longitude>-110.73168611111112</Longitude>
@@ -2679,7 +2681,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
 				<AppTr_Waypoint>
-					<Name>DNW  </Name><!-- TF -->
+					<Name>DNW</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>43.82827777777778</Latitude>
 					<Longitude>-110.335475</Longitude>
