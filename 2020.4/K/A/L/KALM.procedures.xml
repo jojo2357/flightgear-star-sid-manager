@@ -19,60 +19,58 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KALM">
 		<Sid Name="CRONA1" Runways="04">
-			<RunwayTransition Runway="04">
-				<RwyTr_Waypoint>
-					<Name>(04700)</Name><!-- VA -->
-					<Type>ConstHdgtoAlt</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>37.6</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>ZOOOM</Name><!-- DF -->
-					<Type>Normal</Type>
-					<Latitude>32.99263055555556</Latitude>
-					<Longitude>-105.96688611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Left</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>GLINA</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.064074999999995</Latitude>
-					<Longitude>-105.96206388888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>CNX  </Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.367016666666665</Latitude>
-					<Longitude>-105.67800555555556</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
+			<Sid_Waypoint>
+				<Name>(04700)</Name><!-- VA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>04700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>37.6</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>ZOOOM</Name><!-- DF -->
+				<Type>Normal</Type>
+				<Latitude>32.99263055555556</Latitude>
+				<Longitude>-105.96688611111111</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Left</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>GLINA</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>34.064074999999995</Latitude>
+				<Longitude>-105.96206388888889</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>CNX  </Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>34.367016666666665</Latitude>
+				<Longitude>-105.67800555555556</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="RNV 04">
+		<Approach Name="RNV04 ">
 			<App_Waypoint>
 				<Name>JASAN</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -151,7 +149,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="CNX  ">
+			<App_Transition Name="CNX">
 				<AppTr_Waypoint>
 					<Name>CNX  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -212,24 +210,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>JASAN</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>32.74613333333333</Latitude>
-					<Longitude>-106.10373888888888</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>06000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>37.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="PIO  ">
+			<App_Transition Name="PIO">
 				<AppTr_Waypoint>
 					<Name>PIO  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -290,28 +272,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>JASAN</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>32.74613333333333</Latitude>
-					<Longitude>-106.10373888888888</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>06000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>37.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 1/1
--->

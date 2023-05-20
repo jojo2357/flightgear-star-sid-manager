@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KACV">
-		<Sid Name="HOCUT5" Runways="32,01,14,19">
+		<Sid Name="HOCUT5" Runways="ALL">
 			<Sid_Waypoint>
 				<Name>HOCUT</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -31,19 +31,7 @@
 				<Speed>0</Speed>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
-			<Sid_Transition Name="CEC  ">
-				<SidTr_Waypoint>
-					<Name>HOCUT</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>40.97629166666667</Latitude>
-					<Longitude>-124.236225</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
+			<Sid_Transition Name="CEC">
 				<SidTr_Waypoint>
 					<Name>TRIAL</Name><!-- TF -->
 					<Type>Normal</Type>
@@ -69,19 +57,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<Sid_Transition Name="FOT  ">
-				<SidTr_Waypoint>
-					<Name>HOCUT</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>40.97629166666667</Latitude>
-					<Longitude>-124.236225</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
+			<Sid_Transition Name="FOT">
 				<SidTr_Waypoint>
 					<Name>SEVLY</Name><!-- TF -->
 					<Type>Normal</Type>
@@ -120,7 +96,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Approach Name="ILS 32">
+		<Approach Name="ILS32 ">
 			<App_Waypoint>
 				<Name>VOMAC</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -260,24 +236,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="FOT  ">
+			<App_Transition Name="FOT">
 				<AppTr_Waypoint>
 					<Name>FOT  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -302,22 +262,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="YAGER">
 				<AppTr_Waypoint>
@@ -332,21 +276,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM 32">
+		<Approach Name="VDM32 ">
 			<App_Waypoint>
 				<Name>VOMAC</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -510,24 +442,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="FOT  ">
+			<App_Transition Name="FOT">
 				<AppTr_Waypoint>
 					<Name>FOT  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -552,22 +468,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="YAGER">
 				<AppTr_Waypoint>
@@ -582,21 +482,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 01">
+		<Approach Name="RNV01 ">
 			<App_Waypoint>
 				<Name>SEGVE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -688,25 +576,9 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="SEGVE">
-				<AppTr_Waypoint>
-					<Name>SEGVE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.80962777777778</Latitude>
-					<Longitude>-124.23530833333334</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>12.700000000000001</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 14">
+		<Approach Name="RNV14 ">
 			<App_Waypoint>
 				<Name>CULDU</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -786,25 +658,9 @@
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="CULDU">
-				<AppTr_Waypoint>
-					<Name>CULDU</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>41.16730277777778</Latitude>
-					<Longitude>-124.23728055555556</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>135.70000000000002</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 32">
+		<Approach Name="RNV32 ">
 			<App_Waypoint>
 				<Name>VOMAC</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -931,7 +787,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="ACV  ">
+			<App_Transition Name="ACV">
 				<AppTr_Waypoint>
 					<Name>ACV  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -956,24 +812,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.90000000000003</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="FOT  ">
+			<App_Transition Name="FOT">
 				<AppTr_Waypoint>
 					<Name>FOT  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -997,22 +837,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.90000000000003</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="HOCUT">
@@ -1040,22 +864,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>315.90000000000003</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="YAGER">
 				<AppTr_Waypoint>
@@ -1070,24 +878,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOMAC</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>40.703538888888886</Latitude>
-					<Longitude>-123.92250833333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 5/5
--->

@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KHGR">
-		<Star Name="TRSTN3">
+		<Star Name="TRSTN3" Runways="ALL">
 			<Star_Waypoint>
 				<Name>TRSTN</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -70,8 +70,8 @@
 			<Star_Waypoint>
 				<Name>(VECTORS)</Name><!-- VM -->
 				<Type>Vectors</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>0.0</Latitude>
+				<Longitude>0.0</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -130,18 +130,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>TRSTN</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>38.086925</Latitude>
-					<Longitude>-77.7733</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 			<Star_Transition Name="THHMP">
 				<StarTr_Waypoint>
@@ -156,21 +144,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>TRSTN</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>38.086925</Latitude>
-					<Longitude>-77.7733</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS 09">
+		<Approach Name="ILS09">
 			<App_Waypoint>
 				<Name>COVUK</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -261,7 +237,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="MRB  ">
+			<App_Transition Name="MRB">
 				<AppTr_Waypoint>
 					<Name>MRB  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -286,24 +262,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>91.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="THS  ">
+			<App_Transition Name="THS">
 				<AppTr_Waypoint>
 					<Name>THS  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -328,25 +288,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>91.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="ILS 27">
+		<Approach Name="ILS27">
 			<App_Waypoint>
 				<Name>HAIGS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -425,7 +369,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="THS  ">
+			<App_Transition Name="THS">
 				<AppTr_Waypoint>
 					<Name>THS  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -450,25 +394,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>HAIGS</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.75536666666667</Latitude>
-					<Longitude>-77.35871944444443</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>271.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM 09">
+		<Approach Name="VDM09">
 			<App_Waypoint>
 				<Name>COVUK</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -559,7 +487,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="MRB  ">
+			<App_Transition Name="MRB">
 				<AppTr_Waypoint>
 					<Name>MRB  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -584,24 +512,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>91.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="THS  ">
+			<App_Transition Name="THS">
 				<AppTr_Waypoint>
 					<Name>THS  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -626,25 +538,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>91.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM 27">
+		<Approach Name="VDM27">
 			<App_Waypoint>
 				<Name>HAIGS</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -735,7 +631,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="THS  ">
+			<App_Transition Name="THS">
 				<AppTr_Waypoint>
 					<Name>THS  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -760,25 +656,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>HAIGS</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.75536666666667</Latitude>
-					<Longitude>-77.35871944444443</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>271.5</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 09">
+		<Approach Name="RNV09">
 			<App_Waypoint>
 				<Name>COVUK</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -894,36 +774,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="COVUK">
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>91.30000000000001</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="MUMSY">
 				<AppTr_Waypoint>
@@ -950,21 +802,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>COVUK</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.674363888888884</Latitude>
-					<Longitude>-77.9883611111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 27">
+		<Approach Name="RNV27">
 			<App_Waypoint>
 				<Name>ZUPUX</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -1055,7 +895,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="THS  ">
+			<App_Transition Name="THS">
 				<AppTr_Waypoint>
 					<Name>THS  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -1080,28 +920,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>ZUPUX</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.75781111111111</Latitude>
-					<Longitude>-77.42289444444445</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>266.6</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 0/0
-Stars: 1/1
-Appch: 6/6
--->

@@ -18,65 +18,63 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KDTA">
-		<Sid Name="DTA1  " Runways="17,35">
-			<RunwayTransition Runway="17">
-				<RwyTr_Waypoint>
-					<Name>DTA  </Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>39.30226111111111</Latitude>
-					<Longitude>-112.50555833333334</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
-			<RunwayTransition Runway="35">
-				<RwyTr_Waypoint>
-					<Name>(05800)</Name><!-- VA -->
-					<Type>ConstHdgtoAlt</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05800</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>349.3</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>(INTC)</Name><!-- VI -->
-					<Type>Intc</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>180</Hdg_Crs_value>
-					<Sp_Turn>Left</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>DTA  </Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>39.30226111111111</Latitude>
-					<Longitude>-112.50555833333334</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
+		<Sid Name="DTA1  .17 " Runways="17">
+			<Sid_Waypoint>
+				<Name>DTA  </Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>39.30226111111111</Latitude>
+				<Longitude>-112.50555833333334</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="TAC 17">
+		<Sid Name="DTA1  .35 " Runways="35">
+			<Sid_Waypoint>
+				<Name>(05800)</Name><!-- VA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>05800</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>349.3</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>(INTC)</Name><!-- VI -->
+				<Type>Intc</Type>
+				<Latitude>39.30226111111111</Latitude>
+				<Longitude>-112.50555833333334</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>180</Hdg_Crs_value>
+				<Sp_Turn>Left</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>DTA  </Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>39.30226111111111</Latitude>
+				<Longitude>-112.50555833333334</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+		</Sid>
+		<Approach Name="TAC17 ">
 			<App_Waypoint>
 				<Name>GIDEY</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -153,7 +151,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="DTA  ">
+			<App_Transition Name="DTA">
 				<AppTr_Waypoint>
 					<Name>DTA  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -177,18 +175,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>GIDEY</Name><!-- PI -->
-					<Type>Normal</Type>
-					<Latitude>39.602444444444444</Latitude>
-					<Longitude>-112.49404166666666</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>09100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="LOLIC">
@@ -216,18 +202,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>GIDEY</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.602444444444444</Latitude>
-					<Longitude>-112.49404166666666</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="RUBOY">
 				<AppTr_Waypoint>
@@ -242,21 +216,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>GIDEY</Name><!-- AF -->
-					<Type>Normal</Type>
-					<Latitude>39.602444444444444</Latitude>
-					<Longitude>-112.49404166666666</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Left</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 17">
+		<Approach Name="RNV17 ">
 			<App_Waypoint>
 				<Name>WUNDI</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -360,20 +322,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>WUNDI</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.656705555555554</Latitude>
-					<Longitude>-112.50054166666668</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>09700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="DTA  ">
+			<App_Transition Name="DTA">
 				<AppTr_Waypoint>
 					<Name>DTA  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -398,22 +348,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>WUNDI</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.656705555555554</Latitude>
-					<Longitude>-112.50054166666668</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>09700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>186</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>7</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="PUCIT">
 				<AppTr_Waypoint>
@@ -428,21 +362,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>WUNDI</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.656705555555554</Latitude>
-					<Longitude>-112.50054166666668</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>09700</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 35">
+		<Approach Name="RNV35 ">
 			<App_Waypoint>
 				<Name>UTONE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -546,18 +468,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UTONE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.18555277777778</Latitude>
-					<Longitude>-112.50340555555555</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="RUBOY">
 				<AppTr_Waypoint>
@@ -583,22 +493,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UTONE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.18555277777778</Latitude>
-					<Longitude>-112.50340555555555</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>349.3</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>7</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="WADOK">
@@ -626,22 +520,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UTONE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.18555277777778</Latitude>
-					<Longitude>-112.50340555555555</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>349.3</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>7</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="ZIBRA">
 				<AppTr_Waypoint>
@@ -656,21 +534,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UTONE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.18555277777778</Latitude>
-					<Longitude>-112.50340555555555</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VOR 35">
+		<Approach Name="VOR35 ">
 			<App_Waypoint>
 				<Name>DELKE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -774,20 +640,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>DELKE</Name><!-- AF -->
-					<Type>Normal</Type>
-					<Latitude>39.164116666666665</Latitude>
-					<Longitude>-112.58097222222221</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Right</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="DTA  ">
+			<App_Transition Name="DTA">
 				<AppTr_Waypoint>
 					<Name>DTA  </Name><!-- PI -->
 					<Type>Normal</Type>
@@ -814,24 +668,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>DELKE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>39.164116666666665</Latitude>
-					<Longitude>-112.58097222222221</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>07300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 4/4
--->

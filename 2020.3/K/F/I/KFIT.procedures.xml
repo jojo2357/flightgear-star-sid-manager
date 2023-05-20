@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KFIT">
-		<Star Name="GRAYM6">
+		<Star Name="GRAYM6" Runways="ALL">
 			<Star_Waypoint>
 				<Name>GRAYM</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -55,7 +55,7 @@
 				<Speed>0</Speed>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
-			<Star_Transition Name="HFD  ">
+			<Star_Transition Name="HFD">
 				<StarTr_Waypoint>
 					<Name>HFD  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -80,20 +80,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>GRAYM</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.10118611111111</Latitude>
-					<Longitude>-72.031525</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
-			<Star_Transition Name="ORW  ">
+			<Star_Transition Name="ORW">
 				<StarTr_Waypoint>
 					<Name>ORW  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -130,21 +118,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>GRAYM</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.10118611111111</Latitude>
-					<Longitude>-72.031525</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="RNV 14">
+		<Approach Name="RNV14">
 			<App_Waypoint>
 				<Name>FIBAB</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -248,24 +224,8 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="FIBAB">
-				<AppTr_Waypoint>
-					<Name>FIBAB</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>42.730227777777785</Latitude>
-					<Longitude>-71.94009444444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>158.70000000000002</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="GDM  ">
+			<App_Transition Name="GDM">
 				<AppTr_Waypoint>
 					<Name>GDM  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -290,18 +250,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>FIBAB</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.730227777777785</Latitude>
-					<Longitude>-71.94009444444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="JIMUG">
 				<AppTr_Waypoint>
@@ -316,21 +264,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>FIBAB</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.730227777777785</Latitude>
-					<Longitude>-71.94009444444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 32">
+		<Approach Name="RNV32">
 			<App_Waypoint>
 				<Name>DESLO</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -422,22 +358,6 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="DESLO">
-				<AppTr_Waypoint>
-					<Name>DESLO</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>42.398158333333335</Latitude>
-					<Longitude>-71.50976388888888</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>325.20000000000005</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="OWLET">
 				<AppTr_Waypoint>
@@ -449,18 +369,6 @@
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>DESLO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.398158333333335</Latitude>
-					<Longitude>-71.50976388888888</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
@@ -478,24 +386,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>DESLO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.398158333333335</Latitude>
-					<Longitude>-71.50976388888888</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 0/0
-Stars: 1/1
-Appch: 2/2
--->

@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KSVH">
-		<Star Name="KABEE3">
+		<Star Name="KABEE3" Runways="ALL">
 			<Star_Waypoint>
 				<Name>KABEE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -58,8 +58,8 @@
 			<Star_Waypoint>
 				<Name>(VECTORS)</Name><!-- VM -->
 				<Type>Vectors</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>0.0</Latitude>
+				<Longitude>0.0</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -69,7 +69,7 @@
 				<Hdg_Crs_value>346</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
-			<Star_Transition Name="FLO  ">
+			<Star_Transition Name="FLO">
 				<StarTr_Waypoint>
 					<Name>FLO  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -87,18 +87,6 @@
 					<Type>Normal</Type>
 					<Latitude>34.370469444444446</Latitude>
 					<Longitude>-79.85943333333333</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>KABEE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.661047222222216</Latitude>
-					<Longitude>-80.16282222222222</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -162,8 +150,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>35.73994722222222</Latitude>
+				<Longitude>-80.70029166666667</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -202,22 +190,6 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="PEGTE">
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>284.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="ILSZ28">
@@ -274,8 +246,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>35.73994722222222</Latitude>
+				<Longitude>-80.70029166666667</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -313,7 +285,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="BZM  ">
+			<App_Transition Name="BZM">
 				<AppTr_Waypoint>
 					<Name>BZM  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -338,41 +310,13 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>284.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="GSO  ">
+			<App_Transition Name="GSO">
 				<AppTr_Waypoint>
 					<Name>GSO  </Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>36.04569444444444</Latitude>
 					<Longitude>-79.97637222222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>03400</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -448,8 +392,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>35.73994722222222</Latitude>
+				<Longitude>-80.70029166666667</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -488,22 +432,6 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 			<App_Transition Name="PEGTE">
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>284.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 		<Approach Name="VDMZ28">
@@ -572,8 +500,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>35.73994722222222</Latitude>
+				<Longitude>-80.70029166666667</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -611,7 +539,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="BZM  ">
+			<App_Transition Name="BZM">
 				<AppTr_Waypoint>
 					<Name>BZM  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -636,24 +564,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>284.8</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="GSO  ">
+			<App_Transition Name="GSO">
 				<AppTr_Waypoint>
 					<Name>GSO  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -666,21 +578,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 10">
+		<Approach Name="RNV10 ">
 			<App_Waypoint>
 				<Name>UVAXE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -784,20 +684,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UVAXE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>35.78744444444444</Latitude>
-					<Longitude>-81.18601944444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03500</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="BZM  ">
+			<App_Transition Name="BZM">
 				<AppTr_Waypoint>
 					<Name>BZM  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -810,21 +698,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>UVAXE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>35.78744444444444</Latitude>
-					<Longitude>-81.18601944444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03500</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 28">
+		<Approach Name="RNV28 ">
 			<App_Waypoint>
 				<Name>PEGTE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -940,18 +816,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="MOPED">
 				<AppTr_Waypoint>
@@ -978,42 +842,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="PEGTE">
-				<AppTr_Waypoint>
-					<Name>PEGTE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>35.73994722222222</Latitude>
-					<Longitude>-80.70029166666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03400</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>285</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 0/0
-Stars: 1/1
-Appch: 6/6
--->

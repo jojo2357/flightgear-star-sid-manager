@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KCPK">
-		<Star Name="DRONE2">
+		<Star Name="DRONE2" Runways="ALL">
 			<Star_Waypoint>
 				<Name>DRONE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -34,8 +34,8 @@
 			<Star_Waypoint>
 				<Name>(VECTORS)</Name><!-- VM -->
 				<Type>Vectors</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>0.0</Latitude>
+				<Longitude>0.0</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -45,7 +45,7 @@
 				<Hdg_Crs_value>55</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
-			<Star_Transition Name="ISO  ">
+			<Star_Transition Name="ISO">
 				<StarTr_Waypoint>
 					<Name>ISO  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -82,20 +82,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>DRONE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.52923055555556</Latitude>
-					<Longitude>-76.67084722222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
-			<Star_Transition Name="RDU  ">
+			<Star_Transition Name="RDU">
 				<StarTr_Waypoint>
 					<Name>RDU  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -144,21 +132,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>DRONE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.52923055555556</Latitude>
-					<Longitude>-76.67084722222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Star Name="TERKS2">
+		<Star Name="TERKS2" Runways="ALL">
 			<Star_Waypoint>
 				<Name>MOL  </Name><!-- IF -->
 				<Type>Normal</Type>
@@ -220,7 +196,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
 		</Star>
-		<Approach Name="ILS 05">
+		<Approach Name="ILS05">
 			<App_Waypoint>
 				<Name>NALDE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -299,7 +275,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="CVI  ">
+			<App_Transition Name="CVI">
 				<AppTr_Waypoint>
 					<Name>CVI  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -312,20 +288,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="ECG  ">
+			<App_Transition Name="ECG">
 				<AppTr_Waypoint>
 					<Name>ECG  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -338,39 +302,11 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="NALDE">
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>47.900000000000006</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="VDM 05">
+		<Approach Name="VDM05">
 			<App_Waypoint>
 				<Name>NALDE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -461,7 +397,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="CVI  ">
+			<App_Transition Name="CVI">
 				<AppTr_Waypoint>
 					<Name>CVI  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -474,20 +410,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="ECG  ">
+			<App_Transition Name="ECG">
 				<AppTr_Waypoint>
 					<Name>ECG  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -500,39 +424,11 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="NALDE">
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>47.900000000000006</Hld_Rad_value>
-					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
-					<Hld_td_value>1</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 05">
+		<Approach Name="RNV05">
 			<App_Waypoint>
 				<Name>NALDE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -636,20 +532,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="ECG  ">
+			<App_Transition Name="ECG">
 				<AppTr_Waypoint>
 					<Name>ECG  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -674,36 +558,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="NALDE">
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>47.800000000000004</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Left</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="SUNNS">
 				<AppTr_Waypoint>
@@ -718,21 +574,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>NALDE</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.510019444444445</Latitude>
-					<Longitude>-76.4653138888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 23">
+		<Approach Name="RNV23">
 			<App_Waypoint>
 				<Name>ZIMON</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -811,7 +655,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="ORF  ">
+			<App_Transition Name="ORF">
 				<AppTr_Waypoint>
 					<Name>ORF  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -824,24 +668,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>ZIMON</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.790369444444444</Latitude>
-					<Longitude>-76.20411944444446</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 0/0
-Stars: 2/2
-Appch: 4/4
--->

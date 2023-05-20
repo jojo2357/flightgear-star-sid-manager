@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KRAC">
-		<Sid Name="ACCRA5" Runways="04,22,32,14">
+		<Sid Name="ACCRA5" Runways="ALL">
 			<Sid_Waypoint>
 				<Name>FANZI</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -92,7 +92,7 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 		</Sid>
-		<Sid Name="UECKR6" Runways="04,22,32,14">
+		<Sid Name="UECKR6" Runways="ALL">
 			<Sid_Waypoint>
 				<Name>PRFEC</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -143,18 +143,6 @@
 			</Sid_Waypoint>
 			<Sid_Transition Name="DELHI">
 				<SidTr_Waypoint>
-					<Name>UECKR</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>42.314613888888886</Latitude>
-					<Longitude>-87.64710000000001</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>16000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint>
 					<Name>LADDI</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>42.07691944444444</Latitude>
@@ -181,18 +169,6 @@
 			</Sid_Transition>
 			<Sid_Transition Name="SAMPL">
 				<SidTr_Waypoint>
-					<Name>UECKR</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>42.314613888888886</Latitude>
-					<Longitude>-87.64710000000001</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>16000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
-				<SidTr_Waypoint>
 					<Name>SAMPL</Name><!-- TF -->
 					<Type>Normal</Type>
 					<Latitude>41.97916666666667</Latitude>
@@ -206,7 +182,7 @@
 				</SidTr_Waypoint>
 			</Sid_Transition>
 		</Sid>
-		<Star Name="GOPAC2">
+		<Star Name="GOPAC2" Runways="ALL">
 			<Star_Waypoint>
 				<Name>GOPAC</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -334,18 +310,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>GOPAC</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.81673888888889</Latitude>
-					<Longitude>-88.41585277777779</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 			<Star_Transition Name="OGECA">
 				<StarTr_Waypoint>
@@ -432,21 +396,9 @@
 					<Speed>250</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>GOPAC</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.81673888888889</Latitude>
-					<Longitude>-88.41585277777779</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="ILS 04">
+		<Approach Name="ILS04 ">
 			<App_Waypoint>
 				<Name>FIXAX</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -500,8 +452,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>42.827355555555556</Latitude>
+				<Longitude>-87.63391944444444</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -540,7 +492,7 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 		</Approach>
-		<Approach Name="VDM 04">
+		<Approach Name="VDM04 ">
 			<App_Waypoint>
 				<Name>FIXAX</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -594,8 +546,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>42.827355555555556</Latitude>
+				<Longitude>-87.63391944444444</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -634,7 +586,7 @@
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
 		</Approach>
-		<Approach Name="RNV 04">
+		<Approach Name="RNV04 ">
 			<App_Waypoint>
 				<Name>JENFO</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -762,18 +714,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>JENFO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.59804722222222</Latitude>
-					<Longitude>-87.97928611111112</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="VEENA">
 				<AppTr_Waypoint>
@@ -788,21 +728,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>JENFO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.59804722222222</Latitude>
-					<Longitude>-87.97928611111112</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02600</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 22">
+		<Approach Name="RNV22 ">
 			<App_Waypoint>
 				<Name>SAXON</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -918,25 +846,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>SAXON</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>42.913475</Latitude>
-					<Longitude>-87.65759444444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>219</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>4</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 32">
+		<Approach Name="RNV32 ">
 			<App_Waypoint>
 				<Name>VOFGO</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -1040,20 +952,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOFGO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.63033611111111</Latitude>
-					<Longitude>-87.62826666666666</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="OBK  ">
+			<App_Transition Name="OBK">
 				<AppTr_Waypoint>
 					<Name>OBK  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -1078,24 +978,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>VOFGO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>42.63033611111111</Latitude>
-					<Longitude>-87.62826666666666</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>02300</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 2/2
-Stars: 1/1
-Appch: 5/5
--->

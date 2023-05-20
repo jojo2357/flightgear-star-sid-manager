@@ -19,60 +19,58 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KOMK">
 		<Sid Name="EPH1  " Runways="17">
-			<RunwayTransition Runway="17">
-				<RwyTr_Waypoint>
-					<Name>(01805)</Name><!-- VA -->
-					<Type>ConstHdgtoAlt</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>01805</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>173.10000000000002</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>GETNG</Name><!-- DF -->
-					<Type>Normal</Type>
-					<Latitude>48.42515833333333</Latitude>
-					<Longitude>-119.52749444444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>01900</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>210</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>HVARD</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>48.292430555555555</Latitude>
-					<Longitude>-119.50446944444444</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>EPH  </Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>47.377919444444444</Latitude>
-					<Longitude>-119.42400277777779</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>04200</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
+			<Sid_Waypoint>
+				<Name>(01805)</Name><!-- VA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>01805</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>173.10000000000002</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>GETNG</Name><!-- DF -->
+				<Type>Normal</Type>
+				<Latitude>48.42515833333333</Latitude>
+				<Longitude>-119.52749444444444</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>01900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>210</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>HVARD</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>48.292430555555555</Latitude>
+				<Longitude>-119.50446944444444</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>EPH  </Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>47.377919444444444</Latitude>
+				<Longitude>-119.42400277777779</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>04200</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
 		</Sid>
-		<Approach Name="GPS 35">
+		<Approach Name="GPS35">
 			<App_Waypoint>
 				<Name>ETORY</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -163,7 +161,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="EPH  ">
+			<App_Transition Name="EPH">
 				<AppTr_Waypoint>
 					<Name>EPH  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -188,24 +186,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>ETORY</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>48.27586944444444</Latitude>
-					<Longitude>-119.4914388888889</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>05000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 1/1
--->

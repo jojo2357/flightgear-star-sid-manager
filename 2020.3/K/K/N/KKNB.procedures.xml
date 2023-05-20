@@ -18,20 +18,34 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KKNB">
-		<Sid Name="KACIR2" Runways="01,19">
-			<Sid_Transition Name="BCE  ">
-				<SidTr_Waypoint>
-					<Name>KACIR</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>36.991911111111115</Latitude>
-					<Longitude>-112.23944722222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
+		<Sid Name="KACIR2.01 " Runways="01">
+			<Sid_Waypoint>
+				<Name>(INTC)</Name><!-- VI -->
+				<Type>Intc</Type>
+				<Latitude>36.991911111111115</Latitude>
+				<Longitude>-112.23944722222222</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>200</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>5.9</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>KACIR</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>36.991911111111115</Latitude>
+				<Longitude>-112.23944722222222</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Right</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Transition Name="BCE">
 				<SidTr_Waypoint>
 					<Name>BCE  </Name><!-- TF -->
 					<Type>Normal</Type>
@@ -47,10 +61,10 @@
 			</Sid_Transition>
 			<Sid_Transition Name="JALMA">
 				<SidTr_Waypoint>
-					<Name>KACIR</Name><!-- IF -->
+					<Name>JALMA</Name><!-- TF -->
 					<Type>Normal</Type>
-					<Latitude>36.991911111111115</Latitude>
-					<Longitude>-112.23944722222222</Longitude>
+					<Latitude>36.55958888888889</Latitude>
+					<Longitude>-112.19995833333333</Longitude>
 					<Flytype>Fly-by</Flytype>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -58,6 +72,62 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</SidTr_Waypoint>
+			</Sid_Transition>
+		</Sid>
+		<Sid Name="KACIR2.19 " Runways="19">
+			<Sid_Waypoint>
+				<Name>(INTC)</Name><!-- VI -->
+				<Type>Intc</Type>
+				<Latitude>36.889874999999996</Latitude>
+				<Longitude>-112.42680000000001</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>200</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>185.9</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>JOVBA</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>36.889874999999996</Latitude>
+				<Longitude>-112.42680000000001</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>KACIR</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>36.991911111111115</Latitude>
+				<Longitude>-112.23944722222222</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Transition Name="BCE">
+				<SidTr_Waypoint>
+					<Name>BCE  </Name><!-- TF -->
+					<Type>Normal</Type>
+					<Latitude>37.689188888888886</Latitude>
+					<Longitude>-112.30390277777778</Longitude>
+					<Flytype>Fly-by</Flytype>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Speed>0</Speed>
+					<Sp_Turn>Auto</Sp_Turn>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+			<Sid_Transition Name="JALMA">
 				<SidTr_Waypoint>
 					<Name>JALMA</Name><!-- TF -->
 					<Type>Normal</Type>
@@ -71,76 +141,8 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="01">
-				<RwyTr_Waypoint>
-					<Name>(INTC)</Name><!-- VI -->
-					<Type>Intc</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>200</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>5.9</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>KACIR</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.991911111111115</Latitude>
-					<Longitude>-112.23944722222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Right</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
-			<RunwayTransition Runway="19">
-				<RwyTr_Waypoint>
-					<Name>(INTC)</Name><!-- VI -->
-					<Type>Intc</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>200</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>185.9</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>JOVBA</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>36.889874999999996</Latitude>
-					<Longitude>-112.42680000000001</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>KACIR</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>36.991911111111115</Latitude>
-					<Longitude>-112.23944722222222</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
 		</Sid>
-		<Approach Name="RNV 01">
+		<Approach Name="RNV01">
 			<App_Waypoint>
 				<Name>DEDKE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -256,28 +258,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>DEDKE</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>36.81457222222222</Latitude>
-					<Longitude>-112.624675</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08200</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>9.9</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>7</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 1/1
--->

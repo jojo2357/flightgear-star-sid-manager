@@ -18,7 +18,7 @@
   -->
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KMGY">
-		<Star Name="DANEI3">
+		<Star Name="DANEI3" Runways="ALL">
 			<Star_Waypoint>
 				<Name>DANEI</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -34,8 +34,8 @@
 			<Star_Waypoint>
 				<Name>(VECTORS)</Name><!-- VM -->
 				<Type>Vectors</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>0.0</Latitude>
+				<Longitude>0.0</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -45,7 +45,7 @@
 				<Hdg_Crs_value>253</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</Star_Waypoint>
-			<Star_Transition Name="APE  ">
+			<Star_Transition Name="APE">
 				<StarTr_Waypoint>
 					<Name>APE  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -70,21 +70,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
-				<StarTr_Waypoint>
-					<Name>DANEI</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>40.20267777777778</Latitude>
-					<Longitude>-83.63931666666667</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
-		<Approach Name="VDM 20">
+		<Approach Name="VDM20">
 			<App_Waypoint>
 				<Name>SNEZE</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -150,8 +138,8 @@
 			<App_Waypoint>
 				<Name>(INTC)</Name><!-- VI -->
 				<Type>Intc</Type>
-				<Latitude>0</Latitude>
-				<Longitude>0</Longitude>
+				<Latitude>39.47228888888889</Latitude>
+				<Longitude>-83.97086666666667</Longitude>
 				<Flytype>Fly-by</Flytype>
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -189,7 +177,7 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Left</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="DQN  ">
+			<App_Transition Name="DQN">
 				<AppTr_Waypoint>
 					<Name>DQN  </Name><!-- FC -->
 					<Type>Normal</Type>
@@ -202,21 +190,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>SNEZE</Name><!-- CF -->
-					<Type>Normal</Type>
-					<Latitude>39.79794722222222</Latitude>
-					<Longitude>-84.11408055555555</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 02">
+		<Approach Name="RNV02">
 			<App_Waypoint>
 				<Name>SOVVO</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -308,36 +284,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>SOVVO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.412575000000004</Latitude>
-					<Longitude>-84.31778055555556</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="SOVVO">
-				<AppTr_Waypoint>
-					<Name>SOVVO</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.412575000000004</Latitude>
-					<Longitude>-84.31778055555556</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>26.200000000000003</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="ZAVUM">
 				<AppTr_Waypoint>
@@ -352,21 +300,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>SOVVO</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.412575000000004</Latitude>
-					<Longitude>-84.31778055555556</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
-		<Approach Name="RNV 20">
+		<Approach Name="RNV20">
 			<App_Waypoint>
 				<Name>WOBUL</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -458,18 +394,6 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>WOBUL</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.76331666666666</Latitude>
-					<Longitude>-84.1325111111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="SEYOS">
 				<AppTr_Waypoint>
@@ -484,42 +408,9 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>WOBUL</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>39.76331666666666</Latitude>
-					<Longitude>-84.1325111111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="WOBUL">
-				<AppTr_Waypoint>
-					<Name>WOBUL</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>39.76331666666666</Latitude>
-					<Longitude>-84.1325111111111</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>03100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>206.3</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>5</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 0/0
-Stars: 1/1
-Appch: 3/3
--->

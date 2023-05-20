@@ -17,13 +17,15 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 const fs = require('fs');
-const {parseLine, RouteType, altitudeToXML, Latongitude} = require('./arinc424parser');
+const {parseLine, RouteType, Latongitude} = require('./arinc424parser');
 const path = require("path");
+
+const simpleRunwayNames = ["R", "L", "C", " "];
 
 const oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
 let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
-let debug = true;
+let debug = false;
 
 let airpourtCode;
 let discoveredRunways = {};
@@ -68,11 +70,20 @@ for (let i = 2; i < oldData.length; i++) {
 
 const data = fs.readFileSync("CIFP_230518/FAACIFP18").toString().split(/\r?\n/g);
 
+let realRunways = {};
+
 /** @type {ParseResult[]} */
 const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater); // todo investigate why no location for KAPF
-    if (vahl.recognizedLine)
+    if (vahl.recognizedLine) {
         out.push(vahl);
+
+        if (vahl.magbearing) {
+            if (!realRunways[vahl.parentident])
+                realRunways[vahl.parentident] = [];
+            realRunways[vahl.parentident].push(vahl.ident.slice(2).trim());
+        }
+    }
     else if (dater.startsWith("SUSAD KAPF"))
         console.log(dater);
     return out;
@@ -193,182 +204,113 @@ for (const movedRunwaysKey in movedRunways) {
 
 console.log("Wrote renames");
 
-for (const thingeyKey in thingey) {
-    if (Object.keys(thingey[thingeyKey]).length <= 1)
+const baseTabs = "\t".repeat(2);
+
+for (const currentAirport in thingey) {
+    if (Object.keys(thingey[currentAirport]).length <= 1)
         continue;
-    process.stdout.write(`Running on ${thingeyKey}  \r`);
-    let oufile = path.join(...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`);
-    let future_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<Airport ICAOcode="${thingeyKey}">\n`;
-    let current_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<Airport ICAOcode="${thingeyKey}">\n`;
-    let depth = 2;
-    let namedRoute = thingey[thingeyKey];
-    let sids = 0, stars = 0, approaches = 0;
-    let completedsids = 0, completedstars = 0, completedapproaches = 0;
+    process.stdout.write(`Running on ${currentAirport}  \r`);
+    let future_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let current_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let namedRoute = thingey[currentAirport];
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
+
+        let runwayTransitions;
+        let regularTransitions;
+        let commonPoints;
+
+        let mainTag;
+        let transitionTag;
+        let transitionWaypointTag;
+        let wayptTag;
+
+        let oldName = sidarname;
+        let newName = sidarname;
+
         // todo consolidate this if tree
         if (route.sid) {
-            sids++;
-            let sidplaced = false;
-            try {
-                let entrans = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]], route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
-                let trans = [route[RouteType["PD"]["1"]], route[RouteType["PD"]["4"]], route[RouteType["PD"]["F"]], route[RouteType["PD"]["T"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
-                let commoners = [route[RouteType["PD"]["2"]], route[RouteType["PD"]["5"]],
-                    route[RouteType["PD"]["8"]], route[RouteType["PD"]["M"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
+            wayptTag = "Sid_Waypoint";
+            transitionWaypointTag = "SidTr_Waypoint";
+            mainTag = "Sid";
+            transitionTag = "Sid_Transition";
 
-                sidplaced = true;
-
-                future_branch_outstring += `${'\t'.repeat(depth)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace("ALL", thingey[thingeyKey].runweys.join(",")).replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
-                current_branch_outstring += `${'\t'.repeat(depth++)}<Sid Name="${sidarname}" Runways="${Object.keys(trans.length ? trans[0] : commoners[0]).map(it => it.trim().replace("ALL", thingey[thingeyKey].runweys.join(",")).replace(/(\d{2})B/, "$1R,$1L")).join(",")}">\n`;
-                for (const commonerlist of commoners) {
-                    for (const simpsKey in commonerlist) {
-                        for (const simps of commonerlist[simpsKey]) {
-                            future_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, false);
-                            current_branch_outstring += wayptToString(simps, "Sid_Waypoint", depth, true);
-                        }
-                    }
+            regularTransitions = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]],
+                route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
+                if (arr) for (const key of Object.keys(arr)) {
+                    out[key] = arr[key];
                 }
-                for (const translist of entrans) {
-                    for (const simpsKey in translist) {
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Sid_Transition Name="${simpsKey}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<Sid_Transition Name="${simpsKey}">\n`;
-                        for (const simps of translist[simpsKey]) {
-                            future_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, false);
-                            current_branch_outstring += wayptToString(simps, "SidTr_Waypoint", depth, true);
-                        }
-                        future_branch_outstring += `${'\t'.repeat(--depth)}</Sid_Transition>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}</Sid_Transition>\n`;
-                    }
+                return out;
+            }, {});
+            runwayTransitions = [route[RouteType["PD"]["1"]], route[RouteType["PD"]["4"]],
+                route[RouteType["PD"]["F"]], route[RouteType["PD"]["T"]]].reduce((out, arr) => {
+                if (arr) for (const key of Object.keys(arr)) {
+                    out[key] = arr[key];
                 }
-                for (const translist of trans) {
-                    for (const simpsKey in translist) {
-                        for (const runwey of simpsKey.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L").split(",")) {
-                            future_branch_outstring += `${'\t'.repeat(depth)}<RunwayTransition Runway="${runwey}">\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth++)}<RunwayTransition Runway="${runwey}">\n`;
-                            for (const simps of translist[simpsKey]) {
-                                future_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, false);
-                                current_branch_outstring += wayptToString(simps, "RwyTr_Waypoint", depth, true);
-                            }
-                            future_branch_outstring += `${'\t'.repeat(--depth)}</RunwayTransition>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}</RunwayTransition>\n`;
-                        }
-                    }
+                return out;
+            }, {});
+            commonPoints = [route[RouteType["PD"]["2"]], route[RouteType["PD"]["5"]],
+                route[RouteType["PD"]["8"]], route[RouteType["PD"]["M"]]].filter(it => it).reduce((out, curr) => {
+                for (const currKey in curr) {
+                    out.push(...curr[currKey]);
                 }
-                completedsids++;
-            } catch (E) {
-                console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`, E);
-            }
-            if (sidplaced)
-                future_branch_outstring += `${'\t'.repeat(--depth)}</Sid>\n`;
-            current_branch_outstring += `${'\t'.repeat(depth)}</Sid>\n`;
+                return out;
+            }, []);
         } else if (route.star) {
-            stars++;
-            /*if (!route[RouteType["PE"]["2"]] && !route[RouteType["PE"]["5"]]
-                && !route[RouteType["PE"]["8"]] && !route[RouteType["PE"]["M"]]) {
-                continue;
-            }*/
-            try {
-                let trans = [route[RouteType["PE"]["1"]], route[RouteType["PE"]["4"]], route[RouteType["PE"]["7"]], route[RouteType["PE"]["F"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
-                let commoners = [route[RouteType["PE"]["2"]], route[RouteType["PE"]["5"]],
-                    route[RouteType["PE"]["8"]], route[RouteType["PE"]["M"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
-                //unused and i dont know how. makes me sadge :(
-                let rwyTrans = [route[RouteType["PE"]["3"]], route[RouteType["PE"]["6"]],
-                    route[RouteType["PE"]["9"]], route[RouteType["PE"]["S"]]].reduce((out, arr) => {
-                    if (arr) out.push(arr);
-                    return out;
-                }, []);
-                if (rwyTrans.length) {
-                    for (const rwyTran in rwyTrans[0]) {
-                        future_branch_outstring += `${'\t'.repeat(depth)}<Star Name="${sidarname}.${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().slice(0, 2)}" Runways="${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}.${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().slice(0, 2)}" Runways="${rwyTran.match(/(?:RW)?(.*)$/)[1].trim().replace(/(\d{2})B/, "$1R,$1L")}">\n`;
-                        for (const commonerlist of commoners) {
-                            for (const simpsKey in commonerlist) {
-                                for (const simps of commonerlist[simpsKey]) {
-                                    future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
-                                    current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-                                }
-                            }
-                        }
-                        for (const simps of rwyTrans[0][rwyTran]) {
-                            future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
-                            current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-                        }
-                        for (const translist of trans) {
-                            for (const simpsKey in translist) {
-                                future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
-                                for (const simps of translist[simpsKey]) {
-                                    future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
-                                    current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
-                                }
-                                future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
-                                current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
-                            }
-                        }
-                        // console.log(rwyTranKey);
-                        future_branch_outstring += `${'\t'.repeat(--depth)}</Star>\n`;
-                        current_branch_outstring += `${'\t'.repeat(depth)}</Star>\n`;
-                    }
-                } else {
-                    future_branch_outstring += `${'\t'.repeat(depth)}<Star Name="${sidarname}">\n`;
-                    current_branch_outstring += `${'\t'.repeat(depth++)}<Star Name="${sidarname}">\n`;
-                    for (const commonerlist of commoners) {
-                        for (const simpsKey in commonerlist) {
-                            for (const simps of commonerlist[simpsKey]) {
-                                future_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, false);
-                                current_branch_outstring += wayptToString(simps, "Star_Waypoint", depth, true);
-                            }
-                        }
-                    }
-                    for (const translist of trans) {
-                        for (const simpsKey in translist) {
-                            future_branch_outstring += `${'\t'.repeat(depth)}<Star_Transition Name="${simpsKey}">\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth++)}<Star_Transition Name="${simpsKey}">\n`;
-                            for (const simps of translist[simpsKey]) {
-                                future_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, false);
-                                current_branch_outstring += wayptToString(simps, "StarTr_Waypoint", depth, true);
-                            }
-                            future_branch_outstring += `${'\t'.repeat(--depth)}</Star_Transition>\n`;
-                            current_branch_outstring += `${'\t'.repeat(depth)}</Star_Transition>\n`;
-                        }
-                    }
-                    future_branch_outstring += `${'\t'.repeat(--depth)}</Star>\n`;
-                    current_branch_outstring += `${'\t'.repeat(depth)}</Star>\n`;
+            wayptTag = "Star_Waypoint";
+            transitionWaypointTag = "StarTr_Waypoint";
+            mainTag = "Star";
+            transitionTag = "Star_Transition";
+
+            regularTransitions = [route[RouteType["PE"]["1"]], route[RouteType["PE"]["4"]],
+                route[RouteType["PE"]["7"]], route[RouteType["PE"]["F"]]].reduce((out, arr) => {
+                if (arr) for (const key of Object.keys(arr)) {
+                    out[key] = arr[key];
                 }
-                completedstars++;
-            } catch (E) {
-                console.error(`Something went wrong parsing ${sidarname} for ${thingeyKey}`);
-            }
+                return out;
+            }, {});
+            runwayTransitions = [route[RouteType["PE"]["3"]], route[RouteType["PE"]["6"]],
+                route[RouteType["PE"]["9"]], route[RouteType["PE"]["S"]]].reduce((out, arr) => {
+                if (arr) for (const key of Object.keys(arr)) {
+                    out[key.slice(2)] = arr[key];
+                }
+                return out;
+            }, {});
+            commonPoints = [route[RouteType["PE"]["2"]], route[RouteType["PE"]["5"]],
+                route[RouteType["PE"]["8"]], route[RouteType["PE"]["M"]]].filter(it => it).reduce((out, curr) => {
+                for (const currKey in curr) {
+                    out.push(...curr[currKey]);
+                }
+                return out;
+            }, []);
         } else if (route.approach) {
-            approaches++;
-            // continue;
-            let transitions = [route[RouteType["PF"]["A"]]].reduce((out, arr) => {
-                if (arr) out.push(arr);
+            wayptTag = "App_Waypoint";
+            transitionWaypointTag = "AppTr_Waypoint";
+            mainTag = "Approach";
+            transitionTag = "App_Transition";
+
+            regularTransitions = [route[RouteType["PF"]["A"]]].reduce((out, arr) => {
+                if (arr) for (const key of Object.keys(arr)) {
+                    out[key] = arr[key];
+                }
                 return out;
-            }, []);
-            let meatofit = [
+            }, {});
+
+            runwayTransitions = {};
+
+            commonPoints = [
                 "B", "D", "F", "G", "H", "I", "J", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-            ].map(it => route[RouteType["PF"][it]]).reduce((out, arr) => {
-                if (arr) out.push(arr);
+            ].map(it => route[RouteType["PF"][it]]).filter(it => it).reduce((out, curr) => {
+                for (const currKey in curr) {
+                    out.push(...curr[currKey]);
+                }
                 return out;
             }, []);
+
             let changedName = "";
-            const simpleRunwayNames = ["R", "L", "C", " "];
+            let runwayName = sidarname.slice(1, 4);
+            if (!simpleRunwayNames.includes(runwayName.charAt(2)))
+                runwayName = runwayName.slice(0, 2);
             switch (sidarname.charAt(0)) {
                 case "H":
                     changedName = `RNV${sidarname.charAt(4) === " " ? !simpleRunwayNames.includes(sidarname.charAt(3)) ? sidarname.charAt(3) : "" : sidarname.charAt(4)}`;
@@ -410,56 +352,111 @@ for (const thingeyKey in thingey) {
                 default:
                     changedName = sidarname;
             }
-            changedName += sidarname.slice(1, simpleRunwayNames.includes(sidarname.charAt(3)) ? 4 : 3);
-            changedName = changedName.replace('-', '')
-            if (changedName === "")
-                continue;
-            future_branch_outstring += `${'\t'.repeat(depth)}<Approach Name="${changedName.trim()}">\n`;
-            // todo runway swapping sooner
-            current_branch_outstring += `${'\t'.repeat(depth++)}<Approach Name="${(changedName.substring(0, 3) + (movedRunways[thingeyKey].some(change => change.neww === changedName.substring(3)) ? movedRunways[thingeyKey].find(change => change.neww === changedName.substring(3)).orig : changedName.substring(3))).trim()}">\n`;
-            for (const commonerlist of meatofit) {
-                for (const simpsKey in commonerlist) {
-                    for (const simps of commonerlist[simpsKey]) {
-                        // future_branch_outstring += `${'\t'.repeat(depth)}<App_Waypoint>\n`;
-                        // current_branch_outstring += `${'\t'.repeat(depth++)}<App_Waypoint>\n`;
-
-                        future_branch_outstring += wayptToString(simps, "App_Waypoint", depth, false);
-                        current_branch_outstring += wayptToString(simps, "App_Waypoint", depth, true);
-
-                        // future_branch_outstring += `${'\t'.repeat(--depth)}</App_Waypoint>\n`;
-                        // current_branch_outstring += `${'\t'.repeat(depth)}</App_Waypoint>\n`;
-                    }
-                }
-            }
-            for (const translist of transitions) {
-                for (const simpsKey in translist) {
-                    future_branch_outstring += `${'\t'.repeat(depth)}<App_Transition Name="${simpsKey}">\n`;
-                    current_branch_outstring += `${'\t'.repeat(depth++)}<App_Transition Name="${simpsKey}">\n`;
-                    for (const simps of translist[simpsKey]) {
-                        future_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, false);
-                        current_branch_outstring += wayptToString(simps, "AppTr_Waypoint", depth, true);
-                    }
-                    future_branch_outstring += `${'\t'.repeat(--depth)}</App_Transition>\n`;
-                    current_branch_outstring += `${'\t'.repeat(depth)}</App_Transition>\n`;
-                }
-            }
-            completedapproaches++;
-            future_branch_outstring += `${'\t'.repeat(--depth)}</Approach>\n`;
-            current_branch_outstring += `${'\t'.repeat(depth)}</Approach>\n`;
+            oldName = changedName + newRunwayToOld(currentAirport, runwayName.trim());
+            newName = changedName + runwayName;
         } else {
             // bad
+            continue
+        }
+
+        let runTransKeys = Object.keys(runwayTransitions);
+        let onlyNone = runTransKeys.length === 0;
+        if (onlyNone) {
+            if (route.approach)
+                runTransKeys = [(simpleRunwayNames.includes(sidarname.slice(1, 4).charAt(2)) ? sidarname.slice(1, 4) : sidarname.slice(1, 3)).trim()];
+            else
+                runTransKeys = ["ALL"];
+        }
+
+        for (const runwayTransKey of runTransKeys) {
+            let repeatsFor;
+            if (onlyNone || runwayTransKey.trim().length === 2) {
+                if (route.approach)
+                    repeatsFor = [runwayTransKey.charAt(2)];
+                else
+                    repeatsFor = [""];
+            } else if (runwayTransKey.endsWith("B")) {
+                repeatsFor = realRunways[currentAirport].filter(it => it.slice(0, 2) === runwayTransKey.slice(0, 2)).map(it => it.charAt(2));
+            } else {
+                repeatsFor = [runwayTransKey.charAt(2)];
+            }
+
+            let specificDesignator = runwayTransKey.charAt(2);
+
+            // we dont need this because if, say, 1L and 1R are different, we wont ever see 1B.
+            // for (const specificDesignator of repeatsFor) {
+                let newRunway;
+                if (onlyNone)
+                    newRunway = "ALL";
+                else
+                    newRunway = runwayTransKey.slice(0, 2) + specificDesignator;
+                let oldRunway;
+                if (onlyNone)
+                    oldRunway = "ALL";
+                else
+                    oldRunway = newRunway.endsWith("B") ? newRunwayToOld(currentAirport, newRunway.slice(0, 2) + "R").slice(0,2) + "B" : newRunwayToOld(currentAirport, newRunway);
+
+                current_branch_outstring += baseTabs + `<${mainTag} Name="${oldName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${oldRunway.trim()}`}"${!route.approach ? ` Runways="${oldRunway === "ALL" ? oldRunway : repeatsFor.map(it => newRunwayToOld(currentAirport, runwayTransKey.slice(0, 2) + it)).join(',')}"` : ""}>\n`;
+                future_branch_outstring += baseTabs + `<${mainTag} Name="${newName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${newRunway.trim()}`}"${!route.approach ? ` Runways="${newRunway === "ALL" ? newRunway : repeatsFor.map(it => runwayTransKey.slice(0, 2) + it).join(',')}"` : ""}>\n`;
+
+                let runwayArray = onlyNone ? [] : runwayTransitions[runwayTransKey];
+
+                if (runwayArray.length && commonPoints.length) {
+                    if (route.sid) {
+                        if (runwayArray[runwayArray.length - 1].loc.ident && commonPoints[0].loc.ident && runwayArray[runwayArray.length - 1].loc.ident.trim() === commonPoints[0].loc.ident.trim())
+                        runwayArray = runwayArray.concat(commonPoints.slice(1));
+                        else
+                            runwayArray = runwayArray.concat(commonPoints);
+                    } else if (route.star) {
+                        if (runwayArray[0].loc.ident && commonPoints[commonPoints.length - 1].loc.ident && runwayArray[0].loc.ident.trim() === commonPoints[commonPoints.length - 1].loc.ident.trim())
+                            runwayArray = commonPoints.slice(0, -1).concat(runwayArray);
+                        else
+                            runwayArray = commonPoints.concat(runwayArray);
+                    }
+                } else {
+                    if (route.sid)
+                        runwayArray = runwayArray.concat(commonPoints);
+                    else if (route.star || route.approach)
+                        runwayArray = commonPoints.concat(runwayArray);
+                }
+
+                for (let i = 0; i < runwayArray.length; i++) {
+                    current_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, true, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
+                    future_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, false, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
+                }
+
+                for (const regularTransitionsKey in regularTransitions) {
+                    current_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
+                    future_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
+
+                    let runwayArr = regularTransitions[regularTransitionsKey];
+
+                    if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident) runwayArr = runwayArr.slice(1);
+                    else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident) runwayArr = runwayArr.slice(0, -1);
+                    for (const regularTransitionElement of runwayArr) { //todo change to index
+                        current_branch_outstring += wayptToString(regularTransitionElement, transitionWaypointTag, 4, true);
+                        future_branch_outstring += wayptToString(regularTransitionElement, transitionWaypointTag, 4, false);
+                    }
+
+                    current_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
+                    future_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
+                }
+
+                current_branch_outstring += `${baseTabs}</${mainTag}>\n`;
+                future_branch_outstring += `${baseTabs}</${mainTag}>\n`;
+            // }
         }
     }
-    future_branch_outstring += `\t</Airport>\n</ProceduresDB>\n<!-- Completion Stats:\nSids: ${completedsids}/${sids}\nStars: ${completedstars}/${stars}\nAppch: ${completedapproaches}/${approaches}\n-->`;
-    current_branch_outstring += `\t</Airport>\n</ProceduresDB>\n<!-- Completion Stats:\nSids: ${completedsids}/${sids}\nStars: ${completedstars}/${stars}\nAppch: ${completedapproaches}/${approaches}\n-->`;
-    fs.mkdirSync(path.join(process.cwd(), "2020.4", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
-    fs.mkdirSync(path.join(process.cwd(), "2020.3", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "2020.4", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), future_branch_outstring);
-    fs.writeFileSync(path.join(process.cwd(), "2020.3", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), current_branch_outstring);
-    fs.mkdirSync(path.join(process.cwd(), "Airports", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "Airports", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), future_branch_outstring);
-    fs.mkdirSync(path.join(process.cwd(), "realairports", ...thingeyKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "realairports", ...thingeyKey.split("").slice(0, -1), `${thingeyKey}.procedures.xml`), future_branch_outstring);
+    future_branch_outstring += `\t</Airport>\n</ProceduresDB>\n`;
+    current_branch_outstring += `\t</Airport>\n</ProceduresDB>\n`;
+    fs.mkdirSync(path.join(process.cwd(), "2020.4", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.mkdirSync(path.join(process.cwd(), "2020.3", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "2020.4", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
+    fs.writeFileSync(path.join(process.cwd(), "2020.3", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    fs.mkdirSync(path.join(process.cwd(), "Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
 }
 
 //console.log(thing);
@@ -517,11 +514,12 @@ function getAltitudes(obj, tabs = "") {
 // todo next waypt to fix some things
 // todo use old runway so that 2020.3 actually works
 function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextWaypt) {
+    // RF way be special
     if (waypt.obj.fix_path_termination === "FM") {
         return specialWaypt(waypt, tagName, tabDepth, useOldRunway);
     }
     let out = `${'\t'.repeat(tabDepth)}<${tagName}>\n`;
-    // console.log();
+
     // name
     const tabs = '\t'.repeat(tabDepth + 1);
     out += `${tabs}<Name>`;
@@ -530,7 +528,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             if (useOldRunway && waypt.obj.fix_ident.match(/RW\d{2}/)) {
                 out += "RW" + newRunwayToOld(waypt.obj.airportIDENT, waypt.obj.fix_ident.slice(2))
             } else {
-                out += waypt.obj.fix_ident;
+                out += waypt.obj.fix_ident.trim();
             }
             break;
         case "DF":
@@ -539,7 +537,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "AF":
         case "FC":
         case "PI":
-            out += waypt.obj.fix_ident;
+            out += waypt.obj.fix_ident.trim();
             break;
         case "VA":
         case "FA":
@@ -550,22 +548,22 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             out += `(INTC)`; // this might be const hdg to alt with a split with intc
             break;
         case "CF":
-            out += waypt.obj.fix_ident; // cousin of above, really the second half therin
+            out += waypt.obj.fix_ident.trim(); // cousin of above, really the second half therin
             break;
         case "VM":
         case "VD":
             out += "(VECTORS)";
             break;
         case "CD":
-            out += waypt.obj.nav_fix;
+            out += waypt.obj.nav_fix.trim();
             break;
         case "VR":
-            out += waypt.obj.fix_path_navaid;
+            out += waypt.obj.fix_path_navaid.trim();
             break;
         case "HM":
         case "HF":
         case "HA":
-            out += waypt.obj.fix_ident;
+            out += waypt.obj.fix_ident.trim();
             break;
         case "CI":
             break;
@@ -686,9 +684,24 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             break;
         case "VI":
         case "VM":
-            // todo should be coords of waypt referred to;
-            latstr += "0";
-            lonstr += "0";
+            if (!nextWaypt) {
+                latstr += '0.0';
+                lonstr += '0.0';
+            } else if (nextWaypt.loc.vorLatitude){
+                latstr += Latongitude.toAbsNumber(nextWaypt.loc.vorLatitude);
+                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.vorLongitude);
+            } else if (nextWaypt.loc.DMELatitude){
+                latstr += Latongitude.toAbsNumber(nextWaypt.loc.DMELatitude);
+                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.DMELongitude);
+            } else if (nextWaypt.loc.reallatitude) {
+                latstr += Latongitude.toAbsNumber(nextWaypt.loc.reallatitude);
+                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.reallongtude);
+            } else if (nextWaypt.loc.airpotLatitude){
+                latstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLatitude);
+                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLongitude);
+            } else {
+                console.log("FUUUUUCK", nextWaypt.loc);
+            }
             break;
         default:
             console.log("Fuck", waypt.obj.fix_path_termination);

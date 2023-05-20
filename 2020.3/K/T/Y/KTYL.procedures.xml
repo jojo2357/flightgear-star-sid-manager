@@ -19,19 +19,33 @@
 <ProceduresDB build="By jojo2357, with FAA data. Data factor = 0.7134">
 	<Airport ICAOcode="KTYL">
 		<Sid Name="CAMBA4" Runways="03">
+			<Sid_Waypoint>
+				<Name>(06340)</Name><!-- VA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>06340</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Hdg_Crs>1</Hdg_Crs>
+				<Hdg_Crs_value>32.800000000000004</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>CAMBA</Name><!-- DF -->
+				<Type>Normal</Type>
+				<Latitude>34.58606666666667</Latitude>
+				<Longitude>-109.9743</Longitude>
+				<Flytype>Fly-by</Flytype>
+				<Altitude>08900</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Speed>0</Speed>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
 			<Sid_Transition Name="AVANS">
-				<SidTr_Waypoint>
-					<Name>CAMBA</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08900</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
 				<SidTr_Waypoint>
 					<Name>AVANS</Name><!-- TF -->
 					<Type>Normal</Type>
@@ -45,19 +59,7 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<Sid_Transition Name="SJN  ">
-				<SidTr_Waypoint>
-					<Name>CAMBA</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08900</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</SidTr_Waypoint>
+			<Sid_Transition Name="SJN">
 				<SidTr_Waypoint>
 					<Name>SJN  </Name><!-- TF -->
 					<Type>Normal</Type>
@@ -71,36 +73,8 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</SidTr_Waypoint>
 			</Sid_Transition>
-			<RunwayTransition Runway="03">
-				<RwyTr_Waypoint>
-					<Name>(06340)</Name><!-- VA -->
-					<Type>ConstHdgtoAlt</Type>
-					<Latitude>0</Latitude>
-					<Longitude>0</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>06340</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hdg_Crs>1</Hdg_Crs>
-					<Hdg_Crs_value>32.800000000000004</Hdg_Crs_value>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-				<RwyTr_Waypoint>
-					<Name>CAMBA</Name><!-- DF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08900</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</RwyTr_Waypoint>
-			</RunwayTransition>
 		</Sid>
-		<Approach Name="RNV 21">
+		<Approach Name="RNV21">
 			<App_Waypoint>
 				<Name>CAMBA</Name><!-- IF -->
 				<Type>Normal</Type>
@@ -216,36 +190,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>CAMBA</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="CAMBA">
-				<AppTr_Waypoint>
-					<Name>CAMBA</Name><!-- HF -->
-					<Type>Hold</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Hld_Rad_value>211.4</Hld_Rad_value>
-					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
-					<Hld_td_value>7</Hld_td_value>
-					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-					<Hld_Turn>Right</Hld_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 			<App_Transition Name="HOZER">
 				<AppTr_Waypoint>
@@ -272,20 +218,8 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>CAMBA</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
-			<App_Transition Name="SJN  ">
+			<App_Transition Name="SJN">
 				<AppTr_Waypoint>
 					<Name>SJN  </Name><!-- IF -->
 					<Type>Normal</Type>
@@ -310,24 +244,7 @@
 					<Speed>0</Speed>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>CAMBA</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>34.58606666666667</Latitude>
-					<Longitude>-109.9743</Longitude>
-					<Flytype>Fly-by</Flytype>
-					<Altitude>08000</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Speed>0</Speed>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
-<!-- Completion Stats:
-Sids: 1/1
-Stars: 0/0
-Appch: 1/1
--->
