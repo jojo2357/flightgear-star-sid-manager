@@ -58,7 +58,7 @@ Next, we need an `apt.dat` from flightgear in order to handle runways that have 
 
 With the uncompressed `apt.dat` placed next to `index.js`, we can run it all with `node index.js`. However, you may need to allocate more memory than default, and you can do so (at least in 12.19 which I am running, long story) by adding `--max-old-space-size=1000000000` which should be enough. You may want to comment out all references to `Airports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
 
-If you dont have node installed, you can get it [here](). I use 12.19.0 because there are a lot of changed that I CBA to keep up with all the changes.
+If you dont have node installed, you can get it [here](https://nodejs.org/en/download). I use 12.19.0 because there are a lot of changed that I CBA to keep up with all the changes.
 
 ### Please python?
 No. If I am going to translate, I am going to c(\\+\\+)? for compat with fg and performance reasons.
