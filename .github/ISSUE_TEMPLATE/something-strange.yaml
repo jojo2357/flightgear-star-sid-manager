@@ -26,17 +26,17 @@ body:
     validations:
       required: true
   - type: input
+    id: procedure-name
+    attributes:
+      label: Procedure Name
+      description: This can be the name of a SID/STAR/Approach, whichever is to blame for your issue
+    validations:
+      required: true
+  - type: input
     id: transition-name
     attributes:
       description: Include this **only if** the unexpected behavior was in the transition
       label: Transition Name
-  - type: input
-    id: star-transition
-    attributes:
-      label: STAR Transition
-      description: This can be a runway transition or a regular transition
-    validations:
-      required: false
   - type: textarea
     id: problem-description
     attributes:
