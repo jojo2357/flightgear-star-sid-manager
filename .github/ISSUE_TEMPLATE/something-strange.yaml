@@ -13,15 +13,18 @@ body:
       label: Airport ICAO
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: route-type
     attributes:
-      label: What kind of approach was this?
+      label: What part of the flight was this?
+      multiple: false
       options:
-        - label: SID
-        - label: STAR
-        - label: Approach
-          required: true
+        - SID
+        - STAR
+        - Approach
+        - I don't know
+    validations:
+      required: true
   - type: input
     id: transition-name
     attributes:
@@ -34,17 +37,15 @@ body:
       description: This can be a runway transition or a regular transition
     validations:
       required: false
-  - type: input
-    id: star-chart
+  - type: textarea
+    id: problem-description
     attributes:
-      label: star-chart
-      description: Please find the chart for this STAR from [this site](https://www.airnav.com/airport)
-    validations:
-      required: true
-  - type: input
+      label: Problem Description
+      description: Please explain in as much detail as possible what the unexpected behavior is. A screenshot is desired if possible as well as an explanation on how to reproduce the issue including **aircraft** used and route flown.
+  - type: checkboxes
     id: updated-title
     attributes:
-      label: I have updated the title
-      description: Check this box to confirm that you replaced the template in the title
-    validations:
-      required: true
+      label: Did I update the title?
+      options:
+        - label: Yes, I have replaced the templates in the title of this issue
+          required: true

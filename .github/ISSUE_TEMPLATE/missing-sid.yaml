@@ -38,13 +38,13 @@ body:
     id: sid-chart
     attributes:
       label: sid-chart
-      description: Please find the chart for this sid from [this site](https://www.airnav.com/airport)
+      description: Please find the chart for this SID from [this site](https://www.airnav.com/airport)
     validations:
       required: true
-  - type: input
+  - type: checkboxes
     id: updated-title
     attributes:
-      label: I have updated the title
-      description: Check this box to confirm that you replaced the template in the title
-    validations:
-      required: true
+      label: Did I update the title?
+      options:
+        - label: Yes, I have replaced the templates in the title of this issue
+          required: true
