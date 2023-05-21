@@ -1,32 +1,32 @@
-name: Missing STAR
-description: For missing star's when the airport xml exists
-title: "Missing STAR [Airport ICAO] [STAR Name]"
-labels: ["STAR", "untriaged"]
+name: Something Unexpected Happened
+description: My Autopilot came up with a strange route
+title: "Something Unexpected Happened Whilst Flying [Airport ICAO] [SID/STAR/Approach Name] [SID/STAR Transition (if applicable)]"
+labels: ["untriaged"]
 body:
   - type: markdown
     attributes:
       value: |
-        # If your airport does not have a properties file, this is not the template for you
-  - type: checkboxes
-    id: file-exists
-    attributes:
-      label: The File Exists
-      description: You have checked, and there is a .properties.xml for this airport
-      options:
-        - label: I confirm that this is about a file that exists in this repo, and not a missing file
-          required: true
+        Note that this may be an issue with your aircraft, and not this data. We appreciate you reporting it regardless.
   - type: input
     id: airport-icao
     attributes:
       label: Airport ICAO
     validations:
       required: true
-  - type: input
-    id: star-name
+  - type: checkboxes
+    id: route-type
     attributes:
-      label: star Name
-    validations:
-      required: true
+      label: What kind of approach was this?
+      options:
+        - label: SID
+        - label: STAR
+        - label: Approach
+          required: true
+  - type: input
+    id: transition-name
+    attributes:
+      description: Include this **only if** the unexpected behavior was in the transition
+      label: Transition Name
   - type: input
     id: star-transition
     attributes:

@@ -17,10 +17,7 @@ First, a question:
 Does your flightgear use outdated runway designators? (Ex: KSNA today has runway 20R, 2L, but my flightgear running 2020.3.18 says KSNA has 19R, 1L)
 
 - Yes, runways are outdated:
-  - Does your version support runway renames?
-    - No: You will use the 2020.3 files
-    - Yes: You will use 2020.4 files
-    - Idk: Use 2020.3 files
+  - If you are using v2020.3.* of older (warranty void if older), use the 2020.3 files, if using 2020.4.*, use the 2020.4 folder 
 - No, runways are *all* correct:
   - You will be using the files in the 2020.4 folder
 
@@ -60,6 +57,8 @@ This does not run out of the box, unfortunately. You need to download the CIFP, 
 Next, we need an `apt.dat` from flightgear in order to handle runways that have moved (with respect to earth's shifting magnetic field). This should be under `fgdata/Airports` in your flightgear install. It will come as a tarball, so windows users will need extra software to uncompress it.
 
 With the uncompressed `apt.dat` placed next to `index.js`, we can run it all with `node index.js`. However, you may need to allocate more memory than default, and you can do so (at least in 12.19 which I am running, long story) by adding `--max-old-space-size=1000000000` which should be enough. You may want to comment out all references to `Airports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
+
+If you dont have node installed, you can get it [here](). I use 12.19.0 because there are a lot of changed that I CBA to keep up with all the changes.
 
 ### Please python?
 No. If I am going to translate, I am going to c(\\+\\+)? for compat with fg and performance reasons.
