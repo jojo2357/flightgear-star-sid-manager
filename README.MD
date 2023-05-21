@@ -2,6 +2,15 @@
 
 I got mad that I didn't have any SID's or STAR's in flight gear, and it irked me so much that you are now reading this.
 
+## What is this place?
+If you are reading this, you probably really want to know what is going on here. Let me explain.
+
+The FAA provides a product called the Codified Instrument Flight Procedures (CIFP) which can be found [here](https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/cifp/download/). Unfortunately, some greedy people twisted the FAA's arm into providing this data is a weird format: ARINC 424. This format is not good for anything, so in order to use it, one must first transcode it. That is what this repository aims to do.
+
+By transcoding the FAA's data, we can load it into flightgear so that your autopilot-equipped airplane can follow these procedures which are like directions into and out of airports.
+
+The drawback, though, is that only airports under the purview of the FAA is included here. In theory, if you have ARINC 424-encoded data for other airports, you should be able to feed it in and transcode it all the same, but that information is not freely and widely available.
+
 ## Installation
 First, a question:
 
@@ -45,20 +54,12 @@ And that should be it!
 ### My Airport doesn't work!!1!
 First, this is ***not*** a complete dataset for the whole world, only airports under the purview of the FAA. To check if your airport is supported, use this website `https://www.airnav.com/airport`. They get their data from the same place as me, so if they don't have it, I won't either
 
-## What is this place?
-If you are reading this, you probably really want to know what is going on here. Let me explain.
-
-The FAA provides a product called the Codified Instrument Flight Procedures (CIFP) which can be found [here](https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/cifp/download/). Unfortunately, some greedy people twisted the FAA's arm into providing this data is a weird format: ARINC 424. This format is not good for anything, so in order to use it, one must first transcode it. That is what this repository aims to do.
-
 ## How do I run it?
 This does not run out of the box, unfortunately. You need to download the CIFP, extract it, and then point a variable in `index.js` to the meat in the folder you just unzipped.
 
 Next, we need an `apt.dat` from flightgear in order to handle runways that have moved (with respect to earth's shifting magnetic field). This should be under `fgdata/Airports` in your flightgear install. It will come as a tarball, so windows users will need extra software to uncompress it.
 
 With the uncompressed `apt.dat` placed next to `index.js`, we can run it all with `node index.js`. However, you may need to allocate more memory than default, and you can do so (at least in 12.19 which I am running, long story) by adding `--max-old-space-size=1000000000` which should be enough. You may want to comment out all references to `Airports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
-
-### Really, Javascript?
-Yes, piss off python fan(boy|girl).
 
 ### Please python?
 No. If I am going to translate, I am going to c(\\+\\+)? for compat with fg and performance reasons.
