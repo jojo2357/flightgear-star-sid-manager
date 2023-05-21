@@ -1,7 +1,7 @@
-name: Missing Approach
-description: For missing approaches when the airport xml exists
-title: "Missing Approach [Airport ICAO] [Approach Name]"
-labels: ["Approach", "untriaged"]
+name: Missing SID
+description: For missing sid's when the airport xml exists
+title: "Missing SID [Airport ICAO] [SID Name]"
+labels: ["SID", "untriaged"]
 body:
   - type: markdown
     attributes:
@@ -22,15 +22,22 @@ body:
     validations:
       required: true
   - type: input
-    id: approach-name
+    id: sid-name
     attributes:
-      label: Approach Name
+      label: SID Name
     validations:
       required: true
   - type: input
-    id: approach-chart
+    id: sid-transition
     attributes:
-      label: approach-name
-      description: Please find the chart for this approach from [this site](https://www.airnav.com/airport)
+      label: SID Transition
+      description: This can be a runway transition or a regular transition
+    validations:
+      required: false
+  - type: input
+    id: sid-chart
+    attributes:
+      label: sid-chart
+      description: Please find the chart for this sid from [this site](https://www.airnav.com/airport)
     validations:
       required: true

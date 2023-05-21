@@ -1,7 +1,7 @@
-name: Missing Approach
-description: For missing approaches when the airport xml exists
-title: "Missing Approach [Airport ICAO] [Approach Name]"
-labels: ["Approach", "untriaged"]
+name: Missing STAR
+description: For missing star's when the airport xml exists
+title: "Missing STAR [Airport ICAO] [STAR Name]"
+labels: ["STAR", "untriaged"]
 body:
   - type: markdown
     attributes:
@@ -22,15 +22,22 @@ body:
     validations:
       required: true
   - type: input
-    id: approach-name
+    id: star-name
     attributes:
-      label: Approach Name
+      label: star Name
     validations:
       required: true
   - type: input
-    id: approach-chart
+    id: star-transition
     attributes:
-      label: approach-name
-      description: Please find the chart for this approach from [this site](https://www.airnav.com/airport)
+      label: STAR Transition
+      description: This can be a runway transition or a regular transition
+    validations:
+      required: false
+  - type: input
+    id: star-chart
+    attributes:
+      label: star-chart
+      description: Please find the chart for this STAR from [this site](https://www.airnav.com/airport)
     validations:
       required: true
