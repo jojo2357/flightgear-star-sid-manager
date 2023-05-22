@@ -28,7 +28,7 @@ let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
 let airpourtCode;
-let discoveredRunways = {};
+let oldRunways = {};
 
 for (let i = 2; i < oldData.length; i++) {
     if (oldData[i].match(/^1\s/)) {
@@ -40,17 +40,17 @@ for (let i = 2; i < oldData.length; i++) {
         airpourtCode = exploded[2];
         if (debug && !debugAirports.includes(airpourtCode))
             continue;
-        discoveredRunways[airpourtCode] = [];
+        oldRunways[airpourtCode] = [];
     } else if (!airpourtCode) {
         continue;
     } else if (oldData[i].match(/^100\s/)) {
         if (debug && !debugAirports.includes(airpourtCode))
             continue;
         let exploded = oldData[i].match(/^100\s+\d+(?:\.\d+)?\s+\d+\s+\d+\s+\d+(?:\.\d+)?\s+\d\s+\d\s+\d\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)(?:\s+\d+\.\d+\s+\d+\.\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+))?/);
-        if (discoveredRunways[airpourtCode].every(rwy => rwy.ident !== exploded[1])) {
+        if (oldRunways[airpourtCode].every(rwy => rwy.ident !== exploded[1])) {
             let latnum = Number.parseFloat(exploded[2]);
             let lonnum = Number.parseFloat(exploded[3]);
-            discoveredRunways[airpourtCode].push({
+            oldRunways[airpourtCode].push({
                 ident: exploded[1],
                 lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
                 lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
@@ -58,7 +58,7 @@ for (let i = 2; i < oldData.length; i++) {
             if (exploded.filter(it => it).length > 4) {
                 latnum = Number.parseFloat(exploded[5]);
                 lonnum = Number.parseFloat(exploded[6]);
-                discoveredRunways[airpourtCode].push({
+                oldRunways[airpourtCode].push({
                     ident: exploded[4],
                     lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
                     lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
@@ -71,21 +71,36 @@ for (let i = 2; i < oldData.length; i++) {
 const data = fs.readFileSync("current_cifp/FAACIFP18").toString().split(/\r?\n/g);
 
 let realRunways = {};
+let knownWaypoints = {};
+
+let awfullyNamedWaypoints = {};
 
 /** @type {ParseResult[]} */
 const it = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine) {
-        out.push(vahl);
 
         if (vahl.magbearing) {
             if (!realRunways[vahl.parentident])
                 realRunways[vahl.parentident] = [];
             realRunways[vahl.parentident].push(vahl.ident.slice(2).trim());
-        }
+
+            knownWaypoints[vahl.parentident + vahl.ident] = vahl;
+        } else if (vahl.canBeNavigatedTo) {
+            if (awfullyNamedWaypoints[vahl.ident.trim()]) {
+                awfullyNamedWaypoints[vahl.ident.trim()].push(vahl);
+            } else {
+                if (knownWaypoints[vahl.ident.trim()]) {
+                    awfullyNamedWaypoints[vahl.ident.trim()] = [vahl, knownWaypoints[vahl.ident.trim()]];
+                    knownWaypoints[vahl.ident.trim()] = undefined;
+                } else {
+                    knownWaypoints[vahl.ident.trim()] = vahl;
+                }
+            }
+        } //else {
+            out.push(vahl);
+        //}
     }
-    else if (dater.startsWith("SUSAD KAPF"))
-        console.log(dater);
     return out;
 }, []);
 
@@ -94,39 +109,28 @@ let movedRunways = {};
 const worldDist = 0.00005;
 // todo rename this shit
 const thingey = it.reduce((out, curr, windex, array) => {
-    if (curr.parentident) {
-        if (!out[curr.parentident])
-            out[curr.parentident] = {};
-        if (!out[curr.parentident].runweys)
-            out[curr.parentident].runweys = [];
-        // todo C is a runway, did you somehow forget that?
-        curr.ident.substring(2).replace(/(\d{2})B/, "$1R,$1L").split(",").map(val => val.trim()).forEach(thin => {
-            if (!out[curr.parentident].runweys.includes(thin))
-                out[curr.parentident].runweys.push(thin);
-        });
-    }
-    if (curr.parentident && discoveredRunways[curr.parentident] && curr.ident.match(/\d{2}([^WG]$|$)/)) {
+    if (curr.parentident && oldRunways[curr.parentident] && curr.ident.match(/\d{2}([^WG]$|$)/)) {
         if (!movedRunways[curr.parentident]) {
             movedRunways[curr.parentident] = [];
         }
-        discoveredRunways[curr.parentident].map(it => Latongitude.distance(it.lat, it.lon, curr.rwylatitude, curr.rwylongitude));
+        oldRunways[curr.parentident].map(it => Latongitude.distance(it.lat, it.lon, curr.rwylatitude, curr.rwylongitude));
 
-        if (discoveredRunways[curr.parentident].some(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist)) {
-            if (discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident === curr.ident.substring(2).trim())) {
+        if (oldRunways[curr.parentident].some(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist)) {
+            if (oldRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident === curr.ident.substring(2).trim())) {
                 // console.log("Close cousin");
             } else {
                 // different ident?
-                if (discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 36) - 4 < 4)) {
+                if (oldRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).some(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 36) - 4 < 4)) {
                     // console.log("I moved");
                     movedRunways[curr.parentident].push({
-                        orig: discoveredRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).find(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 36) - 4 < 4).ident,
+                        orig: oldRunways[curr.parentident].filter(other => Latongitude.distance(other.lat, other.lon, curr.rwylatitude, curr.rwylongitude) < worldDist).find(thing => thing.ident.length === curr.ident.trim().length - 2 && ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs((Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4)))) + 4) % 36) - 4 < 4).ident,
                         neww: curr.ident.substring(2).trim()
                     });
                 } else {
-                    if (discoveredRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4)) {
+                    if (oldRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4)) {
                         // console.log("???");
                         movedRunways[curr.parentident].push({
-                            orig: discoveredRunways[curr.parentident].filter(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4).sort((a, b) => ((Math.abs(Number.parseInt(a.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 - ((Math.abs(Number.parseInt(b.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4)[0].ident,
+                            orig: oldRunways[curr.parentident].filter(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4).sort((a, b) => ((Math.abs(Number.parseInt(a.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 - ((Math.abs(Number.parseInt(b.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4)[0].ident,
                             neww: curr.ident.substring(2).trim()
                         });
                     } else {
@@ -134,9 +138,9 @@ const thingey = it.reduce((out, curr, windex, array) => {
                     }
                 }
             }
-        } else if (discoveredRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4)) {
+        } else if (oldRunways[curr.parentident].some(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4)) {
             movedRunways[curr.parentident].push({
-                orig: discoveredRunways[curr.parentident].find(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4).ident,
+                orig: oldRunways[curr.parentident].find(thing => ((thing.ident.length === 3) ? (thing.ident.charAt(2) === curr.ident.charAt(4)) : true) && ((Math.abs(Number.parseInt(thing.ident.substring(0, 2)) - Number.parseInt(curr.ident.substring(2, 4))) + 4) % 36) - 4 < 4).ident,
                 neww: curr.ident.substring(2).trim()
             });
         } else {
@@ -150,7 +154,7 @@ const thingey = it.reduce((out, curr, windex, array) => {
         }
     }
     process.stdout.write(`Parsing ${windex}/${array.length}\r`);
-    if (curr.airportIDENT && discoveredRunways[curr.airportIDENT]) {
+    if (curr.airportIDENT && oldRunways[curr.airportIDENT]) {
         if (!out[curr.airportIDENT])
             out[curr.airportIDENT] = {};
         if (!out[curr.airportIDENT][curr.SID_STAR_Ident])
@@ -166,19 +170,15 @@ const thingey = it.reduce((out, curr, windex, array) => {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT] = [];
         if (!curr.fix_ident.match(/RW\d{2}/)) {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
-                loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
+                loc: knownWaypoints[curr.fix_ident.trim()] ? knownWaypoints[curr.fix_ident.trim()] : curr.fix_ident,
+                // loc: it.some(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) ? it.find(val => val.ident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim()) : curr.fix_ident,
                 obj: curr
             });
         } else {
             out[curr.airportIDENT][curr.SID_STAR_Ident][curr.routeType][curr.TRANS_IDENT].push({
-                loc: it.some(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) ? it.find(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) : curr.fix_ident,
+                loc: knownWaypoints[curr.airportIDENT + curr.fix_ident] ? knownWaypoints[curr.airportIDENT + curr.fix_ident] : curr.fix_ident,
+                // loc: it.some(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) ? it.find(val => val.ident && val.parentident && curr.fix_ident && val.ident.trim() === curr.fix_ident.trim() && val.parentident.trim() === curr.airportIDENT) : curr.fix_ident,
                 obj: curr
-            });
-            if (!out[curr.airportIDENT].runweys)
-                out[curr.airportIDENT].runweys = [];
-            curr.fix_ident.substring(2).replace(/(\d{2})B/, "$1R,$1L").split(",").map(val => val.trim()).forEach(thin => {
-                if (!out[curr.airportIDENT].runweys.includes(thin))
-                    out[curr.airportIDENT].runweys.push(thin);
             });
         }
     }
@@ -575,10 +575,18 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     switch (waypt.obj.fix_path_termination) {
         case "TF":
         case "CF":
-            if (waypt.obj.is_APPROACH && waypt.loc.ident.match(/RW\d{2}/)) {
-                out += "Runway";
-            } else
-                out += 'Normal';
+            if (waypt.obj.is_APPROACH) {
+                if (!waypt.loc.ident) {
+                    if (waypt.loc.match(/RW\d{2}/)) {
+                        console.log("WHAT THE FUK");
+                        out += "Runway";
+                    } else {
+                        out += "Normal";
+                    }
+                } else if (waypt.loc.ident.match(/RW\d{2}/)) {
+                    out += "Runway";
+                } else out += 'Normal';
+            } else out += 'Normal';
             break;
         case "IF":
         case "DF":
@@ -645,14 +653,19 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 latstr += Latongitude.toAbsNumber(waypt.loc.airpotLatitude);
                 lonstr += Latongitude.toAbsNumber(waypt.loc.airpotLongitude);
             } else {
-                console.log("FUUUUUCK", waypt.loc);
+                let best = findClosestPoorlyNamedWaypoint(waypt.loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
+                if (best) {
+                    latstr += Latongitude.toAbsNumber(best.latitude());
+                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                } else
+                    console.log("FUUUUUCK", waypt.loc);
             }
             break;
         case "VR":
         case "CD":
         case "VD":
             {
-            let loc = it.find(thing => thing.ident && thing.ident.trim() === waypt.obj.fix_path_navaid.trim());
+            let loc = knownWaypoints[waypt.obj.fix_path_navaid.trim()];
 
             if (!loc) {
                 console.log("Couldnt find", waypt.obj.fix_path_navaid.trim(), "and", waypt.obj.fix_ident);
@@ -671,7 +684,15 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             } else if (loc.airpotLatitude){
                 latstr += Latongitude.toAbsNumber(loc.airpotLatitude);
                 lonstr += Latongitude.toAbsNumber(loc.airpotLongitude);
+            } else if (loc.rwylatitude){
+                latstr += Latongitude.toAbsNumber(loc.rwylatitude);
+                lonstr += Latongitude.toAbsNumber(loc.rwylongitude);
             } else {
+                let best = findClosestPoorlyNamedWaypoint(loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
+                if (best) {
+                    latstr += Latongitude.toAbsNumber(best.latitude());
+                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                } else
                 console.log("FUUUUUCK", loc);
             }
             break;
@@ -700,8 +721,16 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             } else if (nextWaypt.loc.airpotLatitude){
                 latstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLatitude);
                 lonstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLongitude);
+            } else if (nextWaypt.loc.rwylatitude){
+                latstr += Latongitude.toAbsNumber(nextWaypt.loc.rwylatitude);
+                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.rwylongitude);
             } else {
-                console.log("FUUUUUCK", nextWaypt.loc);
+                let best = findClosestPoorlyNamedWaypoint(nextWaypt.loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
+                if (best) {
+                    latstr += Latongitude.toAbsNumber(best.latitude());
+                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                } else
+                    console.log("FUUUUUCK", nextWaypt.loc);
             }
             break;
         default:
@@ -810,4 +839,12 @@ function newRunwayToOld(airport, currentRunway) {
 
 function oldRunwayToNew(airport, oldRunway) {
     return movedRunways[airport].some(renameObj => renameObj.orig === oldRunway.trim()) ? movedRunways[airport].find(renameObj => renameObj.orig === oldRunway.trim()).neww : oldRunway;
+}
+
+function findClosestPoorlyNamedWaypoint(name, locLat, locLon) {
+    let distarr = awfullyNamedWaypoints[name.trim()].map(waypt => Latongitude.distance(waypt.latitude(), waypt.longitude(), locLat, locLon));
+
+    let minDist = Math.min(...distarr);
+
+    return awfullyNamedWaypoints[name.trim()][distarr.findIndex(thing => thing === minDist)];
 }

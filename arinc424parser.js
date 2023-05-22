@@ -545,6 +545,9 @@ const childClasses = [
         /** @type Latongitude */
         reallongtude;
 
+        /** @type boolean */
+        canBeNavigatedTo;
+
         latitude = () => {
             return this.reallatitude ? this.reallatitude : new Error("No latitude on the books")
         }
@@ -573,6 +576,7 @@ const childClasses = [
 
                     out.recognizedLine = true;
                     out.completed = true;
+                    out.canBeNavigatedTo = true;
                     return out;
                 }
             }
@@ -597,6 +601,9 @@ const childClasses = [
 
         /** @type Latongitude */
         DMELongitude;
+
+        /** @type boolean */
+        canBeNavigatedTo;
 
         latitude = () => {
             return this.vorLatitude ? this.vorLatitude : this.DMELatitude ? this.DMELatitude : new Error("No latitude on the books")
@@ -633,6 +640,7 @@ const childClasses = [
 
                     out.recognizedLine = true;
                     out.completed = true;
+                    out.canBeNavigatedTo = true;
                     return out;
                 }
             }
@@ -646,9 +654,11 @@ const childClasses = [
         ident;
         length;
         magbearing;
+        /** @type boolean */
+        canBeNavigatedTo;
 
-        latitude() { return this.rwylatitude}
-        longitude() { return this.rwylongitude}
+        latitude() { return this.rwylatitude }
+        longitude() { return this.rwylongitude }
 
         rwylatitude;
         rwylongitude;
@@ -677,6 +687,7 @@ const childClasses = [
 
                     out.recognizedLine = true;
                     out.completed = true;
+                    out.canBeNavigatedTo = true;
                     return out;
                 }
             }
@@ -691,8 +702,11 @@ const childClasses = [
         longestRunwayLength;
         ataDesig;
 
-        latitude() { return this.airpotLatitude}
-        longitude() { return this.airpotLongitude}
+        /** @type boolean */
+        canBeNavigatedTo;
+
+        latitude() { return this.airpotLatitude }
+        longitude() { return this.airpotLongitude }
 
         airpotLatitude;
         airpotLongitude;
@@ -720,8 +734,8 @@ const childClasses = [
                     out.ifrCapable = splitData[6];
                     out.longestRwySurface = splitData[7];
 
-                    out.rwylatitude = new Latongitude(splitData[8], splitData.slice(9, 9 + 4).map(val => Number.parseInt(val)));
-                    out.rwylongitude = new Latongitude(splitData[13], splitData.slice(14, 14 + 4).map(val => Number.parseInt(val)));
+                    out.airpotLatitude = new Latongitude(splitData[8], splitData.slice(9, 9 + 4).map(val => Number.parseInt(val)));
+                    out.airpotLongitude = new Latongitude(splitData[13], splitData.slice(14, 14 + 4).map(val => Number.parseInt(val)));
 
                     out.magneticVariation = splitData[18];
                     out.elevation = splitData[19];
@@ -739,6 +753,7 @@ const childClasses = [
 
                     out.recognizedLine = true;
                     out.completed = true;
+                    out.canBeNavigatedTo = true;
                     return out;
                 }
             }
