@@ -26,7 +26,13 @@ With the folder in mind, clone the repo.
 
 Not sure what cloning is? See [github's tutorial](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). Note that you can just download the zip.
 
-### Finding a home for your files
+## Finding a home for your files
+Now that we got files, let's get fg to use them!
+
+### The easy, best way:
+Take the folder that you want (`2020.3`/`2020.4` from above) and go into the fg launcher, goto `Add-ons` and add the folder as a custom scenery folder. It is as easy as that! 
+
+### The hard, not-as-good way
 Now, locate where your `FLIGHTGEAR SCENERY` folder is located. [Wiki](https://wiki.flightgear.org/$FG_SCENERY)
 
 Some common places to look are:
@@ -44,7 +50,7 @@ Goto your fg root, and from there, find
 ### Placing your files
 In the scenery directory should be a folder called `Airports`, open it.
 
-Now, take the contents of the folder you chose to use earlier (2020.3/4) and place the subfolders in the Airports folder. If you are in the `Airports` folder, it should have 5 folders inside of it when you are done, namely `C`, `K`, `N`, `P`, `T`
+Now, take the contents of the folder you chose to use earlier (2020.3/4) and merge the Airports folder in the 2020.X folder with the one there.
 
 And that should be it!
 
@@ -52,7 +58,7 @@ And that should be it!
 First, this is ***not*** a complete dataset for the whole world, only airports under the purview of the FAA. To check if your airport is supported, use this website `https://www.airnav.com/airport`. They get their data from the same place as me, so if they don't have it, I won't either
 
 ## How do I run it?
-This does not run out of the box, unfortunately. You need to download the CIFP, extract it, and then point a variable in `index.js` to the meat in the folder you just unzipped.
+This does not run out of the box, unfortunately. You need to download the CIFP, extract it, and rename the folder to `current_cifp`.
 
 Next, we need an `apt.dat` from flightgear in order to handle runways that have moved (with respect to earth's shifting magnetic field). This should be under `fgdata/Airports` in your flightgear install. It will come as a tarball, so windows users will need extra software to uncompress it.
 

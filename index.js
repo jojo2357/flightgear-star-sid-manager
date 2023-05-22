@@ -68,13 +68,13 @@ for (let i = 2; i < oldData.length; i++) {
     }
 }
 
-const data = fs.readFileSync("CIFP_230518/FAACIFP18").toString().split(/\r?\n/g);
+const data = fs.readFileSync("current_cifp/FAACIFP18").toString().split(/\r?\n/g);
 
 let realRunways = {};
 
 /** @type {ParseResult[]} */
 const it = data.reduce((out, dater) => {
-    let vahl = parseLine(dater); // todo investigate why no location for KAPF
+    let vahl = parseLine(dater);
     if (vahl.recognizedLine) {
         out.push(vahl);
 
@@ -194,10 +194,10 @@ for (const movedRunwaysKey in movedRunways) {
 
     let outstring = `<PropertyList build="By jojo2357, with FAA data. Data factor = ${(it.length / data.length).toFixed(4)}">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
 
-    fs.mkdirSync(path.join(process.cwd(), "2020.4", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "2020.4", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
-    fs.mkdirSync(path.join(process.cwd(), "Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
+    fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
+    // fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
+    // fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
     fs.mkdirSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
 }
@@ -448,12 +448,12 @@ for (const currentAirport in thingey) {
     }
     future_branch_outstring += `\t</Airport>\n</ProceduresDB>\n`;
     current_branch_outstring += `\t</Airport>\n</ProceduresDB>\n`;
-    fs.mkdirSync(path.join(process.cwd(), "2020.4", ...currentAirport.split("").slice(0, -1)), {recursive: true});
-    fs.mkdirSync(path.join(process.cwd(), "2020.3", ...currentAirport.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "2020.4", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
-    fs.writeFileSync(path.join(process.cwd(), "2020.3", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
-    fs.mkdirSync(path.join(process.cwd(), "Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.mkdirSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
+    fs.writeFileSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
     fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
 }
