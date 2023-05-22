@@ -62,7 +62,9 @@ This does not run out of the box, unfortunately. You need to download the CIFP, 
 
 Next, we need an `apt.dat` from flightgear in order to handle runways that have moved (with respect to earth's shifting magnetic field). This should be under `fgdata/Airports` in your flightgear install. It will come as a tarball, so windows users will need extra software to uncompress it.
 
-With the uncompressed `apt.dat` placed next to `index.js`, we can run it all with `node index.js`. However, you may need to allocate more memory than default, and you can do so (at least in 12.19 which I am running, long story) by adding `--max-old-space-size=1000000000` which should be enough. You may want to comment out all references to `Airports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
+With the uncompressed `apt.dat` placed next to `index.js`, we can run it all with `node index.js`. 
+
+You may want to comment out all references to `LocalAirports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
 
 If you dont have node installed, you can get it [here](https://nodejs.org/en/download). I use 12.19.0 because there are a lot of changed that I CBA to keep up with all the changes.
 
@@ -71,4 +73,4 @@ No. If I am going to translate, I am going to c(\\+\\+)? for compat with fg and 
 
 ### Legal
 If you use any of this software, I am not liable for any bad outcomes. 
-This software is released under the Glorious People's License (GPL) V3 and a copy of the license can be found in LICENSE.
+This software is released under GPL V3 and a copy of the license can be found in LICENSE.
