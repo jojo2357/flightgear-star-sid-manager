@@ -66,6 +66,8 @@ With the uncompressed `apt.dat` placed next to `index.js`, we can run it all wit
 
 You may want to comment out all references to `LocalAirports` and `realairports`, as those are local symlinks to my installs so I can automagically just have my fg data updated when i run it.
 
+Also, if memory usage is of the essence, you can trade some runtime for lesser memory usage by adding the node flag `--expose-gc`. On my machine, I saw ~10-20% increase in time for a ~30%-40% degrease in memory used.
+
 If you dont have node installed, you can get it [here](https://nodejs.org/en/download). I use 12.19.0 because there are a lot of changed that I CBA to keep up with all the changes.
 
 ### Please python?
