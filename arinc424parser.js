@@ -212,6 +212,24 @@ class Latongitude {
         return (Math.pow(lata.value - latb.value, 2) + Math.pow(lona.value - lonb.value, 2));
     }
 
+    static realDistance(lat1,lon1,lat2,lon2) {
+        var R = 3440.1; // Radius of the earth in km
+        var dLat = this.deg2rad(lat2-lat1);  // deg2rad below
+        var dLon = this.deg2rad(lon2-lon1);
+        var a =
+            Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
+            Math.sin(dLon/2) * Math.sin(dLon/2)
+        ;
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c; // Distance in km
+        return d;
+    }
+
+    static deg2rad(deg) {
+        return deg * (Math.PI/180)
+    }
+
     /**
      * @param {String} hemisphere
      * @param {number|number[]} value
@@ -227,7 +245,7 @@ class Latongitude {
     }
 
     static toAbsNumber(latongitude) {
-        return latongitude ? latongitude.value * (latongitude.hemisphere === "S" || latongitude.hemisphere === "W" ? -1 : 1) : 0;
+        return latongitude ? (latongitude.value * (latongitude.hemisphere === "S" || latongitude.hemisphere === "W" ? -1 : 1)).toFixed(8) : (0).toFixed(0);
     }
 }
 
@@ -677,7 +695,7 @@ const childClasses = [
                     out.parentident = splitData[0];
                     out.ICAO = splitData[1];
                     out.ident = splitData[2];
-                    out.length = splitData[4];
+                    // out.length = splitData[4];
                     out.magbearing = splitData[5];
 
                     if (splitData[6])
@@ -726,30 +744,30 @@ const childClasses = [
 
                     out.ident = splitData[0];
                     out.ICAO = splitData[1];
-                    out.ataDesig = splitData[2];
+                    // out.ataDesig = splitData[2];
                     if (splitData[3] !== "0")
                         return ParseResult.ERROR;
                     out.speedLimitAltitude = splitData[4];
-                    out.longestRunwayLength = splitData[5];
-                    out.ifrCapable = splitData[6];
-                    out.longestRwySurface = splitData[7];
+                    // out.longestRunwayLength = splitData[5];
+                    // out.ifrCapable = splitData[6];
+                    // out.longestRwySurface = splitData[7];
 
                     out.airpotLatitude = new Latongitude(splitData[8], splitData.slice(9, 9 + 4).map(val => Number.parseInt(val)));
                     out.airpotLongitude = new Latongitude(splitData[13], splitData.slice(14, 14 + 4).map(val => Number.parseInt(val)));
 
-                    out.magneticVariation = splitData[18];
-                    out.elevation = splitData[19];
-                    out.speedLimit = splitData[20];
+                    // out.magneticVariation = splitData[18];
+                    // out.elevation = splitData[19];
+                    // out.speedLimit = splitData[20];
                     out.recommendedNavaid = splitData[21];
                     out.navaidICAO = splitData[22];
-                    out.transitionAltitude = splitData[23];
-                    out.transitionLevel = splitData[24];
-                    out.isPublic = splitData[25];
-                    out.timezone = splitData[26];
-                    out.daylight = splitData[27];
-                    out.magneticOrTrue = splitData[28];
-                    out.datumCode = splitData[29];
-                    out.fieldName = splitData[30];
+                    // out.transitionAltitude = splitData[23];
+                    // out.transitionLevel = splitData[24];
+                    // out.isPublic = splitData[25];
+                    // out.timezone = splitData[26];
+                    // out.daylight = splitData[27];
+                    // out.magneticOrTrue = splitData[28];
+                    // out.datumCode = splitData[29];
+                    // out.fieldName = splitData[30];
 
                     out.recognizedLine = true;
                     out.completed = true;

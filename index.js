@@ -24,6 +24,8 @@ const simpleRunwayNames = ["R", "L", "C", " "];
 
 let oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
+const isJojo = require("os").userInfo().username === "jojo2357";
+
 let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
@@ -46,32 +48,7 @@ for (let i = 2; i < oldData.length; i++) {
         if (debug && !debugAirports.includes(airpourtCode))
             continue;
 
-/*        newXRunways[airpourtCode] = [];
-        fs.existsSync(path.join(process.cwd(), "newData", ...airpourtCode.split("").slice(0, -1), `${airpourtCode.trim()}.dat`)) && fs.readFileSync(path.join(process.cwd(), "newData", ...airpourtCode.split("").slice(0, -1), `${airpourtCode.trim()}.dat`)).toString().split(/\r?\n/).forEach(line => {
-            if (line.trim().length && line.startsWith("100 ")) {
-                let exploded = line.match(/^100\s+\d+(?:\.\d+)?\s+\d+\s+\d+\s+\d+(?:\.\d+)?\s+\d\s+\d\s+\d\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)(?:\s+\d+(?:\.\d+)?\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+([0-3]?\d{0,2}[A-Z]?)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+))?/);
-                // if (newXRunways[airpourtCode].every(rwy => rwy.ident !== exploded[1])) {
-                    let latnum = Number.parseFloat(exploded[2]);
-                    let lonnum = Number.parseFloat(exploded[3]);
-                    newXRunways[airpourtCode].push({
-                        ident: exploded[1],
-                        lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
-                        lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
-                    });
-                    if (exploded.filter(it => it).length > 4) {
-                        latnum = Number.parseFloat(exploded[5]);
-                        lonnum = Number.parseFloat(exploded[6]);
-                        newXRunways[airpourtCode].push({
-                            ident: exploded[4],
-                            lat: new Latongitude(latnum > 0 ? "N" : "S", Math.abs(latnum)),
-                            lon: new Latongitude(lonnum > 0 ? "E" : "W", Math.abs(lonnum)),
-                        })
-                    }
-                // }
-            }
-        })*/
         oldRunways[airpourtCode] = [];
-        // oldXtonewXMap[airpourtCode] = {};
     } else if (!airpourtCode) {
         continue;
     } else if (oldData[i].match(/^100\s/)) {
@@ -132,40 +109,6 @@ let it = data.reduce((out, dater) => {
 
             knownWaypoints[vahl.parentident + vahl.ident] = vahl;
 
-/*            if (!oldRunways[vahl.parentident])
-                return out;
-
-            let oldCandidates = oldRunways[vahl.parentident].map(it => it);
-
-            let sortedOldCandidates = oldCandidates.map(it => it).sort((a, b) => Latongitude.distance(a.lat, a.lon, vahl.rwylatitude, vahl.rwylongitude) - Latongitude.distance(b.lat, b.lon, vahl.rwylatitude, vahl.rwylongitude))
-
-            if (!movedRunways[vahl.parentident]) {
-                movedRunways[vahl.parentident] = [];
-            }
-
-            if (newXRunways[vahl.parentident].some(way => way.ident === vahl.ident.slice(2).trim()) && !oldRunways[vahl.parentident].some(way => way.ident === vahl.ident.slice(2).trim())) {
-                let newRwy = newXRunways[vahl.parentident].find(way => way.ident === vahl.ident.slice(2).trim());
-
-                movedRunways[vahl.parentident].push({
-                    orig: oldCandidates.sort((a,b) => Latongitude.distance(a.lat, a.lon, newRwy.lat, newRwy.lon) - Latongitude.distance(b.lat, b.lon, newRwy.lat, newRwy.lon))[0],
-                    neww: vahl.ident.substring(2).trim()
-                });
-            } else if (newXRunways[vahl.parentident].some(way => way.ident === vahl.ident.slice(2).trim()) && oldRunways[vahl.parentident].some(way => way.ident === vahl.ident.slice(2).trim())) {
-                const newRwy = newXRunways[vahl.parentident].find(way => way.ident === vahl.ident.slice(2).trim());
-                const oldRwy = oldRunways[vahl.parentident].find(way => way.ident === vahl.ident.slice(2).trim());
-                if (Math.abs(newRwy.lat.value - oldRwy.lat.value) < xplaneDist && Math.abs(newRwy.lon.value - oldRwy.lon.value) < xplaneDist) {
-                    // found it! but it wasnt renamed so sit tight
-                } else {
-                    // is there a better option?
-                    if (oldRunways[vahl.parentident].map(it => it).sort((a,b) => Latongitude.distance(a.lat, a.lon, newRwy.lat, newRwy.lon) - Latongitude.distance(b.lat, b.lon, newRwy.lat, newRwy.lon))[0].ident === oldRwy.ident) {
-                        // yep we were right
-                    } else {
-                        console.log("????");
-                    }
-                }
-            }*/
-            // console.log(oldCandidates);
-            // this part determines if this runway we observed exists in fg and was moved
             if (oldRunways[vahl.parentident] && vahl.ident.match(/\d{2}([^WG]$|$)/)) {
                 if (!movedRunways[vahl.parentident]) {
                     movedRunways[vahl.parentident] = [];
@@ -287,13 +230,13 @@ for (const movedRunwaysKey in movedRunways) {
 
     fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
-    // fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
-    // fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
-    fs.mkdirSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
+    isJojo && fs.mkdirSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
+    isJojo && fs.writeFileSync(path.join(process.cwd(), "realairports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
 }
 
 console.log("Wrote renames");
+
+let maxDist = 0;
 
 const baseTabs = "\t".repeat(2);
 
@@ -543,10 +486,10 @@ for (const currentAirport in thingey) {
     fs.mkdirSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
     fs.writeFileSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
-    fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
-    fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
-    fs.writeFileSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
+    isJojo && fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    isJojo && fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    isJojo && fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
+    isJojo && fs.writeFileSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
 }
 
 //console.log(thing);
@@ -717,8 +660,10 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     out += "</Type>\n";
 
     // lat/lon
-    let latstr = `${tabs}<Latitude>`;
-    let lonstr = `${tabs}<Longitude>`;
+    let latobj;
+    let lonobj;
+    // let latstr = `${tabs}<Latitude>`;
+    // let lonstr = `${tabs}<Longitude>`;
 
     switch (waypt.obj.fix_path_termination) {
         case "IF":
@@ -733,25 +678,25 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "HA":
         case "CF": // see above comments
             if (waypt.loc.reallatitude) {
-                latstr += Latongitude.toAbsNumber(waypt.loc.reallatitude);
-                lonstr += Latongitude.toAbsNumber(waypt.loc.reallongtude);
+                latobj = waypt.loc.reallatitude;
+                lonobj = waypt.loc.reallongtude;
             } else if (waypt.loc.vorLatitude){
-                latstr += Latongitude.toAbsNumber(waypt.loc.vorLatitude);
-                lonstr += Latongitude.toAbsNumber(waypt.loc.vorLongitude);
+                latobj = waypt.loc.vorLatitude;
+                lonobj = waypt.loc.vorLongitude;
             } else if (waypt.loc.DMELatitude){
-                latstr += Latongitude.toAbsNumber(waypt.loc.DMELatitude);
-                lonstr += Latongitude.toAbsNumber(waypt.loc.DMELongitude);
+                latobj = waypt.loc.DMELatitude;
+                lonobj = waypt.loc.DMELongitude;
             } else if (waypt.loc.rwylatitude){
-                latstr += Latongitude.toAbsNumber(waypt.loc.rwylatitude);
-                lonstr += Latongitude.toAbsNumber(waypt.loc.rwylongitude);
+                latobj = waypt.loc.rwylatitude;
+                lonobj = waypt.loc.rwylongitude;
             } else if (waypt.loc.airpotLatitude){
-                latstr += Latongitude.toAbsNumber(waypt.loc.airpotLatitude);
-                lonstr += Latongitude.toAbsNumber(waypt.loc.airpotLongitude);
+                latobj = waypt.loc.airpotLatitude;
+                lonobj = waypt.loc.airpotLongitude;
             } else {
                 let best = findClosestPoorlyNamedWaypoint(waypt.loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
                 if (best) {
-                    latstr += Latongitude.toAbsNumber(best.latitude());
-                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                    latobj = best.latitude();
+                    lonobj = best.longitude();
                 } else
                     console.log("FUUUUUCK", waypt.loc);
             }
@@ -768,25 +713,25 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             }
 
             if (loc.vorLatitude){
-                latstr += Latongitude.toAbsNumber(loc.vorLatitude);
-                lonstr += Latongitude.toAbsNumber(loc.vorLongitude);
+                latobj = loc.vorLatitude;
+                lonobj = loc.vorLongitude;
             } else if (loc.DMELatitude){
-                latstr += Latongitude.toAbsNumber(loc.DMELatitude);
-                lonstr += Latongitude.toAbsNumber(loc.DMELongitude);
+                latobj = loc.DMELatitude;
+                lonobj = loc.DMELongitude;
             } else if (loc.reallatitude) {
-                latstr += Latongitude.toAbsNumber(loc.reallatitude);
-                lonstr += Latongitude.toAbsNumber(loc.reallongtude);
+                latobj = loc.reallatitude;
+                lonobj = loc.reallongtude;
             } else if (loc.airpotLatitude){
-                latstr += Latongitude.toAbsNumber(loc.airpotLatitude);
-                lonstr += Latongitude.toAbsNumber(loc.airpotLongitude);
+                latobj = loc.airpotLatitude;
+                lonobj = loc.airpotLongitude;
             } else if (loc.rwylatitude){
-                latstr += Latongitude.toAbsNumber(loc.rwylatitude);
-                lonstr += Latongitude.toAbsNumber(loc.rwylongitude);
+                latobj = loc.rwylatitude;
+                lonobj = loc.rwylongitude;
             } else {
                 let best = findClosestPoorlyNamedWaypoint(loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
                 if (best) {
-                    latstr += Latongitude.toAbsNumber(best.latitude());
-                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                    latobj = best.latitude();
+                    lonobj = best.longitude();
                 } else
                 console.log("FUUUUUCK", loc);
             }
@@ -796,67 +741,34 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "VA":
         case "CA":
         case "CI":
-            latstr += "0";
-            lonstr += "0";
+            // latstr += "0";
+            // lonstr += "0";
             break;
         case "VI":
-/*
-            if (nextWaypt && nextWaypt.obj.fix_path_navaid.trim().length) {
-                if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()]) {
-                    if (!knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()]) {
-                        latstr += '0.0';
-                        lonstr += '0.0';
-                    } else if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].vorLatitude){
-                        latstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].vorLatitude);
-                        lonstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].vorLongitude);
-                    } else if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].DMELatitude){
-                        latstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].DMELatitude);
-                        lonstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].DMELongitude);
-                    } else if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].reallatitude) {
-                        latstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].reallatitude);
-                        lonstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].reallongtude);
-                    } else if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].airpotLatitude){
-                        latstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].airpotLatitude);
-                        lonstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].airpotLongitude);
-                    } else if (knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].rwylatitude){
-                        latstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].rwylatitude);
-                        lonstr += Latongitude.toAbsNumber(knownWaypoints[nextWaypt.obj.fix_path_navaid.trim()].rwylongitude);
-                    } else {
-                        let best = findClosestPoorlyNamedWaypoint(nextWaypt.obj.fix_path_navaid, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
-                        if (best) {
-                            latstr += Latongitude.toAbsNumber(best.latitude());
-                            lonstr += Latongitude.toAbsNumber(best.longitude());
-                        } else
-                            console.log("FUUUUUCK", nextWaypt.loc);
-                    }
-                    break;
-                }
-            }
-*/
         case "VM":
             if (!nextWaypt) {
-                latstr += '0.0';
-                lonstr += '0.0';
+                // latstr += '0.0';
+                // lonstr += '0.0';
             } else if (nextWaypt.loc.vorLatitude){
-                latstr += Latongitude.toAbsNumber(nextWaypt.loc.vorLatitude);
-                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.vorLongitude);
+                latobj = nextWaypt.loc.vorLatitude;
+                lonobj = nextWaypt.loc.vorLongitude;
             } else if (nextWaypt.loc.DMELatitude){
-                latstr += Latongitude.toAbsNumber(nextWaypt.loc.DMELatitude);
-                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.DMELongitude);
+                latobj = nextWaypt.loc.DMELatitude;
+                lonobj = nextWaypt.loc.DMELongitude;
             } else if (nextWaypt.loc.reallatitude) {
-                latstr += Latongitude.toAbsNumber(nextWaypt.loc.reallatitude);
-                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.reallongtude);
+                latobj = nextWaypt.loc.reallatitude;
+                lonobj = nextWaypt.loc.reallongtude;
             } else if (nextWaypt.loc.airpotLatitude){
-                latstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLatitude);
-                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.airpotLongitude);
+                latobj = nextWaypt.loc.airpotLatitude;
+                lonobj = nextWaypt.loc.airpotLongitude;
             } else if (nextWaypt.loc.rwylatitude){
-                latstr += Latongitude.toAbsNumber(nextWaypt.loc.rwylatitude);
-                lonstr += Latongitude.toAbsNumber(nextWaypt.loc.rwylongitude);
+                latobj = nextWaypt.loc.rwylatitude;
+                lonobj = nextWaypt.loc.rwylongitude;
             } else {
                 let best = findClosestPoorlyNamedWaypoint(nextWaypt.loc, knownWaypoints[waypt.obj.airportIDENT.trim()].latitude(), knownWaypoints[waypt.obj.airportIDENT.trim()].longitude());
                 if (best) {
-                    latstr += Latongitude.toAbsNumber(best.latitude());
-                    lonstr += Latongitude.toAbsNumber(best.longitude());
+                    latobj = best.latitude();
+                    lonobj = best.longitude();
                 } else
                     console.log("FUUUUUCK", nextWaypt.loc);
             }
@@ -865,7 +777,30 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             console.log("Fuck", waypt.obj.fix_path_termination);
     }
 
-    out += `${latstr}</Latitude>\n${lonstr}</Longitude>\n`;
+/*    if (latobj && lonobj) {
+        let dist = Latongitude.realDistance(latobj.value, lonobj.value, knownWaypoints[waypt.obj.airportIDENT].latitude().value, knownWaypoints[waypt.obj.airportIDENT].longitude().value);
+
+        if (dist > maxDist) {
+            maxDist = dist;
+            console.log("New Record", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
+        } else if (dist > 300) {
+            console.log("Far Awaey", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
+        }
+    }*/
+
+    out += `${tabs}<Latitude>${Latongitude.toAbsNumber(latobj)}</Latitude>\n${tabs}<Longitude>${Latongitude.toAbsNumber(lonobj)}</Longitude>\n`;
+
+    // Speed
+    if (waypt.obj.nav_speed_limit.trim().length === 0)
+        out += `${tabs}<Speed>0</Speed>\n`;
+    else
+        out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
+
+    // Altitude
+    out += getAltitudes(waypt.obj, tabs);
+
+    // Altitude Restriction
+    out += tabs + getAltitudeRestriction(waypt.obj.nav_altitude);
 
     if (waypt.obj.fix_description.charAt(1) === "Y") {
         out += `${tabs}<Flytype>Fly-over</Flytype>\n`;
@@ -877,38 +812,26 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     // if (waypt.obj.nav_speed_limit.trim().length)
     //     out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
 
-    // Altitude
-    out += getAltitudes(waypt.obj, tabs);
-
-    // Altitude Restriction
-    out += tabs + getAltitudeRestriction(waypt.obj.nav_altitude);
-
-    // Speed
-    if (waypt.obj.nav_speed_limit.trim().length === 0)
-        out += `${tabs}<Speed>0</Speed>\n`;
-    else
-        out += `${tabs}<Speed>${waypt.obj.nav_speed_limit.trim()}</Speed>\n`;
-
     // Hdg
     if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "FA" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
-        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`;
+        out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
 /*        if (waypt.obj.fix_path_termination === "VI" && nextWaypt) {
             out += `${tabs}<RadialtoIntercept>${2 * (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 180) - (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 360) + 180}</RadialtoIntercept>\n`
         }*/
     } else if (waypt.obj.fix_path_termination === "CA" || waypt.obj.fix_path_termination === "VI") {
         out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
-        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+        out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
     } else if (waypt.obj.fix_path_termination === "HM" || waypt.obj.fix_path_termination === "HF" || waypt.obj.fix_path_termination === "HA") {
-        out += `${tabs}<Hld_Rad_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hld_Rad_value>\n`;
+        out += `${tabs}<Hld_Rad_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hld_Rad_value>\n`;
         out += `${tabs}<Hld_Time_or_Dist>${waypt.obj.fix_distance.startsWith("T") ? "Time" : "Dist"}</Hld_Time_or_Dist>\n`;
-        out += `${tabs}<Hld_td_value>${waypt.obj.fix_distance.match(/\d+/) * 0.1}</Hld_td_value>\n`;
+        out += `${tabs}<Hld_td_value>${(waypt.obj.fix_distance.match(/\d+/) * 0.1).toFixed(1)}</Hld_td_value>\n`;
         out += `${tabs}<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>\n`;
     } else if (waypt.obj.fix_path_termination === "VR") {
         // console.log();
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
-        out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
-        out += `${tabs}<RadialtoIntercept>${Number.parseInt(waypt.obj.fix_theta) * 0.1}</RadialtoIntercept>\n`
+        out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
+        out += `${tabs}<RadialtoIntercept>${(Number.parseInt(waypt.obj.fix_theta) * 0.1).toFixed(1)}</RadialtoIntercept>\n`;
         // RadialtoIntercept
     }
 
@@ -954,7 +877,7 @@ function specialWaypt(waypt, tagName, tabDepth, useOldRunway, nextWaypt) {
     out += `${tabs}<Latitude>0</Latitude>\n${tabs}<Longitude>0</Longitude>\n`;
 
     out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
-    out += `${tabs}<Hdg_Crs_value>${Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)}</Hdg_Crs_value>\n`
+    out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`
 
     out += `${'\t'.repeat(tabDepth)}</${tagName}>\n`;
 
