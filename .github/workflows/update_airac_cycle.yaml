@@ -38,8 +38,12 @@ jobs:
       - name: run index
         run: node index.js
 
+      - name: Set commit name variable
+        run: |
+          echo "COMMIT_TITLE=AUTOMATIC: Update to $(date +"%y%m%d") cycle" >> $GITHUB_ENV
+
       - name: commit files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           create_branch: false
-          commit_message: 'automatic build'
+          commit_message: ${{ env.COMMIT_TITLE }}
