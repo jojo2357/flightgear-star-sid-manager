@@ -36,7 +36,7 @@ jobs:
         run: wget "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" && unzip -o "CIFP_$(date +"%y%m%d").zip" FAACIFP18 -d current_cifp
 
       - name: get apt.dat
-        run: wget "https://gitlab.com/flightgear/fgdata/-/raw/release/2020.3/Airports/apt.dat.gz" && gunzip -o apt.dat.gz
+        run: wget "https://gitlab.com/flightgear/fgdata/-/raw/release/2020.3/Airports/apt.dat.gz" && gunzip -f apt.dat.gz
 
       - name: run index
         run: node index.js
