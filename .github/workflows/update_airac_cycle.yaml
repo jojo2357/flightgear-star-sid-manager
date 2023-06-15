@@ -32,6 +32,9 @@ jobs:
         with:
           node-version: 12
 
+      - name: get new cifp
+        run: wget "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" && unzip $(date +"%y%m%d") FAACIFP18 -d current_cifp
+
       - name: run index
         run: node index.js
 
