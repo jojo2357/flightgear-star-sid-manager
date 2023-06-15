@@ -1,0 +1,41 @@
+name: Update to new airac cycle
+
+on:
+  schedule:
+    # Run at 0905Z every day to check if the FAA just activated a new AIRAC which happens at 0901Z
+    -  cron: '38 21 * * *'
+
+jobs:
+  check_cycle:
+    runs-on: ubuntu-latest
+    name: Check for new airac
+    outputs:
+      should-run: ${{ steps.should_run.outputs.should_run }}
+    steps:
+      - id: should_run
+        continue-on-error: true
+        name: check for new airac
+        run: ! curl --fail -I -s "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" > /dev/null && echo "::set-output name=should_run::false
+
+  run:
+    needs: check_cycle
+    if: ${{ needs.check_cycle.outputs.should_run != 'false' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout project
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
+      - name: run index
+        run: node index.js
+
+      - name: commit files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          create_branch: false
+          commit_message: automatic build
