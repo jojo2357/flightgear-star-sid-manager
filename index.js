@@ -29,6 +29,25 @@ const isJojo = require("os").userInfo().username === "jojo2357";
 let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
+const copyrightString = `<!--
+ ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+ ~
+ ~ Copyright (c) ${new Date().getFullYear()} jojo2357
+ ~
+ ~  This program is free software: you can redistribute it and/or modify
+ ~  it under the terms of the GNU General Public License as published by
+ ~  the Free Software Foundation, either version 3 of the License, or
+ ~  (at your option) any later version.
+ ~
+ ~  This program is distributed in the hope that it will be useful,
+ ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ~  GNU General Public License for more details.
+ ~
+ ~  You should have received a copy of the GNU General Public License
+ ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->\n`;
+
 // let guessUsingUpdatedXplane = true;
 
 let airpourtCode;
@@ -225,25 +244,7 @@ for (const movedRunwaysKey in movedRunways) {
     if (movedRunways[movedRunwaysKey].some(thing => movedRunways[movedRunwaysKey].some(other => thing !== other && Math.abs(Number.parseInt(thing.orig.substring(0, 2)) - Number.parseInt(other.orig.substring(0, 2))) <= 1)))
         console.log(movedRunways[movedRunwaysKey]);
 
-    let outstring = `<!--
- ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
- ~
- ~ Copyright (c) ${new Date().getFullYear()} jojo2357
- ~
- ~  This program is free software: you can redistribute it and/or modify
- ~  it under the terms of the GNU General Public License as published by
- ~  the Free Software Foundation, either version 3 of the License, or
- ~  (at your option) any later version.
- ~
- ~  This program is distributed in the hope that it will be useful,
- ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
- ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- ~  GNU General Public License for more details.
- ~
- ~  You should have received a copy of the GNU General Public License
- ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
- -->
-<PropertyList build="By jojo2357, with FAA data.">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
+    let outstring = `${copyrightString}<PropertyList build="By jojo2357, with FAA data.">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
 
     fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
@@ -261,8 +262,8 @@ for (const currentAirport in masterDictionary) {
     if (Object.keys(masterDictionary[currentAirport]).length <= 1)
         continue;
     process.stdout.write(`Running on ${currentAirport}  \r`);
-    let future_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
-    let current_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let future_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let current_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
     let namedRoute = masterDictionary[currentAirport];
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
