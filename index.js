@@ -98,7 +98,7 @@ const worldDist =  0.00005;
 const xplaneDist = 0.00001;
 
 /** @type {ParseResult[]} */
-let it = data.reduce((out, dater) => {
+let pointsForFurtherProcessing = data.reduce((out, dater) => {
     let vahl = parseLine(dater);
     if (vahl.recognizedLine) {
         understoodLines++;
@@ -180,8 +180,7 @@ if (global.gc) {
     try { global.gc(); } catch (e) {}
 }
 
-// todo rename this shit
-const thingey = it.reduce((out, curr) => {
+const masterDictionary = pointsForFurtherProcessing.reduce((out, curr) => {
     // process.stdout.write(`Parsing ${windex}/${array.length}\r`);
     if (curr.airportIDENT && oldRunways[curr.airportIDENT]) {
         if (!out[curr.airportIDENT])
@@ -212,13 +211,13 @@ const thingey = it.reduce((out, curr) => {
     return out;
 }, {});
 
-it = undefined;
+pointsForFurtherProcessing = undefined;
 
 if (global.gc) {
     try { global.gc(); } catch (e) {}
 }
 
-const dataFactor = (understoodLines / readLines).toFixed(4);
+const dataFactor = (understoodLines / readLines).toFixed(4); // no longer provided to supress meaningless updates
 for (const movedRunwaysKey in movedRunways) {
     movedRunways[movedRunwaysKey] = movedRunways[movedRunwaysKey].filter(thing => thing.orig !== thing.neww);
     if (!(movedRunways[movedRunwaysKey].length))
@@ -226,7 +225,25 @@ for (const movedRunwaysKey in movedRunways) {
     if (movedRunways[movedRunwaysKey].some(thing => movedRunways[movedRunwaysKey].some(other => thing !== other && Math.abs(Number.parseInt(thing.orig.substring(0, 2)) - Number.parseInt(other.orig.substring(0, 2))) <= 1)))
         console.log(movedRunways[movedRunwaysKey]);
 
-    let outstring = `<PropertyList build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
+    let outstring = `<!--
+  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+  ~
+  ~ Copyright (c) ${new Date().getFullYear()} jojo2357
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+  <PropertyList build="By jojo2357, with FAA data.">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
 
     fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);
@@ -240,13 +257,13 @@ let maxDist = 0;
 
 const baseTabs = "\t".repeat(2);
 
-for (const currentAirport in thingey) {
-    if (Object.keys(thingey[currentAirport]).length <= 1)
+for (const currentAirport in masterDictionary) {
+    if (Object.keys(masterDictionary[currentAirport]).length <= 1)
         continue;
     process.stdout.write(`Running on ${currentAirport}  \r`);
     let future_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
     let current_branch_outstring = `<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
-    let namedRoute = thingey[currentAirport];
+    let namedRoute = masterDictionary[currentAirport];
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
 
@@ -268,22 +285,22 @@ for (const currentAirport in thingey) {
             mainTag = "Sid";
             transitionTag = "Sid_Transition";
 
-            regularTransitions = [route[RouteType["PD"]["3"]], route[RouteType["PD"]["6"]],
-                route[RouteType["PD"]["S"]], route[RouteType["PD"]["V"]]].reduce((out, arr) => {
+            regularTransitions = [route["3"], route["6"],
+                route["S"], route["V"]].reduce((out, arr) => {
                 if (arr) for (const key of Object.keys(arr)) {
                     out[key] = arr[key];
                 }
                 return out;
             }, {});
-            runwayTransitions = [route[RouteType["PD"]["1"]], route[RouteType["PD"]["4"]],
-                route[RouteType["PD"]["F"]], route[RouteType["PD"]["T"]]].reduce((out, arr) => {
+            runwayTransitions = [route["1"], route["4"],
+                route["F"], route["T"]].reduce((out, arr) => {
                 if (arr) for (const key of Object.keys(arr)) {
                     out[key] = arr[key];
                 }
                 return out;
             }, {});
-            commonPoints = [route[RouteType["PD"]["2"]], route[RouteType["PD"]["5"]],
-                route[RouteType["PD"]["8"]], route[RouteType["PD"]["M"]]].filter(it => it).reduce((out, curr) => {
+            commonPoints = [route["2"], route["5"],
+                route["8"], route["M"]].filter(it => it).reduce((out, curr) => {
                 for (const currKey in curr) {
                     out.push(...curr[currKey]);
                 }
@@ -295,22 +312,22 @@ for (const currentAirport in thingey) {
             mainTag = "Star";
             transitionTag = "Star_Transition";
 
-            regularTransitions = [route[RouteType["PE"]["1"]], route[RouteType["PE"]["4"]],
-                route[RouteType["PE"]["7"]], route[RouteType["PE"]["F"]]].reduce((out, arr) => {
+            regularTransitions = [route["1"], route["4"],
+                route["7"], route["F"]].reduce((out, arr) => {
                 if (arr) for (const key of Object.keys(arr)) {
                     out[key] = arr[key];
                 }
                 return out;
             }, {});
-            runwayTransitions = [route[RouteType["PE"]["3"]], route[RouteType["PE"]["6"]],
-                route[RouteType["PE"]["9"]], route[RouteType["PE"]["S"]]].reduce((out, arr) => {
+            runwayTransitions = [route["3"], route["6"],
+                route["9"], route["S"]].reduce((out, arr) => {
                 if (arr) for (const key of Object.keys(arr)) {
                     out[key.slice(2)] = arr[key];
                 }
                 return out;
             }, {});
-            commonPoints = [route[RouteType["PE"]["2"]], route[RouteType["PE"]["5"]],
-                route[RouteType["PE"]["8"]], route[RouteType["PE"]["M"]]].filter(it => it).reduce((out, curr) => {
+            commonPoints = [route["2"], route["5"],
+                route["8"], route["M"]].filter(it => it).reduce((out, curr) => {
                 for (const currKey in curr) {
                     out.push(...curr[currKey]);
                 }
@@ -322,7 +339,7 @@ for (const currentAirport in thingey) {
             mainTag = "Approach";
             transitionTag = "App_Transition";
 
-            regularTransitions = [route[RouteType["PF"]["A"]]].reduce((out, arr) => {
+            regularTransitions = [route["A"]].reduce((out, arr) => {
                 if (arr) for (const key of Object.keys(arr)) {
                     out[key] = arr[key];
                 }
@@ -333,7 +350,7 @@ for (const currentAirport in thingey) {
 
             commonPoints = [
                 "B", "D", "F", "G", "H", "I", "J", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-            ].map(it => route[RouteType["PF"][it]]).filter(it => it).reduce((out, curr) => {
+            ].map(it => route[it]).filter(it => it).reduce((out, curr) => {
                 for (const currKey in curr) {
                     out.push(...curr[currKey]);
                 }
