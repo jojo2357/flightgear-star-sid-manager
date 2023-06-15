@@ -226,24 +226,24 @@ for (const movedRunwaysKey in movedRunways) {
         console.log(movedRunways[movedRunwaysKey]);
 
     let outstring = `<!--
-  ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
-  ~
-  ~ Copyright (c) ${new Date().getFullYear()} jojo2357
-  ~
-  ~  This program is free software: you can redistribute it and/or modify
-  ~  it under the terms of the GNU General Public License as published by
-  ~  the Free Software Foundation, either version 3 of the License, or
-  ~  (at your option) any later version.
-  ~
-  ~  This program is distributed in the hope that it will be useful,
-  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~  GNU General Public License for more details.
-  ~
-  ~  You should have received a copy of the GNU General Public License
-  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-  -->
-  <PropertyList build="By jojo2357, with FAA data.">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
+ ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
+ ~
+ ~ Copyright (c) ${new Date().getFullYear()} jojo2357
+ ~
+ ~  This program is free software: you can redistribute it and/or modify
+ ~  it under the terms of the GNU General Public License as published by
+ ~  the Free Software Foundation, either version 3 of the License, or
+ ~  (at your option) any later version.
+ ~
+ ~  This program is distributed in the hope that it will be useful,
+ ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ~  GNU General Public License for more details.
+ ~
+ ~  You should have received a copy of the GNU General Public License
+ ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->
+<PropertyList build="By jojo2357, with FAA data.">\n\t<runway-rename>\n${movedRunways[movedRunwaysKey].map(thing => `${"\t".repeat(2)}<runway>\n${"\t".repeat(3)}<old-ident>${thing.orig}</old-ident>\n${"\t".repeat(3)}<new-ident>${thing.neww}</new-ident>\n${"\t".repeat(2)}</runway>`).join('\n')}\n\t</runway-rename>\n</PropertyList>`;
 
     fs.mkdirSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...movedRunwaysKey.split("").slice(0, -1), `${movedRunwaysKey}.runway_rename.xml`), outstring);

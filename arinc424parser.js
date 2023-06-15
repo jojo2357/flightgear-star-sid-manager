@@ -390,9 +390,9 @@ class SID_STAR extends ParseResult {
                 out.airportIDENT = splitData[0];
                 out.ICAO_Code = splitData[1];
 
-                out.routeType = RouteType[`P${splitData[2]}`][splitData[4]];
+                out.routeType = splitData[4];
 
-                if (!out.routeType)
+                if (!RouteType[`P${splitData[2]}`][splitData[4]])
                     return ParseResult.ERROR;
 
                 if (splitData[2] === "E")
@@ -482,9 +482,9 @@ const childClasses = [
                     out.airportIDENT = splitData[0];
                     out.ICAO_Code = splitData[1];
 
-                    out.routeType = RouteType[`P${splitData[2]}`][splitData[4]];
+                    out.routeType = splitData[4];
 
-                    if (!out.routeType)
+                    if (!RouteType[`P${splitData[2]}`][splitData[4]])
                         return ParseResult.ERROR;
 
                     if (splitData[2] === "E")
