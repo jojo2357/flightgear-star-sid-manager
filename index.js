@@ -262,8 +262,8 @@ for (const currentAirport in masterDictionary) {
     if (Object.keys(masterDictionary[currentAirport]).length <= 1)
         continue;
     process.stdout.write(`Running on ${currentAirport}  \r`);
-    let future_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
-    let current_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data. Data factor = ${dataFactor}">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let future_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data.">\n\t<Airport ICAOcode="${currentAirport}">\n`;
+    let current_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data.">\n\t<Airport ICAOcode="${currentAirport}">\n`;
     let namedRoute = masterDictionary[currentAirport];
     for (const sidarname in namedRoute) {
         let route = namedRoute[sidarname];
