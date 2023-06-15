@@ -16,7 +16,7 @@ jobs:
       - id: should_run
         continue-on-error: true
         name: check for new airac
-        run: curl --fail -I -s "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" > /dev/null || echo "::set-output name=should_run::false
+        run: curl --fail -I -s "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" > /dev/null || echo "::set-output name=should_run::false"
 
   run:
     needs: check_cycle
