@@ -1323,7 +1323,7 @@
 				<Latitude>39.29810278</Latitude>
 				<Longitude>-78.35240556</Longitude>
 				<Speed>0</Speed>
-				<Altitude>03700</Altitude>
+				<Altitude>04000</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -1344,7 +1344,7 @@
 			<App_Waypoint>
 				<Name>BIPME</Name><!-- TF -->
 				<Type>Normal</Type>
-				<Latitude>39.21859444</Latitude>
+				<Latitude>39.21860556</Latitude>
 				<Longitude>-78.24527778</Longitude>
 				<Speed>0</Speed>
 				<Altitude>02700</Altitude>
@@ -1356,11 +1356,11 @@
 			<App_Waypoint>
 				<Name>WOGDI</Name><!-- TF -->
 				<Type>Normal</Type>
-				<Latitude>39.19372778</Latitude>
-				<Longitude>-78.21182778</Longitude>
+				<Latitude>39.19109722</Latitude>
+				<Longitude>-78.20829167</Longitude>
 				<Speed>0</Speed>
-				<Altitude>02000</Altitude>
-				<AltitudeCons>02013</AltitudeCons>
+				<Altitude>01940</Altitude>
+				<AltitudeCons>01940</AltitudeCons>
 				<AltitudeRestriction>between</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1368,11 +1368,11 @@
 			<App_Waypoint>
 				<Name>WUSBI</Name><!-- TF -->
 				<Type>Normal</Type>
-				<Latitude>39.17181944</Latitude>
-				<Longitude>-78.18240000</Longitude>
+				<Latitude>39.17299167</Latitude>
+				<Longitude>-78.18397500</Longitude>
 				<Speed>0</Speed>
-				<Altitude>01400</Altitude>
-				<AltitudeCons>01400</AltitudeCons>
+				<Altitude>01440</Altitude>
+				<AltitudeCons>01440</AltitudeCons>
 				<AltitudeRestriction>between</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Sp_Turn>Auto</Sp_Turn>
@@ -1437,7 +1437,7 @@
 					<Type>Normal</Type>
 					<Latitude>39.30549722</Latitude>
 					<Longitude>-78.42977500</Longitude>
-					<Speed>0</Speed>
+					<Speed>210</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -1477,7 +1477,7 @@
 					<Type>Normal</Type>
 					<Latitude>39.17473333</Latitude>
 					<Longitude>-78.47049167</Longitude>
-					<Speed>0</Speed>
+					<Speed>210</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>at</AltitudeRestriction>
@@ -1670,7 +1670,19 @@
 		</Approach>
 		<Approach Name="VORADM">
 			<App_Waypoint>
-				<Name>CWINE</Name><!-- IF -->
+				<Name>MRB</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>39.38557222</Latitude>
+				<Longitude>-77.84835556</Longitude>
+				<Speed>0</Speed>
+				<Altitude>03000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>CWINE</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>39.20430556</Latitude>
 				<Longitude>-78.07035000</Longitude>
@@ -1760,19 +1772,21 @@
 					<Flytype>Fly-over</Flytype>
 					<Sp_Turn>Auto</Sp_Turn>
 				</AppTr_Waypoint>
-			</App_Transition>
-			<App_Transition Name="MRB">
 				<AppTr_Waypoint>
-					<Name>MRB</Name><!-- IF -->
-					<Type>Normal</Type>
-					<Latitude>39.38557222</Latitude>
-					<Longitude>-77.84835556</Longitude>
+					<Name>CWINE</Name><!-- HF -->
+					<Type>Hold</Type>
+					<Latitude>39.20430556</Latitude>
+					<Longitude>-78.07035000</Longitude>
 					<Speed>0</Speed>
-					<Altitude>0</Altitude>
+					<Altitude>03000</Altitude>
 					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
+					<AltitudeRestriction>above</AltitudeRestriction>
 					<Flytype>Fly-by</Flytype>
-					<Sp_Turn>Auto</Sp_Turn>
+					<Hld_Rad_value>230.7</Hld_Rad_value>
+					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
+					<Hld_td_value>1.0</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Left</Hld_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
