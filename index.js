@@ -98,7 +98,10 @@ for (let i = 2; i < oldData.length; i++) {
 oldData = undefined;
 
 if (global.gc) {
-    try { global.gc(); } catch (e) {}
+    try {
+        global.gc();
+    } catch (e) {
+    }
 }
 
 let data = fs.readFileSync("current_cifp/FAACIFP18").toString().split(/\r?\n/g);
@@ -113,7 +116,7 @@ let understoodLines = 0;
 let movedRunways = {};
 
 
-const worldDist =  0.00005;
+const worldDist = 0.00005;
 const xplaneDist = 0.00001;
 
 /** @type {ParseResult[]} */
@@ -196,7 +199,10 @@ const readLines = data.length;
 data = undefined;
 
 if (global.gc) {
-    try { global.gc(); } catch (e) {}
+    try {
+        global.gc();
+    } catch (e) {
+    }
 }
 
 const masterDictionary = pointsForFurtherProcessing.reduce((out, curr) => {
@@ -233,10 +239,12 @@ const masterDictionary = pointsForFurtherProcessing.reduce((out, curr) => {
 pointsForFurtherProcessing = undefined;
 
 if (global.gc) {
-    try { global.gc(); } catch (e) {}
+    try {
+        global.gc();
+    } catch (e) {
+    }
 }
 
-const dataFactor = (understoodLines / readLines).toFixed(4); // no longer provided to supress meaningless updates
 for (const movedRunwaysKey in movedRunways) {
     movedRunways[movedRunwaysKey] = movedRunways[movedRunwaysKey].filter(thing => thing.orig !== thing.neww);
     if (!(movedRunways[movedRunwaysKey].length))
@@ -256,11 +264,17 @@ console.log("Wrote renames");
 
 let maxDist = 0;
 
+let errantOutstring = "";
+
 const baseTabs = "\t".repeat(2);
+
+if (fs.existsSync("errantFiles.out"))
+    fs.unlinkSync("errantFiles.out");
 
 for (const currentAirport in masterDictionary) {
     if (Object.keys(masterDictionary[currentAirport]).length <= 1)
         continue;
+    let erroredThisAirport = false;
     process.stdout.write(`Running on ${currentAirport}  \r`);
     let future_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data.">\n\t<Airport ICAOcode="${currentAirport}">\n`;
     let current_branch_outstring = `${copyrightString}<ProceduresDB build="By jojo2357, with FAA data.">\n\t<Airport ICAOcode="${currentAirport}">\n`;
@@ -436,65 +450,70 @@ for (const currentAirport in masterDictionary) {
 
             // we dont need this because if, say, 1L and 1R are different, we wont ever see 1B.
             // for (const specificDesignator of repeatsFor) {
-                let newRunway;
-                if (onlyNone)
-                    newRunway = "ALL";
-                else
-                    newRunway = runwayTransKey.slice(0, 2) + specificDesignator;
-                let oldRunway;
-                if (onlyNone)
-                    oldRunway = "ALL";
-                else
-                    oldRunway = newRunway.endsWith("B") ? newRunwayToOld(currentAirport, newRunway.slice(0, 2) + "R").slice(0,2) + "B" : newRunwayToOld(currentAirport, newRunway);
+            let newRunway;
+            if (onlyNone)
+                newRunway = "ALL";
+            else
+                newRunway = runwayTransKey.slice(0, 2) + specificDesignator;
+            let oldRunway;
+            if (onlyNone)
+                oldRunway = "ALL";
+            else
+                oldRunway = newRunway.endsWith("B") ? newRunwayToOld(currentAirport, newRunway.slice(0, 2) + "R").slice(0, 2) + "B" : newRunwayToOld(currentAirport, newRunway);
 
-                current_branch_outstring += baseTabs + `<${mainTag} Name="${oldName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${oldRunway.trim()}`}"${!route.approach && oldRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => newRunwayToOld(currentAirport, runwayTransKey.slice(0, 2) + it)).join(',')}"` : ""}>\n`;
-                future_branch_outstring += baseTabs + `<${mainTag} Name="${newName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${newRunway.trim()}`}"${!route.approach && newRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => runwayTransKey.slice(0, 2) + it).join(',')}"` : ""}>\n`;
+            current_branch_outstring += baseTabs + `<${mainTag} Name="${oldName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${oldRunway.trim()}`}"${!route.approach && oldRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => newRunwayToOld(currentAirport, runwayTransKey.slice(0, 2) + it)).join(',')}"` : ""}>\n`;
+            future_branch_outstring += baseTabs + `<${mainTag} Name="${newName.trim()}${route.approach || runTransKeys.length <= 1 ? "" : `.${newRunway.trim()}`}"${!route.approach && newRunway !== "ALL" ? ` Runways="${repeatsFor.map(it => runwayTransKey.slice(0, 2) + it).join(',')}"` : ""}>\n`;
 
-                let runwayArray = onlyNone ? [] : runwayTransitions[runwayTransKey];
+            let runwayArray = onlyNone ? [] : runwayTransitions[runwayTransKey];
 
-                if (runwayArray.length && commonPoints.length) {
-                    if (route.sid) {
-                        if (runwayArray[runwayArray.length - 1].loc.ident && commonPoints[0].loc.ident && runwayArray[runwayArray.length - 1].loc.ident.trim() === commonPoints[0].loc.ident.trim())
+            if (runwayArray.length && commonPoints.length) {
+                if (route.sid) {
+                    if (runwayArray[runwayArray.length - 1].loc.ident && commonPoints[0].loc.ident && runwayArray[runwayArray.length - 1].loc.ident.trim() === commonPoints[0].loc.ident.trim())
                         runwayArray = runwayArray.concat(commonPoints.slice(1));
-                        else
-                            runwayArray = runwayArray.concat(commonPoints);
-                    } else if (route.star) {
-                        if (runwayArray[0].loc.ident && commonPoints[commonPoints.length - 1].loc.ident && runwayArray[0].loc.ident.trim() === commonPoints[commonPoints.length - 1].loc.ident.trim())
-                            runwayArray = commonPoints.slice(0, -1).concat(runwayArray);
-                        else
-                            runwayArray = commonPoints.concat(runwayArray);
-                    }
-                } else {
-                    if (route.sid)
+                    else
                         runwayArray = runwayArray.concat(commonPoints);
-                    else if (route.star || route.approach)
+                } else if (route.star) {
+                    if (runwayArray[0].loc.ident && commonPoints[commonPoints.length - 1].loc.ident && runwayArray[0].loc.ident.trim() === commonPoints[commonPoints.length - 1].loc.ident.trim())
+                        runwayArray = commonPoints.slice(0, -1).concat(runwayArray);
+                    else
                         runwayArray = commonPoints.concat(runwayArray);
                 }
+            } else {
+                if (route.sid)
+                    runwayArray = runwayArray.concat(commonPoints);
+                else if (route.star || route.approach)
+                    runwayArray = commonPoints.concat(runwayArray);
+            }
 
-                for (let i = 0; i < runwayArray.length; i++) {
-                    current_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, true, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
-                    future_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, false, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
+            for (let i = 0; i < runwayArray.length; i++) {
+                current_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, true, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
+                future_branch_outstring += wayptToString(runwayArray[i], wayptTag, 3, false, i === runwayArray.length - 1 ? undefined : runwayArray[i + 1]);
+            }
+
+            for (const regularTransitionsKey in regularTransitions) {
+                let runwayArr = regularTransitions[regularTransitionsKey];
+
+                if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[0].obj.fix_path_termination)) {
+                    runwayArr = runwayArr.slice(1);
+                } else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[runwayArr.length - 1].obj.fix_path_termination)) {
+                    runwayArr = runwayArr.slice(0, -1);
+                }
+                if (runwayArr.length === 0) {
+                    continue;
+                }
+                current_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
+                future_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
+                for (let i = 0; i < runwayArr.length; i++) {
+                    current_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, true, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
+                    future_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, false, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
                 }
 
-                for (const regularTransitionsKey in regularTransitions) {
-                    current_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
-                    future_branch_outstring += `${baseTabs}\t<${transitionTag} Name="${regularTransitionsKey.trim()}">\n`;
+                current_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
+                future_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
+            }
 
-                    let runwayArr = regularTransitions[regularTransitionsKey];
-
-                    if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident) runwayArr = runwayArr.slice(1);
-                    else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident) runwayArr = runwayArr.slice(0, -1);
-                    for (let i = 0; i < runwayArr.length; i++) {
-                        current_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, true, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
-                        future_branch_outstring += wayptToString(runwayArr[i], transitionWaypointTag, 4, false, i === runwayArr.length - 1 ? undefined : runwayArr[i + 1]);
-                    }
-
-                    current_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
-                    future_branch_outstring += `${baseTabs}\t</${transitionTag}>\n`;
-                }
-
-                current_branch_outstring += `${baseTabs}</${mainTag}>\n`;
-                future_branch_outstring += `${baseTabs}</${mainTag}>\n`;
+            current_branch_outstring += `${baseTabs}</${mainTag}>\n`;
+            future_branch_outstring += `${baseTabs}</${mainTag}>\n`;
             // }
         }
     }
@@ -504,6 +523,9 @@ for (const currentAirport in masterDictionary) {
     fs.mkdirSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
     fs.writeFileSync(path.join(process.cwd(), "2020.4/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
     fs.writeFileSync(path.join(process.cwd(), "2020.3/Airports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
+    if (future_branch_outstring.match(/<(?<TagName>[A-Z_]+)( Name="\w+")?>(\s)+<\/\k<TagName>>/) || current_branch_outstring.match(/<(?<TagName>[A-Z_]+)( Name="\w+")?>(\s)+<\/\k<TagName>>/)) {
+        fs.appendFileSync("errantFiles.out", currentAirport);
+    }
     isJojo && fs.mkdirSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
     isJojo && fs.writeFileSync(path.join(process.cwd(), "LocalAirports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), current_branch_outstring);
     isJojo && fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
@@ -698,16 +720,16 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             if (waypt.loc.reallatitude) {
                 latobj = waypt.loc.reallatitude;
                 lonobj = waypt.loc.reallongtude;
-            } else if (waypt.loc.vorLatitude){
+            } else if (waypt.loc.vorLatitude) {
                 latobj = waypt.loc.vorLatitude;
                 lonobj = waypt.loc.vorLongitude;
-            } else if (waypt.loc.DMELatitude){
+            } else if (waypt.loc.DMELatitude) {
                 latobj = waypt.loc.DMELatitude;
                 lonobj = waypt.loc.DMELongitude;
-            } else if (waypt.loc.rwylatitude){
+            } else if (waypt.loc.rwylatitude) {
                 latobj = waypt.loc.rwylatitude;
                 lonobj = waypt.loc.rwylongitude;
-            } else if (waypt.loc.airpotLatitude){
+            } else if (waypt.loc.airpotLatitude) {
                 latobj = waypt.loc.airpotLatitude;
                 lonobj = waypt.loc.airpotLongitude;
             } else {
@@ -721,8 +743,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             break;
         case "VR":
         case "CD":
-        case "VD":
-            {
+        case "VD": {
             let loc = knownWaypoints[waypt.obj.fix_path_navaid.trim()];
 
             if (!loc) {
@@ -730,19 +751,19 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 break;
             }
 
-            if (loc.vorLatitude){
+            if (loc.vorLatitude) {
                 latobj = loc.vorLatitude;
                 lonobj = loc.vorLongitude;
-            } else if (loc.DMELatitude){
+            } else if (loc.DMELatitude) {
                 latobj = loc.DMELatitude;
                 lonobj = loc.DMELongitude;
             } else if (loc.reallatitude) {
                 latobj = loc.reallatitude;
                 lonobj = loc.reallongtude;
-            } else if (loc.airpotLatitude){
+            } else if (loc.airpotLatitude) {
                 latobj = loc.airpotLatitude;
                 lonobj = loc.airpotLongitude;
-            } else if (loc.rwylatitude){
+            } else if (loc.rwylatitude) {
                 latobj = loc.rwylatitude;
                 lonobj = loc.rwylongitude;
             } else {
@@ -751,7 +772,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                     latobj = best.latitude();
                     lonobj = best.longitude();
                 } else
-                console.log("FUUUUUCK", loc);
+                    console.log("FUUUUUCK", loc);
             }
             break;
         }
@@ -767,19 +788,19 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             if (!nextWaypt) {
                 // latstr += '0.0';
                 // lonstr += '0.0';
-            } else if (nextWaypt.loc.vorLatitude){
+            } else if (nextWaypt.loc.vorLatitude) {
                 latobj = nextWaypt.loc.vorLatitude;
                 lonobj = nextWaypt.loc.vorLongitude;
-            } else if (nextWaypt.loc.DMELatitude){
+            } else if (nextWaypt.loc.DMELatitude) {
                 latobj = nextWaypt.loc.DMELatitude;
                 lonobj = nextWaypt.loc.DMELongitude;
             } else if (nextWaypt.loc.reallatitude) {
                 latobj = nextWaypt.loc.reallatitude;
                 lonobj = nextWaypt.loc.reallongtude;
-            } else if (nextWaypt.loc.airpotLatitude){
+            } else if (nextWaypt.loc.airpotLatitude) {
                 latobj = nextWaypt.loc.airpotLatitude;
                 lonobj = nextWaypt.loc.airpotLongitude;
-            } else if (nextWaypt.loc.rwylatitude){
+            } else if (nextWaypt.loc.rwylatitude) {
                 latobj = nextWaypt.loc.rwylatitude;
                 lonobj = nextWaypt.loc.rwylongitude;
             } else {
@@ -795,16 +816,16 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
             console.log("Fuck", waypt.obj.fix_path_termination);
     }
 
-/*    if (latobj && lonobj) {
-        let dist = Latongitude.realDistance(latobj.value, lonobj.value, knownWaypoints[waypt.obj.airportIDENT].latitude().value, knownWaypoints[waypt.obj.airportIDENT].longitude().value);
+    /*    if (latobj && lonobj) {
+            let dist = Latongitude.realDistance(latobj.value, lonobj.value, knownWaypoints[waypt.obj.airportIDENT].latitude().value, knownWaypoints[waypt.obj.airportIDENT].longitude().value);
 
-        if (dist > maxDist) {
-            maxDist = dist;
-            console.log("New Record", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
-        } else if (dist > 300) {
-            console.log("Far Awaey", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
-        }
-    }*/
+            if (dist > maxDist) {
+                maxDist = dist;
+                console.log("New Record", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
+            } else if (dist > 300) {
+                console.log("Far Awaey", waypt.obj.airportIDENT, "on", waypt.obj.SID_STAR_Ident, "at", waypt.loc.ident, dist, "nm");
+            }
+        }*/
 
     out += `${tabs}<Latitude>${Latongitude.toAbsNumber(latobj)}</Latitude>\n${tabs}<Longitude>${Latongitude.toAbsNumber(lonobj)}</Longitude>\n`;
 
@@ -834,9 +855,9 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "FA" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
-/*        if (waypt.obj.fix_path_termination === "VI" && nextWaypt) {
-            out += `${tabs}<RadialtoIntercept>${2 * (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 180) - (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 360) + 180}</RadialtoIntercept>\n`
-        }*/
+        /*        if (waypt.obj.fix_path_termination === "VI" && nextWaypt) {
+                    out += `${tabs}<RadialtoIntercept>${2 * (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 180) - (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 360) + 180}</RadialtoIntercept>\n`
+                }*/
     } else if (waypt.obj.fix_path_termination === "CA" || waypt.obj.fix_path_termination === "VI") {
         out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;

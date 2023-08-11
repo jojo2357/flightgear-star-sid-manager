@@ -2,6 +2,7 @@ name: Update to new airac cycle
 
 # Run at 0905Z every day to check if the FAA just activated a new AIRAC which happens at 0901Z
 on:
+  workflow_dispatch:
   schedule:
     -  cron: '05 09 * * 4'
 #on: [workflow_dispatch]
