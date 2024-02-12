@@ -74,5 +74,6 @@ If you dont have node installed, you can get it [here](https://nodejs.org/en/dow
 No. If I am going to translate, I am going to c(\\+\\+)? for compat with fg and performance reasons.
 
 ### Legal
-If you use any of this software, I am not liable for any bad outcomes. 
-This software is released under GPL V3 and a copy of the license can be found in LICENSE.
+The output of the program (the 2020.4 and 2020.3 folders) are licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/). See also [2020.3](./2020.3/LICENSE) and [2020.4](./2020.4/LICENSE)
+
+The program itself, ([./arinc424parser.js](arinc424parser.js) and [./index.js](index.js)) are licensed under [GPL V2.0 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt) see also [LICENSE](LICENSE)

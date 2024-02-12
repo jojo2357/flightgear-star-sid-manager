@@ -13,17 +13,22 @@ jobs:
     name: Check for new airac
     outputs:
       should_run: ${{ steps.should_run.outputs.should_run }}
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
     steps:
       - id: should_run
         continue-on-error: true
         name: check for new airac
-        run: curl --fail -I -s "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_$(date +"%y%m%d").zip" > /dev/null || echo "should_run=false" >> $GITHUB_OUTPUT
+        run: DATE="$(date +"%y%m%d")"; echo "Today is $DATE"; curl --fail -I -s "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_${DATE}.zip" > /dev/null || echo "should_run=true" >> $GITHUB_OUTPUT
 
   run:
     needs: check_cycle
-    if: ${{ needs.check_cycle.outputs.should_run != 'false' }}
+    if: ${{ needs.check_cycle.outputs.should_run != 'true' }}
     runs-on: ubuntu-latest
-
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
     steps:
       - name: checkout project
         uses: actions/checkout@v3

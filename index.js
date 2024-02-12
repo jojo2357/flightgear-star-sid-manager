@@ -1,7 +1,7 @@
 /*
  * This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
  *
- * Copyright (c) 2022-2023 jojo2357
+ * Copyright (c) 2022-2024 jojo2357
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -30,22 +30,8 @@ let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
 
 const copyrightString = `<!--
- ~ This file is a part of flightgear-star-sid-manager, a tool to extract sid/star data from ARINC 424
- ~
- ~ Copyright (c) ${new Date().getFullYear()} jojo2357
- ~
- ~  This program is free software: you can redistribute it and/or modify
- ~  it under the terms of the GNU General Public License as published by
- ~  the Free Software Foundation, either version 3 of the License, or
- ~  (at your option) any later version.
- ~
- ~  This program is distributed in the hope that it will be useful,
- ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
- ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- ~  GNU General Public License for more details.
- ~
- ~  You should have received a copy of the GNU General Public License
- ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ ~ The output of flightgear-sid-star-manager Copyright (c) ${new Date().getFullYear()} by jojo2357 licensed under CC BY 4.0.
+ ~ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
  -->\n`;
 
 // let guessUsingUpdatedXplane = true;
@@ -679,6 +665,7 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
         case "FA":
             out += 'ConstHdgtoAlt';
             break;
+        case "CI":
         case "VI":
             out += 'Intc';
             break;
@@ -855,9 +842,6 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
     if (waypt.obj.fix_path_termination === "VA" || waypt.obj.fix_path_termination === "FA" || waypt.obj.fix_path_termination === "VM" || waypt.obj.fix_path_termination === "VD") {
         out += `${tabs}<Hdg_Crs>1</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
-        /*        if (waypt.obj.fix_path_termination === "VI" && nextWaypt) {
-                    out += `${tabs}<RadialtoIntercept>${2 * (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 180) - (Number.parseInt(nextWaypt.obj.fix_magnetic_course) * 0.1 % 360) + 180}</RadialtoIntercept>\n`
-                }*/
     } else if (waypt.obj.fix_path_termination === "CA" || waypt.obj.fix_path_termination === "VI") {
         out += `${tabs}<Hdg_Crs>0</Hdg_Crs>\n`;
         out += `${tabs}<Hdg_Crs_value>${(Number.parseInt(waypt.obj.fix_magnetic_course) * (waypt.obj.fix_magnetic_course.endsWith("T") ? 1 : 0.1)).toFixed(1)}</Hdg_Crs_value>\n`;
