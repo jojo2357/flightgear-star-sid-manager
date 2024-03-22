@@ -479,10 +479,12 @@ for (const currentAirport in masterDictionary) {
             for (const regularTransitionsKey in regularTransitions) {
                 let runwayArr = regularTransitions[regularTransitionsKey];
 
-                if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[0].obj.fix_path_termination)) {
-                    runwayArr = runwayArr.slice(1);
-                } else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[runwayArr.length - 1].obj.fix_path_termination)) {
-                    runwayArr = runwayArr.slice(0, -1);
+                if (runwayArray.length) {
+                    if (route.sid && runwayArr[0].loc.ident === runwayArray[runwayArray.length - 1].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[0].obj.fix_path_termination)) {
+                        runwayArr = runwayArr.slice(1);
+                    } else if ((route.star || route.approach) && runwayArr[runwayArr.length - 1].loc.ident === runwayArray[0].loc.ident && !["HM", "HF", "HA"].includes(runwayArr[runwayArr.length - 1].obj.fix_path_termination)) {
+                        runwayArr = runwayArr.slice(0, -1);
+                    }
                 }
                 if (runwayArr.length === 0) {
                     continue;
