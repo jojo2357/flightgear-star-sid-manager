@@ -726,8 +726,10 @@ function wayptToString(waypt, tagName, tabDepth = 0, useOldRunway = false, nextW
                 if (best) {
                     latobj = best.latitude();
                     lonobj = best.longitude();
-                } else
-                    console.log("FUUUUUCK", waypt.loc);
+                } else {
+                    console.error("FUUUUUCK", waypt.loc, waypt.obj.airportIDENT, waypt.obj.SID_STAR_Ident);
+                    return "";
+                }
             }
             break;
         case "VR":
@@ -918,9 +920,13 @@ function oldRunwayToNew(airport, oldRunway) {
 }
 
 function findClosestPoorlyNamedWaypoint(name, locLat, locLon) {
-    let distarr = awfullyNamedWaypoints[name.trim()].map(waypt => Latongitude.distance(waypt.latitude(), waypt.longitude(), locLat, locLon));
+    const awfulPoints = awfullyNamedWaypoints[name.trim()];
+    if (!awfulPoints)
+        return false;
+
+    let distarr = awfulPoints.map(waypt => Latongitude.distance(waypt.latitude(), waypt.longitude(), locLat, locLon));
 
     let minDist = Math.min(...distarr);
 
-    return awfullyNamedWaypoints[name.trim()][distarr.findIndex(thing => thing === minDist)];
+    return awfulPoints[distarr.findIndex(thing => thing === minDist)];
 }
