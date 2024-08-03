@@ -31,10 +31,10 @@ jobs:
       ACTIONS_STEP_DEBUG: true
     steps:
       - name: checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 12
 
@@ -52,7 +52,7 @@ jobs:
           echo "COMMIT_TITLE=AUTOMATIC: Update to $(date +"%y%m%d") cycle" >> $GITHUB_ENV
 
       - name: commit files
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           create_branch: false
           commit_message: ${{ env.COMMIT_TITLE }}
