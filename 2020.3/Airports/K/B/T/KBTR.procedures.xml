@@ -6,14 +6,26 @@
 	<Airport ICAOcode="KBTR">
 		<Approach Name="ILS13">
 			<App_Waypoint>
-				<Name>RAZOJ</Name><!-- IF -->
+				<Name>RELAY</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>30.65040000</Latitude>
+				<Longitude>-91.29483056</Longitude>
+				<Speed>0</Speed>
+				<Altitude>02000</Altitude>
+				<AltitudeCons>01400</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>RAZOJ</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>30.60595833</Latitude>
 				<Longitude>-91.24050000</Longitude>
 				<Speed>0</Speed>
 				<Altitude>01600</Altitude>
-				<AltitudeCons>01400</AltitudeCons>
-				<AltitudeRestriction>at</AltitudeRestriction>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
@@ -123,22 +135,10 @@
 			</App_Transition>
 			<App_Transition Name="WRACK">
 				<AppTr_Waypoint>
-					<Name>WRACK</Name><!-- IF -->
+					<Name>WRACK</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>30.89109167</Latitude>
 					<Longitude>-91.29596667</Longitude>
-					<Speed>0</Speed>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Flytype>Fly-by</Flytype>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>RELAY</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>30.65040000</Latitude>
-					<Longitude>-91.29483056</Longitude>
 					<Speed>0</Speed>
 					<Altitude>02000</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -268,7 +268,19 @@
 		</Approach>
 		<Approach Name="VDM13">
 			<App_Waypoint>
-				<Name>RAZOJ</Name><!-- IF -->
+				<Name>RELAY</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>30.65040000</Latitude>
+				<Longitude>-91.29483056</Longitude>
+				<Speed>0</Speed>
+				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>RAZOJ</Name><!-- CF -->
 				<Type>Normal</Type>
 				<Latitude>30.60595833</Latitude>
 				<Longitude>-91.24050000</Longitude>
@@ -385,22 +397,10 @@
 			</App_Transition>
 			<App_Transition Name="WRACK">
 				<AppTr_Waypoint>
-					<Name>WRACK</Name><!-- IF -->
+					<Name>WRACK</Name><!-- FC -->
 					<Type>Normal</Type>
 					<Latitude>30.89109167</Latitude>
 					<Longitude>-91.29596667</Longitude>
-					<Speed>0</Speed>
-					<Altitude>0</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>at</AltitudeRestriction>
-					<Flytype>Fly-by</Flytype>
-					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-				<AppTr_Waypoint>
-					<Name>RELAY</Name><!-- TF -->
-					<Type>Normal</Type>
-					<Latitude>30.65040000</Latitude>
-					<Longitude>-91.29483056</Longitude>
 					<Speed>0</Speed>
 					<Altitude>02000</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -1083,20 +1083,6 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
-			<App_Transition Name="LSU">
-				<AppTr_Waypoint>
-					<Name>LSU</Name><!-- PI -->
-					<Type>Normal</Type>
-					<Latitude>30.48513333</Latitude>
-					<Longitude>-91.29406667</Longitude>
-					<Speed>0</Speed>
-					<Altitude>02500</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Flytype>Fly-by</Flytype>
-					<Sp_Turn>Right</Sp_Turn>
-				</AppTr_Waypoint>
-			</App_Transition>
 		</Approach>
 	</Airport>
 </ProceduresDB>
