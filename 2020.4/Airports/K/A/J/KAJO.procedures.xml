@@ -512,6 +512,104 @@
 				</StarTr_Waypoint>
 			</Star_Transition>
 		</Star>
+		<Approach Name="RNVBNV">
+			<App_Waypoint>
+				<Name>AZARR</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>33.91392778</Latitude>
+				<Longitude>-117.43000278</Longitude>
+				<Speed>0</Speed>
+				<Altitude>04400</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>PDZ</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>33.91833611</Latitude>
+				<Longitude>-117.52999722</Longitude>
+				<Speed>0</Speed>
+				<Altitude>03100</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>MAHEB</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>33.89885000</Latitude>
+				<Longitude>-117.59826111</Longitude>
+				<Speed>0</Speed>
+				<Altitude>00533</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Flytype>Fly-over</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>(01700)</Name><!-- CA -->
+				<Type>ConstHdgtoAlt</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Speed>0</Speed>
+				<Altitude>01700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Hdg_Crs>0</Hdg_Crs>
+				<Hdg_Crs_value>237.1</Hdg_Crs_value>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>AZARR</Name><!-- DF -->
+				<Type>Normal</Type>
+				<Latitude>33.91392778</Latitude>
+				<Longitude>-117.43000278</Longitude>
+				<Speed>0</Speed>
+				<Altitude>04700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-over</Flytype>
+				<Sp_Turn>Right</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>AZARR</Name><!-- HM -->
+				<Type>Hold</Type>
+				<Latitude>33.91392778</Latitude>
+				<Longitude>-117.43000278</Longitude>
+				<Speed>0</Speed>
+				<Altitude>04700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Hld_Rad_value>258.0</Hld_Rad_value>
+				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+				<Hld_td_value>5.0</Hld_td_value>
+				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+				<Hld_Turn>Right</Hld_Turn>
+			</App_Waypoint>
+			<App_Transition Name="AZARR">
+				<AppTr_Waypoint>
+					<Name>AZARR</Name><!-- HF -->
+					<Type>Hold</Type>
+					<Latitude>33.91392778</Latitude>
+					<Longitude>-117.43000278</Longitude>
+					<Speed>0</Speed>
+					<Altitude>04400</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Hld_Rad_value>258.0</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>5.0</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Right</Hld_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
+		</Approach>
 		<Approach Name="VORAOR">
 			<App_Waypoint>
 				<Name>PDZ</Name><!-- IF -->
@@ -528,8 +626,8 @@
 			<App_Waypoint>
 				<Name>MAHEB</Name><!-- CF -->
 				<Type>Normal</Type>
-				<Latitude>33.89990833</Latitude>
-				<Longitude>-117.59797778</Longitude>
+				<Latitude>33.89885000</Latitude>
+				<Longitude>-117.59826111</Longitude>
 				<Speed>0</Speed>
 				<Altitude>00533</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -548,7 +646,7 @@
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Hdg_Crs>0</Hdg_Crs>
-				<Hdg_Crs_value>237.0</Hdg_Crs_value>
+				<Hdg_Crs_value>236.1</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
@@ -557,19 +655,31 @@
 				<Latitude>33.91833611</Latitude>
 				<Longitude>-117.52999722</Longitude>
 				<Speed>0</Speed>
-				<Altitude>03100</Altitude>
+				<Altitude>04700</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-over</Flytype>
 				<Sp_Turn>Right</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>PDZ</Name><!-- HM -->
-				<Type>Hold</Type>
-				<Latitude>33.91833611</Latitude>
-				<Longitude>-117.52999722</Longitude>
+				<Name>AZARR</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>33.91392778</Latitude>
+				<Longitude>-117.43000278</Longitude>
 				<Speed>0</Speed>
-				<Altitude>03100</Altitude>
+				<Altitude>04700</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-over</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>AZARR</Name><!-- HM -->
+				<Type>Hold</Type>
+				<Latitude>33.91392778</Latitude>
+				<Longitude>-117.43000278</Longitude>
+				<Speed>0</Speed>
+				<Altitude>04700</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -586,11 +696,11 @@
 					<Latitude>33.91833611</Latitude>
 					<Longitude>-117.52999722</Longitude>
 					<Speed>0</Speed>
-					<Altitude>03100</Altitude>
+					<Altitude>03400</Altitude>
 					<AltitudeCons>0</AltitudeCons>
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Flytype>Fly-by</Flytype>
-					<Hld_Rad_value>258.0</Hld_Rad_value>
+					<Hld_Rad_value>236.1</Hld_Rad_value>
 					<Hld_Time_or_Dist>Time</Hld_Time_or_Dist>
 					<Hld_td_value>1.0</Hld_td_value>
 					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
