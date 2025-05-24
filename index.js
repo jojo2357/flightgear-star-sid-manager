@@ -24,7 +24,7 @@ const simpleRunwayNames = ["R", "L", "C", " "];
 
 let oldData = fs.readFileSync("apt.dat").toString().split(/\r?\n/g).filter(it => it.trim().length);
 
-const isJojo = require("os").userInfo().username === "jojo2357";
+const isJojo = false//require("os").userInfo().username === "jojo2357";
 
 let debugAirports = ["KLAS", "KLAX", "KABQ", "KSNA", "KHOU"];
 let debug = false;
@@ -519,6 +519,28 @@ for (const currentAirport in masterDictionary) {
     isJojo && fs.mkdirSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1)), {recursive: true});
     isJojo && fs.writeFileSync(path.join(process.cwd(), "realairports", ...currentAirport.split("").slice(0, -1), `${currentAirport}.procedures.xml`), future_branch_outstring);
 }
+
+if (!fs.existsSync("2020.3/Navaids"))
+    fs.mkdirSync("2020.3/Navaids");
+if (!fs.existsSync("2020.4/Navaids"))
+    fs.mkdirSync("2020.4/Navaids");
+
+fs.writeFileSync("2020.3/Navaids/fix.dat", `I
+600 Version. The output of flightgear-sid-star-manager Copyright (c) ${new Date().getFullYear()} by jojo2357 licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+`);
+fs.writeFileSync("2020.4/Navaids/fix.dat", `I
+600 Version. The output of flightgear-sid-star-manager Copyright (c) ${new Date().getFullYear()} by jojo2357 licensed under CC BY 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+`);
+
+for (const [waypoint_key, waypoint_data] of Object.entries(knownWaypoints).filter(([key, data]) => data && key.match(/^[A-Z0-9]{5}$/i)).sort(([a,],[b,]) => a.localeCompare(b))) {
+    fs.appendFileSync("2020.3/Navaids/fix.dat", `${Latongitude.toAbsNumber(waypoint_data.latitude()).padStart(12, ' ')} ${Latongitude.toAbsNumber(waypoint_data.longitude()).padStart(13, ' ')} ${waypoint_key}\n`);
+    fs.appendFileSync("2020.4/Navaids/fix.dat", `${Latongitude.toAbsNumber(waypoint_data.latitude()).padStart(12, ' ')} ${Latongitude.toAbsNumber(waypoint_data.longitude()).padStart(13, ' ')} ${waypoint_key}\n`);
+}
+
+fs.appendFileSync("2020.3/Navaids/fix.dat", "99\n");
+fs.appendFileSync("2020.4/Navaids/fix.dat", "99\n");
 
 //console.log(thing);
 
