@@ -4,14 +4,14 @@
  -->
 <ProceduresDB build="By jojo2357, with FAA data.">
 	<Airport ICAOcode="KCGS">
-		<Approach Name="RNVANV">
+		<Approach Name="RNV15">
 			<App_Waypoint>
 				<Name>PINEY</Name><!-- IF -->
 				<Type>Normal</Type>
-				<Latitude>39.07605556</Latitude>
-				<Longitude>-77.09617778</Longitude>
+				<Latitude>39.09490000</Latitude>
+				<Longitude>-77.05280278</Longitude>
 				<Speed>0</Speed>
-				<Altitude>02100</Altitude>
+				<Altitude>02200</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -20,10 +20,10 @@
 			<App_Waypoint>
 				<Name>BRNCH</Name><!-- TF -->
 				<Type>Normal</Type>
-				<Latitude>39.02305278</Latitude>
-				<Longitude>-76.99882222</Longitude>
+				<Latitude>39.03260278</Latitude>
+				<Longitude>-76.98165278</Longitude>
 				<Speed>0</Speed>
-				<Altitude>01500</Altitude>
+				<Altitude>01800</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -32,12 +32,12 @@
 			<App_Waypoint>
 				<Name>ZILEX</Name><!-- TF -->
 				<Type>Normal</Type>
-				<Latitude>39.00249722</Latitude>
-				<Longitude>-76.96114722</Longitude>
+				<Latitude>39.00445833</Latitude>
+				<Longitude>-76.94951944</Longitude>
 				<Speed>0</Speed>
-				<Altitude>00780</Altitude>
-				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>above</AltitudeRestriction>
+				<Altitude>00840</Altitude>
+				<AltitudeCons>00840</AltitudeCons>
+				<AltitudeRestriction>between</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
@@ -54,47 +54,65 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>(00448)</Name><!-- CA -->
+				<Name>(00449)</Name><!-- CA -->
 				<Type>ConstHdgtoAlt</Type>
 				<Latitude>0</Latitude>
 				<Longitude>0</Longitude>
 				<Speed>0</Speed>
-				<Altitude>00448</Altitude>
+				<Altitude>00449</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
 				<Hdg_Crs>0</Hdg_Crs>
-				<Hdg_Crs_value>136.0</Hdg_Crs_value>
+				<Hdg_Crs_value>149.3</Hdg_Crs_value>
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>PINEY</Name><!-- DF -->
+				<Name>JAXXS</Name><!-- DF -->
 				<Type>Normal</Type>
-				<Latitude>39.07605556</Latitude>
-				<Longitude>-77.09617778</Longitude>
+				<Latitude>38.87515833</Latitude>
+				<Longitude>-76.80232778</Longitude>
 				<Speed>0</Speed>
 				<Altitude>02100</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-over</Flytype>
-				<Sp_Turn>Left</Sp_Turn>
+				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>PINEY</Name><!-- HM -->
+				<Name>JAXXS</Name><!-- HM -->
 				<Type>Hold</Type>
-				<Latitude>39.07605556</Latitude>
-				<Longitude>-77.09617778</Longitude>
+				<Latitude>38.87515833</Latitude>
+				<Longitude>-76.80232778</Longitude>
 				<Speed>0</Speed>
 				<Altitude>02100</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
-				<Hld_Rad_value>136.0</Hld_Rad_value>
+				<Hld_Rad_value>329.4</Hld_Rad_value>
 				<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
 				<Hld_td_value>4.0</Hld_td_value>
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
-				<Hld_Turn>Left</Hld_Turn>
+				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
+			<App_Transition Name="PINEY">
+				<AppTr_Waypoint>
+					<Name>PINEY</Name><!-- HF -->
+					<Type>Hold</Type>
+					<Latitude>39.09490000</Latitude>
+					<Longitude>-77.05280278</Longitude>
+					<Speed>0</Speed>
+					<Altitude>02200</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Hld_Rad_value>149.3</Hld_Rad_value>
+					<Hld_Time_or_Dist>Dist</Hld_Time_or_Dist>
+					<Hld_td_value>4.0</Hld_td_value>
+					<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
+					<Hld_Turn>Left</Hld_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
 		</Approach>
 		<Approach Name="RNVBNV">
 			<App_Waypoint>

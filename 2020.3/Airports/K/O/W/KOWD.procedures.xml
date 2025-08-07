@@ -80,10 +80,10 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>STOGE</Name><!-- CF -->
+				<Name>BODYA</Name><!-- CF -->
 				<Type>Normal</Type>
-				<Latitude>42.11901389</Latitude>
-				<Longitude>-71.13053889</Longitude>
+				<Latitude>42.12165278</Latitude>
+				<Longitude>-71.13220833</Longitude>
 				<Speed>0</Speed>
 				<Altitude>01400</Altitude>
 				<AltitudeCons>0</AltitudeCons>
@@ -94,10 +94,10 @@
 			<App_Waypoint>
 				<Name>DIKEY</Name><!-- CF -->
 				<Type>Normal</Type>
-				<Latitude>42.15820000</Latitude>
-				<Longitude>-71.15532778</Longitude>
+				<Latitude>42.15481389</Latitude>
+				<Longitude>-71.15318333</Longitude>
 				<Speed>0</Speed>
-				<Altitude>00580</Altitude>
+				<Altitude>00700</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -130,24 +130,38 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>MILIS</Name><!-- CF -->
-				<Type>Normal</Type>
-				<Latitude>42.10516389</Latitude>
-				<Longitude>-71.31156111</Longitude>
+				<Name>(INTC)</Name><!-- VI -->
+				<Type>Intc</Type>
+				<Latitude>42.09888611</Latitude>
+				<Longitude>-71.31952778</Longitude>
 				<Speed>0</Speed>
-				<Altitude>03000</Altitude>
+				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
-				<AltitudeRestriction>above</AltitudeRestriction>
-				<Flytype>Fly-over</Flytype>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Hdg_Crs>0</Hdg_Crs>
+				<Hdg_Crs_value>200.0</Hdg_Crs_value>
 				<Sp_Turn>Left</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>MILIS</Name><!-- HM -->
-				<Type>Hold</Type>
-				<Latitude>42.10516389</Latitude>
-				<Longitude>-71.31156111</Longitude>
+				<Name>CLNNT</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>42.09888611</Latitude>
+				<Longitude>-71.31952778</Longitude>
 				<Speed>0</Speed>
-				<Altitude>03000</Altitude>
+				<Altitude>02000</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>above</AltitudeRestriction>
+				<Flytype>Fly-over</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</App_Waypoint>
+			<App_Waypoint>
+				<Name>CLNNT</Name><!-- HM -->
+				<Type>Hold</Type>
+				<Latitude>42.09888611</Latitude>
+				<Longitude>-71.31952778</Longitude>
+				<Speed>0</Speed>
+				<Altitude>02000</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>above</AltitudeRestriction>
 				<Flytype>Fly-by</Flytype>
@@ -157,6 +171,20 @@
 				<Hld_Rad_or_Inbd>Inbd</Hld_Rad_or_Inbd>
 				<Hld_Turn>Right</Hld_Turn>
 			</App_Waypoint>
+			<App_Transition Name="BODYA">
+				<AppTr_Waypoint>
+					<Name>BODYA</Name><!-- PI -->
+					<Type>Normal</Type>
+					<Latitude>42.12165278</Latitude>
+					<Longitude>-71.13220833</Longitude>
+					<Speed>0</Speed>
+					<Altitude>02100</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>above</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Sp_Turn>Left</Sp_Turn>
+				</AppTr_Waypoint>
+			</App_Transition>
 			<App_Transition Name="PVD">
 				<AppTr_Waypoint>
 					<Name>PVD</Name><!-- FC -->
@@ -169,20 +197,6 @@
 					<AltitudeRestriction>above</AltitudeRestriction>
 					<Flytype>Fly-by</Flytype>
 					<Sp_Turn>Auto</Sp_Turn>
-				</AppTr_Waypoint>
-			</App_Transition>
-			<App_Transition Name="STOGE">
-				<AppTr_Waypoint>
-					<Name>STOGE</Name><!-- PI -->
-					<Type>Normal</Type>
-					<Latitude>42.11901389</Latitude>
-					<Longitude>-71.13053889</Longitude>
-					<Speed>0</Speed>
-					<Altitude>02100</Altitude>
-					<AltitudeCons>0</AltitudeCons>
-					<AltitudeRestriction>above</AltitudeRestriction>
-					<Flytype>Fly-by</Flytype>
-					<Sp_Turn>Left</Sp_Turn>
 				</AppTr_Waypoint>
 			</App_Transition>
 		</Approach>
