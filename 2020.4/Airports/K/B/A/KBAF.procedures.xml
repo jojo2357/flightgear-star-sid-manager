@@ -316,6 +316,58 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</Sid_Waypoint>
 		</Sid>
+		<Sid Name="THUMB1">
+			<Sid_Waypoint>
+				<Name>GOETS</Name><!-- IF -->
+				<Type>Normal</Type>
+				<Latitude>41.70351389</Latitude>
+				<Longitude>-72.61454722</Longitude>
+				<Speed>0</Speed>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Waypoint>
+				<Name>THUMB</Name><!-- TF -->
+				<Type>Normal</Type>
+				<Latitude>41.52332222</Latitude>
+				<Longitude>-72.35883333</Longitude>
+				<Speed>0</Speed>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+				<Flytype>Fly-by</Flytype>
+				<Sp_Turn>Auto</Sp_Turn>
+			</Sid_Waypoint>
+			<Sid_Transition Name="CCC">
+				<SidTr_Waypoint>
+					<Name>NTMEG</Name><!-- TF -->
+					<Type>Normal</Type>
+					<Latitude>41.27520833</Latitude>
+					<Longitude>-72.48113333</Longitude>
+					<Speed>0</Speed>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Sp_Turn>Auto</Sp_Turn>
+				</SidTr_Waypoint>
+				<SidTr_Waypoint>
+					<Name>CCC</Name><!-- TF -->
+					<Type>Normal</Type>
+					<Latitude>40.92961944</Latitude>
+					<Longitude>-72.79885833</Longitude>
+					<Speed>0</Speed>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Sp_Turn>Auto</Sp_Turn>
+				</SidTr_Waypoint>
+			</Sid_Transition>
+		</Sid>
 		<Star Name="DPK3">
 			<Star_Waypoint>
 				<Name>MAD</Name><!-- IF -->
@@ -466,8 +518,26 @@
 				<Altitude>0</Altitude>
 				<AltitudeCons>0</AltitudeCons>
 				<AltitudeRestriction>at</AltitudeRestriction>
-				<Flytype>Fly-by</Flytype>
+				<Flytype>Fly-over</Flytype>
 				<Sp_Turn>Auto</Sp_Turn>
+			</Star_Waypoint>
+			<Star_Waypoint>
+				<Name>BAF  </Name>
+				<Type>Normal</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Speed>0</Speed>
+				<Altitude>0</Altitude>
+				<AltitudeCons>0</AltitudeCons>
+				<AltitudeRestriction>at</AltitudeRestriction>
+			</Star_Waypoint>
+			<Star_Waypoint>
+				<Name>(VECTORS)</Name>
+				<Type>Vectors</Type>
+				<Latitude>0</Latitude>
+				<Longitude>0</Longitude>
+				<Hdg_Crs>0</Hdg_Crs>
+				<Hdg_Crs_value>114.4</Hdg_Crs_value>
 			</Star_Waypoint>
 			<Star_Transition Name="ALB">
 				<StarTr_Waypoint>
@@ -475,6 +545,32 @@
 					<Type>Normal</Type>
 					<Latitude>42.74728056</Latitude>
 					<Longitude>-73.80318333</Longitude>
+					<Speed>0</Speed>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Sp_Turn>Auto</Sp_Turn>
+				</StarTr_Waypoint>
+			</Star_Transition>
+			<Star_Transition Name="ARRKK">
+				<StarTr_Waypoint>
+					<Name>ARRKK</Name><!-- IF -->
+					<Type>Normal</Type>
+					<Latitude>42.06347778</Latitude>
+					<Longitude>-75.31678056</Longitude>
+					<Speed>0</Speed>
+					<Altitude>0</Altitude>
+					<AltitudeCons>0</AltitudeCons>
+					<AltitudeRestriction>at</AltitudeRestriction>
+					<Flytype>Fly-by</Flytype>
+					<Sp_Turn>Auto</Sp_Turn>
+				</StarTr_Waypoint>
+				<StarTr_Waypoint>
+					<Name>SWEDE</Name><!-- TF -->
+					<Type>Normal</Type>
+					<Latitude>42.47781111</Latitude>
+					<Longitude>-74.66891944</Longitude>
 					<Speed>0</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -497,10 +593,10 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
 				<StarTr_Waypoint>
-					<Name>RKA</Name><!-- TF -->
+					<Name>RAHKS</Name><!-- TF -->
 					<Type>Normal</Type>
-					<Latitude>42.46633056</Latitude>
-					<Longitude>-75.23922778</Longitude>
+					<Latitude>42.46646667</Latitude>
+					<Longitude>-75.23935556</Longitude>
 					<Speed>0</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -535,12 +631,12 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
 			</Star_Transition>
-			<Star_Transition Name="HNK">
+			<Star_Transition Name="RAHKS">
 				<StarTr_Waypoint>
-					<Name>HNK</Name><!-- IF -->
+					<Name>RAHKS</Name><!-- IF -->
 					<Type>Normal</Type>
-					<Latitude>42.06305833</Latitude>
-					<Longitude>-75.31628333</Longitude>
+					<Latitude>42.46646667</Latitude>
+					<Longitude>-75.23935556</Longitude>
 					<Speed>0</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -575,10 +671,10 @@
 					<Sp_Turn>Auto</Sp_Turn>
 				</StarTr_Waypoint>
 				<StarTr_Waypoint>
-					<Name>RKA</Name><!-- TF -->
+					<Name>RAHKS</Name><!-- TF -->
 					<Type>Normal</Type>
-					<Latitude>42.46633056</Latitude>
-					<Longitude>-75.23922778</Longitude>
+					<Latitude>42.46646667</Latitude>
+					<Longitude>-75.23935556</Longitude>
 					<Speed>0</Speed>
 					<Altitude>0</Altitude>
 					<AltitudeCons>0</AltitudeCons>
@@ -854,10 +950,10 @@
 				<Sp_Turn>Auto</Sp_Turn>
 			</App_Waypoint>
 			<App_Waypoint>
-				<Name>RW02</Name><!-- CF -->
-				<Type>Runway</Type>
-				<Latitude>42.14530000</Latitude>
-				<Longitude>-72.71881944</Longitude>
+				<Name>JAGON</Name><!-- CF -->
+				<Type>Normal</Type>
+				<Latitude>42.14554722</Latitude>
+				<Longitude>-72.72047778</Longitude>
 				<Speed>0</Speed>
 				<Altitude>00303</Altitude>
 				<AltitudeCons>0</AltitudeCons>
